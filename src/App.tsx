@@ -1,8 +1,10 @@
 import React from 'react';
-import './App.css';
 import { Container3 } from './BodyComponents/Container3'
-import { Header } from './BodyComponents/Header'
-import { CardsC2 } from './BodyComponents/CardsC2'
+import { Header } from './Components/Header'
+import { CardsC2 } from './Components/CardsC2'
+import { Button } from './Components/Button';
+import { Buildings } from "@phosphor-icons/react";
+
 function App() {
   return (
     <div>
@@ -20,7 +22,8 @@ function App() {
             <br/>
             <p className='text-[22px]'>O Entre-Linhas foi desenvolvido com foco total em você,<br/> e no seu negócio! Explore a plataforma, aprenda e<br/>evolua!</p>
             <br/>
-            <button className='text-custom-salmon h-[50px] w-[174px] border-solid border-2  border-custom-salmon rounded-[6px]'>Comece agora!</button>
+            {/* <button className='text-custom-salmon h-[50px] w-[174px] border-solid border-2  border-custom-salmon rounded-[6px]'>Comece agora!</button> */}
+            <Button title='Comece agora!' typeStyle='secondary' />
           </div>
 
 
@@ -58,9 +61,9 @@ function App() {
               <div className="w-[53px] border-dashed border-[1px] border-custom-salmon"></div>
 
               <div className="border-solid border-2 h-[308px] w-[273px] rounded-[20px] bg-white flex flex-col items-center justify-evenly text-center">
-              <img src="/IconCard1C5.svg" className="w-[53px] h-[52px]"></img>
-                  <p className="font-[Nunito] font-bold text-[22px]">Entendendo meu cliente</p>
-                  <p className="text-[22px] font-[Nunito]">Quem são meus clientes, como captá-los?</p>
+                <Buildings />
+                <p className="font-[Nunito] font-bold text-[22px]">Entendendo meu cliente</p>
+                <p className="text-[22px] font-[Nunito]">Quem são meus clientes, como captá-los?</p>
               </div>
 
               <div className="w-[53px] border-dashed border-[1px] border-custom-salmon"></div>
