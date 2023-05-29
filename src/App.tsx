@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container3 } from './BodyComponents/Container3'
+import { Container3 } from './Components/Container3'
 import { Header } from './Components/Header'
 import { CardsC2 } from './Components/CardsC2'
 import { Button } from './Components/Button';
