@@ -11,7 +11,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement>{
 export function Button({ title, icon: Icon, typeStyle = "primary", ...rest}: ButtonProps) {
     return (
         <button
-            className={`flex items-center py-2 gap-1 rounded-lg w-fit ${typeStyle === "primary" ? "bg-custom-salmon px-5" : "border-solid border-2 px-[14px] border-custom-salmon"}`}
+            className={`flex flex-row items-center py-2 gap-1 rounded-lg w-fit ${typeStyle === "primary" ? "bg-custom-salmon px-5" : "border-solid border-2 px-[14px] border-custom-salmon"}`}
             {...rest}
         >
             {Icon && <Icon color={typeStyle === "primary" ? "white" : "#FF6464"} size={22} />}
