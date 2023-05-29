@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container3 } from '../Components/Container3'
-import { Header } from '../Components/Header'
-import { CardsC2 } from '../Components/CardsC2'
-import { Button } from '../Components/Button';
+import { Container3 } from '../components/Container3'
+import { Header } from '../components/Header'
+import { CardsC2 } from '../components/CardsC2'
+import { Button } from '../components/Button';
 import { Buildings } from "@phosphor-icons/react";
 
 function App() {
