@@ -6,18 +6,18 @@ export const Header = () => {
 return (
 
 
-<div className="bg-custom-yellow flex w-screen h-[67px] items-center justify-between">
+<header className="px-4 py-[0.6rem] bg-custom-yellow flex w-[100%] h-[auto] items-center justify-between">
 
 {/* Abaixo fica a nossa logo */}
 
-<div className="w-80 flex items-center justify-around">
-    <p className="leading-[30px] text-custom-salmon font-[Sacramento] text-[40px]">Entre Linhas</p>
+<div className="w-auto flex items-center gap-[2rem]">
+    <p className="leading-[30px] text-custom-salmon font-[Sacramento] text-[4rem]">Entre Linhas</p>
     <img src='/bobina.png' />
 </div>
 
 {/* Aqui começa o Nav */}
 
-<div className="flex gap-10 font-Nunito font-[22px]">
+<div className="flex gap-[25px] font-Nunito text-[2.2rem]">
     <ul>Home</ul>
     <ul>Ferramentas</ul>
     <ul>Eventos</ul>
@@ -27,12 +27,12 @@ return (
 
 {/* Abaixo fica o componente de botões, a gente utiliza ele em todo o projeto, e personaliza conforme nossa necessidade através de props */}
 
-<div className='flex gap-2'>
-    <Button title='Login' typeStyle='secondary' icon={SignIn} />
-    <Button title='Registro' icon={SignIn}/>
+<div className='flex gap-[1.2rem]'>
+    <Button title='Login' typeStyle='secondary' />
+    <Button title='Registro'/>
 </div>
 
-</div>
+</header>
 )
 }
 

@@ -1,94 +1,81 @@
-import { Buildings } from "@phosphor-icons/react";
+import { Bag, Buildings, Hammer} from "@phosphor-icons/react";
 import { Button } from "../components/Button";
-import { CardsC2 } from "../components/CardsC2";
-import { Container3 } from "../components/Container3";
+import { Card } from "../components/Card";
+import { Container } from "../components/Container";
 import { Header } from "../components/Header";
+import { Image } from "../components/Image"
 
 
 export default function Home() {
     return (
       <div>
-       <Header />
-       {/* //  div container */}
 
-        <div className="bg-custom-yellow w-screen h-[565px] flex items-center"> 
-         
-          <div className='w-[102px] bg-custom-salmon'>
-            {/* div pra manter o conteúdo sempre distante da borda */}
+      <Header />
+
+     
+      <div className="bg-custom-yellow h-[auto] flex items-center justify-between px-[60px]"> 
+          <div className="flex flex-col gap-[1.6rem]">
+              <h1 className='text-[3.6rem] font-[Nunito] font-bold max-[800px]:text-[1rem]'>Conosco você poderá costurar o <br/>seu futuro!</h1>
+              <p className='text-[2.2rem]'>O Entre-Linhas foi desenvolvido com foco total em você,<br/> e no seu negócio! Explore a plataforma, aprenda e<br/>evolua!</p>
+              <Button title='Comece agora!' typeStyle='secondary' />
           </div>
-
-          <div className="float-left w-[700px] flex flex-col">
-            <h1 className='text-[36px] font-[Nunito] font-bold'>Conosco você poderá costurar o <br/>seu futuro!</h1>
-            <br/>
-            <p className='text-[22px]'>O Entre-Linhas foi desenvolvido com foco total em você,<br/> e no seu negócio! Explore a plataforma, aprenda e<br/>evolua!</p>
-            <br/>
-            {/* <button className='text-custom-salmon h-[50px] w-[174px] border-solid border-2  border-custom-salmon rounded-[6px]'>Comece agora!</button> */}
-            <Button title='Comece agora!' typeStyle='secondary' />
+             <img className="self-end" src='/Banner1.svg' alt="Imagem de uma moça costurando"></img>
+      </div>
+       
+      <div className="m-[-45px] w-[100%]">
+          <div className="flex justify-between w-[80%] m-auto max-[600px]:w-[100%]">
+            <Card title="Aprenda a empreender" text="Aqui você encontrará tudo que precisa para transformar o seu negócio!" icon={Bag} />
+            <Card title="Conheça ferramentas" text="Problemas com o gerenciamento? A gente te ajuda! " icon={Hammer}/>
+            <Card title="Conheça outras pessoas" text="Que tal criar conexões com pessoas tão incríveis quanto você?" icon={Bag}/>
           </div>
+      </div>
 
+      <Container image="Ellipse 65.svg" text="Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!" title="Costure seu futuro" perword="aqui" percolor="text-black"/>
+      
+    
 
-        <div className="float-right w-[1000px] h-[576px] flex items-end">
-          <img className="w-[1000px]" src='/Banner1.svg'></img>
-        </div>
-        
-        </div>
-        {/* // fim div container 01 */}
+         <div className=" h-[50rem] flex flex-col justify-center gap-[74px]">
+            <h1 className="m-auto font-[Nunito] text-[48px]">Conheça nossa <span className="text-custom-salmon">trilha educacional</span></h1>
+            <div className="z-10 flex px-[50px] justify-center m-auto items-center">
+              <Card typeStyle="secondary" title="Conheça outras pessoas" text="Que tal criar conexões com pessoas tão incríveis quanto você?" icon={Bag}/>
+              <div className="border-dashed border-t-[2px] border-custom-salmon w-[7rem]"></div>
+              <Card typeStyle="secondary" title="Conheça outras pessoas" text="Que tal criar conexões com pessoas tão incríveis quanto você?" icon={Hammer}/>
+              <div className="border-dashed border-t-[2px] border-custom-salmon w-[7rem]"></div>
+              <Card typeStyle="secondary" title="TESTE TESTE" text="Que tal criar conexões com pessoas tão incríveis quanto você?" icon={Bag}/>
+              <div className="border-dashed border-t-[2px] border-custom-salmon w-[7rem]"></div>
+              <Card typeStyle="secondary" title="Conheça outras pessoas" text="Que tal criar conexões com pessoas tão incríveis quanto você?" icon={Bag}/>
+            </div>   
+         </div>
 
+        <Container image="Ellipse 65.svg" text="Até a mais bela roupa passou pela mão de um profissional de costura. Cada ponto, cada traço, cada corte, importa. " title="" percolor="text-black" perword="Por que fazemos?" />
 
-        {/* Container 02 */}
+        <div className="h-[509px] bg-[#CCCCCC]">
 
-        <div className="h-[231px] flex w-screen justify-evenly">
-          <CardsC2 />
-          <CardsC2 />
-          <CardsC2 />
-        </div>
-
-
-        <Container3 />
-        <div className="h-[500px] flex flex-col items-center justify-center gap-[74px] bg-custom-yellow">
-
-        
-          <h1 className="font-[Nunito] text-[48px]">Conheça nossa <span className="text-custom-salmon">trilha educacional</span></h1>
-         
-          <div className="flex items-center justify-center">
-
-              <div className="border-solid border-2 h-[308px] w-[273px] rounded-[20px] bg-white flex flex-col items-center justify-evenly text-center">
-                  <img src="/IconCard1C5.svg" className="w-[53px] h-[52px]"></img>
-                  <p className="font-[Nunito] font-bold text-[22px]">Entendendo meu cliente</p>
-                  <p className="text-[22px] font-[Nunito]">Quem são meus clientes, como captá-los?</p>
-              </div>
-
-              <div className="w-[53px] border-dashed border-[1px] border-custom-salmon"></div>
-
-              <div className="border-solid border-2 h-[308px] w-[273px] rounded-[20px] bg-white flex flex-col items-center justify-evenly text-center">
-                <Buildings />
-                <p className="font-[Nunito] font-bold text-[22px]">Entendendo meu cliente</p>
-                <p className="text-[22px] font-[Nunito]">Quem são meus clientes, como captá-los?</p>
-              </div>
-
-              <div className="w-[53px] border-dashed border-[1px] border-custom-salmon"></div>
-
-              <div className="border-solid border-2 h-[308px] w-[273px] rounded-[20px] bg-white flex flex-col items-center justify-evenly text-center">
-              <img src="/IconCard1C5.svg" className="w-[53px] h-[52px]"></img>
-                  <p className="font-[Nunito] font-bold text-[22px]">Entendendo meu cliente</p>
-                  <p className="text-[22px] font-[Nunito]">Quem são meus clientes, como captá-los?</p>
-              </div>
-
-              <div className="w-[53px] border-dashed border-[1px] border-custom-salmon"></div>
-
-              <div className="border-solid border-2 h-[308px] w-[273px] rounded-[20px] bg-white flex flex-col items-center justify-evenly text-center">
-              <img src="/IconCard1C5.svg" className="w-[53px] h-[52px]"></img>
-                  <p className="font-[Nunito] font-bold text-[22px]">Entendendo meu cliente</p>
-                  <p className="text-[22px] font-[Nunito]">Quem são meus clientes, como captá-los?</p>
-              </div>
-          </div>                                
 
         </div>
-        <Container3 />
-        <div className="h-[509px] bg-[#CCCCCC]"></div>
-        <Container3 />
-        <div className="h-[700px] bg-black"></div>
-        <div className="h-[235px] bg-gray-300"></div>
+
+        <div className="flex px-[12rem] py-[6rem] justify-between items-center">
+          <div className="w-[50%]">
+            <h1 className="text-[4.8rem]">Conheça o <br/>
+            Entre  Linhas Podcast</h1>
+            <p className="text-[2.2rem]">Histórias inspiradoras, para te inspirar! Conheça a trajetória de outros profissionais de costura que venceram desafios supreendentes, aprenda com experiências de vida e relatos reais. Vem pro PodLinhas!</p>
+            <Button typeStyle="secondary" title="Ouça aqui"/>
+          </div>
+          <Image source="Ellipse 65.svg"/>
+        </div>
+
+        <div className="bg-black py-[60px]">
+          <img src="/cellphone 1.svg"></img>
+
+        </div>
+
+
+        <div className="h-[235px] bg-gray-300">
+
+
+        </div>
+
+
     </div>
     )
 }
