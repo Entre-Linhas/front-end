@@ -4,7 +4,6 @@ interface CardProps {
 icon?: React.FC<IconProps>
 title: string
 text: string
-// Aqui quando eu coloquei entre aspas ele definiu automáticamente o tipo pra string - Math
 typeStyle?: "primary" | "secondary"
 }
 
