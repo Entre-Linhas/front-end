@@ -12,34 +12,48 @@ export default function Home() {
   <div>
       <Header />
       
-      <div className="bg-custom-yellow h-[60vh]"> 
-        <div className="items-center flex box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
-            <div className="flex flex-col gap-[1.6rem]">
-              <h1 className='text-[3.6rem] font-[Nunito] font-bold max-[800px]:text-[1rem]'>Conosco você poderá costurar o <br/>seu futuro!</h1>
-              <p className='text-[2.2rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e<br/>evolua!</p>
-              <Button title='Comece agora!' typeStyle='secondary' />
+      <div className="bg-[#62B8AF] h-[60vh]"> 
+      <div className="z-0">teste</div>
+      
+        
+
+           <div className="items-center flex box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
+                <div className="flex flex-col gap-[1.6rem] text-white">
+                  <h1 className='text-center text-[5.6rem] font-[Nunito] font-bold max-[800px]:text-[1rem]'>Costure seu futuro aqui!</h1>
+                  <p className='text-center text-[2.2rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e<br/>evolua!</p>
+                  <div className="self-center">
+                  <Button title='Comece agora!'/>
+                  </div>
+                </div>
+                <div className="max-w-[51.9%]">
+                  <img src='/BannerS.svg' alt="Imagem de uma moça costurando" className="h-[600px]"></img>
+                </div>
             </div>
-            <div className="max-w-[100%]">
-              <img src='/Banner1.svg' alt="Imagem de uma moça costurando"></img>
-            </div>
-        </div>
+
+
       </div>
 
       <div>
-        <div className=" box-border flex justify-between box-border w-[100%] h-[23.1rem] mx-auto -mt-11 xl:max-w-[1220px] 2xl:max-w-[1476px]">
-          <Card title="Aprenda a empreender" text="Aqui você encontrará tudo que precisa para transformar o seu negócio!" icon={Bag} />
+        <div className=" box-border flex justify-center box-border w-[100%] h-[23.1rem] mx-auto -mt-11 xl:max-w-[1220px] 2xl:max-w-[1476px]">
+            <Card title="Aprenda a empreender" text="Aqui você encontrará tudo que precisa para transformar o seu negócio!" icon={Bag} />
+            <div className="self-center border-dashed border-t-[2px] border-custom-salmon w-[10%]"></div>
             <Card title="Conheça ferramentas" text="Problemas com o gerenciamento? A gente te ajuda! " icon={Hammer}/>
+            <div className="self-center border-dashed border-t-[2px] border-custom-salmon w-[10%]"></div>
             <Card title="Conheça outras pessoas" text="Que tal criar conexões com pessoas tão incríveis quanto você?" icon={Bag}/>
           </div>
        </div>
 
       <div className="py-[120px] box-border w-[100%] m-auto px-[1.5rem] sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
-        <div className="flex items-center px-[9.6rem] justify-between py-[10rem]">
-          <div className="w-[50%]">
-            <h1 className="text-[4.8rem] font-[Nunito] text-custom-salmon">"Costure seu futuro" <span className="text-black">aqui</span></h1>
-            <p className="text-[2.2rem]">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
+        <div className="px-[9.6rem] py-[10rem]">
+          <div className="w-[55%] m-auto">
+            <h1 className="text-center text-[4.8rem] font-[Nunito] text-custom-salmon">Costure seu futuro <span className="text-black">aqui</span></h1>
+            <br/>
+            <p className="text-[2.2rem] text-center">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
+            <div className="flex justify-center mt-[-60px]">
+            <img src="/Machinee.svg" className="h-[40rem]"/>
+            </div>
           </div>
-            <Image source="Ellipse 65.svg"/>
+            
         </div>
       </div>
 
@@ -58,14 +72,23 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
-        <div className="flex items-center px-[9.6rem] justify-between py-[10rem]">
-          <div className="w-[50%]">
-            <h1 className="text-[4.8rem] font-[Nunito] text-custom-salmon">"Costure seu futuro" <span className="text-black">aqui</span></h1>
-            <p className="text-[2.2rem]">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
-           </div>
-            <Image source="Ellipse 65.svg"/>
+      <div className="py-[23rem] bg-[custom-fundo] flex box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
+        
+          
+      
+        <div className="px-[9.6rem] py-[10rem] relative">
+          <div className="w-[55%] m-auto z-10">
+            <h1 className="text-center text-[4.8rem] font-[Nunito] text-custom-salmon">Por que<span className="text-black"> fazemos</span>?</h1>
+            <br/>
+            <p className="text-[2.2rem] text-center">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
+          
+            <img src="/Gallery.svg" className=""/>
+            
+          </div>
+          <div className="z-0 mt-[-100px] border-dashed border-t-[2px] border-custom-salmon w-[100%]"></div>
         </div>
+      
+        
       </div>
 
         <div className="h-[509px] bg-[#CCCCCC] text-[3.2rem]">
