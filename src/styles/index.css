@@ -5,20 +5,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 html {
-font-size: 62.5%;
-/* fazendo com que 1rem equivale a 10px, pra facilitar nas contas */
-}
+    font-size: 62.5%;
+    /* fazendo com que 1rem equivale a 10px, pra facilitar nas contas */
+    }
+    
+    body {
+        font-family: "Nunito", sans-serif;
+    }
+    
+    input, button {
+        outline: none;
+    }
+    
+    img, 
+    video {
+        max-width: initial;
+        height: auto;
+    }
+    
+    .person {
+        background-image: url("/public/Linhas1.svg"), url("/public/BannerS.svg"), url("/public/Linhas2.svg");
+        background-repeat: no-repeat;
+        background-position: bottom left, right 0, bottom right;
+        background-size: contain, contain, contain;
+     }
 
-body {
-    font-family: "Nunito", sans-serif;
-}
-
-input, button {
-    outline: none;
-}
-
-img, 
-video {
-    max-width: initial;
-    height: auto;
-}
+     .person2 {
+        background-image: url("/public/Banner2SignIn.svg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: auto;
+     }
+    
+     @media (max-width: 880px) {
+        .person {
+          background-position: bottom left, bottom right;
+          background-image: url("/public/Linhas1.svg"), url("/public/Linhas2.svg");
+          background-repeat: no-repeat;
+    
+        }
+      }
