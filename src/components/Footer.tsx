@@ -6,7 +6,7 @@ icon: React.FC<IconProps>
 
 export function Footer({icon:Icon}: FooterProps) {
 return (
-    <div className="py-[2rem] bg-black">
+    <div className="py-[2rem] bg-black min-[220px]:hidden">
     <div className="items-center flex box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
       <div className="flex flex-col gap-[3.8rem] items-center w-[100%] py-[1.6rem]">
         <div className="text-[1.6rem] w-[100%] flex justify-between text-white">
