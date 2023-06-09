@@ -15,8 +15,8 @@ export default function SignIn() {
         <>
         {/* bg-[url('/public/FundoSg.svg')] bg-no-repeat bg-right bg-[#E3E3E3] bg-contain" */}
         {/* bg-[#E3E3E3] min-[1024px]:bg-custom-salmon  */}
-        <div className="">
-            <div className="border solid bg-[url('/public/SubArt.svg')] bg-no-repeat bg-bottom h-screen bg-white flex flex-col p-6 min-[220px]:bg-contain min-[280px]:bg-contain max-w-full min-[360px]:bg-auto 2xl:max-w-[64rem] sm:max-w-full min-[1024px]:max-w-[64rem] bg-none">
+        <div>
+            <div className="border solid h-screen bg-white flex flex-col p-6 min-[280px]:max-w-full min-[360px]:2xl:max-w-[64rem] sm:max-w-full min-[1024px]:max-w-[64rem]">
                 <header className="w-full">
                     <button
                         className="flex items-center gap-1 min-[560px]:text-[1.2rem] min-[720px]:text-[1.4rem]"
@@ -37,6 +37,7 @@ export default function SignIn() {
                     <Button title="Entrar"/>
                 </div>
             </div>
+            <img src="/Banner2SignIn.svg" className="absolute left-0"/>
                 
                 </div>
         </>

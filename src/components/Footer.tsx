@@ -6,34 +6,42 @@ icon: React.FC<IconProps>
 
 export function Footer({icon:Icon}: FooterProps) {
 return (
-    <div className="py-[2rem] bg-black min-[220px]:hidden">
-    <div className="items-center flex box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]">
+    <div className="py-[2rem] bg-black">
+    <div className="flex items-center box-border w-[100%] m-auto px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
       <div className="flex flex-col gap-[3.8rem] items-center w-[100%] py-[1.6rem]">
-        <div className="text-[1.6rem] w-[100%] flex justify-between text-white">
+        <div className="min-[661px]:w-[100%] flex justify-between text-white max-[660px]:flex flex-col items-center gap-8">
           <nav>
               <ul className="text-[1.8rem] font-bold">Sobre Nós</ul>
-              <ul>Parceiros</ul>
-              <ul>Segurança</ul>
-              <ul>Educacional</ul>
+              <div className="max-[660px]:hidden">
+                <ul>Parceiros</ul>
+                <ul>Segurança</ul>
+                <ul>Educacional</ul>
+              </div>
           </nav>
           <nav>
               <ul className="text-[1.8rem] font-bold">Conta</ul>
-              <ul>Entrar</ul>
-              <ul>Comunidade</ul>
-              <ul>Configurações</ul>
+              <div className="max-[660px]:hidden">
+                <ul>Entrar</ul>
+                <ul>Comunidade</ul>
+                <ul>Configurações</ul>
+              </div>
           </nav>
           <nav>
               <ul className="text-[1.8rem] font-bold">Suporte</ul>
-              <ul>Acessibilidade</ul>
-              <ul>Contato</ul>
+              <div className="max-[660px]:hidden">
+                <ul>Acessibilidade</ul>
+                <ul>Contato</ul>
+              </div>
           </nav>
           <nav>
               <ul className="text-[1.8rem] font-bold">Mapa do site</ul>
-              <ul>Home</ul>
-              <ul>Ferramentas</ul>
-              <ul>Eventos</ul>
-              <ul>Ajuda</ul>
-              <ul>Sobre Nós</ul>
+              <div className="max-[660px]:hidden">
+                  <ul>Home</ul>
+                  <ul>Ferramentas</ul>
+                  <ul>Eventos</ul>
+                  <ul>Ajuda</ul>
+                  <ul>Sobre Nós</ul>
+              </div>
           </nav>
           <nav className="text-center">
               <ul className="text-[1.8rem] font-bold">Redes sociais</ul>
