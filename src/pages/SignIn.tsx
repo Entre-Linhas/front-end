@@ -13,9 +13,8 @@ export default function SignIn() {
 
     return (
         <>
-        {/* bg-[url('/public/FundoSg.svg')] bg-no-repeat bg-right bg-[#E3E3E3] bg-contain" */}
-        {/* bg-[#E3E3E3] min-[1024px]:bg-custom-salmon  */}
-        <div>
+        
+        <div className="bg-[url('/public/BannerLogin.svg')] bg-no-repeat bg-contain bg-right">
             <div className="border solid h-screen bg-white flex flex-col p-6 min-[280px]:max-w-full min-[360px]:2xl:max-w-[64rem] sm:max-w-full min-[1024px]:max-w-[64rem]">
                 <header className="w-full">
                     <button
@@ -37,9 +36,8 @@ export default function SignIn() {
                     <Button title="Entrar"/>
                 </div>
             </div>
-            <img src="/Banner2SignIn.svg" className="absolute left-0"/>
-                
-                </div>
+          </div>
+          
         </>
     )
 
