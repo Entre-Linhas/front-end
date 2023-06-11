@@ -12,19 +12,19 @@ export const Header = () => {
         <img src='/bobina.png' className="min-[220px]:h-[2rem] min-[240px]:h-[2.2rem] min-[320px]:h-[2.8rem] min-[426px]:h-[3rem] min-[600px]:h-[3.rem]"/>
       </div>
 
-      <nav className="flex gap-[25px] font-Nunito font-medium text-[2.2rem] mx-auto text-custom-salmon min-[220px]:hidden min-[900px]:flex text-[2.2rem]">
-        <ul>
+      <nav className=" flex gap-[25px] font-Nunito font-medium text-[2.2rem] mx-auto text-custom-salmon min-[220px]:hidden min-[900px]:flex text-[2.2rem]">
+        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
           <Link to="/">Home</Link> 
         </ul>
-        <ul>
+        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
           <Link to="/eventos">Eventos</Link> 
         </ul>
-        <ul>
+        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
           <Link to="/ajuda">Ajuda</Link> 
         </ul>
-        <ul>
+        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
           <Link to="/ferramentas">Ferramentas</Link> 
-        </ul>
+        </ul >
       </nav>
 
       <div className='flex gap-[1.2rem] min-[220px]:hidden min-[900px]:flex'>

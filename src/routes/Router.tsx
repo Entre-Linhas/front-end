@@ -5,6 +5,7 @@ import SignUp from "../pages/SignUp";
 import Ferramentas from "../pages/Ferramentas";
 import Eventos from "../pages/Eventos";
 import Contato from "../pages/Contato";
+import Sobre from "../pages/Sobre";
 
 export default function Router() {
   return (
@@ -17,6 +18,7 @@ export default function Router() {
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/ajuda" element={<Contato />} />
+        <Route path="/sobre" element={<Sobre />} />
       </Routes>
     </BrowserRouter>
   );
