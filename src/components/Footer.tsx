@@ -1,7 +1,7 @@
 import { IconProps } from "@phosphor-icons/react"
 
 interface FooterProps {
-icon: React.FC<IconProps>
+icon?: React.FC<IconProps>
 }
 
 export function Footer({icon:Icon}: FooterProps) {
@@ -9,7 +9,7 @@ return (
     <div className="py-[2rem] bg-black">
     <div className="flex items-center box-border w-[100%] m-auto px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
       <div className="flex flex-col gap-[3.8rem] items-center w-[100%] py-[1.6rem]">
-        <div className="min-[661px]:w-[100%] flex justify-between text-white max-[660px]:flex flex-col items-center gap-8">
+      <div className="w-[100%] flex justify-between text-white max-[660px]:flex max-[660px]:flex-col items-center gap-8">
           <nav>
               <ul className="text-[1.8rem] font-bold">Sobre Nós</ul>
               <div className="max-[660px]:hidden">
