@@ -3,6 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom'; 
 import { IconProps } from "@phosphor-icons/react"
 import { UserCircle, List } from "@phosphor-icons/react"
+import { Linking } from './Linking';
 
 export const Header = () => {
   return (
@@ -13,18 +14,20 @@ export const Header = () => {
       </div>
 
       <nav className=" flex gap-[25px] font-Nunito font-medium text-[2.2rem] mx-auto text-custom-salmon min-[220px]:hidden min-[900px]:flex text-[2.2rem]">
-        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
-          <Link to="/">Home</Link> 
+        <ul className='flex gap-6'>
+          <li className="relative">
+            <Linking to="/" title='Inicio'/>
+            </li>
+          <li className="relative">
+            <Linking to="/eventos" title="Eventos"/>
+          </li>
+          <li className="relative">
+            <Linking to="/ajuda" title='Ajuda' />
+          </li>
+          <li className="relative">
+            <Linking to="/ferramentas" title='Ferramentas' />
+          </li>
         </ul>
-        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
-          <Link to="/eventos">Eventos</Link> 
-        </ul>
-        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
-          <Link to="/ajuda">Ajuda</Link> 
-        </ul>
-        <ul className="hover:bg-custom-salmon hover:text-white delay-100 border solid border-transparent rounded">
-          <Link to="/ferramentas">Ferramentas</Link> 
-        </ul >
       </nav>
 
       <div className='flex gap-[1.2rem] min-[220px]:hidden min-[900px]:flex'>
