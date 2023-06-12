@@ -9,7 +9,9 @@ module.exports = {
       },
       colors: {
         'custom-yellow': 'rgba(254, 209, 48, 0.09)', 
+        'custom-salmon-300': "#ffa0a0",
         'custom-salmon': '#FF6464', 
+        'custom-salmon-500': "#f83b3b"
       },
       screens: {
         'min-[840px]': '840px',

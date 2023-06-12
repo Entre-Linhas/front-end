@@ -6,21 +6,21 @@
 
 html {
     font-size: 62.5%;
-    /* fazendo com que 1rem equivale a 10px, pra facilitar nas contas */
-    }
-    
-    body {
-        font-family: "Nunito", sans-serif;
-    }
-    
-    input, button {
-        outline: none;
-    }
-    
-    img, 
-    video {
-        max-width: initial;
-        height: auto;
-    }
+/* fazendo com que 1rem equivale a 10px, pra facilitar nas contas */
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+input, button {
+    outline: none;
+}
+
+img, 
+video {
+    max-width: initial;
+    height: auto;
+}
     
  

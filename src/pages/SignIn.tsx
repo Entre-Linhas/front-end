@@ -1,4 +1,4 @@
-import { CaretLeft, Envelope, Password } from "@phosphor-icons/react";
+import { CaretLeft, Envelope, Key, Password } from "@phosphor-icons/react";
 import { Button } from "../components/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ export default function SignIn() {
                 <header className="w-full">
                     <button
                         className="flex items-center gap-1 min-[560px]:text-[1.2rem] min-[720px]:text-[1.4rem]"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate(-1)}
                     >
                         <CaretLeft />
                         Voltar
@@ -32,7 +32,7 @@ export default function SignIn() {
                     <h4 className="text-[1.4rem] min-[300px]:text-[1.6rem] min-[360px]:text-[1.8rem] min-[560px]:text-[2.2rem]">Olá, boas vindas de volta =)</h4>
                     <span className="text-[1rem] min-[300px]:text-[1.2rem] min-[360px]:text-[1.4rem] min-[720px]:text-[1.5rem]">Estamos contente em vê-lo(a) novamente.</span>
                     <Input className="min-[220px]: w-full min-[720px]:max-w-[80%]" placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />}/>
-                    <Input className="min-[220px]: w-full min-[720px]:" placeholder="Senha" leftElement={<Password className="mr-2 text-zinc-300" weight="light" size={31} />}/>
+                    <Input className="min-[220px]: w-full min-[720px]:" placeholder="Senha" leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />}/>
                     <Button title="Entrar"/>
                 </div>
             </div>

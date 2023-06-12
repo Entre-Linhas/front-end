@@ -25,7 +25,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
 
 // card
 
-  <div className="bg-[#F3F4F6]">
+  <div className="bg-gray-100">
 
     {/* responsividade ok */}
       <Header /> 

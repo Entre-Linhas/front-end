@@ -6,6 +6,7 @@ import Ferramentas from "../pages/Ferramentas";
 import Eventos from "../pages/Eventos";
 import Contato from "../pages/Contato";
 import Sobre from "../pages/Sobre";
+import TermsUse from "../pages/TermsUse";
 
 export default function Router() {
   return (
@@ -14,11 +15,13 @@ export default function Router() {
         <Route path="/" element={<Home />} /> 
         <Route path="/signin" element={<SignIn />} /> 
         <Route path="/signup" element={<SignUp />} /> 
+        <Route path="/terms-of-use" element={<TermsUse />} /> 
         <Route path="/ferramentas" element={<Ferramentas />} /> 
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/ajuda" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
   );

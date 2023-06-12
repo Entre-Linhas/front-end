@@ -1,11 +1,14 @@
 import { IconBase } from '@phosphor-icons/react';
 import { Button } from './Button';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import { IconProps } from "@phosphor-icons/react"
 import { UserCircle, List } from "@phosphor-icons/react"
 import { Linking } from './Linking';
 
 export const Header = () => {
+
+  const navigate = useNavigate();
+
   return (
     <header className="px-4 py-[1rem] bg-white flex w-[100%] h-[auto] items-center justify-between">
       <div className="w-auto flex items-center gap-[1rem] py-[1rem]">
@@ -31,8 +34,8 @@ export const Header = () => {
       </nav>
 
       <div className='flex gap-[1.2rem] min-[220px]:hidden min-[900px]:flex'>
-        <Button title='Login' typeStyle='secondary' />
-        <Button title='Registro'/>
+        <Button title='Login' typeStyle='secondary' onClick={() => navigate("/signin")} />
+        <Button title='Registro' onClick={() => navigate("/signup")}/>
       </div>
 
       <div className="flex gap-[1.5rem] min-[900px]:hidden">
