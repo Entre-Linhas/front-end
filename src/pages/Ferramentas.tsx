@@ -16,9 +16,9 @@ export default function Ferramentas () {
                     
                     
                     <div className="flex py-[11.5rem] justify-center max-[820px]:flex-col min-[820px]:px-[2rem] min-[820px]:gap-[2rem]">
-                        <div className="self-center max-[660px]:w-[80%]">
-                            <h1 className="max-w-[770px] font-semibold text-center text-[2.8rem] min-[425px]:text-[3rem] min-[1024px]:text-[4.8rem]">Transforme seu negócio com as ferramentas do Entre-Linhas</h1>
-                            <p className="m-auto max-w-[46rem] text-[2.4rem] text-justify max-[375px]:text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem]">Economize tempo e mantenha o controle dos seus pedidos. Simplifique tarefas demoradas e faça orçamentos em segundos.</p>
+                        <div className="self-center max-[660px]:w-[80%] max-w-[770px]">
+                            <h1 className="max-w-[770px] font-semibold text-[2.8rem] min-[425px]:text-[3rem] min-[1024px]:text-[4.8rem]">Transforme seu negócio com as ferramentas do Entre-Linhas</h1>
+                            <p className="max-w-[700px] text-[2.4rem] text-justify max-[375px]:text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem]">Economize tempo e mantenha o controle dos seus pedidos. Simplifique tarefas demoradas e faça orçamentos em segundos.</p>
                          </div>
                         <div className="px-[1.5rem] max-w-[510px] flex flex-col py-[3rem] rounded-[3rem] shadow-md text-white max-[660px]:w-[80%] max-[1000px]:gap-[2.5rem] min-[820px]:py-[10rem] max-[820px]:m-auto min-[1000px]:gap-[7.5rem] min-[1000px]:min-h-[61.2rem] bg-[#62B8AF]">
                             <h3 className="text-[2.8rem] text-center font-bold min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2.4rem] min-[500px]:text-[2.8rem]">Aproveite todo o poder do Entre-Linhas!</h3>

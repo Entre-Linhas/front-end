@@ -84,7 +84,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
         {/* container2 padrão*/}
 
       <div className="max-[1023px]:hidden box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-      <div className="flex box-border min-[220px]:flex-col gap-10 mt-0 min-[900px]:flex-row mt-[-1.5rem] justify-center gap-0 px-5">
+      <div className="flex box-border min-[220px]:flex-col mt-0 min-[900px]:flex-row mt-[-3.5rem] justify-center gap-0 px-5">
             <Card title="Aprenda a empreender" text="Aqui você encontrará tudo que precisa para transformar o seu negócio!" icon={Lightbulb} />
             <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[10%]"></div>
             <Card title="Conheça ferramentas" text="Problemas com o gerenciamento? A gente te ajuda! " icon={Hammer}/>
