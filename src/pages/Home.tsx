@@ -42,29 +42,27 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       {/* container1 - responsividade ok*/}
 
         <div className="py-[1rem] bg-[#62B8AF] min-[220px]:h-auto flex justify-center items-center min-[1024px]:h-[70vh]"> 
-              <div className="max-[1439px]:hidden mr-auto h-full">
-                <img src="/LineLeft.svg" className="max-[1439px]:hidden h-full ml-0"/>
-              </div>
-              <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+  
+              <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem]">
                 <div className="flex flex-col text-white m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
-                    <h1 className='text-center font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
-                    <p className='max-[1499px]:max-w-[50rem] text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
-                    <div className="self-center">
+                    <h1 className='self-center min-[1024px]:self-start font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
+                    <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
+                    <div className="min-[1024px]:self-start">
                       <Button title='Comece agora!'/>
                     </div>
                 </div>
-                <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:hidden"/>
+                <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[44rem] min-[1280px]:h-[50rem]"/>
               </div>
-              <img src="/ArteMain.svg" className="self-center max-[1023px]:hidden min-[1024px]:h-[46rem] min-[1240px]:h-[48rem]"/>
+              {/* <img src="/ArteMain.svg" className="self-center max-[1023px]:hidden min-[1024px]:h-[46rem] min-[1240px]:h-[48rem]"/> */}
           </div>
 
 
         {/* Container2 responsivo */}
 
             <div className="flex flex-col gap-[10rem] py-[5rem] min-[220px]:w-[100%] px-[1rem] min-[600px]:max-w-[70%] m-auto min-[1024px]:hidden">
-              <div className="flex flex-col text-center gap-[2rem]">
+              <div className="flex flex-col max-[1024px]:text-center gap-[2rem]">
                 <Lightbulb size={50} className="text-custom-salmon m-auto"/>
-                <h1 className="m-auto font-bold text-[2.2rem] font-[Nunito]">Aprenda a empreender</h1>
+                <h1 className="font-bold text-[2.2rem] font-[Nunito]">Aprenda a empreender</h1>
                 <p className="text-[2.2rem]">Aqui você encontrará tudo que precisa para transformar o seu negócio!</p>
               </div>
 
@@ -102,11 +100,13 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
         <div className="min-[220px]:py-[1rem] px-5 min-[900px]:py-[10rem]">
          
             
+            {/* alinhar o texto À esquerda para mínimo de 1024px */}
             <div className="min-[1024px]:flex gap-[2rem]">
                 <div>
-                  <h1 className="text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black"> futuro!</span> aqui!</h1>
+                  <h1 className="text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black"> futuro</span> aqui!</h1>
                   <p className="max-w-[64rem] m-auto text-justify min-[220px]:text-[1.8rem] py-[2rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
                 </div>
+                {/* gabi vai arrumar essa iamgem no canva, deixar menos vazia enviar pra ela no discrod */}
                   <img src="/Machinee.svg" className="m-auto min-[220px]:h-[10rem] min-[240px]:h-[11rem] min-[300px]:h-[15rem] min-[360px]:h-[18rem] min-[425px]:h-[21rem] min-[500px]:h-[24rem] min-[768px]:h-[35rem] min-[1024px]:h-[28rem] min-[1440px]:h-[32rem]"/>
               </div>
           </div>
@@ -121,13 +121,13 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
         {/* <div className="flex flex-col justify-center gap-[74px] box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]"> */}
         <div className="box-border w-[100%] m-auto py-[5rem] lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
               <h1 className="py-[4rem] text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Conheça nossa <span className="text-custom-salmon">trilha educacional</span></h1>
-            <div className="flex max-[900px]:overflow-x-scroll">
+            <div className="flex overflow-x-scroll max-[1024px]:px-[2.5rem]">
               <Card typeStyle="secondary" title="Conhecendo meu negócio" text="Quem sou eu, onde estou e onde quero chegar?" icon={Buildings}/>
-                <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] max-[900px]:min-w-[9rem]"></div>
+                <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
               <Card typeStyle="secondary" title="Entendendo meu cliente" text="Quem são meus clientes, como captá-los?" icon={UserCircleGear}/>
-                <div className="self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] max-[900px]:min-w-[9rem]"></div>
+                <div className="self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
               <Card typeStyle="secondary" title="Aprendendo a gerênciar" text="Como me organizar para que meu negócio possa crescer?" icon={Briefcase}/>
-                <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] max-[900px]:min-w-[9rem]"></div>
+                <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
               <Card typeStyle="secondary" title="Marketing e inovação" text="Indo além! Alcançando novos clientes e novas perspectivas." icon={Star}/>
             </div>   
         </div>
@@ -137,6 +137,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
     
 
       {/* container7 responsividade 95% falta só ajustar um pouco*/}
+ 
 
       <div className="m-auto box-border w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1440px]:flex gap-10">
                 
@@ -157,6 +158,8 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
 
   {/* container8 - responsividade ok  */}
 
+  {/* diminuir o tamanho do botão*/}
+
       <div className="flex items-center box-border w-[100%] m-auto px-[3rem] py-[5rem] lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
         <div className="m-auto flex flex-col gap-[1.6rem] items-center min-[840px]:flex-row">
           <div className="flex flex-col gap-[1.6rem] items-center">
@@ -170,7 +173,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       </div>
 
 
-
+      {/* quando a página de dentro da plataforma mostrando as ferramentas eu coloco um nootbook ao invés do celular e em telas menores, mantenho o celular 
 
       {/* container6 responsividade quase ok, falta o carrosel */}
 
@@ -204,13 +207,14 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
 
       {/* container 5  responsividade 95%*/}
     
-      
+      {/* colocar dentro de caixinhas */}
+
       <div className="py-[14rem] box-border w-[100%] m-auto flex flex-col gap-[5rem]">
         
             <div className="m-auto">
                 <h1 className="text-center font-[Nunito] text-[2.8rem] text-custom-salmon min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que<span className="text-black"> fazemos</span>?</h1>
                 <br/>
-                <p className="max-w-[64.2rem] m-auto text-justify min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
+                <p className="max-w-[90.2rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
             </div>
             <div className="min-[900px]:flex justify-evenly">
               <div className="py-[3rem] flex flex-col justify-center items-center gap-[4.8rem]">
@@ -230,17 +234,11 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
               </div>
             </div>
           
-            
+           
         
       </div>
 
-      <div className="w-[100%] h-[8vh] bg-black flex items-center justify-center">
-        <div className="m-auto flex items-center gap-[1rem] py-[1rem]">
-          <p className="leading-[30px] text-custom-salmon font-[Sacramento] min-[220px]:text-[2.2rem] min-[240px]:text-[2.5rem] min-[320px]:text-[3.2rem] min-[426px]:text-[3.6rem] min-[600px]:text-[3.8rem] ">Entre Linhas</p>
-          <img src='/bobina.png' className="min-[220px]:h-[2rem] min-[240px]:h-[2.2rem] min-[320px]:h-[2.8rem] min-[426px]:h-[3rem] min-[600px]:h-[3.rem]"/>
-          </div>
-        </div>       
-      <div className="bg-black m-auto w-[100%] h-[70vh] bg-[url('/public/Gallery.svg')] bg-cover min-[1380px]:h-[80vh]"></div>
+      
 
         <Footer icon={InstagramLogo}/>
         
