@@ -5,76 +5,105 @@ import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import React, { Component, useEffect, useState, HTMLInputTypeAttribute } from "react";
 import { Linking } from "../components/Linking";
-
+import axios from "axios";
 
 export class Sign extends Component {
     state = {
-        step: 1,
-        email: "",
-        terms: false,
-        password: "",
-        username: "",
-        surname: "",
-        cpf: "",
-        address: ""
+        formData: {
+            nome: "",
+            sobrenome: "",
+            email: "",
+            senha: "",
+            endereco: "",
+            cpf: "",
+            step: 1,
+            terms: false
+        }
     }
 
     nextStep = () => {
-        const { step } = this.state;
+        const { formData } = this.state;
         this.setState({
-            step: step + 1
+            formData: {
+                ...formData,
+                step: formData.step + 1
+            }
         })
     }
 
-    handleChange = (input: "step" | "email" | "terms" | "password" | "username" | "surname" | "cpf" | "address") => (e: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({ [input]: input === "terms" ? e.currentTarget.checked : e.target.value});
-        console.log(input, input === "terms" ? e.currentTarget.checked : e.target.value)
-    }
+    handleChange = (input: keyof typeof Sign.prototype.state['formData']) => (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        const { formData } = this.state;
+        const value = input === "terms" ? e.currentTarget.checked : e.target.value;
+
+        this.setState({
+            formData: {
+                ...formData,
+                [input]: value
+            }
+        });
+
+        console.log(input, value);
+    };
+
+    
+    handleSubmit = () => {
+        const { formData } = this.state;
+
+        axios
+            .post("http://localhost:8080/api/usuarios", formData)
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     render(): React.ReactNode {
-        const { step, email, password, terms, username, surname, cpf, address } = this.state;
-        const values = {email, password, terms, username, surname, cpf, address };
+        const { formData } = this.state;
 
-        switch(step) {
+        switch (formData.step) {
             case 1:
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 1 de 3</h1>
                         <span className="text-center">Olá! Seja bem-vindo/a.<br />Vamos começar a se cadastrar.</span>
-                        <Input type="email" placeholder="Email" onChange={this.handleChange("email")} value={values.email} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31}/>} />
-                        <Input type="password" placeholder="Senha" onChange={this.handleChange("password")} value={values.password} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31}/>} />
+                        <Input type="email" placeholder="Email" onChange={this.handleChange("email")} value={formData.email} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                        <Input type="password" placeholder="Senha" onChange={this.handleChange("senha")} value={formData.senha} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
                         <div className="flex items-center gap-2">
-                            <input type="checkbox" onChange={this.handleChange("terms")}/>
-                            <label htmlFor="">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" style={{color: "#FF6464"}}/></label>
+                            <input type="checkbox" onChange={this.handleChange("terms")} />
+                            <label htmlFor="">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" style={{ color: "#FF6464" }} /></label>
                         </div>
-                        <Button disabled={values.email?.length === 0 || values.password?.length === 0 || !values.terms} title="Continuar" icon={SignIn} onClick={(e) => this.nextStep()} />
+                        <Button disabled={formData.email?.length === 0 || formData.senha?.length === 0 || !formData.terms} title="Continuar" icon={SignIn} onClick={this.nextStep} />
                     </>
                 );
-            case 2: 
+            case 2:
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 2 de 3</h1>
                         <span>Falta pouco para completarmos =)</span>
-                        <Input type="text" placeholder="Nome" onChange={this.handleChange("username")} value={values.username} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31}/>} />
-                        <Input type="text" placeholder="Sobrenome" onChange={this.handleChange("surname")} value={values.surname} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31}/>} />
-                        <Input type="text" placeholder="CPF" onChange={this.handleChange("cpf")} value={values.cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31}/>} />
+                        <Input type="text" placeholder="Nome" onChange={this.handleChange("nome")} value={formData.nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                        <Input type="text" placeholder="Sobrenome" onChange={this.handleChange("sobrenome")} value={formData.sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                        <Input type="text" placeholder="CPF" onChange={this.handleChange("cpf")} value={formData.cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                        <Button disabled={values.username.length === 0 || values.username.length === 0 || values.cpf.length < 11} title="Continuar" icon={SignIn} onClick={(e) => this.nextStep()} />
+                        <Button disabled={formData.nome.length === 0 || formData.nome.length === 0 || formData.cpf.length < 11} title="Continuar" icon={SignIn} onClick={this.nextStep} />
                     </>
                 );
-            case 3: 
+            case 3:
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 3 de 3</h1>
                         <span>SignUp - 3/3</span>
-                        <Input type="text" placeholder="Endereço" onChange={this.handleChange("address")} value={values.address} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31}/>} />
+                        <Input type="text" placeholder="Endereço" onChange={this.handleChange("endereco")} value={formData.endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                        <Button disabled={values.address.length === 0} title="Finalizar" icon={SignIn} onClick={(e) => {}} />
+                        <Button disabled={formData.endereco.length === 0} title="Finalizar" icon={SignIn} onClick={this.handleSubmit} />
                     </>
                 )
-            default: 
-            break;
+            default:
+                break;
         }
     }
 }
@@ -89,8 +118,8 @@ export default function SignUp() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const abc = document.querySelector("html") 
-        if(abc) {
+        const abc = document.querySelector("html")
+        if (abc) {
             // abc.style.fontSize = "100%";
         }
     }, [])
