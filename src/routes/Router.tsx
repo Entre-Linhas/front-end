@@ -7,6 +7,8 @@ import Eventos from "../pages/Eventos";
 import Contato from "../pages/Contato";
 import Sobre from "../pages/Sobre";
 import TermsUse from "../pages/TermsUse";
+import Nivelamento from "../pages/Nivelamento"
+import { Conteudo } from "../pages/Conteudo"
 
 export default function Router() {
   return (
@@ -21,6 +23,8 @@ export default function Router() {
         <Route path="/contato" element={<Contato />} />
         <Route path="/ajuda" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
+        <Route path="/Nivelamento" element={<Nivelamento />}/>
+        <Route path="/Conteudo" element={<Conteudo />}/>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

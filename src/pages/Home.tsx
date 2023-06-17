@@ -41,12 +41,12 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       
       {/* container1 - responsividade ok*/}
 
-        <div className="py-[1rem] bg-[#62B8AF] min-[220px]:h-auto flex justify-center items-center min-[1024px]:h-[70vh]"> 
+        <div className="py-[1rem] bg-[#F5EED3] min-[220px]:h-auto flex justify-center items-center min-[1024px]:h-[70vh] max-[1023px]:py-[5rem]"> 
   
               <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem]">
-                <div className="flex flex-col text-white m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
+                <div className="flex flex-col text-custom-salmon m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
                     <h1 className='self-center min-[1024px]:self-start font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
-                    <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
+                    <p className='text-black max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
                     <div className="min-[1024px]:self-start">
                       <Button title='Comece agora!'/>
                     </div>
