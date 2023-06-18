@@ -19,10 +19,14 @@ return (
             <p className="max-[1023px]:hidden text-[2.4rem] text-justify max-[375px]:text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem] px-[2rem]">Dúvidas e sugestões? Envie-nos um e-mail explicando o assunto desejado e responderemos assim que possível.</p>
             <div className="flex flex-col gap-2 m-auto max-w-[80%]">
             <p className="min-[1024px]:hidden text-[2.4rem] text-justify max-[375px]:text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem] px-[2rem]">Dúvidas e sugestões? Envie-nos um e-mail explicando o assunto desejado e responderemos assim que possível.</p>
-                <Input className="m-auto min-[220px]:w-full text-[2rem]" placeholder="Seu nome" onChange={(e: any) => setEmail(e.target.value)} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={40} />}/>
-                <Input className="m-auto min-[220px]:w-full min-[720px]:max-w-[80%] min-[500px]:text-[2rem]" placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={40} />}/>
-                <Input className="m-auto min-[220px]:h-[23.1rem] min-[220px]:w-full min-[720px]:max-w-[80%] min-[500px]:text-[2rem]" placeholder="Como podemos te ajudar?" onChange={(e: any) => setEmail(e.target.value)} leftElement={<ChatText className="mr-2 text-zinc-300" weight="light" size={40} />}/>
-                <button className="m-auto text-center min-[220px]: w-full min-[720px]:max-w-[80%] bg-[#1E1E1E] text-white py-[1.5rem] min-[500px]:px-[17.8rem] text-[2rem]">Enviar</button>
+                 
+                    <Input className="m-auto min-[220px]:w-full text-[2rem]" placeholder="Seu nome" onChange={(e: any) => setEmail(e.target.value)} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={40} />}/>
+                    <Input className="m-auto min-[220px]:w-full min-[720px]:max-w-[80%] min-[500px]:text-[2rem]" placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={40} />}/>
+                    <Input className="m-auto min-[220px]:h-[23.1rem] min-[220px]:w-full min-[720px]:max-w-[80%] min-[500px]:text-[2rem]" placeholder="Como podemos te ajudar?" onChange={(e: any) => setEmail(e.target.value)} leftElement={<ChatText className="mr-2 text-zinc-300" weight="light" size={40} />}/>
+                     
+                        {/* <button className="m-auto text-center max-w-[100%] bg-[#1E1E1E] text-white py-[1.5rem] min-[500px]:px-[17.8rem] text-[2rem]">Enviar</button> */}
+                        <button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem]">Enviar</button>
+                    
             </div>
         </div>
         <img src="/Contato.svg" className="max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto "/>

@@ -39,25 +39,8 @@ return (
         </div>
             <div className="mx-0 text-center text-[2.2rem] underline text-[#525151]">Entenda mais sobre o teste de nivelamento e por onde começar.</div>
         </div>
-            
-                
-           
-
-
-
-
-
-
-
-
-
-      
-
-</div>
-    
    
-
-
-
+</div>
+ 
 )
 }

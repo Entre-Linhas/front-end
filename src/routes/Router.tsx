@@ -9,6 +9,8 @@ import Sobre from "../pages/Sobre";
 import TermsUse from "../pages/TermsUse";
 import Nivelamento from "../pages/Nivelamento"
 import { Conteudo } from "../pages/Conteudo"
+import {Trilha } from "../pages/Trilha"
+import Comunidade from "../pages/Comunidade"
 
 export default function Router() {
   return (
@@ -25,6 +27,8 @@ export default function Router() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/Nivelamento" element={<Nivelamento />}/>
         <Route path="/Conteudo" element={<Conteudo />}/>
+        <Route path="/Trilha" element={<Trilha />}/>
+        <Route path="/Comunidade" element={<Comunidade />}/>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

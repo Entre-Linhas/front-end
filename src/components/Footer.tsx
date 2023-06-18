@@ -1,12 +1,10 @@
 import { IconProps } from "@phosphor-icons/react"
+import { InstagramLogo, LinkedinLogo} from "@phosphor-icons/react";
 
-interface FooterProps {
-icon?: React.FC<IconProps>
-}
 
-export function Footer({icon:Icon}: FooterProps) {
+export function Footer() {
 return (
-    <div className="py-[2rem] bg-black">
+    <div className="py-[2rem] bg-custom-salmon">
     <div className="flex items-center box-border w-[100%] m-auto px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
       <div className="flex flex-col gap-[3.8rem] items-center w-[100%] py-[1.6rem]">
       <div className="w-[100%] flex justify-between text-white max-[660px]:flex max-[660px]:flex-col items-center gap-8">
@@ -45,11 +43,9 @@ return (
           </nav>
           <nav className="text-center">
               <ul className="text-[1.8rem] font-bold">Redes sociais</ul>
-              <div className="flex gap-[1rem]">
-                  <a>{Icon && <Icon className="text-white" size="32"/>}</a>
-                  <a>{Icon && <Icon className="text-white" size="32"/>}</a>
-                  <a>{Icon && <Icon className="text-white" size="32"/>}</a>
-                  <a>{Icon && <Icon className="text-white" size="32"/>}</a>
+              <div className="flex gap-[1rem] justify-center">
+                  <a><InstagramLogo size="32" className="text-white"/></a>
+                  <a><LinkedinLogo size="32" className="text-white"/></a>
               </div>
           </nav>
         </div>

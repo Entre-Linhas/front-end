@@ -148,6 +148,10 @@ export default function SignUp() {
     //     }
     // }
 
+
+    
+
+
     return (
         <div className="flex h-screen w-full bg-gray-100 text-[100% !important]">
             <div className="border solid h-screen bg-white flex flex-col p-6 min-[280px]:max-w-full min-[360px]:2xl:max-w-[64rem] sm:max-w-full min-[1024px]:max-w-[64rem]">

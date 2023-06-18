@@ -22,10 +22,12 @@ return (
                         <p className="max-w-[73.5rem] text-[2.2rem]">
                         Fique atento à nossa agenda de eventos e não perca a oportunidade de participar de um de nossos encontros emocionantes!
                         </p>
+
+                        <button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem]">Clique aqui para ser lembrado</button>
                     </div>
 
                         
-                    <img src="/Eventos.svg" className="max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto "/>
+                    <img src="/Eventos.svg" className="py-[1.5rem] max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto "/>
 {/* 
                     m-auto max-w-[95%] max-[1140px]:max-w-[100%] */}
 

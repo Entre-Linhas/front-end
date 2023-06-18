@@ -17,49 +17,35 @@ TextUser?: String
 export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
     return (
       
-// Fazer uma página exclusiva para falar das ferramentas, e inserir um container entre o PodCast e entre os depoimentos falando sobre as assinaturas. Inserir "Ferramentas" na nav, redirecionando pra página de ferramentas, onde vamos falar só sobre as ferramentas. fundo do sandro verde. 
-
-// Título "Transforme seu negócio com as ferramentas do Entre-Linhas; texto em baixo:"
-
-// Ferramentas personalizadas criadas para serem suas maiores aliadas em seu dia a dia! Poupe tempo planejando o orçamento de um material, tenha o gerenciamento de pedidos sempre sob seu controle e muito mais! 
-
-// card
-
   <div className="bg-gray-100">
 
     {/* responsividade ok */}
+    
+
       <Header /> 
-      
-      {/* criar um componente pra cada container; 
-      
-      isolation: funcionalidade que você pode usar em qualquer lugar;
-      
-      
-      
-      
-      */}
+         
       
       {/* container1 - responsividade ok*/}
 
-        <div className="py-[1rem] bg-[#F5EED3] min-[220px]:h-auto flex justify-center items-center min-[1024px]:h-[70vh] max-[1023px]:py-[5rem]"> 
+        <div className="py-[9rem] bg-[#62B8AF] min-[220px]:h-auto flex justify-center items-center max-[1023px]:py-[5rem]"> 
   
-              <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem]">
-                <div className="flex flex-col text-custom-salmon m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
+              <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem] no-wrap">
+                <div className="flex flex-col text-white m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
                     <h1 className='self-center min-[1024px]:self-start font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
-                    <p className='text-black max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
+                    <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
                     <div className="min-[1024px]:self-start">
                       <Button title='Comece agora!'/>
                     </div>
                 </div>
                 <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[44rem] min-[1280px]:h-[50rem]"/>
               </div>
-              {/* <img src="/ArteMain.svg" className="self-center max-[1023px]:hidden min-[1024px]:h-[46rem] min-[1240px]:h-[48rem]"/> */}
+               
           </div>
 
 
         {/* Container2 responsivo */}
 
-            <div className="flex flex-col gap-[10rem] py-[5rem] min-[220px]:w-[100%] px-[1rem] min-[600px]:max-w-[70%] m-auto min-[1024px]:hidden">
+            <div className="flex flex-col gap-[10rem] min-[220px]:w-[100%] px-[1rem] min-[600px]:max-w-[70%] m-auto min-[1024px]:hidden">
               <div className="flex flex-col max-[1024px]:text-center gap-[2rem]">
                 <Lightbulb size={50} className="text-custom-salmon m-auto"/>
                 <h1 className="font-bold text-[2.2rem] font-[Nunito]">Aprenda a empreender</h1>
@@ -82,7 +68,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
         {/* container2 padrão*/}
 
       <div className="max-[1023px]:hidden box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-      <div className="flex box-border min-[220px]:flex-col mt-0 min-[900px]:flex-row mt-[-3.5rem] justify-center gap-0 px-5">
+      <div className="flex box-border px-5 min-[220px]:flex-col min-[900px]:flex-row min-[1024px]:mt-[-3.5rem]">
             <Card title="Aprenda a empreender" text="Aqui você encontrará tudo que precisa para transformar o seu negócio!" icon={Lightbulb} />
             <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[10%]"></div>
             <Card title="Conheça ferramentas" text="Problemas com o gerenciamento? A gente te ajuda! " icon={Hammer}/>
@@ -102,12 +88,11 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
             
             {/* alinhar o texto À esquerda para mínimo de 1024px */}
             <div className="min-[1024px]:flex gap-[2rem]">
-                <div>
-                  <h1 className="text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black"> futuro</span> aqui!</h1>
+                <div className="self-center">
+                  <h1 className="max-[1023px]:text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black"> futuro</span> aqui!</h1>
                   <p className="max-w-[64rem] m-auto text-justify min-[220px]:text-[1.8rem] py-[2rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
                 </div>
-                {/* gabi vai arrumar essa iamgem no canva, deixar menos vazia enviar pra ela no discrod */}
-                  <img src="/Machinee.svg" className="m-auto min-[220px]:h-[10rem] min-[240px]:h-[11rem] min-[300px]:h-[15rem] min-[360px]:h-[18rem] min-[425px]:h-[21rem] min-[500px]:h-[24rem] min-[768px]:h-[35rem] min-[1024px]:h-[28rem] min-[1440px]:h-[32rem]"/>
+                  <img src="/Machinee.svg" className="m-auto min-[220px]:h-[15rem] min-[240px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[24rem] min-[425px]:h-[28rem] min-[500px]:h-[32rem] min-[768px]:h-[40rem] min-[1024px]:h-[40rem] min-[1440px]:h-[48rem]"/>
               </div>
           </div>
 
@@ -139,43 +124,94 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       {/* container7 responsividade 95% falta só ajustar um pouco*/}
  
 
-      <div className="m-auto box-border w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1440px]:flex gap-10">
+                  <div className="m-auto box-border w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1440px]:flex gap-10">
+                        <div className="m-auto flex max-[1024px]:flex-col min-[1024px]:gap-[10rem]">
+                            <div className="text-justify max-[1280px]:text-center self-center max-[1024px]:text-center">
+                                <h3 className="max-w-[70.9rem] self-center text-[2.8rem] font-bold min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2.4rem] min-[500px]:text-[4.8rem]">Transforme seu negócio com as <span className="text-custom-salmon">ferramentas</span> do Entre-Linhas</h3>
+                                <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
+                            </div>
+                            <div> 
+                                <img src="/HomeFerramenta.svg"  className="m-auto max-w-[50rem] max-h-[80rem] w-[100%]"/>
+                            </div>
+                        </div>
+                   </div>
                 
-                <div className="py-[10rem] m-auto flex flex-col gap-10 items-center min-[1440px]:max-w-[70rem] gap-[8rem]">
-                    <h1 className="text-center font-medium font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Transforme seu negócio com as <span className="text-custom-salmon">ferramentas</span> do Entre-Linhas</h1>
-                    <p className="max-w-[99rem] m-auto text-justify min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
-                  <button className="min-[220px]:px-[2.3rem] py-[2.6rem] min-[230px]:text-[1.8rem] min-[500px]:text-[2.2rem] px-[3.3rem] py-[3.6rem] font-bold bg-custom-salmon rounded-[3rem] text-white">Conheça nossas ferramentas</button>
-                    {/* <Button typeStyle="primary" title="Ouça aqui"/> */}
-                </div>
-                <img src="/FerramentaCell.svg" className="m-auto max-w-[95%] min-[1140px]:max-w-[100%]"/>
-                {/* <div>
-                  <img src="/FerramentaCell.svg" className="m-auto max-w-[70%] min-[1140px]:max-w-[100%]"/>
-                </div> */}
-              </div>
-
 
 
 
   {/* container8 - responsividade ok  */}
 
   {/* diminuir o tamanho do botão*/}
-
-      <div className="flex items-center box-border w-[100%] m-auto px-[3rem] py-[5rem] lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+    <div className="bg-[#FFF2C1]"> 
+      <div className="flex items-center box-border w-[100%] m-auto px-[3rem] lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
         <div className="m-auto flex flex-col gap-[1.6rem] items-center min-[840px]:flex-row">
           <div className="flex flex-col gap-[1.6rem] items-center">
           <h1 className="text-center text-custom-salmon font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]"> Aprenda também pelo <span className="text-custom-salmon">App</span></h1>
           <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
           <img src="/Login.svg" className="h-[5.3rem]"/>
           </div>
-          <img src="/AprendaCelular.svg" className="m-auto min-[220px]:w-[18rem] min-[320px]:w-[26rem] min-[425px]:w-[30rem] min-[840px]:max-w-[100%]"></img>
+          <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[44rem] min-[1280px]:h-[50rem]"></img>
          </div>
-         
       </div>
-
+      </div>
 
       {/* quando a página de dentro da plataforma mostrando as ferramentas eu coloco um nootbook ao invés do celular e em telas menores, mantenho o celular 
 
       {/* container6 responsividade quase ok, falta o carrosel */}
+
+      
+
+
+
+
+
+      {/* container 5  responsividade 95%*/}
+    
+      {/* colocar dentro de caixinhas */}
+
+      <div className="py-[14rem] box-border w-[100%] m-auto flex flex-col gap-[5rem]">
+        
+            <div className="m-auto">
+                <h1 className="text-center font-[Nunito] text-[2.8rem] text-custom-salmon min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que<span className="text-black"> fazemos</span>?</h1>
+                <br/>
+                <p className="max-w-[90.2rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
+            </div>
+
+            <div className="min-[900px]:flex justify-center">
+            
+            <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+                  <div> 
+                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Conhecimento</h3>
+                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Através da educação, buscamos mostrar aos nossos profissionais todo o seu potêncial como empreendedores de sucesso.</p>
+                  </div>
+                  <img src="/LineSalmon.svg" className="py-[1rem]"/>
+              </div>
+
+                <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
+
+              <div className="bg-white border solid  rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+                  <div> 
+                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Transformação</h3>
+                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Almejamos a transformação de profissionais da costura através da educação, permitindo que eles tenham impacto em seus negócios e comunidades.</p>
+                  </div>
+                  <img src="/LineYellow.svg" className="py-[1rem]"/>
+              </div>
+
+                <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
+
+              <div className="bg-white border solidrounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+                  <div> 
+                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Sustentabilidade</h3>
+                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
+                  </div>
+                  <img src="/LineTurq.svg" className="py-[1rem]"/>
+              </div>
+
+            </div>
+          
+           
+        
+      </div>
 
       <div className="h-[50.9rem] py-[40rem]">
           <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
@@ -201,46 +237,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
            </div>
         </div>
 
-
-
-
-
-      {/* container 5  responsividade 95%*/}
-    
-      {/* colocar dentro de caixinhas */}
-
-      <div className="py-[14rem] box-border w-[100%] m-auto flex flex-col gap-[5rem]">
-        
-            <div className="m-auto">
-                <h1 className="text-center font-[Nunito] text-[2.8rem] text-custom-salmon min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que<span className="text-black"> fazemos</span>?</h1>
-                <br/>
-                <p className="max-w-[90.2rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
-            </div>
-            <div className="min-[900px]:flex justify-evenly">
-              <div className="py-[3rem] flex flex-col justify-center items-center gap-[4.8rem]">
-                  <h3 className="text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Transformação</h3>
-                  <p className="max-w-[28rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus.</p>
-                  <img src="/LineSalmon.svg"/>
-              </div>
-              <div className="py-[3rem] flex flex-col justify-center items-center gap-[4.8rem]">
-                  <h3 className="text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Transformação</h3>
-                  <p className="max-w-[28rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus.</p>
-                  <img src="/LineYellow.svg"/>
-              </div>
-              <div className="py-[3rem] flex flex-col justify-center items-center gap-[4.8rem]">
-                  <h3 className="text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Transformação</h3>
-                  <p className="max-w-[28rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus.</p>
-                  <img src="/LineTurq.svg"/>
-              </div>
-            </div>
-          
-           
-        
-      </div>
-
-      
-
-        <Footer icon={InstagramLogo}/>
+        <Footer />
         
   </div>
 )
