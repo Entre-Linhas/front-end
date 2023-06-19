@@ -9,15 +9,17 @@ import "../styles/index.css";
 
 
 interface HomeProps {
-NameUser?: String
-PhotoUser?: String
-TextUser?: String
+  NameUser?: String
+  PhotoUser?: String
+  TextUser?: String
 }
+
+/* Não se assuste, Passos! Era para isto acontecer mesmo. */
 
 export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
     return (
       
-  <div className="bg-gray-100">
+  <div className="bg-gray-100 dark:bg-zinc-900">
 
     {/* responsividade ok */}
     
@@ -27,7 +29,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       
       {/* container1 - responsividade ok*/}
 
-        <div className="py-[9rem] bg-[#62B8AF] min-[220px]:h-auto flex justify-center items-center max-[1023px]:py-[5rem]"> 
+        <div className='py-[9rem] bg-[#62B8AF] min-[220px]:h-auto flex justify-center items-center max-[1023px]:py-[5rem]'> 
   
               <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem] no-wrap">
                 <div className="flex flex-col text-white m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
@@ -89,8 +91,8 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
             {/* alinhar o texto À esquerda para mínimo de 1024px */}
             <div className="min-[1024px]:flex gap-[2rem]">
                 <div className="self-center">
-                  <h1 className="max-[1023px]:text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black"> futuro</span> aqui!</h1>
-                  <p className="max-w-[64rem] m-auto text-justify min-[220px]:text-[1.8rem] py-[2rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
+                  <h1 className="max-[1023px]:text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black dark:text-white"> futuro</span> aqui!</h1>
+                  <p className="max-w-[64rem] m-auto text-justify min-[220px]:text-[1.8rem] py-[2rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-100">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
                 </div>
                   <img src="/Machinee.svg" className="m-auto min-[220px]:h-[15rem] min-[240px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[24rem] min-[425px]:h-[28rem] min-[500px]:h-[32rem] min-[768px]:h-[40rem] min-[1024px]:h-[40rem] min-[1440px]:h-[48rem]"/>
               </div>
@@ -105,7 +107,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       <div className="h-[50rem]">
         {/* <div className="flex flex-col justify-center gap-[74px] box-border w-[100%] px-[1.5rem] mx-auto sm:max-w-[] md:max-w-[] lg:max-w-[] xl:max-w-[1220px] 2xl:max-w-[1476px]"> */}
         <div className="box-border w-[100%] m-auto py-[5rem] lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-              <h1 className="py-[4rem] text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Conheça nossa <span className="text-custom-salmon">trilha educacional</span></h1>
+              <h1 className="py-[4rem] text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem] dark:text-white">Conheça nossa <span className="text-custom-salmon">trilha educacional</span></h1>
             <div className="flex overflow-x-scroll max-[1024px]:px-[2.5rem]">
               <Card typeStyle="secondary" title="Conhecendo meu negócio" text="Quem sou eu, onde estou e onde quero chegar?" icon={Buildings}/>
                 <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
@@ -127,8 +129,8 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
                   <div className="m-auto box-border w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1440px]:flex gap-10">
                         <div className="m-auto flex max-[1024px]:flex-col min-[1024px]:gap-[10rem]">
                             <div className="text-justify max-[1280px]:text-center self-center max-[1024px]:text-center">
-                                <h3 className="max-w-[70.9rem] self-center text-[2.8rem] font-bold min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2.4rem] min-[500px]:text-[4.8rem]">Transforme seu negócio com as <span className="text-custom-salmon">ferramentas</span> do Entre-Linhas</h3>
-                                <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
+                                <h3 className="max-w-[70.9rem] self-center text-[2.8rem] font-bold min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2.4rem] min-[500px]:text-[4.8rem] dark:text-white">Transforme seu negócio com as <span className="text-custom-salmon">ferramentas</span> do Entre-Linhas</h3>
+                                <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto dark:text-gray-100">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
                             </div>
                             <div> 
                                 <img src="/HomeFerramenta.svg"  className="m-auto max-w-[50rem] max-h-[80rem] w-[100%]"/>
@@ -172,9 +174,9 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
       <div className="py-[14rem] box-border w-[100%] m-auto flex flex-col gap-[5rem]">
         
             <div className="m-auto">
-                <h1 className="text-center font-[Nunito] text-[2.8rem] text-custom-salmon min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que<span className="text-black"> fazemos</span>?</h1>
+                <h1 className="text-center font-[Nunito] text-[2.8rem] text-custom-salmon min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que<span className="text-black dark:text-white"> fazemos</span>?</h1>
                 <br/>
-                <p className="max-w-[90.2rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
+                <p className="max-w-[90.2rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-100">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
             </div>
 
             <div className="min-[900px]:flex justify-center">
@@ -215,7 +217,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
 
       <div className="h-[50.9rem] py-[40rem]">
           <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-                          <h1 className="text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Confira <span className="text-custom-salmon">relatos</span> de quem já passou por aqui</h1>
+                          <h1 className="text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem] dark:text-white">Confira <span className="text-custom-salmon">relatos</span> de quem já passou por aqui</h1>
                 <div className="flex gap-10 min-[220px]:flex-col">  
                   <div className="flex justify-evenly gap-10">
                           <img src="/left.svg"/>
@@ -230,7 +232,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
                   </div>
                       <p className="text-[2.2rem] m-auto font-bold text-custom-salmon min-[1440px]:hidden">Angie Nonbine</p>
                     <div className="min-[1440px]:hidden">
-                      <p className="text-[2.2rem]">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
+                      <p className="text-[2.2rem] dark:text-gray-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
                       <p className="min-[220px]:hidden text-[2.2rem] mr-auto">Angie Nonbine</p>
                    </div>
               </div>
