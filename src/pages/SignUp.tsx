@@ -109,20 +109,52 @@ export class Sign extends Component {
 }
 
 export default function SignUp() {
-    // const [email, setEmail] = useState<string>();
-    // const [password, setPassword] = useState<string>();
-    // const [terms, setTerms] = useState<boolean>(false);
-    // const [steps, setSteps] = useState<number>(1);
-    // const [showPassword, setShowPassord] = useState<boolean>(false);
-    // const [typePassword, setTypePassword] = useState<"text" | "password">("password")
+    const [steps, setSteps] = useState<number>(1);
+    const [email, setEmail] = useState<string>();
+    const [password, setPassword] = useState<string>();
+    const [terms, setTerms] = useState<boolean>(false);
+    const [showPassword, setShowPassord] = useState<boolean>(false);
+    const [typePassword, setTypePassword] = useState<"text" | "password">("password");
+    const [currentValue, setCurrentValue] = useState<{src: string, alt: string}>({src: "/ContentIm5.jpg", alt: "img5"});
+
     const navigate = useNavigate();
 
+    
     useEffect(() => {
-        const abc = document.querySelector("html")
-        if (abc) {
-            // abc.style.fontSize = "100%";
+        const carouselValues: {src: string, alt: string}[] = [
+            {
+                src: "/ContentIm1.jpg",
+                alt: "img5"
+            },  
+            {
+                src: "/ContentIm2.jpg",
+                alt: "img5"
+            },  
+            {
+                src: "/ContentIm3.jpg",
+                alt: "img5"
+            },  
+            {
+                src: "/ContentIm4.jpg",
+                alt: "img5"
+            },  
+            {
+                src: "/ContentIm5.jpg",
+                alt: "img5"
+            }  
+        ];
+
+        let currentIndex: number = 0;
+
+        const intervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselValues.length;
+            setCurrentValue(carouselValues[currentIndex]);
+        }, 7000);
+
+        return () => {
+            clearInterval(intervalId);
         }
-    }, [])
+    }, []);
 
     // function handlePassword() {
     //     setShowPassord(!showPassword);
@@ -154,7 +186,7 @@ export default function SignUp() {
 
     return (
         <div className="flex h-screen w-full bg-gray-100 text-[100% !important]">
-            <div className="border solid h-screen bg-white flex flex-col p-6 min-[280px]:max-w-full min-[360px]:2xl:max-w-[64rem] sm:max-w-full min-[1024px]:max-w-[64rem]">
+            <div className="border solid h-screen bg-white flex flex-col p-6 max-[1023px]:w-full sm:w-full min-[1024px]:w-[64rem] min-[1440px]:w-[100rem] min-[1770px]:w-[130rem]">
                 <header className="w-full">
                     <button
                         className="flex items-center gap-1 min-[560px]:text-[1.2rem] min-[720px]:text-[1.4rem]"
@@ -167,10 +199,11 @@ export default function SignUp() {
 
                 <div className="flex flex-col items-center my-auto gap-4">
                     <Logo />
-
                     <Sign />
-
                 </div>
+            </div>
+            <div className="max-[1023px]:hiddenflex items-center w-[100%] h-screen max-[1023px]:hidden">
+                    <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
             </div>
         </div>
     )
