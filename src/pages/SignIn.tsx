@@ -58,7 +58,7 @@ export default function SignIn() {
                     </div>
                 </div>
 
-                <div className="max-[1023px]:hiddenflex items-center w-[100%] h-screen max-[1023px]:hidden">
+                <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen max-[1023px]:hidden">
                     <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
                 </div>
             </div>
