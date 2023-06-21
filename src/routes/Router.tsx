@@ -11,6 +11,9 @@ import Nivelamento from "../pages/Nivelamento"
 import { Conteudo } from "../pages/Conteudo"
 import {Trilha } from "../pages/Trilha"
 import Comunidade from "../pages/Comunidade"
+import { Gerenciamento } from "../pages/Gerenciamento";
+ 
+import { Trofeu } from "../pages/Trofeu";
 
 export default function Router() {
   return (
@@ -29,6 +32,8 @@ export default function Router() {
         <Route path="/Conteudo" element={<Conteudo />}/>
         <Route path="/Trilha" element={<Trilha />}/>
         <Route path="/Comunidade" element={<Comunidade />}/>
+        <Route path="/Gerenciamento" element={<Gerenciamento/>}/>
+        <Route path="/Trofeu" element={<Trofeu />}/>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

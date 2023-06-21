@@ -2,6 +2,6 @@
 
 export default function TermsUse() {
     return (
-        <div className="bg-gray-100"></div>
+        <div className="gray-100"></div>
     )
 }

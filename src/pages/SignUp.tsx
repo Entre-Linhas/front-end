@@ -1,11 +1,12 @@
 import { CaretLeft, Envelope, Eye, EyeClosed, Key, SignIn, UserCircle, Tag, IdentificationCard, MapPin } from "@phosphor-icons/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import React, { Component, useEffect, useState, HTMLInputTypeAttribute } from "react";
 import { Linking } from "../components/Linking";
 import axios from "axios";
+import Nivelamento from "./Nivelamento";
 
 export class Sign extends Component {
     state = {
@@ -84,7 +85,7 @@ export class Sign extends Component {
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 2 de 3</h1>
-                        <span>Falta pouco para completarmos =)</span>
+                        <span>Falta pouco para completarmos</span>
                         <Input type="text" placeholder="Nome" onChange={this.handleChange("nome")} value={formData.nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
                         <Input type="text" placeholder="Sobrenome" onChange={this.handleChange("sobrenome")} value={formData.sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
                         <Input type="text" placeholder="CPF" onChange={this.handleChange("cpf")} value={formData.cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
@@ -99,7 +100,10 @@ export class Sign extends Component {
                         <span>SignUp - 3/3</span>
                         <Input type="text" placeholder="Endereço" onChange={this.handleChange("endereco")} value={formData.endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                        <Button disabled={formData.endereco.length === 0} title="Finalizar" icon={SignIn} onClick={this.handleSubmit} />
+                    <a href="./Nivelamento"> 
+                        <Button disabled={formData.endereco.length === 0} title="Finalizar" icon={SignIn} onClick={this.handleSubmit}/>
+                        </a>
+                     
                     </>
                 )
             default:
