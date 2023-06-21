@@ -12,7 +12,6 @@ import { Conteudo } from "../pages/Conteudo"
 import {Trilha } from "../pages/Trilha"
 import Comunidade from "../pages/Comunidade"
 import { Gerenciamento } from "../pages/Gerenciamento";
- 
 import { Trofeu } from "../pages/Trofeu";
 
 export default function Router() {

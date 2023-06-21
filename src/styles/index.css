@@ -25,5 +25,20 @@ video {
     max-width: initial;
     height: auto;
 }
-    
+
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FF6464;
+    border-radius: 12px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar {
+    background-color: #18181b;
+}
  

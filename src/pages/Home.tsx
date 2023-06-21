@@ -201,7 +201,7 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
 
                 <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
 
-                <div className="bg-white border solid  rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+              <div className="bg-white border solidrounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
                   <div> 
                     <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Sustentabilidade</h3>
                     <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
