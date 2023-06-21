@@ -23,7 +23,9 @@ return (
                                 <h2 className="font-bold text-[2.2rem]">Vou começar meu negócio</h2>
                                 <p className="text-center">Aqui você começa a trilha desde o início, vendo todos os tópicos</p>
                             </div>
+                            <a href="./Trilha"> 
                        <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]">Iniciar Trilha</button>
+                            </a>
                     </div>
                 </div>
                 <div className="border solid border-1 border-[#E3E3E3] bg-white rounded-[2rem] shadow-mg flex flex-col items-center text-center min-[1024px]:min-h-[48.7rem] min-[1024px]:max-w-[39.87rem]">
