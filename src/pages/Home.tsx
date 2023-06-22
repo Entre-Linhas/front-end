@@ -1,11 +1,11 @@
-import { Bag, Buildings, Hammer, Lightbulb, UsersThree, UserCircleGear, Briefcase, Star} from "@phosphor-icons/react";
+import { Buildings, Hammer, Lightbulb, UsersThree, UserCircleGear, Briefcase, Star} from "@phosphor-icons/react";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { IconProps } from "@phosphor-icons/react"
-import { InstagramLogo, LinkedinLogo, YoutubeLogo} from "@phosphor-icons/react";
 import "../styles/index.css";
+import { useCarousel } from "../utils/carousel";
+// import { useCa} from "react"
 
 
 interface HomeProps {
@@ -17,9 +17,22 @@ interface HomeProps {
 /* Não se assuste, Passos! Era para isto acontecer mesmo. */
 
 export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
+  const carousel = [{
+    id: 1,
+    author: "Fulano",
+    msg: "Lorem tal",
+    url: "/Temporary.svg"
+  }, {
+    id: 2,
+    author: "Fulana",
+    msg: "Lorem tal 2223232323",
+    url: "/Temporary.svg"
+  }];
+
+  const [active, setActive, handlers, style] = useCarousel(carousel.length, 5000);
     return (
       
-  <div className="bg-gray-100 dark:bg-zinc-900">
+  <div className="">
 
     {/* responsividade ok */}
     
@@ -181,30 +194,30 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
 
             <div className="min-[900px]:flex justify-center">
             
-            <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+            <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700">
                   <div> 
-                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Conhecimento</h3>
-                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Através da educação, buscamos mostrar aos nossos profissionais todo o seu potêncial como empreendedores de sucesso.</p>
+                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Conhecimento</h3>
+                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Através da educação, buscamos mostrar aos nossos profissionais todo o seu potêncial como empreendedores de sucesso.</p>
                   </div>
                   <img src="/LineSalmon.svg" className="py-[1rem]"/>
               </div>
 
                 <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
 
-              <div className="bg-white border solid  rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+              <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700">
                   <div> 
-                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Transformação</h3>
-                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Almejamos a transformação de profissionais da costura através da educação, permitindo que eles tenham impacto em seus negócios e comunidades.</p>
+                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Transformação</h3>
+                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Almejamos a transformação de profissionais da costura através da educação, permitindo que eles tenham impacto em seus negócios e comunidades.</p>
                   </div>
                   <img src="/LineYellow.svg" className="py-[1rem]"/>
               </div>
 
                 <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
 
-              <div className="bg-white border solidrounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem]">
+              <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700">
                   <div> 
-                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem]">Sustentabilidade</h3>
-                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem]">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
+                    <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Sustentabilidade</h3>
+                    <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
                   </div>
                   <img src="/LineTurq.svg" className="py-[1rem]"/>
               </div>
@@ -238,6 +251,14 @@ export default function Home({NameUser, PhotoUser, TextUser}:HomeProps) {
               </div>
            </div>
         </div>
+
+        {/* <ul>
+          {carousel.map((s, i) => (
+            <li onClick={() => setActive(i)} key={i}><img src={s.url} alt={s.author} /></li>
+          ))}
+        </ul> */}
+
+        
 
         <Footer />
         

@@ -69,14 +69,14 @@ export class Sign extends Component {
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 1 de 3</h1>
-                        <span className="text-center">Olá! Seja bem-vindo/a.<br />Vamos começar a se cadastrar.</span>
+                        <span className="text-center dark:text-gray-100">Olá! Seja bem-vindo/a.<br />Vamos começar a se cadastrar.</span>
                         
                             <Input type="email" placeholder="Email" onChange={this.handleChange("email")} value={formData.email} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
                             <Input type="password" placeholder="Senha" onChange={this.handleChange("senha")} value={formData.senha} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
                        
                         <div className="flex items-center gap-2">
                             <input type="checkbox" onChange={this.handleChange("terms")} />
-                            <label htmlFor="">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" style={{ color: "#FF6464" }} /></label>
+                            <label htmlFor="" className="dark:text-gray-100">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" style={{ color: "#FF6464" }} /></label>
                         </div>
                         <Button disabled={formData.email?.length === 0 || formData.senha?.length === 0 || !formData.terms} title="Continuar" icon={SignIn} onClick={this.nextStep} />
                     </>
@@ -85,7 +85,7 @@ export class Sign extends Component {
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 2 de 3</h1>
-                        <span>Falta pouco para completarmos =)</span>
+                        <span className="dark:text-gray-100">Falta pouco para completarmos =)</span>
                         <Input type="text" placeholder="Nome" onChange={this.handleChange("nome")} value={formData.nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
                         <Input type="text" placeholder="Sobrenome" onChange={this.handleChange("sobrenome")} value={formData.sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
                         <Input type="text" placeholder="CPF" onChange={this.handleChange("cpf")} value={formData.cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
@@ -97,7 +97,7 @@ export class Sign extends Component {
                 return (
                     <>
                         <h1 className="text-zinc-400">Passo 3 de 3</h1>
-                        <span>SignUp - 3/3</span>
+                        <span className="dark:text-gray-100">SignUp - 3/3</span>
                         <Input type="text" placeholder="Endereço" onChange={this.handleChange("endereco")} value={formData.endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
                         <Button disabled={formData.endereco.length === 0} title="Finalizar" icon={SignIn} onClick={this.handleSubmit} />
@@ -186,11 +186,11 @@ export default function SignUp() {
 
 
     return (
-        <div className="flex h-screen w-full bg-gray-100 text-[100% !important]">
-            <div className="border solid h-screen bg-white flex flex-col p-6 max-[1023px]:w-full sm:w-full min-[1024px]:w-[64rem] min-[1440px]:w-[100rem] min-[1770px]:w-[130rem]">
+        <div className="flex h-screen w-full text-[100% !important]">
+            <div className="h-screen bg-white flex flex-col p-6 max-[1023px]:w-full sm:w-full min-[1024px]:w-[64rem] min-[1440px]:w-[100rem] min-[1770px]:w-[130rem] dark:bg-zinc-900">
                 <header className="w-full">
                     <button
-                        className="flex items-center gap-1 min-[560px]:text-[1.2rem] min-[720px]:text-[1.4rem]"
+                        className="flex items-center gap-1 min-[560px]:text-[1.2rem] min-[720px]:text-[1.4rem] dark:text-gra"
                         onClick={() => navigate(-1)}
                     >
                         <CaretLeft />
