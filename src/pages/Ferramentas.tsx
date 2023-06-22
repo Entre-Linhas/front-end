@@ -56,7 +56,7 @@ export default function Ferramentas () {
                                 <p className="max-w-[35rem] m-auto dark:text-zinc-50">Acesso à ferramenta de precificação e gerenciamento por:</p>
                             </div>
                             <h2 className="font-bold text-[6.4rem] max-[400px]:text-[3.2rem] dark:text-white">R$ 36,00</h2>
-                            <button className="px-[10rem] bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]">Assine aqui</button>
+                            <button className="bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]">Assine aqui</button>
                         </div>
 
                         <div className="max-[1023px]:m-auto text-center bg-white rounded-[2rem] shadow-mg flex flex-col gap-[5rem] py-[7rem] px-[2.4rem] text-[2.2rem] max-w-[50rem] dark:bg-zinc-800 dark:border-zinc-700 dark:border-2">
@@ -65,7 +65,7 @@ export default function Ferramentas () {
                                 <p className="max-w-[35rem] m-auto dark:text-zinc-50">Acesso à ferramenta de precificação e gerenciamento por:</p>
                             </div>
                             <h2 className="font-bold text-[6.4rem] max-[400px]:text-[3.2rem] dark:text-white">R$ 36,00</h2>
-                            <button className="px-[10rem] bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]">Assine aqui</button>
+                            <button className=" bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]">Assine aqui</button>
                         </div>  
                     </div>
 

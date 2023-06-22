@@ -13,6 +13,7 @@ import {Trilha } from "../pages/Trilha"
 import Comunidade from "../pages/Comunidade"
 import { Gerenciamento } from "../pages/Gerenciamento";
 import { Trofeu } from "../pages/Trofeu";
+import Profile from "../pages/Profile";
 
 export default function Router() {
   return (
@@ -33,6 +34,7 @@ export default function Router() {
         <Route path="/Comunidade" element={<Comunidade />}/>
         <Route path="/Gerenciamento" element={<Gerenciamento/>}/>
         <Route path="/Trofeu" element={<Trofeu />}/>
+        <Route path="/Profile" element={<Profile />}/>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
