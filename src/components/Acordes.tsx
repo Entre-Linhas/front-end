@@ -28,7 +28,7 @@ setIcon(icon === "hidden" ? "block" : "hidden")
 return (
 
 <div className="py-10">
-        <div className="py-3 bg-white w-[100%] flex items-center justify-between shadow-md">
+        <div className={`${display === "hidden" ? "block" : "hidden"} py-3 bg-white w-[100%] flex items-center justify-between shadow-md`}>
           <span className="px-5 text-2.2rem">{nome_pedido}</span>
           <div className="flex items-center px-5">
             <span className="px-5 text-2.2rem">R$ {valor_pedido}</span>

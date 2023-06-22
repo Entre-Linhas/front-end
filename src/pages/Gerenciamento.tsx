@@ -9,11 +9,15 @@ import { Acordes } from "../components/Acordes";
 
 export const Gerenciamento = () => {
   const [showModal, setShowModal] = useState(true);
- 
+  const [showForm, setShowForm] = useState(true)
 
   function handleModal() {
       setShowModal(!showModal)
   };
+
+  function newForm() {
+    setShowForm(!showForm)
+  }
 
 
 return (
