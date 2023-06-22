@@ -56,6 +56,8 @@ return (
         <li className="flex flex-col py-3">
             <span className="font-semibold">Nível</span>
             <span>07 dias</span>
+            <span></span>
+            <span></span>
          </li>
         </ul>
 
