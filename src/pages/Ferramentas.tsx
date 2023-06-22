@@ -2,14 +2,9 @@ import { useState } from "react";
 import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Footer } from "../components/Footer";
-import { Modal } from "../components/Modal";
-import { Linking } from "../components/Linking";
+ 
 export default function Ferramentas () {
-    const [showModal, setShowModal] = useState(true);
-
-    function handleModal() {
-        setShowModal(!showModal)
-    }
+   
     return (
 
         <>
@@ -87,14 +82,6 @@ export default function Ferramentas () {
                 </div>
             </div>
             <Footer />
-
-            <Modal _showModal={showModal} _close={handleModal}>
-                <div className="flex flex-col items-center">
-                    <h1 className="text-center font-semibold text-4xl">Experimente as ferramentas do Entre Linhas e otimize sua <span className="text-custom-salmon">produtividade</span>!</h1>
-                    <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{width: "-webkit-fill-available"}}/>
-                    <Linking to={"/ferramentas"} title="Saiba mais" className="bg-turquoise-400 color-white text-2xl py-4 px-6 rounded-md"/>
-                </div>
-            </Modal>
         </>
 
     )
