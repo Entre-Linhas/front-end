@@ -2,6 +2,7 @@ import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Linking } from '../components/Linking';
 import { Footer } from "../components/Footer";
+import { Acordes } from "../components/Acordes";
 
 export default function Precificacao() {
     return( 
@@ -46,20 +47,7 @@ export default function Precificacao() {
                                     <div>
                                         <h3>Materias usados</h3>
                                         {/* accordion */}
-                                        <div className="">
-                                            <label htmlFor="">Nome do produto: </label>
-                                            <input type="text" placeholder="bolsa"/>
-                                        </div>
-                                       <div className="">
-                                        <label htmlFor="">Medidas:</label>
-                                        <input type="text" placeholder="cm"/>
-                                       </div>
-
-                                       <div className="">
-                                        <label htmlFor="">Preço:</label>
-                                        <input type="text" placeholder="preço pago pelo material"/>
-                                       </div>
-                                       
+                                            <Acordes/>
                                     </div>
 
                                     <div className="mt-2">
