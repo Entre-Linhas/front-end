@@ -16,16 +16,16 @@ export default function FreeRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/signin" element={<SignIn />} /> 
-        <Route path="/signup" element={<SignUp />} /> 
-        <Route path="/terms-of-use" element={<TermsUse />} /> 
-        <Route path="/ferramentas" element={<Ferramentas />} /> 
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/terms-of-use" element={<TermsUse />} />
+        <Route path="/ferramentas" element={<Ferramentas />} />
         <Route path="/eventos" element={<Eventos />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/ajuda" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
-        <Route path="/Comunidade" element={<Comunidade />}/>
+        <Route path="/Comunidade" element={<Comunidade />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

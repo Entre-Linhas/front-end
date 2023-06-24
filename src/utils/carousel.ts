@@ -4,7 +4,7 @@ import { useSwipeable, SwipeableHandlers, SwipeEventData } from 'react-swipeable
 function previous(length: number, current: number) {
     return (current - 1 + length) % length;
 }
-  
+
 function next(length: number, current: number) {
     return (current + 1) % length;
 }
@@ -12,7 +12,7 @@ function next(length: number, current: number) {
 function threshold(target: EventTarget | null) {
     const width = (target as HTMLElement).clientWidth;
     return width / 3;
-} 
+}
 
 interface CarouselState {
     offset: number;
@@ -25,17 +25,17 @@ const initialCarouselState: CarouselState = {
     desired: 0,
     active: 0,
 };
-  
+
 interface CarouselNextAction {
     type: 'next';
     length: number;
 }
-  
+
 interface CarouselPrevAction {
     type: 'prev';
     length: number;
 }
-  
+
 interface CarouselJumpAction {
     type: 'jump';
     desired: number;
@@ -54,34 +54,34 @@ type CarouselAction = CarouselJumpAction | CarouselNextAction | CarouselPrevActi
 
 
 function carouselReducer(state: CarouselState, action: CarouselAction) {
-    switch(action.type) {
-        case "jump": 
+    switch (action.type) {
+        case "jump":
             return {
                 ...state,
                 desired: action.desired
             };
-        case "next": 
+        case "next":
             return {
                 ...state,
                 desired: next(action.length, state.active)
             };
-        case "prev": 
+        case "prev":
             return {
                 ...state,
                 desired: previous(action.length, state.active)
             };
-        case "done": 
+        case "done":
             return {
                 ...state,
                 offset: NaN,
                 active: state.desired
             };
-        case "drag": 
+        case "drag":
             return {
                 ...state,
                 offset: action.offset
             };
-        default: 
+        default:
             return state;
     }
 }
@@ -91,10 +91,10 @@ function swiped(e: SwipeEventData, dispatch: React.Dispatch<CarouselAction>, len
     const t = threshold(e.event.target);
     const d = dir * e.deltaX;
 
-    if(d >= t) {
-        dispatch({type: dir > 0 ? "next" : "prev", length});
+    if (d >= t) {
+        dispatch({ type: dir > 0 ? "next" : "prev", length });
     } else {
-        dispatch({type: "drag", offset: 0});
+        dispatch({ type: "drag", offset: 0 });
     }
 }
 
@@ -103,7 +103,7 @@ export function useCarousel(length: number, interval: number): [number, (n: numb
     const [state, dispatch] = useReducer(carouselReducer, initialCarouselState);
     const handlers = useSwipeable({
         onSwiped(e) {
-            dispatch({type: "drag", offset: -e.deltaX});
+            dispatch({ type: "drag", offset: -e.deltaX });
         },
         onSwipedLeft(e) {
             swiped(e, dispatch, length, 1);
@@ -116,7 +116,7 @@ export function useCarousel(length: number, interval: number): [number, (n: numb
     });
 
     useEffect(() => {
-        const id = setTimeout(() => dispatch({type: "next", length}), interval);
+        const id = setTimeout(() => dispatch({ type: "next", length }), interval);
         return () => clearTimeout(id);
     }, [state.offset, state.active, length, interval]);
 
@@ -131,7 +131,7 @@ export function useCarousel(length: number, interval: number): [number, (n: numb
         left: `-${(state.active + 1) * 100}%`,
     };
 
-    if(state.desired !== state.active) {
+    if (state.desired !== state.active) {
         const dist = Math.abs(state.active - state.desired);
         const pref = Math.sign(state.offset || 0);
         const dir = (dist > length / 2 ? 1 : -1) * Math.sign(state.desired - state.active);
@@ -139,12 +139,12 @@ export function useCarousel(length: number, interval: number): [number, (n: numb
         style.transition = "transform 400ms ease";
         style.transform = `translateX(${shift}%)`;
     } else if (!isNaN(state.offset)) {
-        if(state.offset !== 0) {
+        if (state.offset !== 0) {
             style.transform = `translateX(${state.offset})px`;
         } else {
             style.transition = "transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55)";
         }
     }
 
-    return [state.active, n => dispatch({type: "jump", desired: n}), handlers, style]
+    return [state.active, n => dispatch({ type: "jump", desired: n }), handlers, style]
 }

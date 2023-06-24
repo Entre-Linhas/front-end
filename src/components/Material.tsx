@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from "./Button";
 import { useNavigate } from 'react-router-dom';
 
@@ -6,47 +6,32 @@ var content1 = "A definição clara do seu negócio é essencial para o sucesso.
 
 var content2 = "vendas e crescimento. Comece definindo o seu negócio com clareza e, em seguida, trabalhe em direção a seus objetivos, mantendo sempre em mente o que torna sua empresa única."
 
-var content3 = "A definição clara do seu negócio é essencial para o sucesso. É importante entender exatamente o que sua empresa oferece e a quem se destina. A definição do negócio inclui identificar a sua proposta de valor única, seus produtos ou serviços, o público-alvo e como você se diferencia da concorrência. É fundamental ter uma visão clara do seu negócio para poder desenvolver estratégias eficazes de marketing,"
+var content3 = "A definição clara do seu negócio é essencial para o sucesso. É importante entender exatamente o que sua empresa oferece e a quem se destina. A definição do negócio inclui identificar a sua proposta de valor única, seus produtos ou serviços, o público-alvo e como você se diferencia da concorrência. É fundamental ter uma visão clara do seu negócio para poder desenvolver estratégias de marketing,"
 
 interface MaterialProps {
   title: string;
   image?: string;
-  content?: string; 
+  content?: string;
 }
 
 export default function Material({ image, title, content }: MaterialProps) {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [displayedContent, setDisplayedContent] = useState('');
+  const [displayedContent, setDisplayedContent] = useState(content1);
   const contents = [
     content1,
     content2,
     content3
   ];
 
-  useEffect(() => {
-    setDisplayedContent('');
-    const typingInterval = setInterval(() => {
-      setDisplayedContent((prevContent) => {
-        const currentContent = contents[currentIndex];
-        const nextCharacter = currentContent[prevContent.length];
-        if (nextCharacter) {
-          return prevContent + nextCharacter;
-        }
-        clearInterval(typingInterval);
-        return prevContent;
-      });
-    }, 10);
-
-    return () => clearInterval(typingInterval);
-  }, [currentIndex]);
-
   const handlePreviousClick = () => {
     setCurrentIndex(currentIndex - 1);
+    setDisplayedContent(contents[currentIndex - 1]);
   };
 
   const handleNextClick = () => {
     setCurrentIndex(currentIndex + 1);
+    setDisplayedContent(contents[currentIndex + 1]);
   };
 
   return (
@@ -58,7 +43,7 @@ export default function Material({ image, title, content }: MaterialProps) {
             <img src={image} className="m-auto py-[4rem] max-w-[100%]" />
           </div>
 
-          <p className="text-justify max-w-[80.9rem] max-w-[70%]">
+          <p className="text-justify max-w-[80.9rem]">
             {displayedContent}
           </p>
           <div className="flex gap-[3.5rem] py-[3.5rem]">

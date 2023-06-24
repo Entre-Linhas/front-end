@@ -14,11 +14,11 @@ export default function SignIn() {
     const navigate = useNavigate();
 
     const carouselValues: string[] = [
-        "/ContentIm1.jpg",  
-        "/ContentIm2.jpg",  
-        "/ContentIm3.jpg",  
-        "/ContentIm4.jpg",  
-        "/ContentIm5.jpg"  
+        "/ContentIm1.jpg",
+        "/ContentIm2.jpg",
+        "/ContentIm3.jpg",
+        "/ContentIm4.jpg",
+        "/ContentIm5.jpg"
     ];
     let currentIndex: number = 0;
 

@@ -47,7 +47,7 @@ export class Sign extends Component {
         console.log(input, value);
     };
 
-    
+
     handleSubmit = () => {
         const { formData } = this.state;
 
@@ -70,10 +70,10 @@ export class Sign extends Component {
                     <>
                         <h1 className="text-zinc-400">Passo 1 de 3</h1>
                         <span className="text-center dark:text-gray-100">Olá! Seja bem-vindo/a.<br />Vamos começar a se cadastrar.</span>
-                        
-                            <Input type="email" placeholder="Email" onChange={this.handleChange("email")} value={formData.email} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                            <Input type="password" placeholder="Senha" onChange={this.handleChange("senha")} value={formData.senha} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                       
+
+                        <Input type="email" placeholder="Email" onChange={this.handleChange("email")} value={formData.email} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                        <Input type="password" placeholder="Senha" onChange={this.handleChange("senha")} value={formData.senha} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
+
                         <div className="flex items-center gap-2">
                             <input type="checkbox" onChange={this.handleChange("terms")} />
                             <label htmlFor="" className="dark:text-gray-100">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" style={{ color: "#FF6464" }} /></label>
@@ -116,33 +116,33 @@ export default function SignUp() {
     const [terms, setTerms] = useState<boolean>(false);
     const [showPassword, setShowPassord] = useState<boolean>(false);
     const [typePassword, setTypePassword] = useState<"text" | "password">("password");
-    const [currentValue, setCurrentValue] = useState<{src: string, alt: string}>({src: "/ContentIm5.jpg", alt: "img5"});
+    const [currentValue, setCurrentValue] = useState<{ src: string, alt: string }>({ src: "/ContentIm5.jpg", alt: "img5" });
 
     const navigate = useNavigate();
 
-    
+
     useEffect(() => {
-        const carouselValues: {src: string, alt: string}[] = [
+        const carouselValues: { src: string, alt: string }[] = [
             {
                 src: "/ContentIm1.jpg",
                 alt: "img5"
-            },  
+            },
             {
                 src: "/ContentIm2.jpg",
                 alt: "img5"
-            },  
+            },
             {
                 src: "/ContentIm3.jpg",
                 alt: "img5"
-            },  
+            },
             {
                 src: "/ContentIm4.jpg",
                 alt: "img5"
-            },  
+            },
             {
                 src: "/ContentIm5.jpg",
                 alt: "img5"
-            }  
+            }
         ];
 
         let currentIndex: number = 0;
@@ -182,7 +182,7 @@ export default function SignUp() {
     // }
 
 
-    
+
 
 
     return (
@@ -204,7 +204,7 @@ export default function SignUp() {
                 </div>
             </div>
             <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen max-[1023px]:hidden">
-                    <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
+                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
             </div>
         </div>
     )
