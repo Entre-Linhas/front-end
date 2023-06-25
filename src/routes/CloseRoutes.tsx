@@ -9,7 +9,7 @@ import Sobre from "../pages/Sobre";
 import TermsUse from "../pages/TermsUse";
 import Nivelamento from "../pages/Nivelamento"
 import { Conteudo } from "../pages/Conteudo"
-import { Trilha } from "../pages/Trilha"
+import { Trilha } from "../pages/Trilha/Trilha"
 import Comunidade from "../pages/Comunidade"
 import { Gerenciamento } from "../pages/Gerenciamento";
 import { Trofeu } from "../pages/Trofeu";
