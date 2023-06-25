@@ -1,11 +1,11 @@
-import { CaretLeft, Envelope, Eye, EyeClosed, Key, SignIn, UserCircle, Tag, IdentificationCard, MapPin } from "@phosphor-icons/react";
-import { useNavigate } from "react-router-dom";
-import { Logo } from "../components/Logo";
-import { Input } from "../components/Input";
-import { Button } from "../components/Button";
-import React, { Component, useEffect, useState, HTMLInputTypeAttribute } from "react";
-import { Linking } from "../components/Linking";
+import { CaretLeft, Envelope, IdentificationCard, Key, MapPin, SignIn, Tag, UserCircle } from "@phosphor-icons/react";
 import axios from "axios";
+import React, { Component, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../components/Button";
+import { Input } from "../components/Input";
+import { Linking } from "../components/Linking";
+import { Logo } from "../components/Logo";
 
 export class Sign extends Component {
     state = {
@@ -52,11 +52,12 @@ export class Sign extends Component {
         const { formData } = this.state;
 
         axios
-            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios", formData)
+            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData)
             .then((response) => {
                 console.log(response.data);
             })
             .catch((error) => {
+                alert("Email ja utilizado")
                 console.error(error);
             });
     };
@@ -203,7 +204,7 @@ export default function SignUp() {
                     <Sign />
                 </div>
             </div>
-            <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">
+            <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
                 <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
             </div>
         </div>

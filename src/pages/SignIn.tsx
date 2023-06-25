@@ -1,15 +1,39 @@
 import { CaretLeft, Envelope, Key } from "@phosphor-icons/react";
-import { Button } from "../components/Button";
-import { useState, useEffect } from "react";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Logo } from "../components/Logo";
+import { Context } from "../contexts/Context";
 
 export default function SignIn() {
     const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
+    const [senha, setPassword] = useState<string>("");
     const [showPassword, setShowPassword] = useState<boolean>(false);
     var [currentValue, setCurrentValue] = useState<string>("/ContentIm5.jpg");
+    const {perfil, setPerfil} = useContext(Context)
+    const formData = {
+        email, senha
+    }
+
+    useEffect (() => {
+        console.log("Recebi perfil do back end", perfil);
+    }, [perfil]);
+
+    const handleSubmit = () => {
+
+
+        axios
+            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/login", formData)
+            .then((response) => {
+                setPerfil && setPerfil(response.data)
+            })
+            .catch((error) => {
+                alert("Email ja utilizado")
+                console.error(error);
+            });
+    };
 
     const navigate = useNavigate();
 
@@ -53,13 +77,13 @@ export default function SignIn() {
                         <h4 className="text-[1.4rem] min-[300px]:text-[1.6rem] min-[360px]:text-[1.8rem] min-[560px]:text-[2.2rem] dark:text-white">Olá, boas vindas de volta =)</h4>
                         <span className="text-[1rem] min-[300px]:text-[1.2rem] min-[360px]:text-[1.4rem] min-[720px]:text-[1.5rem] dark:text-gray-100">Estamos contente em vê-lo(a) novamente.</span>
                         <Input placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                        <Input placeholder="Senha" leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                        <Button title="Entrar" />
+                        <Input placeholder="Senha" onChange={(e: any) => setPassword(e.target.value)} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                        <Button title="Entrar" onClick={handleSubmit} />
                         <NavLink to="/SignUp" className="dark:text-gray-100">Cadastrar-me</NavLink>
                     </div>
                 </div>
 
-                <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
+                <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen max-[1023px]:hidden">
                     <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
                 </div>
             </div>
