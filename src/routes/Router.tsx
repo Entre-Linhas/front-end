@@ -14,6 +14,7 @@ import Comunidade from "../pages/Comunidade"
 import { Gerenciamento } from "../pages/Gerenciamento";
 import { Trofeu } from "../pages/Trofeu";
 import Profile from "../pages/Profile";
+import NotFound from "../pages/NotFound";
 
 export default function Router() {
   return (
@@ -28,14 +29,14 @@ export default function Router() {
         <Route path="/contato" element={<Contato />} />
         <Route path="/ajuda" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
-        <Route path="/Nivelamento" element={<Nivelamento />} />
-        <Route path="/Conteudo" element={<Conteudo />} />
-        <Route path="/Trilha" element={<Trilha />} />
-        <Route path="/Comunidade" element={<Comunidade />} />
-        <Route path="/Gerenciamento" element={<Gerenciamento />} />
-        <Route path="/Trofeu" element={<Trofeu />} />
-        <Route path="/Profile" element={<Profile />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="/Nivelamento" element={<Nivelamento />}/>
+        <Route path="/Conteudo" element={<Conteudo />}/>
+        <Route path="/Trilha" element={<Trilha />}/>
+        <Route path="/Comunidade" element={<Comunidade />}/>
+        <Route path="/Gerenciamento" element={<Gerenciamento/>}/>
+        <Route path="/Trofeu" element={<Trofeu />}/>
+        <Route path="/Profile" element={<Profile />}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
