@@ -3,12 +3,35 @@ import { Header } from "../../components/Header";
 import { Model } from "../../components/Model";
 import { Modulo } from "./Modulo";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useContext, useState } from "react";
 
 interface ExemploProps extends HTMLAttributes<HTMLDivElement> {}
 
 function Exemplo({...rest}: ExemploProps) {
+  const [error, setError] = useState(false);
+  const [progresso, setProgressPerfil] = useState<any>(null);
+  const formData = {
+    progresso
+  };
 
   const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    axios
+      .put("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/login", formData)
+      .then((response) => {
+        if (response.data) {
+          setProgressPerfil?.(navigate("/Conteudo"));
+          console.log(response.data);
+        } else {
+          console.log("vazio");
+        }
+      })
+      .catch((error) => {
+        setError(true);
+      });
+  };
 
   return (
     <div className="flex flex-row-reverse item " {...rest}>
@@ -20,6 +43,7 @@ function Exemplo({...rest}: ExemploProps) {
           describe="Identificar o nicho de mercado e da proposta de valor."
           time="20min"
           _completed
+          Rafa="/Conteudo"
         />
       {/* </button> */}
 

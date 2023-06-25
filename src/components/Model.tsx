@@ -1,16 +1,19 @@
 import { Check } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 export interface ModelProps {
   title: string;
   describe: string;
   time: string;
   _completed?: boolean;
+  Rafa?: String
 }
 
 
-export const Model = ({ title, describe, time, _completed = false }: ModelProps) => {
+export const Model = ({ title, describe, time, _completed = false, Rafa }: ModelProps) => {
+  const navigate = useNavigate();
   return (
-    <div>
+    <div onClick={() => {navigate("/Conteudo")}}>
 
       <div className="flex gap-[4rem]">
         <div className="flex items-center gap-[0.5rem] w-full">
