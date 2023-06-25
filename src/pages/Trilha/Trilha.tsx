@@ -2,19 +2,27 @@ import { HTMLAttributes } from "react";
 import { Header } from "../../components/Header";
 import { Model } from "../../components/Model";
 import { Modulo } from "./Modulo";
+import { useNavigate } from 'react-router-dom';
 
 interface ExemploProps extends HTMLAttributes<HTMLDivElement> {}
 
 function Exemplo({...rest}: ExemploProps) {
+
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-row-reverse item " {...rest}>
       <div className="flex flex-col gap-7 w-2/4">
+
+      {/* <button OnClick={() => {navigate("/Conteudo")}}>  */}
         <Model
           title="1. Definição do negócio"
           describe="Identificar o nicho de mercado e da proposta de valor."
           time="20min"
           _completed
         />
+      {/* </button> */}
+
         <Model
           title="2. Análise de mercado"
           describe="Estudo do público-alvo e concorrência."

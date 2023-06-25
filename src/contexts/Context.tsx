@@ -10,7 +10,7 @@ interface ContextProps {
 export const Context = createContext<ContextProps>({ auth: false, perfil: null });
 
 export default function Provider({ children }: { children: React.ReactNode }) {
-  const [auth, setAuth] = useState(true);
+  const [auth, setAuth] = useState(false);
   const [perfil, setPerfil] = useState<any>(null);
 
   // para não perder os dados mesmo depois de recarregar
