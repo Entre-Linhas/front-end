@@ -6,11 +6,11 @@ export interface ModelProps {
   describe: string;
   time: string;
   _completed?: boolean;
-  Rafa?: String
+  path?: String;
 }
 
 
-export const Model = ({ title, describe, time, _completed = false, Rafa }: ModelProps) => {
+export const Model = ({ title, describe, time, _completed = false, path }: ModelProps) => {
   const navigate = useNavigate();
   return (
     <div onClick={() => {navigate("/Conteudo")}}>

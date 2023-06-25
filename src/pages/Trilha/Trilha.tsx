@@ -5,14 +5,25 @@ import { Modulo } from "./Modulo";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useContext, useState } from "react";
+import { Context } from "../../contexts/Context";
 
 interface ExemploProps extends HTMLAttributes<HTMLDivElement> {}
 
 function Exemplo({...rest}: ExemploProps) {
   const [error, setError] = useState(false);
   const [progresso, setProgressPerfil] = useState<any>(null);
+  const { perfil } = useContext(Context);
+  // progressAtividade e FKS
+  
+  
+  
+
   const formData = {
-    progresso
+    idPerfil : perfil.idPerfil,
+    progresso : 10.0,
+    /* materia : {
+      idMateria: 1
+    } */
   };
 
   const navigate = useNavigate();
@@ -43,7 +54,7 @@ function Exemplo({...rest}: ExemploProps) {
           describe="Identificar o nicho de mercado e da proposta de valor."
           time="20min"
           _completed
-          Rafa="/Conteudo"
+          path="/Conteudo"
         />
       {/* </button> */}
 
@@ -75,10 +86,21 @@ function Exemplo({...rest}: ExemploProps) {
 }
 
 export const Trilha = () => { 
+  const { perfil, setPerfil} = useContext(Context);
+  const atividades = () => {
+    /* perfil.progresso += 25.0;
+    perfil.trilhas.atividades.materia = 1;
+    console.log(perfil); */
+    const newPerfil = {
+      ...perfil, 
+      progresso: perfil.progresso + 25
+    }
+    setPerfil && setPerfil(newPerfil)
+  }
   return (
     <div className="overflow-hidden h-screen">
         <Header style={{position: "relative"}}/>
-      
+      <button onClick={atividades}></button>
       <div className="flex flex-col overflow-auto h-full snap-y snap-mandatory">
         <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always">Bem vindo, à Trilha Educacional</h1>
         <div className="flex flex-col mx-auto ">
