@@ -14,6 +14,7 @@ export default function SignIn() {
   var [currentValue, setCurrentValue] = useState<string>("/ContentIm5.jpg");
   const [error, setError] = useState(false);
   const { auth, setAuth } = useContext(Context);
+  const {perfil, setPerfil} = useContext(Context);
   const formData = {
     email,
     senha
@@ -26,8 +27,9 @@ export default function SignIn() {
       .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/login", formData)
       .then((response) => {
         if (response.data) {
-          setAuth && setAuth(true); // Define o valor de `auth` como true quando o login for bem-sucedido
-          navigate("/Trilha");
+          setAuth && setAuth(true);
+          setPerfil?.(response.data)
+          navigate("/Nivelamento");
         } else {
           console.log("vazio");
         }

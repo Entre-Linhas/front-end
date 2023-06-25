@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Star, StarHalf } from "@phosphor-icons/react";
 import { Header } from "../components/Header";
 import { Modal } from "../components/Modal";
+import { Context } from '../contexts/Context';
 
 export default function Nivelamento() {
+    const { perfil } = useContext(Context);
+    console.log(perfil);
+    console.log(perfil?.usuario);
+    console.log(perfil?.usuario?.nome);
+
+
     const [showModal, setShowModal] = useState(false);
 
     function handleModal() {
