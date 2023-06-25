@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Envelope, UserCircle, ChatText } from "@phosphor-icons/react";
 
+
+
 export default function Contato() {
     const [email, setEmail] = useState<string>("");
 

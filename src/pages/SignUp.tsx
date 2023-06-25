@@ -6,6 +6,9 @@ import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Linking } from "../components/Linking";
 import { Logo } from "../components/Logo";
+import { Modal } from "../components/Modal";
+
+ 
 
 export class Sign extends Component {
     state = {
@@ -47,18 +50,27 @@ export class Sign extends Component {
         console.log(input, value);
     };
 
+     
 
     handleSubmit = () => {
         const { formData } = this.state;
-
+        
         axios
             .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData)
             .then((response) => {
-                console.log(response.data);
+                console.log(response);
+                
+                // if (response.status) {
+                // //  navigate("/nivelamento")
+                // } else {
+                //     alert("")
+                // }
+
             })
             .catch((error) => {
                 alert("Email ja utilizado")
                 console.error(error);
+
             });
     };
 
