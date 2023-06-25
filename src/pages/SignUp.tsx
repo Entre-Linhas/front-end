@@ -52,7 +52,7 @@ export class Sign extends Component {
         const { formData } = this.state;
 
         axios
-            .post("http://localhost:8080/api/usuarios", formData)
+            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios", formData)
             .then((response) => {
                 console.log(response.data);
             })
@@ -203,7 +203,7 @@ export default function SignUp() {
                     <Sign />
                 </div>
             </div>
-            <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen max-[1023px]:hidden">
+            <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">
                 <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
             </div>
         </div>
