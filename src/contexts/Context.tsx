@@ -8,15 +8,15 @@ interface ContextProps {
   setPerfil?: Function;
   atividades: any
   setAtividades?: Function;
+  incrementarProgressoAtividade: Function
+  decrementarProgressoAtividade: Function
 }
-
-
-export const Context = createContext<ContextProps>({ auth: false, perfil: null , atividades: null});
+export const Context = createContext<ContextProps>({ /* auth: false, perfil: null , atividades: null */} as any);
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState(false);
   const [perfil, setPerfil] = useState<any>(null);
-  const [atividades, setAtividades] = useState<any>(null);
+  const [atividades, setAtividades] = useState<any>({progresso: 0});
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -39,16 +39,14 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     }
   }, [perfil]); */
 
-  //manter os dados salvos
-
   useEffect(() => {
     const idPerfil : any = perfil?.idPerfil;
-
-    api
+    idPerfil && api
       .put("/perfis/" + idPerfil, perfil)
       .then((response) => {
         if (response.data) {
-          console.log(response.data);
+          console.log('resposta put perfil', response.data);
+          setAtividades(response.data.trilhas.atividades)
         } else {
           console.log("vazio");
         }
@@ -56,31 +54,50 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       .catch((error) => {
         console.error(error);
       });
+  }, [perfil]);
 
-      const idAtividade : any = perfil?.trilhas?.atividades?.idAtividades;
+  useEffect(()=>{
+    const idAtividade : any = atividades?.idAtividades;
 
-      if (atividades != null) 
-      api
-      .put("/atividades/" + idAtividade, atividades)
-      .then((response) => {
-        if (response.data) {
-          /* const newAtividades = {
-            ...response.data
-          }
-          setAtividades?.(newAtividades); */
-          console.log("resposta api", response.data);
-        } else {
-          console.log("vazio");
-        }
-      })
-      .catch((error) => {
-        console.log("deu erro")
-        console.error(error);
-      });
-  }, [perfil, atividades]);
+    if (atividades != null) 
+    api
+    .put("/atividades/" + idAtividade, atividades)
+    .then((response) => {
+      if (response.data) {
+        console.log("resposta api", response.data);
+      } else {
+        console.log("vazio");
+      }
+    })
+    .catch((error) => {
+      console.log("deu erro")
+      console.error(error);
+    });
+  }, [atividades])
+
+  function incrementarProgressoAtividade() {
+    const newAtividade = {
+      ...atividades,
+      progresso: atividades.progresso + 1/* ,
+      materia: {
+        idMateria: atividades.progresso + 1
+      } */
+    }
+
+    setAtividades(newAtividade)
+  }
+
+  function decrementarProgressoAtividade() {
+    const newAtividade = {
+      ...atividades,
+      progresso: atividades.progresso - 1
+    }
+    setAtividades(newAtividade)
+  }
 
   return (
-    <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades }}>
+    <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade }}>
+      {JSON.stringify(atividades || {})}
       {children}
     </Context.Provider>
   );

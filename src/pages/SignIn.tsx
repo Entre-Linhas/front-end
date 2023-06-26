@@ -14,12 +14,12 @@ export default function SignIn() {
   var [currentValue, setCurrentValue] = useState<string>("/ContentIm5.jpg");
   const [error, setError] = useState(false);
   const { auth, setAuth } = useContext(Context);
-  const {perfil, setPerfil} = useContext(Context);
+  const {perfil, setPerfil, setAtividades} = useContext(Context);
   const formData = {
     email,
     senha
   };
-
+// eae
   const navigate = useNavigate();
 
   const handleSubmit = () => {
@@ -29,6 +29,7 @@ export default function SignIn() {
         if (response.data) {
           setAuth && setAuth(true);
           setPerfil?.(response.data)
+          setAtividades && setAtividades(response.data.trilhas.atividades)
           navigate("/Nivelamento");
         } else {
           console.log("vazio");

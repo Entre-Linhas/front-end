@@ -3,18 +3,12 @@ import { Header } from "../../components/Header";
 import { Model } from "../../components/Model";
 import { Modulo } from "./Modulo";
 import { useNavigate } from 'react-router-dom';
-import axios from "axios";
 import { useContext, useState } from "react";
 import { Context } from "../../contexts/Context";
 
 interface ExemploProps extends HTMLAttributes<HTMLDivElement> { }
 
 function Exemplo({ ...rest }: ExemploProps) {
-
-  const [progresso, setProgressPerfil] = useState<any>(null);
-  const { perfil } = useContext(Context);
-
-
   const navigate = useNavigate();
 
 
@@ -77,13 +71,13 @@ export const Trilha = () => {
       progresso: 0.2,
       materia: {
         idMateria: 1
-      }/* ,
+      },
       pratica: {
         idPratica: 1
       },
       dica: {
         idDica: 1
-      } */
+      }
     }
     console.log("Antes", newAtividades);
     console.log("Antes perf", perfil);
