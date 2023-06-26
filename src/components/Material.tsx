@@ -8,6 +8,7 @@ var content2 = "vendas e crescimento. Comece definindo o seu negócio com clarez
 
 var content3 = "A definição clara do seu negócio é essencial para o sucesso. É importante entender exatamente o que sua empresa oferece e a quem se destina. A definição do negócio inclui identificar a sua proposta de valor única, seus produtos ou serviços, o público-alvo e como você se diferencia da concorrência. É fundamental ter uma visão clara do seu negócio para poder desenvolver estratégias de marketing,"
 
+var content4 = "teste"
 interface MaterialProps {
   title: string;
   image?: string;
@@ -21,7 +22,7 @@ export default function Material({ image, title, content }: MaterialProps) {
   const contents = [
     content1,
     content2,
-    content3
+    content3,
   ];
 
   const handlePreviousClick = () => {
@@ -37,6 +38,7 @@ export default function Material({ image, title, content }: MaterialProps) {
   return (
     <>
       <div className="m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] py-[10rem] text-center">
+        
         <h1 className="text-[2.4rem] font-semibold">{title}</h1>
         <div className="flex flex-col items-center px-[2rem]">
           <div>
@@ -59,6 +61,7 @@ export default function Material({ image, title, content }: MaterialProps) {
             />
           </div>
         </div>
+     
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Router from '../routes/Router';
+ 
 import FreeRoutes from '../routes/FreeRoutes';
 import CloseRoutes from '../routes/CloseRoutes';
 import "../utils/theme";

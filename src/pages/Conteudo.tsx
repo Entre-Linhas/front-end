@@ -11,7 +11,8 @@ export const Conteudo = () => {
     return (
         <>
             <Header />
-            <Material title="teste" content="teste" />
+        <Material title="title" />
+        <Pratica />
 
         </>
     )
