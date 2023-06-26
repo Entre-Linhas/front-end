@@ -1,19 +1,22 @@
 import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../apiInstance';
 
 interface ContextProps {
   auth: boolean;
   setAuth?: Function;
   perfil: any
-  setPerfil?: Function
+  setPerfil?: Function;
+  atividades: any
+  setAtividades?: Function;
 }
 
 
-export const Context = createContext<ContextProps>({ auth: false, perfil: null });
+export const Context = createContext<ContextProps>({ auth: false, perfil: null , atividades: null});
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState(false);
   const [perfil, setPerfil] = useState<any>(null);
+  const [atividades, setAtividades] = useState<any>(null);
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -39,10 +42,10 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   //manter os dados salvos
 
   useEffect(() => {
-    const id : any = perfil?.idPerfil;
+    const idPerfil : any = perfil?.idPerfil;
 
-    axios
-      .put("http://localhost:5000/api/perfis/" + id, perfil)
+    api
+      .put("/perfis/" + idPerfil, perfil)
       .then((response) => {
         if (response.data) {
           console.log(response.data);
@@ -53,10 +56,31 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       .catch((error) => {
         console.error(error);
       });
-  }, [perfil]);
+
+      const idAtividade : any = perfil?.trilhas?.atividades?.idAtividades;
+
+      if (atividades != null) 
+      api
+      .put("/atividades/" + idAtividade, atividades)
+      .then((response) => {
+        if (response.data) {
+          /* const newAtividades = {
+            ...response.data
+          }
+          setAtividades?.(newAtividades); */
+          console.log("resposta api", response.data);
+        } else {
+          console.log("vazio");
+        }
+      })
+      .catch((error) => {
+        console.log("deu erro")
+        console.error(error);
+      });
+  }, [perfil, atividades]);
 
   return (
-    <Context.Provider value={{ auth, setAuth, perfil, setPerfil }}>
+    <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades }}>
       {children}
     </Context.Provider>
   );
