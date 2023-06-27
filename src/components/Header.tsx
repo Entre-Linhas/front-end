@@ -2,7 +2,7 @@
 import { Button } from './Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { HTMLAttributes } from "react";
-import { UserCircle, List } from "@phosphor-icons/react"
+import { UserCircle, List, Gear } from "@phosphor-icons/react"
 import { Linking } from './Linking';
 import React, { useContext, useState } from 'react';
 import { Context } from '../contexts/Context';
@@ -108,30 +108,42 @@ export const Header = ({ ...rest }: HeaderProps) => {
           </button>
 
         <div className={`${display}`}>
-          <ul className="text-custom-salmon absolute right-0 z-10 mt-6 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+          <ul className="shadow-xl text-custom-salmon absolute right-0 z-10 mt-6 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
             {auth ? 
             (
               <div>
+                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                  <div className="flex items-center gap-5 text-zinc-600 dark:text-zinc-200">
+                    <UserCircle size={32} weight="fill"/>
+                    <Linking to="/Profile" title={perfil.usuario.nome} />
+                  </div>
+                </li>
+                <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                    <Linking to="/Profile" title="Configurações" />
+                </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
                   <Linking to="/" title='Inicio' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Trilha' />
+                  <Linking to="/trilha" title='Trilha' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Ferramentas' />
+                  <Linking to="/Gerenciamento" title='Ferramentas' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Fórum' />
+                  <Linking to="/Comunidade" title='Comunidade' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Eventos' />
+                  <Linking to="/Eventos" title='Eventos' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Ajuda' />
+                  <Linking to="/Contato" title='Ajuda' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Sobre nós' />
+                  <Linking to="/Sobre" title='Sobre nós' />
+                </li>
+                <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                  <Linking to="/" title='Sair' />
                 </li>
               </div>
             ) 
@@ -141,25 +153,25 @@ export const Header = ({ ...rest }: HeaderProps) => {
             (
               <div>
                  <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Login' />
+                  <Linking to="/SignIn" title='Login' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Registrar' />
+                  <Linking to="/SignUp" title='Registrar' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
                   <Linking to="/" title='Inicio' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Eventos' />
+                  <Linking to="/Eventos" title='Eventos' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Ajuda' />
+                  <Linking to="/Ajuda" title='Ajuda' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Ferramentas' />
+                  <Linking to="/Ferramentas" title='Ferramentas' />
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Sobre nós' />
+                  <Linking to="/Sobre" title='Sobre nós' />
                 </li>
               </div>
             )

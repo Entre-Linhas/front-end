@@ -1,32 +1,102 @@
 import { Header } from "../components/Header";
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import { Conquistas } from "../components/Conquistas";
+import { Context } from "../contexts/Context";
+import { useContext } from "react";
+import { Button } from "../components/Button";
+import axios from "axios";
 
 export default function Profile() {
   const [displayFotos, setDisplayFotos] = useState(true);
   const [background, setBackground] = useState("bg-custom-salmon");
+  const { perfil } = useContext(Context)
+  const [displaydesc, setDisplaydesc] = useState(false)
 
   const alterContent = () => {
     setDisplayFotos(!displayFotos);
     setBackground(displayFotos ? "" : "bg-custom-salmon");
   };
 
+  const Block = () => {
+    setDisplaydesc(true);
+  }
+
+  const Hidden = () => {
+    setDisplaydesc(false);
+  }
+
+  var textarea 
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <>
       <Header />
 
-      <div className="max-[768px]:text-[1.8rem] text-[2rem] px-12 py-40 flex max-md:flex-col max-md:px-5 min-[768px]:gap-12">
+      <div className="max-[768px]:text-[1.8rem] text-[2rem] px-12 py-40 flex max-md:flex-col max-md:px-5 min-[768px]:gap-12 ">
 
 
 
 
-        <div className="py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[768px]:border solid min-[768px]:max-w-sm">
-          <div className="h-96 bg-black max-w-[25rem] w-full m-auto"></div>
+        <div className="py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[768px]:border solid min-[768px]:max-w-sm min-[768px]:min-[768px]:shadow-xl min-[768px]:px-3">
+          <div className="h-96 bg-black max-w-[25rem] w-full m-auto">
+            
+          </div>
+
           <div>
-            <h2 className="font-bold">Username</h2>
+            <h2 className="font-bold">{perfil.usuario.nome} {perfil.usuario.sobrenome}</h2>
             <span>Membro</span>
           </div>
-          <p>Olá! Me chamo username, tenho age, atuo no ramo exemplo...</p>
+          <div>
+            {perfil.serviço ?
+              (
+              <p>
+                {perfil.serviço || "costurando a descrição"}
+              </p>
+              )
+              :
+              (
+              
+                <div>
+                  <p className="py-5">Adicione uma descrição sobre você</p>
+                  <textarea name="teste" value={textarea} className={`text-black resize-y py-5 rounded-3xl shadow-xl max-w-[20rem] min-[768px]:m-auto ${displaydesc ? "block" : "hidden"}`} />
+                  {displaydesc ?
+                    (
+                      <div className="py-10 flex gap-3">
+                        <Button title="Confirmar" onClick={Block} />
+                        <div className={`${displaydesc ? "block" : "hidden"}`}>
+                          <Button title="Cancelar" onClick={Hidden} />
+                        </div>
+                      </div>
+                    )
+                    :
+                    (
+                      <div>
+                        <div className={`${displaydesc ? "hidden" : "block"}`}>
+                          <Button typeStyle="secondary" title="Adicionar" onClick={Block} />
+                        </div>
+                      </div>
+                    )
+                  }
+                </div>
+                )
+                }
+          </div>
+
+
           <ul>
             <li className="flex items-center gap-3">
               <div className="w-6 h-6 rounded-lg bg-black"></div>
@@ -44,15 +114,17 @@ export default function Profile() {
           <ul>
             <li className="flex flex-col py-3">
               <span className="font-semibold">Nível</span>
-              <span>01 - Aprendiz</span>
+              <span>{perfil.nivel} - {perfil.nivel > 3 ? "Aprendiz" : "Iniciante"}</span>
             </li>
             <li className="flex flex-col py-3">
               <span className="font-semibold">Membro desde</span>
-              <span>00/00/00</span>
+              <span>
+                {perfil.usuario.data_termino || "não tem"}
+              </span>
             </li>
             <li className="flex flex-col py-3">
-              <span className="font-semibold">Nível</span>
-              <span>07 dias</span>
+              <span className="font-semibold">Melhor sequência</span>
+              <span>{perfil.max_combo || "Você ainda não iniciou a Trilha."}</span>
               <span></span>
               <span></span>
             </li>

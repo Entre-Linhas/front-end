@@ -78,10 +78,10 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   function incrementarProgressoAtividade() {
     const newAtividade = {
       ...atividades,
-      progresso: atividades.progresso + 1/* ,
+      progresso: atividades.progresso + 1 ,
       materia: {
         idMateria: atividades.progresso + 1
-      } */
+      } 
     }
 
     setAtividades(newAtividade)
