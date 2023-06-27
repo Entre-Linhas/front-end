@@ -81,9 +81,25 @@ export const Header = ({ ...rest }: HeaderProps) => {
       <div>
         {auth ? 
         (
+          <div>
+          <button onClick={Click}>
           <div className='hidden lg:flex items-center gap-[1.2rem]'>
-            <div className="w-[3.5rem] h-[3.5rem] rounded-full bg-black"></div>
+            <div className="w-[3.5rem] h-[3.5rem] rounded-full bg-black">
+              <img src={perfil.foto} className="max-w-[100%] h-full rounded-full"/>
+            </div>
              <p>{perfil.usuario.nome}</p>
+          </div>
+          </button>
+          <div className={`${display}`}>
+              <ul className="shadow-xl text-custom-salmon absolute right-0 z-10 mt-4 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+                 <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
+                    <Linking to="/Profile" title="Configurações" />
+                </li>
+                <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
+                    <Linking to="/" title="Sair" />
+                </li>
+              </ul>
+            </div>
           </div>
         ) 
         
@@ -92,7 +108,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
         (
           <div className='hidden lg:flex gap-[1.2rem]'>
             <Button title='Login' typeStyle='secondary' onClick={() => navigate("/signin")} />
-            <Button title='Registro' onClick={() => navigate("/Profile")} />
+            <Button title='Registro' onClick={() => navigate("/SignUp")} />
           </div>
         )
         }

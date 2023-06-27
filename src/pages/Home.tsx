@@ -52,7 +52,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
               <Button title='Comece agora!' />
             </div>
           </div>
-          <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[44rem] min-[1280px]:h-[50rem]" />
+          <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem] " />
         </div>
 
       </div>
@@ -165,7 +165,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
               <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
               <img src="/Login.svg" className="h-[5.3rem]" />
             </div>
-            <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[44rem] min-[1280px]:h-[50rem]"></img>
+            <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]"></img>
           </div>
         </div>
       </div>

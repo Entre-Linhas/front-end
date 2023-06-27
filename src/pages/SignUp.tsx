@@ -50,7 +50,7 @@ export class Sign extends Component {
         console.log(input, value);
     };
 
-     
+    
 
     handleSubmit = () => {
         const { formData } = this.state;
@@ -61,9 +61,9 @@ export class Sign extends Component {
                 console.log(response);
                 
                 // if (response.status) {
-                // //  navigate("/nivelamento")
+                 
                 // } else {
-                //     alert("")
+                //     alert("teste")
                 // }
 
             })
@@ -76,6 +76,10 @@ export class Sign extends Component {
 
     render(): React.ReactNode {
         const { formData } = this.state;
+
+       
+
+
 
         switch (formData.step) {
             case 1:

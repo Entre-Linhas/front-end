@@ -9,7 +9,7 @@ import axios from "axios";
 export default function Profile() {
   const [displayFotos, setDisplayFotos] = useState(true);
   const [background, setBackground] = useState("bg-custom-salmon");
-  const { perfil } = useContext(Context)
+  const { perfil, definirFotoPerfil } = useContext(Context)
   const [displaydesc, setDisplaydesc] = useState(false)
 
   const alterContent = () => {
@@ -25,11 +25,23 @@ export default function Profile() {
     setDisplaydesc(false);
   }
 
-  var textarea 
+
+  const images = ["/CryptoFluff_0040.jpg",
+    "/CryptoFluff_0059.jpg",
+    "/CryptoFluff_0192.jpg",
+    "/CryptoFluff_0193.jpg",
+    "/CryptoFluff_0195.jpg",
+    "/CryptoFluff_0196.jpg",
+    "/CryptoFluff_0197.jpg",
+    "/CryptoFluff_0198.jpg",
+    "/CryptoFluff_0199.jpg",
+  ]
+
+  var textarea
+
+
+
  
-  
-
-
 
 
 
@@ -53,7 +65,7 @@ export default function Profile() {
 
         <div className="py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[768px]:border solid min-[768px]:max-w-sm min-[768px]:min-[768px]:shadow-xl min-[768px]:px-3">
           <div className="h-96 bg-black max-w-[25rem] w-full m-auto">
-            
+             <img src={perfil.foto} className="max-w-[100%] h-full"/>
           </div>
 
           <div>
@@ -63,13 +75,13 @@ export default function Profile() {
           <div>
             {perfil.serviço ?
               (
-              <p>
-                {perfil.serviço || "costurando a descrição"}
-              </p>
+                <p>
+                  {perfil.serviço || "costurando a descrição"}
+                </p>
               )
               :
               (
-              
+
                 <div>
                   <p className="py-5">Adicione uma descrição sobre você</p>
                   <textarea name="teste" value={textarea} className={`text-black resize-y py-5 rounded-3xl shadow-xl max-w-[20rem] min-[768px]:m-auto ${displaydesc ? "block" : "hidden"}`} />
@@ -92,8 +104,8 @@ export default function Profile() {
                     )
                   }
                 </div>
-                )
-                }
+              )
+            }
           </div>
 
 
@@ -155,8 +167,8 @@ export default function Profile() {
             </button>
           </div>
 
-          <div className={`${displayFotos ? "" : "hidden"} px-10 py-10`}>
-            <span>Vini, vou esperar as fotos do banco</span>
+          <div className={`${displayFotos ? "" : "hidden"} flex flex-wrap items-center justify-center gap-10 px-10 py-10 overflow-y-auto`}>
+            {images.map((image) => <img onClick={() => definirFotoPerfil(image)} className="h-52 w-52" src={image}/>)}
           </div>
 
           <div className={`${displayFotos ? "hidden" : ""} px-10 py-10`}>

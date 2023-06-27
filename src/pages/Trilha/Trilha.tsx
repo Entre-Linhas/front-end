@@ -55,7 +55,7 @@ function Exemplo({ ...rest }: ExemploProps) {
 
 export const Trilha = () => {
   const { perfil, setPerfil } = useContext(Context);
-  const { atividades, setAtividades } = useContext(Context);
+  const { atividades, setAtividades, atualizarAtividade } = useContext(Context);
   const test = () => {
     /* perfil.progresso += 25.0;
     perfil.trilhas.atividades.materia = 1;
@@ -68,7 +68,7 @@ export const Trilha = () => {
 
     const newAtividades = {
       ...atividades,
-      progresso: 0.2,
+      progresso: 1,
       materia: {
         idMateria: 1
       },
@@ -79,11 +79,7 @@ export const Trilha = () => {
         idDica: 1
       }
     }
-    console.log("Antes", newAtividades);
-    console.log("Antes perf", perfil);
-    setAtividades?.(newAtividades);
-    console.log("Depois", newAtividades);
-    console.log("Depois perf", perfil);
+    atualizarAtividade(newAtividades);
   }
 
 

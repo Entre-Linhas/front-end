@@ -12,7 +12,7 @@ export const Conteudo = () => {
         <>
             <Header />
         <Material title="title" />
-        <Pratica />
+ 
 
         </>
     )
