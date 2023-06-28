@@ -1,5 +1,4 @@
 import { CaretLeft, Envelope, IdentificationCard, Key, MapPin, SignIn, Tag, UserCircle } from "@phosphor-icons/react";
-import axios from "axios";
 import React, { Component, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
@@ -7,6 +6,7 @@ import { Input } from "../components/Input";
 import { Linking } from "../components/Linking";
 import { Logo } from "../components/Logo";
 import { Modal } from "../components/Modal";
+import api from "../apiInstance";
 
  
 
@@ -55,7 +55,7 @@ export class Sign extends Component {
     handleSubmit = () => {
         const { formData } = this.state;
         
-        axios
+        api
             .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData)
             .then((response) => {
                 console.log(response);
@@ -76,10 +76,6 @@ export class Sign extends Component {
 
     render(): React.ReactNode {
         const { formData } = this.state;
-
-       
-
-
 
         switch (formData.step) {
             case 1:

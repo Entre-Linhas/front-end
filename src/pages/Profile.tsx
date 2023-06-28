@@ -4,13 +4,13 @@ import { Conquistas } from "../components/Conquistas";
 import { Context } from "../contexts/Context";
 import { useContext } from "react";
 import { Button } from "../components/Button";
-import axios from "axios";
 
 export default function Profile() {
   const [displayFotos, setDisplayFotos] = useState(true);
   const [background, setBackground] = useState("bg-custom-salmon");
-  const { perfil, definirFotoPerfil } = useContext(Context)
+  const { perfil, definirFotoPerfil, definirDescricao } = useContext(Context)
   const [displaydesc, setDisplaydesc] = useState(false)
+  const [descricao, setDescricao] = useState<string>("")
 
   const alterContent = () => {
     setDisplayFotos(!displayFotos);
@@ -37,10 +37,13 @@ export default function Profile() {
     "/CryptoFluff_0199.jpg",
   ]
 
-  var textarea
+  
 
 
 
+  
+
+  
  
 
 
@@ -73,10 +76,10 @@ export default function Profile() {
             <span>Membro</span>
           </div>
           <div>
-            {perfil.serviço ?
+            {perfil.servico ?
               (
                 <p>
-                  {perfil.serviço || "costurando a descrição"}
+                  {perfil.servico || "costurando a descrição"}
                 </p>
               )
               :
@@ -84,11 +87,11 @@ export default function Profile() {
 
                 <div>
                   <p className="py-5">Adicione uma descrição sobre você</p>
-                  <textarea name="teste" value={textarea} className={`text-black resize-y py-5 rounded-3xl shadow-xl max-w-[20rem] min-[768px]:m-auto ${displaydesc ? "block" : "hidden"}`} />
+                  <textarea name="teste"  onChange={(e) => setDescricao(e.target.value)} className={`text-black resize-y py-5 rounded-3xl shadow-xl max-w-[20rem] min-[768px]:m-auto ${displaydesc ? "block" : "hidden"}`} />
                   {displaydesc ?
                     (
                       <div className="py-10 flex gap-3">
-                        <Button title="Confirmar" onClick={Block} />
+                        <Button title="Confirmar" onClick={() => definirDescricao(descricao)}  />
                         <div className={`${displaydesc ? "block" : "hidden"}`}>
                           <Button title="Cancelar" onClick={Hidden} />
                         </div>
@@ -98,7 +101,7 @@ export default function Profile() {
                     (
                       <div>
                         <div className={`${displaydesc ? "hidden" : "block"}`}>
-                          <Button typeStyle="secondary" title="Adicionar" onClick={Block} />
+                          <Button typeStyle="secondary" title="Adicionar" onClick={Block}/>
                         </div>
                       </div>
                     )

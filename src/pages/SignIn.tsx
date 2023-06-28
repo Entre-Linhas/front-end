@@ -1,11 +1,11 @@
 import { CaretLeft, Envelope, Key } from "@phosphor-icons/react";
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Logo } from "../components/Logo";
 import { Context } from "../contexts/Context";
+import api from "../apiInstance";
 
 export default function SignIn() {
   const [email, setEmail] = useState<string>("");
@@ -23,7 +23,7 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    axios
+    api
       .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/login", formData)
       .then((response) => {
         if (response.data) {

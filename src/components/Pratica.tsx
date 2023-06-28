@@ -1,5 +1,9 @@
 import { Button } from "../components/Button"
+import { Context } from "../contexts/Context";
+import { useContext } from "react";
 export default function Pratica() {
+   const { atividades, incrementarProgressoAtividade, decrementarProgressoAtividade } = useContext(Context);
+
    return (
       <>
 
@@ -18,7 +22,7 @@ export default function Pratica() {
                   <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%]"><p className="text-center">Não é importante, o negócio pode ser ajustado com o tempo.</p></div>
                   <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%]"><p className="text-center">Não é importante, o negócio pode ser ajustado com o tempo.</p></div>
                </div>
-               <Button title="Corrigir" />
+               <Button title="Corrigir" onClick={() => incrementarProgressoAtividade()} />  
             </div>
          </div>
 
