@@ -15,7 +15,7 @@ export default function Contato() {
 
         <>
             <Header />
-            <div className="flex items-center py-[11rem] justify-center max-[1023px]:flex-col box-border w-[100%] m-auto xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+            <div className="flex items-center h-[100dvh] justify-center max-[1023px]:flex-col box-border w-[100%] m-auto xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
 
 
                 <div className="m-auto">

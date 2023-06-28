@@ -8,7 +8,7 @@ if (prefersTheme.matches || !localStorage.getItem("theme")) {
 }
 
 export function handleTheme() {
-    theme = theme === "light" ? "dark" : "light";
+    theme = theme === "light" ? "light" : "dark";
     localStorage.setItem("theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
 }

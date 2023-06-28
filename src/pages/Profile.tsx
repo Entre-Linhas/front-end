@@ -171,7 +171,7 @@ export default function Profile() {
           </div>
 
           <div className={`${displayFotos ? "" : "hidden"} flex flex-wrap items-center justify-center gap-10 px-10 py-10 overflow-y-auto`}>
-            {images.map((image) => <img onClick={() => definirFotoPerfil(image)} className="h-52 w-52" src={image}/>)}
+            {images.map((image) => <img onClick={() => definirFotoPerfil(image)} className="h-52 w-52 cursor-pointer" src={image}/>)}
           </div>
 
           <div className={`${displayFotos ? "hidden" : ""} px-10 py-10`}>
