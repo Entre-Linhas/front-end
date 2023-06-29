@@ -5,57 +5,20 @@ import { Modulo } from "./Modulo";
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
 import { Context } from "../../contexts/Context";
-
-interface ExemploProps extends HTMLAttributes<HTMLDivElement> { }
-
-function Exemplo({ ...rest }: ExemploProps) {
-  const navigate = useNavigate();
+import { Modal } from "../../components/Modal";
+import { Linking } from "../../components/Linking";
 
 
-  return (
-    <div className="flex flex-row-reverse item " {...rest}>
-      <div className="flex flex-col gap-7 w-2/4">
-
-        {/* <button OnClick={() => {navigate("/Conteudo")}}>  */}
-        <Model
-          title="1. Definição do negócio"
-          describe="Identificar o nicho de mercado e da proposta de valor."
-          time="20min"
-          _completed
-          path="/Conteudo"
-        />
-        {/* </button> */}
-
-        <Model
-          title="2. Análise de mercado"
-          describe="Estudo do público-alvo e concorrência."
-          time="20min"
-        />
-        <Model
-          title="3. Meu produto"
-          describe="Qual o meu produto e como identificar seu valor agregado"
-          time="20min"
-        />
-        <Model
-          title="4. Diferencial"
-          describe="Identificar o diferencial do seu negócio e o que ele pode oferecer ao mercado"
-          time="20min"
-        />
-      </div>
-      <button className="border-none outline-none mx-11 w-3 visible h-[406px] bg-red-500 relative">
-        <img src="/btnIndicator.svg" alt="Btn" className="absolute -left-[1.30rem] -top-4 bg-red-500 p-2 rounded-full" />
-      </button>
-      <div className="flex w-2/4 " style={{ flexDirection: rest.style?.flexDirection === "row" ? "row" : "row-reverse" }}>
-        <span>Meu Negócio - 0%</span>
-        <div />
-      </div>
-    </div>
-  )
-}
 
 export const Trilha = () => {
   const { perfil, setPerfil } = useContext(Context);
   const { atividades, setAtividades, atualizarAtividade } = useContext(Context);
+  const [showModal, setShowModal] = useState(true);
+    
+  
+  function handleModal() {
+    setShowModal(!showModal)
+  };
   const test = () => {
     /* perfil.progresso += 25.0;
     perfil.trilhas.atividades.materia = 1;
@@ -80,12 +43,17 @@ export const Trilha = () => {
       }
     }
     atualizarAtividade(newAtividades);
+
+  
+
   }
 
 
   return (
+    <>
     <div className="overflow-hidden h-screen">
       <Header style={{ position: "relative" }} />
+      <button onClick={test}>TEEEEEEEEEST</button>
       <button onClick={test}>TEEEEEEEEEST</button>
       <div className="flex flex-col overflow-auto h-full snap-y snap-mandatory">
         <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always">Bem vindo, à Trilha Educacional</h1>
@@ -105,5 +73,19 @@ export const Trilha = () => {
         </div>
       </div>
     </div>
+
+
+
+<Modal _showModal={showModal} _close={handleModal}>
+<div className="py-10 px-5 flex flex-col items-center gap-10 text-white bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-[0_55px_90px_-8px_rgba(0,0,0,15.9)] rounded-[2rem]">
+  <h1 className="text-center text-[6rem] font-Sacramento">Entre  Linhas</h1>
+  <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
+  <img src="/Trofeu.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="h-[30rem]"/>
+   
+  <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]"><span>Continuar</span></div>
+</div>
+</Modal>
+</>
+
   );
 };
