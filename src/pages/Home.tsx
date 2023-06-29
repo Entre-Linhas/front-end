@@ -126,7 +126,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
             <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
             <Card typeStyle="secondary" title="Entendendo meu cliente" text="Quem são meus clientes, como captá-los?" icon={UserCircleGear} />
             <div className="self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
-            <Card typeStyle="secondary" title="Aprendendo a gerênciar" text="Como me organizar para que meu negócio possa crescer?" icon={Briefcase} />
+            <Card typeStyle="secondary" title="Aprendendo a gerenciar" text="Como me organizar para que meu negócio possa crescer?" icon={Briefcase} />
             <div className=" self-center border-dashed border-t-[2px] border-custom-salmon w-[9rem] min-w-[9rem]"></div>
             <Card typeStyle="secondary" title="Marketing e inovação" text="Indo além! Alcançando novos clientes e novas perspectivas." icon={Star} />
           </div>

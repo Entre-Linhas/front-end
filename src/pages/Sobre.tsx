@@ -3,7 +3,7 @@ import { Footer } from "../components/Footer"
 import Material from "../components/Material";
 import { Button } from "../components/Button"
 import Dica from "../components/Dica"
-
+import { About } from "../components/About";
 
 
 
@@ -39,12 +39,29 @@ export default function Sobre() {
                         <h3 className="text-[2.4rem] font-semibold">Nossos valores</h3>
                         <p className="text-[2rem]">Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem contínua.</p>
                     </div>
-                </div>
-
-            </div>
 
 
+                        {/* essa aqui */}
 
+
+                    <div className="py-20">
+                        <h1 className="text-[3.2rem] min-[1800px]:text-[4.8rem] font-bold">Nossa equipe</h1>
+                        <p className="text-[2rem]">A nossa equipe do Entre Linhas é composta por pessoas verdadeiramente incríveis, que são a essência do nosso projeto. São indivíduos talentosos e apaixonados, que trabalham arduamente para oferecer um conteúdo de qualidade e tornar o Entre Linhas o que ele é hoje.</p>
+                    </div>
+
+
+                    <About  nome="Matheus Passos" GitHub="https://github.com/DevPassosMatheus" Linkedin="https://www.linkedin.com/in/passosmatheus/" desc="teste" />
+                    <About  StyleAbout="secondary"  GitHub="https://github.com/gabrielaasouza" Linkedin="https://www.linkedin.com/in/gabrielaasouza/"  nome="Gabriela Souza" desc="teste" />
+                    <About  nome="Kevyn Aciole"  GitHub="https://github.com/KevynAciole" Linkedin="https://www.linkedin.com/in/kevyn-aciole-15a446254/" desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem contínua porque eu adoro comer batata e chorar no choveiro às terças feiras."/>
+                    <About  StyleAbout="secondary"  GitHub="https://github.com/Skinzin" Linkedin="https://www.linkedin.com/in/vinicius-scosta/" nome="Vinicius Costa" desc="teste"/>
+                    <About  nome="Thailany Pereira"  GitHub="https://github.com/ThailanyP" Linkedin="https://www.linkedin.com/in/thailany-pereira-neves-santos/" desc="teste"/>
+                    <About  StyleAbout="secondary"  GitHub="https://github.com/RaffaGR" Linkedin="https://www.linkedin.com/in/raffavf/" nome="Rafael Viana" desc="teste"/>
+                    <About  nome="Matheus Assis"  GitHub="https://github.com/M4THEUSDev" Linkedin="https://www.linkedin.com/in/matheusassisdev/" desc="teste"/>
+                    
+                
+                </div> 
+
+                </div> 
             <Footer />
         </>
     )

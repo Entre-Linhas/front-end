@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import api from '../apiInstance';
+import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 interface ContextProps {
   auth: boolean;
@@ -13,6 +15,8 @@ interface ContextProps {
   atualizarAtividade: Function
   definirFotoPerfil: (imageName: string) => void
   definirDescricao: (descricaoProps: string) => void
+  /* handleSubmit2: (formDat: any) => void
+  hS3: (formDat: any) => void */
 }
 export const Context = createContext<ContextProps>({ /* auth: false, perfil: null , atividades: null */ } as any);
 
@@ -131,9 +135,48 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       setAtividades(newAtividade)
     }
 
+    // ADICIONADO, PODE SE TORNAR UM ERRO CAUSA DO ERRO
+    
+
+    /* function handleSubmit2(formData2: any) {
+      api
+          .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData2)
+          .then((response) => {
+              console.log(response);
+              
+              if (response) {
+                <Router>
+                  const navigate = useNavigate();
+                  navigate("/Nivelamento");
+                </Router>
+              } else {
+                  alert("teste");
+              }
+
+          })
+          .catch((error) => {
+              alert("Email já utilizado");
+              console.error(error);
+
+          });
+  };
+
+  function hS3(formData2: any) {
+    const navigate = useNavigate();
+  
     return (
-      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao }}>
-        {/* {JSON.stringify(atividades.progresso || {})} */}
+      <Router>
+        <div>
+          <button onClick={() => handleSubmit2(formData2)}></button>
+        </div>
+      </Router>
+    );
+  } */
+  // ATÈ AQUI  
+
+    return (
+      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao/* , handleSubmit2, hS3 */ }}>
+        {JSON.stringify(atividades.progresso || {})}
         {children}
       </Context.Provider>
     );
