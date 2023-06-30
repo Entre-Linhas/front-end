@@ -193,7 +193,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest/* , handleSubmit2, hS3 */ }}>
-        {JSON.stringify(atividades.progresso || {})}
+        {/* {JSON.stringify(atividades.progresso || {})} */}
         {children}
       </Context.Provider>
     );

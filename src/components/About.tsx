@@ -16,31 +16,29 @@ export const About = ({StyleAbout = "primary", img, nome, desc, Linkedin, GitHub
 
 return ( 
    
-    <div className={`flex items-center gap-[4rem] m-auto ${StyleAbout === "primary" ? "max-lg:flex-col max-lg:px-3" : "max-lg:flex-col-reverse max-lg:px-3"}`}>
+    <div className={`flex items-center maxgap-[4rem] m-auto ${StyleAbout === "primary" ? "max-lg:flex-col max-lg:px-3" : "max-lg:flex-col-reverse max-lg:px-3"}`}>
       
         {/* if else */}
         {StyleAbout === "primary" ? 
         
         (
         <> 
-            <div className="h-[30rem] w-[30rem] bg-black rounded-full">
-            
+            <div className="">
+                 <img src={img} className="max-w-[30rem] w-full rounded-full"/>
              </div>
 
-            <div>
-            <h1 className="text-[2.4rem] font-semibold">{nome}</h1>
+            <div className="px-10">
+            <h1 className="max-lg:py-10 text-[2.4rem] font-semibold max-lg:text-center">{nome}</h1>
+                <p className="text-[2rem] max-w-[70rem] py-5">{desc}</p>
                 <div className="flex gap-5 py-10">
                    <a href={Linkedin} target="_blank"> 
-                    <LinkedinLogo size={32} weight="fill" className="text-[#0A66C2]"/>
+                    <img src="/Linkedin.png" className="h-[3.2rem]"/>
                    </a>
                    <a  href={GitHub} target="_blank"> 
-                     <GithubLogo size={32} weight="fill" className="dark:text-white"/>
+                   <img src="/GitHub.png" className="h-[3.2rem]"/>
                    </a>
-                   <a target="_blank"> 
-                    <FileArrowDown size={32} weight="fill" className="text-[#62B8AF]" />
-                   </a>
+                 
                 </div> 
-                <p className="text-[2rem] max-w-[70rem]">{desc}</p>
             </div>
         </>
         ) 
@@ -48,23 +46,21 @@ return (
         (
         <>
             <div>
-            <h1 className="text-[2.4rem] font-semibold">{nome}</h1>
-                <div className="flex gap-5 py-10">
-                   <a href={Linkedin} target="_blank"> 
-                    <LinkedinLogo size={32} weight="fill" className="text-[#0A66C2]"/>
+            <h1 className="max-lg:py-10 text-[2.4rem] font-semibold max-lg:text-center">{nome}</h1>
+            
+                <p className="py-5 text-[2rem] max-w-[70rem]">{desc}</p>
+                <div className="flex gap-5 py-10 max-lg:m-auto">
+                <a href={Linkedin} target="_blank"> 
+                    <img src="/Linkedin.png" className="h-[3.2rem]"/>
                    </a>
                    <a  href={GitHub} target="_blank"> 
-                     <GithubLogo size={32} weight="fill" className="dark:text-white"/>
-                   </a>
-                   <a target="_blank"> 
-                    <FileArrowDown size={32} weight="fill" className="text-" />
+                   <img src="/GitHub.png" className="h-[3.2rem]"/>
                    </a>
                 </div> 
-                <p className="text-[2rem] max-w-[70rem]">{desc}</p>
             </div>
             
-            <div className="h-[30rem] w-[30rem] bg-black rounded-full">
-            
+            <div>
+            <img src={img} className="max-w-[30rem] w-full rounded-full"/>
             </div>
         </>
         )

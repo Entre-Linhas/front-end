@@ -50,13 +50,58 @@ export default function Sobre() {
                     </div>
 
 
-                    <About  nome="Matheus Passos" GitHub="https://github.com/DevPassosMatheus" Linkedin="https://www.linkedin.com/in/passosmatheus/" desc="teste" />
-                    <About  StyleAbout="secondary"  GitHub="https://github.com/gabrielaasouza" Linkedin="https://www.linkedin.com/in/gabrielaasouza/"  nome="Gabriela Souza" desc="teste" />
-                    <About  nome="Kevyn Aciole"  GitHub="https://github.com/KevynAciole" Linkedin="https://www.linkedin.com/in/kevyn-aciole-15a446254/" desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem contínua porque eu adoro comer batata e chorar no choveiro às terças feiras."/>
-                    <About  StyleAbout="secondary"  GitHub="https://github.com/Skinzin" Linkedin="https://www.linkedin.com/in/vinicius-scosta/" nome="Vinicius Costa" desc="teste"/>
-                    <About  nome="Thailany Pereira"  GitHub="https://github.com/ThailanyP" Linkedin="https://www.linkedin.com/in/thailany-pereira-neves-santos/" desc="teste"/>
-                    <About  StyleAbout="secondary"  GitHub="https://github.com/RaffaGR" Linkedin="https://www.linkedin.com/in/raffavf/" nome="Rafael Viana" desc="teste"/>
-                    <About  nome="Matheus Assis"  GitHub="https://github.com/M4THEUSDev" Linkedin="https://www.linkedin.com/in/matheusassisdev/" desc="teste"/>
+                    <About  
+                        nome="Matheus Passos" 
+                        GitHub="https://github.com/DevPassosMatheus" 
+                        Linkedin="https://www.linkedin.com/in/passosmatheus/" 
+                        desc="Sou um jovem cheio de energia e extremamente dedicado, dou o sangue sempre, em tudo que faço. Tenho uma fome imensurável de crescimento e sou apaixonado por tecnologia." 
+                        img="/Matheus.png"
+                    />
+                    <About 
+                         StyleAbout="secondary"  
+                         GitHub="https://github.com/gabrielaasouza" 
+                         Linkedin="https://www.linkedin.com/in/gabrielaasouza/"  
+                         nome="Gabriela Souza" 
+                         desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                         img="/Gabi.png"
+                     />
+                    <About 
+                     nome="Kevyn Aciole" 
+                      GitHub="https://github.com/KevynAciole" 
+                      Linkedin="https://www.linkedin.com/in/kevyn-aciole-15a446254/" 
+                      desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                      img="/Kevyn.png"
+                    />
+                    <About  
+                     StyleAbout="secondary" 
+                     GitHub="https://github.com/Skinzin" 
+                     Linkedin="https://www.linkedin.com/in/vinicius-scosta/" 
+                     nome="Vinicius Costa" 
+                     desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                     img="/Vini.png"
+                     />
+                    <About  
+                    nome="Thailany Pereira"  
+                    GitHub="https://github.com/ThailanyP" 
+                    Linkedin="https://www.linkedin.com/in/thailany-pereira-neves-santos/" 
+                    desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                    img="/Thai.png"
+                    />
+                    <About  
+                    StyleAbout="secondary"  
+                    GitHub="https://github.com/RaffaGR" 
+                    Linkedin="https://www.linkedin.com/in/raffavf/" 
+                    nome="Rafael Viana" 
+                    desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                    img="/Rafa.png"
+                    />
+                    <About  
+                    nome="Matheus Assis"  
+                    GitHub="https://github.com/M4THEUSDev" 
+                    Linkedin="https://www.linkedin.com/in/matheusassisdev/"
+                    desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                    img="/Assis.png"
+                    />
                     
                 
                 </div> 

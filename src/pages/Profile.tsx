@@ -5,6 +5,7 @@ import { Context } from "../contexts/Context";
 import { useContext } from "react";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
+import { Pencil, GearSix } from "@phosphor-icons/react";
 
 export default function Profile() {
   const [displayFotos, setDisplayFotos] = useState(true);
@@ -35,9 +36,13 @@ export default function Profile() {
 
       <div className="max-[1024px]:text-[1.8rem] text-[2rem] px-12 py-40 flex max-md:flex-col max-md:px-5 min-[1024px]:gap-12 ">
 
-        <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:max-w-sm min-[1024px]:min-[1024px]:shadow-xl px-5">
-          <div className="h-96 max-w-[25rem] w-full m-auto">
+        <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:max-w-[31rem] min-[1024px]:min-[1024px]:shadow-xl px-5">
+          <div className="h-96 max-w-[25rem] w-full m-auto flex flex-col">
             <img src={perfil.foto} className="max-w-[100%] h-full rounded-full" />
+            <div className="self-end text-custom-salmon"> 
+            {/* <Pencil size={32} weight="fill"/> */}
+            <GearSix size={32} weight="fill" />
+            </div>
           </div>
 
           <div>

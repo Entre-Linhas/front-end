@@ -16,7 +16,7 @@ export const Model = ({ title, describe, time, _completed = false, path }: Model
     <div onClick={() => {navigate("/Conteudo")}}>
 
       <div className="flex gap-[4rem]">
-        <div className="flex items-center gap-[0.5rem] w-full">
+        <div className="flex items-center gap-[0.5rem] w-full" onClick={() => {}}>
          <p className={`font-bold ${!_completed && "opacity-50"}`}>{title}</p>
           {_completed && <div className="bg-green-500 rounded-full p-1">
             <Check  weight="bold"/>

@@ -50,7 +50,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
               <Linking to="/Eventos" title='Eventos' />
             </li>
             <li className="relative">
-              <Linking to="/sobres" title='Sobre' />
+              <Linking to="/sobre" title='Sobre' />
             </li>
           </div>
            ) 
