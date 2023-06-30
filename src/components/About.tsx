@@ -16,7 +16,7 @@ export const About = ({StyleAbout = "primary", img, nome, desc, Linkedin, GitHub
 
 return ( 
    
-    <div className="flex items-center gap-[4rem] m-auto">
+    <div className={`flex items-center gap-[4rem] m-auto ${StyleAbout === "primary" ? "max-lg:flex-col max-lg:px-3" : "max-lg:flex-col-reverse max-lg:px-3"}`}>
       
         {/* if else */}
         {StyleAbout === "primary" ? 

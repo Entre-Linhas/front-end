@@ -76,13 +76,13 @@ export const Trilha = () => {
 
 
 
-<Modal _showModal={showModal} _close={handleModal}>
-<div className="py-10 px-5 flex flex-col items-center gap-10 text-white bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-[0_55px_90px_-8px_rgba(0,0,0,15.9)] rounded-[2rem]">
+<Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
+<div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
   <h1 className="text-center text-[6rem] font-Sacramento">Entre  Linhas</h1>
   <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
-  <img src="/Trofeu.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="h-[30rem]"/>
+  <img src="/Trofeu.svg" alt="Ilustração de uma troféu" style={{ width: "-webkit-fill-available" }} className="max-h-[30rem]"/>
    
-  <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]"><span>Continuar</span></div>
+  <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal}><span>Continuar</span></div>
 </div>
 </Modal>
 </>

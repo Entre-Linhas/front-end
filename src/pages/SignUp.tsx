@@ -1,16 +1,15 @@
 import { CaretLeft, Envelope, IdentificationCard, Key, MapPin, SignIn, Tag, UserCircle } from "@phosphor-icons/react";
-import React, { Component, useContext, useEffect, useState } from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
+import React, { Component, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Linking } from "../components/Linking";
 import { Logo } from "../components/Logo";
 import { Modal } from "../components/Modal";
 import api from "../apiInstance";
-import { Context } from "../contexts/Context";
 
  
- 
+
 export class Sign extends Component {
     state = {
         formData: {
@@ -51,11 +50,29 @@ export class Sign extends Component {
         console.log(input, value);
     };
 
+    
+
     handleSubmit = () => {
         const { formData } = this.state;
-        // const { handleSubmit2 } = useContext(Context);
-        // handleSubmit2(formData);
-    }
+        
+        api
+            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData)
+            .then((response) => {
+                console.log(response);
+                
+                // if (response.status) {
+                 
+                // } else {
+                //     alert("teste")
+                // }
+
+            })
+            .catch((error) => {
+                alert("Email ja utilizado")
+                console.error(error);
+
+            });
+    };
 
     render(): React.ReactNode {
         const { formData } = this.state;

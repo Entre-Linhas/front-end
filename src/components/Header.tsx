@@ -41,13 +41,16 @@ export const Header = ({ ...rest }: HeaderProps) => {
               <Linking to="/Trilha" title='Trilha' />
             </li>
             <li className="relative">
-              <Linking to="/Ferramentas" title='Ferramentas' />
+              <Linking to="/Gerenciamento" title='Ferramentas' />
             </li>
             <li className="relative">
               <Linking to="/Comunidade" title='Comunidade' />
             </li>
             <li className="relative">
               <Linking to="/Eventos" title='Eventos' />
+            </li>
+            <li className="relative">
+              <Linking to="/sobres" title='Sobre' />
             </li>
           </div>
            ) 
@@ -92,8 +95,11 @@ export const Header = ({ ...rest }: HeaderProps) => {
           </button>
           <div className={`${display}`}>
               <ul className="shadow-xl text-custom-salmon absolute right-0 z-10 mt-4 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+                <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
+                    <Linking to="/Profile" title="Meu perfil" />
+                </li>
                  <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
-                    <Linking to="/Profile" title="Configurações" />
+                    <Linking to="/Configurar" title="Configurações" />
                 </li>
                 <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
                     <Linking to="/" title="Sair" />

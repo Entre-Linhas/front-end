@@ -65,7 +65,7 @@ export const Gerenciamento = () => {
         </div> */}
 
 
-        <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto px-[3rem]">
+        <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto max-lg:px-[1rem]  px-[3rem]">
           <h1 className="font-bold">Gerenciamento de Pedidos</h1>
           <p>Aqui você encontra os pedidos pendentes, em andamento e concluídos.</p>
 
@@ -106,12 +106,12 @@ export const Gerenciamento = () => {
 
         <div className="space-y-4">
           <div className="py-5">
-            <label htmlFor="nomePedido" className="block text-gray-700 font-bold">
-              Nome do pedido
+            <label htmlFor="titulo" className="block text-gray-700 font-bold">
+              Título
             </label>
             <input
               type="text"
-              id="nomePedido"
+              id="titulo"
               className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>

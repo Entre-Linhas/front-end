@@ -11,14 +11,14 @@ import { useContext } from "react";
 
 export const Conteudo = () => {
     const { atividades } = useContext(Context);
-    if (atividades?.progresso <= 5 || atividades?.progresso >= 8 && atividades?.progresso <= 10 || atividades?.progresso >= 13 && atividades?.progresso <= 15 || atividades?.progresso >= 18 && atividades?.progresso <= 20) {
+    if (atividades?.progresso <= 9 || atividades?.progresso >= 12 && atividades?.progresso <= 20 || atividades?.progresso >= 23 && atividades?.progresso <= 31 || atividades?.progresso >= 34 && atividades?.progresso <= 42) {
     return (
         <>
             <Header /> 
         <Material title="title" />
         </>
     )
-    } else if (atividades?.progresso > 5 && atividades?.progresso < 8 || atividades?.progresso > 10 && atividades?.progresso < 13 || atividades?.progresso > 15 && atividades?.progresso < 18|| atividades?.progresso > 20 && atividades?.progresso <= 22) 
+    } else if (atividades?.progresso > 9 && atividades?.progresso < 12 || atividades?.progresso > 20 && atividades?.progresso < 23 || atividades?.progresso > 31 && atividades?.progresso < 34|| atividades?.progresso > 42 && atividades?.progresso <= 45) 
     return (
         <>
             <Header /> 

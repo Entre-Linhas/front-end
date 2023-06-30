@@ -15,10 +15,11 @@ interface ContextProps {
   atualizarAtividade: Function
   definirFotoPerfil: (imageName: string) => void
   definirDescricao: (descricaoProps: string) => void
+  avançarQuest: Function
   /* handleSubmit2: (formDat: any) => void
   hS3: (formDat: any) => void */
 }
-export const Context = createContext<ContextProps>({ /* auth: false, perfil: null , atividades: null */ } as any);
+export const Context = createContext<ContextProps>({ /* auth: false, atividades: null */ } as any);
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState(false);
@@ -130,9 +131,25 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     function decrementarProgressoAtividade() {
       const newAtividade = {
         ...atividades,
-        progresso: atividades.progresso - 1
+        progresso: atividades.progresso - 1,
+        materia: {
+          idMateria: atividades.progresso - 1
+        }
       }
-      setAtividades(newAtividade)
+      console.log(atividades.materia) // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
+      atualizarAtividade(newAtividade)
+    }
+
+    function avançarQuest() {
+      const newAtividade = {
+        ...atividades,
+        progresso: atividades.progresso + 1,
+        pratica: {
+          idPratica: atividades.pratica.idPratica + 1
+        }
+      }
+      console.log(atividades.materia) // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
+      atualizarAtividade(newAtividade)
     }
 
     // ADICIONADO, PODE SE TORNAR UM ERRO CAUSA DO ERRO
@@ -175,7 +192,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   // ATÈ AQUI  
 
     return (
-      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao/* , handleSubmit2, hS3 */ }}>
+      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest/* , handleSubmit2, hS3 */ }}>
         {JSON.stringify(atividades.progresso || {})}
         {children}
       </Context.Provider>
