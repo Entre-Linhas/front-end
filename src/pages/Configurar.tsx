@@ -32,7 +32,7 @@ return (
     <div className="m-auto flex max-md:flex-col justify-center py-[10rem] gap-[6rem]   lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
         
           <div className="h-96 max-w-[25rem] w-full flex flex-col items-center gap-10 max-md:m-auto">
-             <img src={perfil.foto} className="max-w-[100%] h-full rounded-full cursor-pointer" onClick={handleModal}/>
+             <img src={perfil.foto} className="max-w-[100%] h-full rounded-full cursor-pointer" onClick={handleModal}  alt="Foto de perfil" role="button"/>
              <span className="font-semibold text-[2.4rem]">{`Seu perfil, ${perfil.usuario.nome}`}</span>  
          </div>
 
@@ -42,7 +42,7 @@ return (
             {/* inputs e outras coisas. */}
             
             <div>
-                <h2 className="font-semibold text-[2rem]">Perfil público</h2>
+                <h2 className="font-semibold text-[2rem] ">Perfil público</h2>
                 <hr/>
             </div>
             <div className="max-w-[90rem]"> 
@@ -104,12 +104,12 @@ return (
          <div className="flex gap-10">
          <button className="flex items-center gap-2 bg-white px-8 py-3 rounded-xl shadow-md">
                 <Sun size={24} className="text-[#FFB125]"/>
-               <span>Modo claro</span>
+               <span className="dark:text-gray-600">Modo claro</span>
             </button>
 
             <button className="flex items-center gap-2 bg-white px-8 py-3 rounded-xl shadow-md">
                 <Moon size={24} className="text-gray-500"/>
-               <span>Modo escuro</span>
+               <span className="dark:text-gray-600">Modo escuro</span>
             </button>
          </div>
 

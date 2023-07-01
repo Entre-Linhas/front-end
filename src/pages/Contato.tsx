@@ -32,7 +32,7 @@ export default function Contato() {
                     </div>
                 </div>
 
-                <img src="/Contato.svg" className="max-[1340px]:max-w-[50rem] max-[1170px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " />
+                <img src="/Contato.svg" className="max-[1340px]:max-w-[50rem] max-[1170px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Imagem de contato" role="img" />
 
             </div>
             <Footer />
