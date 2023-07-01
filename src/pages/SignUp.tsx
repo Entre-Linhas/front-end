@@ -1,13 +1,12 @@
 import { CaretLeft, Envelope, IdentificationCard, Key, MapPin, SignIn, Tag, UserCircle } from "@phosphor-icons/react";
-import React, { Component, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 import { Linking } from "../components/Linking";
 import { Logo } from "../components/Logo";
-import { Modal } from "../components/Modal";
 import api from "../apiInstance";
-import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
+import { Swiper, SwiperSlide, } from "swiper/react";
 import { Swiper as classSwiper } from 'swiper';
 
 import 'swiper/css';
@@ -98,8 +97,7 @@ export default function SignUp() {
                 sobrenome,
                 endereco,
                 cpf,
-                terms,
-                step: 0
+                terms
             })
             .then((response) => {
                 console.log(response);
@@ -182,7 +180,7 @@ export default function SignUp() {
                 </div>
             </div>
             <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
-                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" role="imagem" aria-roledescription="Variações de imagem de costureiras(os)" />
+                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" aria-roledescription="Variações de imagem de costureiras(os)" />
             </div>
         </div>
         </>
