@@ -7,136 +7,26 @@ import { Linking } from "../components/Linking";
 import { Logo } from "../components/Logo";
 import { Modal } from "../components/Modal";
 import api from "../apiInstance";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import classSwiper, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
+import { Swiper, SwiperSlide, useSwiper, SwiperRef } from "swiper/react";
+import { Swiper as classSwiper } from 'swiper';
+
 import 'swiper/css';
-import 'swiper/css/effect-fade';
 
  
 
-export class Sign extends Component {
-    state = {
-        formData: {
-            nome: "",
-            sobrenome: "",
-            email: "",
-            senha: "",
-            endereco: "",
-            cpf: "",
-            step: 1,
-            terms: false
-        }
-    }
-
-    nextStep = () => {
-        const { formData } = this.state;
-        this.setState({
-            formData: {
-                ...formData,
-                step: formData.step + 1
-            }
-        })
-    }
-
-    handleChange = (input: keyof typeof Sign.prototype.state['formData']) => (
-        e: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        const { formData } = this.state;
-        const value = input === "terms" ? e.currentTarget.checked : e.target.value;
-
-        this.setState({
-            formData: {
-                ...formData,
-                [input]: value
-            }
-        });
-
-        console.log(input, value);
-    };
-
-    
-
-    handleSubmit = () => {
-        const { formData } = this.state;
-        
-        api
-            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData)
-            .then((response) => {
-                console.log(response);
-                
-                // if (response.status) {
-                 
-                // } else {
-                //     alert("teste")
-                // }
-
-            })
-            .catch((error) => {
-                alert("Email ja utilizado")
-                console.error(error);
-
-            });
-    };
-
-    render(): React.ReactNode {
-        const { formData } = this.state;
-
-        switch (formData.step) {
-            case 1:
-                return (
-                    <>
-                        <h1 className="text-zinc-400">Passo 1 de 3</h1>
-                        <span className="text-center dark:text-gray-100">Olá! Seja bem-vindo/a.<br />Vamos começar a se cadastrar.</span>
-
-                        <Input type="email" placeholder="Email" onChange={this.handleChange("email")} value={formData.email} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                        <Input type="password" placeholder="Senha" onChange={this.handleChange("senha")} value={formData.senha} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
-
-                        <div className="flex items-center gap-2">
-                            <input type="checkbox" onChange={this.handleChange("terms")} />
-                            <label htmlFor="" className="dark:text-gray-100">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" style={{ color: "#FF6464" }} /></label>
-                        </div>
-                        <Button disabled={formData.email?.length === 0 || formData.senha?.length === 0 || !formData.terms} title="Continuar" icon={SignIn} onClick={this.nextStep} />
-                    </>
-                );
-            case 2:
-                return (
-                    <>
-                        <h1 className="text-zinc-400">Passo 2 de 3</h1>
-                        <span className="dark:text-gray-100">Falta pouco para completarmos =)</span>
-                        <Input type="text" placeholder="Nome" onChange={this.handleChange("nome")} value={formData.nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                        <Input type="text" placeholder="Sobrenome" onChange={this.handleChange("sobrenome")} value={formData.sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                        <Input type="text" placeholder="CPF" onChange={this.handleChange("cpf")} value={formData.cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
-
-                        <Button disabled={formData.nome.length === 0 || formData.nome.length === 0 || formData.cpf.length < 11} title="Continuar" icon={SignIn} onClick={this.nextStep} />
-                    </>
-                );
-            case 3:
-                return (
-                    <>
-                        <h1 className="text-zinc-400">Passo 3 de 3</h1>
-                        <span className="dark:text-gray-100">SignUp - 3/3</span>
-                        <Input type="text" placeholder="Endereço" onChange={this.handleChange("endereco")} value={formData.endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
-
-                        <Button disabled={formData.endereco.length === 0} title="Finalizar" icon={SignIn} onClick={this.handleSubmit} />
-                    </>
-                )
-            default:
-                break;
-        }
-    }
-}
-
 export default function SignUp() {
-    const [steps, setSteps] = useState<number>(0);
-    const [email, setEmail] = useState<string>();
-    const [password, setPassword] = useState<string>();
+    const [email, setEmail] = useState<string>("");
+    const [senha, setSenha] = useState<string>("");
+    const [nome, setNome] = useState<string>("");
+    const [sobrenome, setSobrenome] = useState<string>("");
+    const [endereco, setEndereco] = useState<string>("");
+    const [cpf, setCpf] = useState<string>("");
     const [terms, setTerms] = useState<boolean>(false);
     const [typePassword, setTypePassword] = useState<"text" | "password">("password");
     const [currentValue, setCurrentValue] = useState<{ src: string, alt: string }>({ src: "/ContentIm5.jpg", alt: "img5" });
     const navigate = useNavigate();
-    const swiperRef = useRef<any>();
+    const swiperRef = useRef<classSwiper>();
+    // const swiper = useSwiper();
 
 
     useEffect(() => {
@@ -199,32 +89,41 @@ export default function SignUp() {
     //     }
     // }
 
+    function handleSubmit() {
+        api
+            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", {
+                email,
+                senha,
+                nome,
+                sobrenome,
+                endereco,
+                cpf,
+                terms,
+                step: 0
+            })
+            .then((response) => {
+                console.log(response);
+                
+                // if (response.status) {
+                    // navigate("/nivelamento")
+                // } else {
+                //     alert("teste")
+                // }
+
+            })
+            .catch((error) => {
+                alert("Email ja utilizado")
+                console.error(error);
+
+            });
+    }
+
+    const changeStep = () => {
+        swiperRef.current?.slideNext();
+    }
     return (
         <>
-            <Swiper
-                // install Swiper modules
-                navigation
-                spaceBetween={20}
-                slidesPerView={1}
-                onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                }} effect="fade"
-            >
-                <SwiperSlide className="w-full"  >
-                    <div>
-                        <span>Primeiro <input type="text" /></span>
-                    </div>
-                </SwiperSlide>
-                <button onClick={() => swiperRef.current.slideNext()}>
-                    Go to Next Slide
-                </button>
-            </Swiper>
-        </>
-    )
-}
-
-/* 
-        <div className="flex h-screen w-full text-[100% !important]">
+            <div className="flex h-screen w-full text-[100% !important]">
             <div className="h-screen bg-white flex flex-col p-6 max-[1023px]:w-full sm:w-full min-[1024px]:w-[64rem] min-[1440px]:w-[100rem] min-[1770px]:w-[130rem] dark:bg-zinc-900">
                 <header className="w-full">
                     <button
@@ -238,10 +137,54 @@ export default function SignUp() {
 
                 <div className="flex flex-col items-center my-auto gap-4">
                     <Logo />
-                    <Sign />
+                    <h1 className="text-zinc-400 text-2xl">Passo {(swiperRef.current?.activeIndex || 0) + 1} de {swiperRef.current?.slides.length || 0}</h1>
+                    <Swiper 
+                        spaceBetween={5}
+                        slidesPerView={1}
+                        // allowSlideClick={false}
+                        allowTouchMove={false}
+                        onSwiper={(swi) => swiperRef.current = swi}
+                    >
+                        <SwiperSlide>
+                            <span className="text-center text-2xl dark:text-gray-100">Olá! Seja bem-vindo/a.<br />Vamos começar a se cadastrar.</span>
+                            <div className="flex gap-2 mt-2 flex-col items-center">
+                                <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="password" placeholder="Senha" value={senha} onChange={(e) => setSenha(e.target.value)} leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />} />
+
+                                <div className="flex items-center gap-2">
+                                    <input type="checkbox" onChange={() => setTerms(!terms)} />
+                                    <label htmlFor="" className="dark:text-gray-100">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" className="hover:border-none" style={{ color: "#FF6464" }} /></label>
+                                </div>
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={email.length === 0 || senha.length === 0 || !terms || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)} title="Continuar" icon={SignIn} onClick={changeStep} />
+                            </div>
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <span className="dark:text-gray-100">Falta pouco para completarmos =)</span>
+                            <div className="flex gap-2 mt-2 flex-col items-center">
+                                <Input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value)} value={nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value)} value={sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="text" placeholder="CPF" onChange={(e) => setCpf(e.target.value)} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
+
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} title="Continuar" icon={SignIn} onClick={changeStep} />
+                            </div>
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <span className="dark:text-gray-100">Ultimo etapa</span>
+                            <div className="flex gap-2 mt-2 justify-center flex-col items-center">
+                                <Input type="text" placeholder="Endereço" onChange={(e) => setEndereco(e.target.value)} value={endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
+
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={endereco.length === 0} title="Finalizar" icon={SignIn} onClick={handleSubmit} />
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </div>
             <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
-                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" role="imagem" />
+                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" role="imagem" aria-roledescription="Variações de imagem de costureiras(os)" />
             </div>
-        </div> */
+        </div>
+        </>
+    )
+}

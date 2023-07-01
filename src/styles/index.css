@@ -42,3 +42,21 @@ video {
     background-color: #18181b;
 }
  
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+  
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    font-size: 16px;
+    text-align: center;
+}
+
+.swiper-wrapper {
+    height: auto !important;
+}

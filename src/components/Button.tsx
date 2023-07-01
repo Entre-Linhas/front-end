@@ -13,7 +13,7 @@ export function Button({ title, icon: Icon, typeStyle = "primary", ...rest }: Bu
     document.body.style.fontSize = "initial"
     return (
         <button
-            className={`flex flex-row items-center py-[1rem] px-[1.4rem] gap-1 rounded-lg w-fit ${typeStyle === "primary" ? "bg-custom-salmon disabled:bg-custom-salmon-300 disabled:cursor-not-allowed px-5" : "border-solid border-2 px-[1.4rem] border-custom-salmon"}`}
+            className={`flex flex-row items-center justify-center py-[1rem] px-[1.4rem] gap-1 rounded-lg w-fit ${typeStyle === "primary" ? "bg-custom-salmon disabled:bg-custom-salmon-300 disabled:cursor-not-allowed px-5" : "border-solid border-2 px-[1.4rem] border-custom-salmon"}`}
             {...rest}
         >
             {Icon && <Icon color={typeStyle === "primary" ? "white" : "#FF6464"} size={22} />}
