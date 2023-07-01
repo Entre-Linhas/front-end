@@ -12,9 +12,9 @@ export default function SignIn() {
   const [senha, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
   var [currentValue, setCurrentValue] = useState<string>("/ContentIm5.jpg");
-  const [error, setError] = useState(false);
+  const [ error, setError] = useState(false);
   const { auth, setAuth } = useContext(Context);
-  const {perfil, setPerfil, setAtividades} = useContext(Context);
+  const {perfil, setPerfil, setAtividades, atulizarPerfil} = useContext(Context);
   const formData = {
     email,
     senha
@@ -29,14 +29,20 @@ export default function SignIn() {
         if (response.data) {
           setAuth && setAuth(true);
           setPerfil?.(response.data)
+          atulizarPerfil();
           setAtividades && setAtividades(response.data.trilhas.atividades)
-          navigate("/Nivelamento");
+          if (response.data.trilhas.atividades && !perfil?.progresso === null)
+            navigate("/Trilha");
+          else {
+            navigate("/Nivelamento");
+          }
         } else {
           console.log("vazio");
         }
       })
       .catch((error) => {
         setError(true);
+        console.log(error)
       });
   };
 

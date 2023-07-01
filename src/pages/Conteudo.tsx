@@ -6,7 +6,7 @@ import { Context } from "../contexts/Context";
 
 
 export const Conteudo = () => {
-    const { atividades } = useContext(Context);
+    const { atividades, perfil } = useContext(Context);
 
     const progresso = atividades?.progresso;
     const [exerciciosP1T1, setExerciciosP1T1] = useState(false);
@@ -24,54 +24,55 @@ export const Conteudo = () => {
     const [exerciciosP4T1, setExerciciosP4T1] = useState(false);
     const [exerciciosP4T2, setExerciciosP4T2] = useState(false);
     const [exerciciosP4T3, setExerciciosP4T3] = useState(false);
+    
 
     useEffect(() => {
-        if (atividades?.pratica?.idPratica === 3) {
+        if (atividades?.pratica?.idPratica === 3 || perfil.progresso >= 2) {
           setExerciciosP1T1(true);
         }
-        if (atividades?.pratica?.idPratica === 5) {
+        if (atividades?.pratica?.idPratica === 5 || perfil.progresso >= 4) {
           setExerciciosP1T2(true);
         }
-        if (atividades?.pratica?.idPratica === 7) {
+        if (atividades?.pratica?.idPratica === 7 || perfil.progresso >= 6) {
           setExerciciosP1T3(true);
         }
-        if (atividades?.pratica?.idPratica === 9) {
+        if (atividades?.pratica?.idPratica === 9 || perfil.progresso >= 8) {
           setExerciciosP1T4(true);
         }
-        if (atividades?.pratica?.idPratica === 11) {
+        if (atividades?.pratica?.idPratica === 11 || perfil.progresso >= 10) {
           setExerciciosP2T1(true);
         }
-        if (atividades?.pratica?.idPratica === 13) {
+        if (atividades?.pratica?.idPratica === 13 || perfil.progresso >= 12) {
           setExerciciosP2T2(true);
         }
-        if (atividades?.pratica?.idPratica === 15) {
+        if (atividades?.pratica?.idPratica === 15 || perfil.progresso >= 14) {
           setExerciciosP2T3(true);
         }
-        if (atividades?.pratica?.idPratica === 17) {
+        if (atividades?.pratica?.idPratica === 17 || perfil.progresso >= 16) {
           setExerciciosP2T4(true);
         }
-        if (atividades?.pratica?.idPratica === 19) {
+        if (atividades?.pratica?.idPratica === 19 || perfil.progresso >= 18) {
           setExerciciosP3T1(true);
         }
-        if (atividades?.pratica?.idPratica === 21) {
+        if (atividades?.pratica?.idPratica === 21 || perfil.progresso >= 20) {
           setExerciciosP3T2(true);
         }
-        if (atividades?.pratica?.idPratica === 23) {
+        if (atividades?.pratica?.idPratica === 23 || perfil.progresso >= 22) {
           setExerciciosP3T3(true);
         }
-        if (atividades?.pratica?.idPratica === 25) {
+        if (atividades?.pratica?.idPratica === 25 || perfil.progresso >= 24) {
           setExerciciosP3T4(true);
         }
-        if (atividades?.pratica?.idPratica === 27) {
+        if (atividades?.pratica?.idPratica === 27 || perfil.progresso >= 26) {
           setExerciciosP4T1(true);
         }
-        if (atividades?.pratica?.idPratica === 29) {
+        if (atividades?.pratica?.idPratica === 29 || perfil.progresso >= 28) {
           setExerciciosP4T2(true);
         }
-        if (atividades?.pratica?.idPratica === 31) {
+        if (atividades?.pratica?.idPratica === 31 || perfil.progresso >= 30) {
           setExerciciosP4T3(true);
         }
-      }, [atividades?.pratica?.idPratica]);
+      }, [atividades?.pratica?.idPratica, perfil.progresso]);
       
 
     if (progresso > 0) {

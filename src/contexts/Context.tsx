@@ -16,6 +16,7 @@ interface ContextProps {
   avançarQuest: Function
   nivelamento: any
   setNivelamento: Function
+  atulizarPerfil: Function
 }
 export const Context = createContext<ContextProps>({} as any);
 
@@ -46,7 +47,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     }
   }, [perfil]); */
 
-  useEffect(() => {
+  /* useEffect(() => {
     const idPerfil: any = perfil?.idPerfil;
     idPerfil && api
       .put("/perfis/" + idPerfil, perfil)
@@ -62,7 +63,25 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       .catch((error) => {
         console.error(error);
       });
-  }, [perfil]);
+  }, [perfil]); */
+
+  function atulizarPerfil() {
+    const idPerfil: any = perfil?.idPerfil;
+    idPerfil && api
+      .put("/perfis/" + idPerfil, perfil)
+      .then((response) => {
+        if (response.data) {
+          console.log('resposta put perfil', response.data);
+          atividades?.idAtividades &&
+            setAtividades(response.data.trilhas.atividades)
+        } else {
+          console.log("vazio");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
   /* useEffect(() => {
     const idAtividade: any = atividades?.idAtividades;
@@ -107,6 +126,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       foto: imageName
     };
     setPerfil(newPerfil)
+    atulizarPerfil()
   };
 
     function definirDescricao(servicoProps: string) {
@@ -115,6 +135,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         servico: servicoProps
       };
       setPerfil(newPerfil)
+      atulizarPerfil()
     };
 
     function incrementarProgressoAtividade() {
@@ -152,7 +173,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
-        setNivelamento }}>
+        setNivelamento, atulizarPerfil }}>
         {/* {JSON.stringify(atividades.progresso || {})} */}
         {children}
       </Context.Provider>

@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Context } from "../contexts/Context";
 import { useContext } from "react";
 export default function Pratica() {
-   const { atividades, avançarQuest } = useContext(Context);
+   const { atividades, avançarQuest, perfil, setPerfil, atulizarPerfil } = useContext(Context);
+
+   const navigate = useNavigate();
 
    function verificarResposta(respostaSelecionada: string) {
       let respostaCorreta: string;
@@ -10,9 +13,51 @@ export default function Pratica() {
 
   switch (questao) {
     case 1:
-      respostaCorreta = 'A'; // escolha a resposta correta
+      respostaCorreta = 'A';
       break;
     case 2:
+      respostaCorreta = 'B';
+      break;
+    case 3:
+      respostaCorreta = 'B';
+      break;
+    case 4:
+      respostaCorreta = 'A'; 
+      break;
+    case 5:
+      respostaCorreta = 'B';
+      break;
+    case 6:
+      respostaCorreta = 'B';
+      break;
+    case 7:
+      respostaCorreta = 'A'; 
+      break;
+    case 8:
+      respostaCorreta = 'B';
+      break;
+    case 9:
+      respostaCorreta = 'B';
+      break;
+    case 10:
+      respostaCorreta = 'A'; 
+      break;
+    case 11:
+      respostaCorreta = 'B';
+      break;
+    case 12:
+      respostaCorreta = 'B';
+      break;
+    case 13:
+      respostaCorreta = 'B';
+      break;
+    case 14:
+      respostaCorreta = 'A'; 
+      break;
+    case 15:
+      respostaCorreta = 'B';
+      break;
+    case 16:
       respostaCorreta = 'B';
       break;
     // Adicione os casos para outras questões
@@ -31,11 +76,35 @@ export default function Pratica() {
     
     function respostaCorretaSelecionada() {
       console.log('Resposta correta! Parabéns!');
+      const newPerfil = {
+        ...perfil,
+        progresso: perfil?.progresso + 0.5
+      }
+      setPerfil?.(newPerfil)
+      atulizarPerfil()
+      if ((perfil?.progresso === 1 && atividades?.pratica?.idPratica === 3)  ||  
+        (perfil?.progresso === 2 && atividades?.pratica?.idPratica === 5)    || 
+        (perfil?.progresso === 3  && atividades?.pratica?.idPratica === 7)   ||
+        (perfil?.progresso === 4  && atividades?.pratica?.idPratica === 9)   ||
+        (perfil?.progresso === 5   && atividades?.pratica?.idPratica === 11)  ||
+        (perfil?.progresso === 6   && atividades?.pratica?.idPratica === 13)  ||
+        (perfil?.progresso === 7   && atividades?.pratica?.idPratica === 15)  ||
+        (perfil?.progresso === 8   && atividades?.pratica?.idPratica === 17)  ||
+        (perfil?.progresso === 9   && atividades?.pratica?.idPratica === 19)  ||
+        (perfil?.progresso === 10  && atividades?.pratica?.idPratica === 21)  ||
+        (perfil?.progresso === 11   && atividades?.pratica?.idPratica === 23) ||
+        (perfil?.progresso === 12   && atividades?.pratica?.idPratica === 25) ||
+        (perfil?.progresso === 13   && atividades?.pratica?.idPratica === 27) ||
+        (perfil?.progresso === 14   && atividades?.pratica?.idPratica === 29) ||
+        (perfil?.progresso === 15   && atividades?.pratica?.idPratica === 31) ||
+        (perfil?.progresso === 16  && atividades?.pratica?.idPratica === 33)) {
+        navigate("/Trilha");
+      }
       avançarQuest();
     }
 
     function respostaIncorretaSelecionada() {
-      console.log('Incorreto! Parabéns!');
+      console.log('Incorreto! Tente novamente!');
     }
 
    return (

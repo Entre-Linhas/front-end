@@ -15,13 +15,11 @@ export default function Nivelamento() {
 
     function startUser() {
         setNivelamento?.(0)
-
         navigate("/Trilha")
     }
 
     function advancedUser() {
         setNivelamento?.(100)
-
         navigate("/Trilha")
     }
 
