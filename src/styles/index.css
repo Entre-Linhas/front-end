@@ -60,3 +60,10 @@ video {
 .swiper-wrapper {
     height: auto !important;
 }
+
+
+.swiper-pagination-bullet-active {
+    width: 14px !important;
+    border-radius: 8px !important;
+    background: #FF6464 !important;
+}
