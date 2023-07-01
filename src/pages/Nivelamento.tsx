@@ -13,6 +13,12 @@ export default function Nivelamento() {
 
     const navigate = useNavigate();
 
+    function startUser() {
+        setNivelamento?.(0)
+
+        navigate("/Trilha")
+    }
+
     function advancedUser() {
         setNivelamento?.(100)
 
@@ -39,7 +45,7 @@ export default function Nivelamento() {
                                     <p className="text-center dark:text-gray-900">Aqui você começa a trilha desde o início, vendo todos os tópicos</p>
                                 </div>
                                 
-                                    <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]" onClick={() => {navigate("/Trilha")}}>Iniciar Trilha</button>
+                                    <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]" onClick={startUser}>Iniciar Trilha</button>
                                 
                             </div>
                         </div>

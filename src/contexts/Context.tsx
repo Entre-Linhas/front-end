@@ -1,7 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import api from '../apiInstance';
-import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
 
 interface ContextProps {
   auth: boolean
@@ -145,52 +143,12 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     function avançarQuest() {
       const newAtividade = {
         ...atividades,
-        progresso: atividades.progresso + 1,
         pratica: {
           idPratica: atividades.pratica.idPratica + 1
         }
       }
       atualizarAtividade(newAtividade)
     }
-
-    // ADICIONADO, PODE SE TORNAR UM ERRO CAUSA DO ERRO
-    
-
-    /* function handleSubmit2(formData2: any) {
-      api
-          .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", formData2)
-          .then((response) => {
-              console.log(response);
-              
-              if (response) {
-                <Router>
-                  const navigate = useNavigate();
-                  navigate("/Nivelamento");
-                </Router>
-              } else {
-                  alert("teste");
-              }
-
-          })
-          .catch((error) => {
-              alert("Email já utilizado");
-              console.error(error);
-
-          });
-  };
-
-  function hS3(formData2: any) {
-    const navigate = useNavigate();
-  
-    return (
-      <Router>
-        <div>
-          <button onClick={() => handleSubmit2(formData2)}></button>
-        </div>
-      </Router>
-    );
-  } */
-  // ATÈ AQUI  
 
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,

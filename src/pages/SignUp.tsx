@@ -105,10 +105,10 @@ export default function SignUp() {
                 console.log(response);
                 
                 if (response.status) {
-                    // setAuth && setAuth(true);
+                    setAuth && setAuth(true);
                     // setPerfil?.(response.data)
                     // setAtividades && setAtividades(response.data.trilhas.atividades)
-                    // navigate("/Nivelamento");
+                    navigate("/Nivelamento");
                 } else {
                     alert("teste")
                 }

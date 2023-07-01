@@ -1,8 +1,7 @@
-import { Button } from "../components/Button"
 import { Context } from "../contexts/Context";
 import { useContext } from "react";
 export default function Pratica() {
-   const { atividades, incrementarProgressoAtividade, decrementarProgressoAtividade, avançarQuest } = useContext(Context);
+   const { atividades, avançarQuest } = useContext(Context);
 
    function verificarResposta(respostaSelecionada: string) {
       let respostaCorreta: string;
@@ -32,7 +31,6 @@ export default function Pratica() {
     
     function respostaCorretaSelecionada() {
       console.log('Resposta correta! Parabéns!');
-      incrementarProgressoAtividade()
       avançarQuest();
     }
 
