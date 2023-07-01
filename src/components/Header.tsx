@@ -22,7 +22,6 @@ export const Header = ({ ...rest }: HeaderProps) => {
   };
 
   return (
-
     <header className="fixed border-b-zinc-200 shadow border-b-[1px] px-4 py-[1rem] bg-white flex w-[100%] h-[auto] items-center justify-between dark:bg-zinc-800 dark:border-b-zinc-700" {...rest}>
       <div className="w-auto flex items-center gap-[1rem] py-[1rem]">
         <p className="leading-[30px] text-custom-salmon font-[Sacramento] min-[220px]:text-[2.2rem] min-[240px]:text-[2.5rem] min-[320px]:text-[3.2rem] min-[426px]:text-[3.6rem] min-[600px]:text-[3.8rem] ">Entre Linhas</p>
@@ -34,48 +33,48 @@ export const Header = ({ ...rest }: HeaderProps) => {
           {auth ? 
           (
             <div className='flex gap-6'>
-            <li className="relative">
-              <Linking to="/" title='Inicio' />
-            </li>
-            <li className="relative">
-              <Linking to="/Trilha" title='Trilha' />
-            </li>
-            <li className="relative">
-              <Linking to="/Gerenciamento" title='Ferramentas' />
-            </li>
-            <li className="relative">
-              <Linking to="/Comunidade" title='Comunidade' />
-            </li>
-            <li className="relative">
-              <Linking to="/Eventos" title='Eventos' />
-            </li>
-            <li className="relative">
-              <Linking to="/sobre" title='Sobre' />
-            </li>
-          </div>
-           ) 
+              <li className="relative">
+                <Linking to="/" title='Inicio' />
+              </li>
+              <li className="relative">
+                <Linking to="/Trilha" title='Trilha' />
+              </li>
+              <li className="relative">
+                <Linking to="/Gerenciamento" title='Ferramentas' />
+              </li>
+              <li className="relative">
+                <Linking to="/Comunidade" title='Comunidade' />
+              </li>
+              <li className="relative">
+                <Linking to="/Eventos" title='Eventos' />
+              </li>
+              <li className="relative">
+                <Linking to="/sobre" title='Sobre' />
+              </li>
+            </div>
+          ) 
            
            : // se tiver feio pode trocar, é só pra testar. 
            
            ( 
          
-          <div className='flex gap-6'> 
-          <li className="relative">
-            <Linking to="/" title='Inicio' />
-          </li>
-          <li className="relative">
-            <Linking to="/eventos" title="Eventos" />
-          </li>
-          <li className="relative">
-            <Linking to="/ajuda" title='Ajuda' />
-          </li>
-          <li className="relative">
-            <Linking to="/ferramentas" title='Ferramentas' />
-          </li>
-          <li className="relative">
-            <Linking to="/Sobre" title='Sobre' />
-          </li>
-        </div>
+            <div className='flex gap-6'> 
+              <li className="relative">
+                <Linking to="/" title='Inicio' />
+              </li>
+              <li className="relative">
+                <Linking to="/eventos" title="Eventos" />
+              </li>
+              <li className="relative">
+                <Linking to="/ajuda" title='Ajuda' />
+              </li>
+              <li className="relative">
+                <Linking to="/ferramentas" title='Ferramentas' />
+              </li>
+              <li className="relative">
+                <Linking to="/Sobre" title='Sobre' />
+              </li>
+            </div>
           )
           }
         </ul>
@@ -121,13 +120,13 @@ export const Header = ({ ...rest }: HeaderProps) => {
       </div>
 
 
-        <div className="lg:hidden">
-          <button onClick={Click}>
-            <div className="flex gap-5"> 
-            <span className="text-custom-salmon m-auto text-[2.2rem] max-[425px]:hidden">Menu</span>
-            <List size={32} className="text-custom-salmon m-auto" />
-            </div>
-          </button>
+      <div className="lg:hidden">
+        <button onClick={Click}>
+          <div className="flex gap-5"> 
+          <span className="text-custom-salmon m-auto text-[2.2rem] max-[425px]:hidden">Menu</span>
+          <List size={32} className="text-custom-salmon m-auto" />
+          </div>
+        </button>
 
         <div className={`${display}`}>
           <ul className="shadow-xl text-custom-salmon absolute right-0 z-10 mt-6 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
