@@ -2,66 +2,61 @@ import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Linking } from '../components/Linking';
 import { Footer } from "../components/Footer";
-import { Accordion } from "../components/Accordion";
+import { Menu } from "../components/Menu";
+import { Acordes } from "../components/Acordes";
 
 export default function Precificacao() {
     return( 
         <>
             <Header />
-            {/* espaço da header */}
-               <div className="py-[10rem]">
-                    {/* container */}
-                    <div className="container mx-auto">
-                            {/* layout de grade com três linhas e fluxo de coluna, com um espaçamento de 4 unidades  */}
-                        <div className="grid grid-row-3 grid-flow-col gap-4">
-                            {/* row-span  é linha vertical, e aqui ocupa 3, com sombra e borda aredondada*/}
-                            <div className="row-span-3 h-48 w-96 shadow-lg rounded-lg">
-                                {/* margin-left */}
-                                <h1 className="m-2"><b>Ferramentas</b></h1>
-                                <div className="ml-4 ">
-                                    <nav>
-                                        <ul>
-                                            <li>Precificação</li>
-                                            <li>Gerenciamento de pedidos</li>
-                                            <li>Fornecedores</li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
 
-                            <div className="ml-20">
-                                    <h3 className=""><b>Precificação</b></h3>
-                                    <p>Adicione os itens usados no seu produto e calcule.</p>
 
-                                    <div className="bg-white shadow-lg rounded-lg" >
-                                        <div className="m-12 mt-5">
-                                            <div className="">
-                                                {/* aqui o usuario tem que digitar */}
-                                                <p> <b>Nome do produto:</b> Bolsa de mão</p>
-                                                <br></br>
-                                            </div>
 
-                                            <div>
-                                                <h3><b>Materias usados</b></h3>
-                                                {/* accordion */}
-                                                    <Accordion/>
-                                            </div>
-                                            <div className="mt-2 mb-5">
-                                                <button className="bg-[#62B8AF] w-full text-white py-5 rounded-0.5rem">+ Novo item</button>
-                                            </div>
-                                            <div className="mt-2 mb-5">
-                                                <button className="bg-[#62B8AF] w-full text-white py-5 rounded-0.5rem">Calcular</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
+            <div className="text-3xl flex h-[100dvh] gap-5 py-[10rem] max-lg:flex-col">
+            <Menu SelectPage="Precificacao" />
 
-                        </div>
-                        
-                    </div>
 
-               </div>
-            <Footer />
+            <div className=" py-10 flex flex-col flex-1 max-w-[80rem]  mt-16 m-auto max-lg:px-[1rem] px-[3rem]">
+          
+          <h1 className="font-bold">Precificação</h1>
+          <p>Adicione itens usados no seu produto e calcule o preço dele.</p>
+
+
+         <div className="w-full text-black h-[80rem] bg-white px-5">
+
+         {/* <div>
+            <span>Nome do produto: {}</span>
+            <hr/>
+         </div>
+         <div>
+            <span>Materiais usados</span>
+            <hr/>
+         </div>
+         <div>
+            <span>Nome do produto: {}</span>
+            <hr/>
+         </div> */}
+
+        </div>
+
+
+        
+               
+              
+      
+     
+    
+
+      
+     
+
+
+
+        </div>
+        </div>
+       
+      
+        
         </>
    
         

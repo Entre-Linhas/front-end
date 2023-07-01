@@ -26,7 +26,7 @@ export default function Ferramentas() {
 
                 </div>
 
-                <img src="/ArtFerramenta.svg" className="m-auto max-w-[100%] max-[700px]:hidden" />
+                <img src="/ArtFerramenta.svg" className="m-auto max-w-[100%] max-[700px]:hidden" alt="Imagem de ferramentas" role="presentation" />
 
                 <div className="flex flex-col m-auto box-border gap-[10rem] w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1020px]:justify-evenly">
                     <div className="flex max-[1024px]:flex-col min-[1024px]:gap-[10rem]">
@@ -84,7 +84,7 @@ export default function Ferramentas() {
                         <h2 className="text-[3.6rem] font-bold text-center dark:text-white">Suas maiores aliadas no dia a dia</h2>
                         <p className="text-[2.2rem] max-w-[77rem] max-[500px]:text-center min-[500px]:px-[5rem]">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
                     </div>
-                    <img src="FerramentaArt2.svg" className="py-[10rem] m-auto max-w-[95%] min-[1140px]:max-w-[100%]" />
+                    <img src="FerramentaArt2.svg" className="py-[10rem] m-auto max-w-[95%] min-[1140px]:max-w-[100%]"  alt="Imagem ilustrativa" role="imagem"/>
                 </div>
             </div>
             <Footer />

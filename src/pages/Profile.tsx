@@ -46,8 +46,8 @@ export default function Profile() {
           </div>
 
           <div>
-            <h2 className="font-bold text-[2.4rem]">{perfil.usuario.nome} {perfil.usuario.sobrenome}</h2>
-            <span>Membro</span>
+            <h2 className="font-bold text-[2.4rem] dark:text-gray-600 ">{perfil.usuario.nome} {perfil.usuario.sobrenome}</h2>
+            <span className="dark:text-gray-600">Membro</span>
           </div>
           <div>
             {perfil.servico ?
@@ -66,7 +66,7 @@ export default function Profile() {
 
 
                 <div>
-                  <p className="py-5">Adicione uma descrição sobre você</p>
+                  <p className="py-5 dark:text-gray-600">Adicione uma descrição sobre você</p>
                   <div className={`${displaydesc ? "hidden" : "block"}`}>
                     <Button typeStyle="secondary" title="Adicionar" onClick={() => { navigate("/Configurar") }} />
                   </div>
@@ -79,31 +79,31 @@ export default function Profile() {
           <ul>
             <li className="flex items-center gap-3">
               <div className="w-6 h-6 rounded-lg bg-black"></div>
-              <span>Rede 01</span>
+              <span className="dark:text-gray-600" >Rede 01</span>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-6 h-6 rounded-lg bg-black"></div>
-              <span>Rede 02</span>
+              <span className="dark:text-gray-600">Rede 02</span>
             </li>
             <li className="flex items-center gap-3">
               <div className="w-6 h-6 rounded-lg bg-black"></div>
-              <span>Rede 03</span>
+              <span className="dark:text-gray-600">Rede 03</span>
             </li>
           </ul>
           <ul>
             <li className="flex flex-col py-3">
-              <span className="font-semibold">Nível</span>
-              <span>{perfil.nivel} - {perfil.nivel > 3 ? "Aprendiz" : "Iniciante"}</span>
+              <span className="font-semibold dark:text-gray-600 ">Nível</span>
+              <span className="dark:text-gray-600">{perfil.nivel} - {perfil.nivel > 3 ? "Aprendiz" : "Iniciante"}</span>
             </li>
             <li className="flex flex-col py-3">
-              <span className="font-semibold">Membro desde</span>
-              <span>
+              <span className="font-semibold dark:text-gray-600">Membro desde</span>
+              <span className="dark:text-gray-600">
                 {perfil.usuario.data_termino || "não tem"}
               </span>
             </li>
             <li className="flex flex-col py-3">
-              <span className="font-semibold">Melhor sequência</span>
-              <span>{perfil.max_combo || "Você ainda não iniciou a Trilha."}</span>
+              <span className="font-semibold dark:text-gray-600">Melhor sequência</span>
+              <span className="dark:text-gray-600">{perfil.max_combo || "Você ainda não iniciou a Trilha."}</span>
               <span></span>
               <span></span>
             </li>
@@ -116,7 +116,7 @@ export default function Profile() {
           
         <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:w-[100%]">
           <div className={` px-10 py-10`}>
-            <h1>Últimas conquistas</h1>
+            <h1 className="dark:text-gray-600">Últimas conquistas</h1>
             <div className="flex flex-col gap-10 py-10">
               <Conquistas etapa="1. Definição do negócio" />
               <Conquistas etapa="2. Análise de mercado" />

@@ -24,7 +24,8 @@ export default function Comunidade() {
                 </div>
 
 
-                <img src="/Comunidade.svg" className="max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " />
+                <img src="/Comunidade.svg" className="max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Imagem da comunidade Entre-Linhas"
+                role="img"/>
 
 
             </div>

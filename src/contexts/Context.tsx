@@ -91,6 +91,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       .then((response) => {
         if (response.data) {
           setAtividades(response.data);
+          console.log(response.data); // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
         } else {
           console.log("vazio");
         }
@@ -124,8 +125,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
           idMateria: atividades.progresso + 1
         }
       }
-      console.log(atividades.materia) // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
-      atualizarAtividade(newAtividade)
+      atualizarAtividade(newAtividade);
     }
 
     function decrementarProgressoAtividade() {
@@ -148,7 +148,6 @@ export default function Provider({ children }: { children: React.ReactNode }) {
           idPratica: atividades.pratica.idPratica + 1
         }
       }
-      console.log(atividades.materia) // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
       atualizarAtividade(newAtividade)
     }
 

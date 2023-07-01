@@ -52,7 +52,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
               <Button title='Comece agora!' />
             </div>
           </div>
-          <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem] " />
+          <img src="/ArteMain.svg"  className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt="ilustração da moça costurando" role="imagem"/>
         </div>
 
       </div>
@@ -107,9 +107,10 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
               <h1 className="max-[1023px]:text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black dark:text-white"> futuro</span> aqui!</h1>
               <p className="max-w-[64rem] m-auto text-justify min-[220px]:text-[1.8rem] py-[2rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-100">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
             </div>
-            <img src="/Machinee.svg" className="m-auto min-[220px]:h-[15rem] min-[240px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[24rem] min-[425px]:h-[28rem] min-[500px]:h-[32rem] min-[768px]:h-[40rem] min-[1024px]:h-[40rem] min-[1440px]:h-[48rem]" />
+            <img src="/Machinee.svg" className="m-auto min-[220px]:h-[15rem] min-[240px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[24rem] min-[425px]:h-[28rem] min-[500px]:h-[32rem] min-[768px]:h-[40rem] min-[1024px]:h-[40rem] min-[1440px]:h-[48rem]" alt="ilustração de máquina de costura" role="imagem"/>
           </div>
         </div>
+
 
       </div>
 
@@ -146,7 +147,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
             <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto dark:text-gray-100">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
           </div>
           <div>
-            <img src="/HomeFerramenta.svg" className="m-auto max-w-[50rem] max-h-[80rem] w-[100%]" />
+            <img src="/HomeFerramenta.svg" className="m-auto max-w-[50rem] max-h-[80rem] w-[100%]"  />
           </div>
         </div>
       </div>
@@ -162,7 +163,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
           <div className="m-auto flex flex-col gap-[1.6rem] items-center min-[840px]:flex-row">
             <div className="flex flex-col gap-[1.6rem] items-center">
               <h1 className="text-center text-custom-salmon font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]"> Aprenda também pelo <span className="text-custom-salmon">App</span></h1>
-              <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem]">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
+              <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-900">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
               <img src="/Login.svg" className="h-[5.3rem]" />
             </div>
             <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]"></img>

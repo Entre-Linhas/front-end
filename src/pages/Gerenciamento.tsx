@@ -96,7 +96,7 @@ export const Gerenciamento = () => {
 
       <Modal _showModal={showModal} _close={handleModal}>
         <div className="flex flex-col items-center">
-          <h1 className="text-center font-semibold text-4xl">Experimente as ferramentas do Entre Linhas e otimize sua <span className="text-custom-salmon">produtividade</span>!</h1>
+          <h1 className="text-center font-semibold text-4xl dark:text-gray-900">Experimente as ferramentas do Entre Linhas e otimize sua <span className="text-custom-salmon">produtividade</span>!</h1>
           <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="min-[500px]:h-[38rem]"/>
           <Linking to={"/ferramentas"} title="Saiba mais" className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md" />
         </div>
@@ -112,7 +112,7 @@ export const Gerenciamento = () => {
             <input
               type="text"
               id="titulo"
-              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-custom-salmon"
+              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
           <div className="py-5">
@@ -122,7 +122,7 @@ export const Gerenciamento = () => {
             <input
               type="date"
               id="dataEntrega"
-              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-custom-salmon"
+              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
           <div className="py-5">
@@ -132,7 +132,7 @@ export const Gerenciamento = () => {
             <input
               type="text"
               id="nomeCliente"
-              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-custom-salmon"
+              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
           <div className="py-5">
@@ -141,7 +141,7 @@ export const Gerenciamento = () => {
             </label>
             <textarea
               id="descricaoProdutos"
-              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-5 border border-gray-300 rounded-md focus:outline-none focus:border-custom-salmon resize-y"
+              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-5 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon resize-y"
             ></textarea>
           </div>
           <div className="py-5">
@@ -151,7 +151,7 @@ export const Gerenciamento = () => {
             <input
               type="number"
               id="precoTotal"
-              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 rounded-md focus:outline-none focus:border-custom-salmon"
+              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
           <Button title="Adicionar" />

@@ -53,10 +53,10 @@ export default function Pratica() {
             <div className="py-[2rem] flex flex-col items-center">
                <h2 className="text-center font-semibold">Qual é a importância da definição do negócio para um empreendimento?</h2>
                <div className="flex flex-col m-auto text-center gap-[3rem] py-[4rem] max-w-[100rem] px-[2.5rem]">
-                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto w-[100%] cursor-pointer" onClick={() => verificarResposta('A')}><p className="text-center">{atividades?.pratica?.txt1}</p></div>
-                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer" onClick={() => verificarResposta('B')}><p className="text-center">{atividades?.pratica?.txt2}</p></div>
-                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer" onClick={() => verificarResposta('C')}><p className="text-center">{atividades?.pratica?.txt3}</p></div>
-                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer" onClick={() => verificarResposta('D')}><p className="text-center">{atividades?.pratica?.txt4}</p></div>
+                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('A')}><p className="text-center">{atividades?.pratica?.txt1}</p></div>
+                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('B')}><p className="text-center">{atividades?.pratica?.txt2}</p></div>
+                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('C')}><p className="text-center">{atividades?.pratica?.txt3}</p></div>
+                  <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('D')}><p className="text-center">{atividades?.pratica?.txt4}</p></div>
                </div>
                
             </div>

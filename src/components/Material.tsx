@@ -21,7 +21,7 @@ export default function Material({ image, title, content }: MaterialProps) {
           <div>
             <img src={image} className="m-auto py-[4rem] max-w-[100%]" alt="Material" />
           </div>
-          <p className="text-justify max-w-[80.9rem]">
+          <p className="text-justify max-w-[80.9rem] ">
             {atividades?.materia?.txt1 || "...Carregando"}
           </p>
           <div className="flex gap-[3.5rem] py-[3.5rem]">

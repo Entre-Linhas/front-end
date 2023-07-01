@@ -24,7 +24,7 @@ export const Pagamento = () => {
 
             <div className="space-y-2">
               <div className="py-5">
-                <label htmlFor="nomeCompleto" className="block text-[#575757]">
+                <label htmlFor="nomeCompleto" className="block text-[#575757] dark:text-gray-100">
                   Nome completo
                 </label>
                 <input
@@ -35,7 +35,7 @@ export const Pagamento = () => {
                 />
               </div>
               <div className="py-5">
-                <label htmlFor="email" className="block text-[#575757]">
+                <label htmlFor="email" className="block text-[#575757] dark:text-gray-100">
                   E-mail
                 </label>
                 <input
@@ -47,7 +47,7 @@ export const Pagamento = () => {
               </div>
               <div className="flex gap-12 max-[450px]:flex-col">
                 <div className="w-full max-w-[28.5rem] py-5">
-                  <label htmlFor="celular" className="block text-[#575757]">
+                  <label htmlFor="celular" className="block text-[#575757] dark:text-gray-100">
                     Celular com DDD
                   </label>
                   <input
@@ -59,7 +59,7 @@ export const Pagamento = () => {
                 </div>
 
                 <div className="w-full max-w-[28.5rem] py-5">
-                  <label htmlFor="cpf" className="block text-[#575757]">
+                  <label htmlFor="cpf" className="block text-[#575757] dark:text-gray-100">
                     CPF
                   </label>
                   <input
@@ -90,7 +90,7 @@ export const Pagamento = () => {
 
             <div className="space-y-2">
               <div className="py-5">
-                <label htmlFor="nomeImpresso" className="block text-[#575757]">
+                <label htmlFor="nomeImpresso" className="block text-[#575757] dark:text-gray-100">
                   Nome impresso no cartão
                 </label>
                 <input
@@ -101,8 +101,8 @@ export const Pagamento = () => {
                 />
               </div>
               <div className="py-5">
-                <label htmlFor="numeroCartao" className="block text-[#575757]">
-                  Número do cartão
+                <label htmlFor="numeroCartao" className="block text-[#575757] dark:text-gray-100">
+                  Número do cartão 
                 </label>
                 <input
                   type="text"
@@ -113,7 +113,7 @@ export const Pagamento = () => {
               </div>
               <div className="flex gap-12 max-[450px]:flex-col">
                 <div className="w-full max-w-[28.5rem] py-5">
-                  <label htmlFor="validade" className="block text-[#575757]">
+                  <label htmlFor="validade" className="block text-[#575757] dark:text-gray-100">
                     Validade
                   </label>
                   <input
@@ -125,7 +125,7 @@ export const Pagamento = () => {
                 </div>
 
                 <div className="w-full max-w-[28.5rem] py-5">
-                  <label htmlFor="cvv" className="block text-[#575757]">
+                  <label htmlFor="cvv" className="block text-[#575757] dark:text-gray-100">
                     CVV
                   </label>
                   <input
@@ -160,7 +160,7 @@ export const Pagamento = () => {
               <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white">
                 <Link to="/Gerenciamento">Ir para as ferramentas</Link>
               </button>
-              <span className="text-[1.8rem] text-[#8F8F8F] underline">
+              <span className="text-[1.8rem] text-[#8F8F8F] underline dark:text-gray-100">
                 <Link to="/">Voltar para a página inicial</Link>
               </span>
             </div>

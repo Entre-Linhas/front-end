@@ -66,11 +66,11 @@ export const Acordes = () => {
           display === "hidden" ? "block" : "hidden"
         } py-3 bg-white w-[100%] flex items-center justify-between`}
       >
-        <span className="px-5 text-2.2rem">{nome_pedido}</span>
+        <span className="px-5 text-2.2rem dark:text-gray-900">{nome_pedido}</span>
         <div className="flex items-center px-5">
-          <span className="px-5 text-2.2rem">R$ {valor_pedido}</span>
+          <span className="px-5 text-2.2rem dark:text-gray-900">R$ {valor_pedido}</span>
           <div className="flex items-center max-lg:flex-col-reverse">
-            <span title={status}>Status: </span>
+            <span title={status} className="dark:text-gray-900">Status: </span>
             <Circle
               size={26}
               weight="fill"
@@ -85,7 +85,7 @@ export const Acordes = () => {
             >
               <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
                 <div className="flex px-5 py-2 gap-5 max-lg:flex-col">
-                  <li>
+                  <li className="dark:text-gray-900">
                     {" "}
                     <Circle
                       size={26}
@@ -119,7 +119,7 @@ export const Acordes = () => {
         </div>
       </div>
 
-      {/* esconder essa abaixo e só mostrar quando o usuário clicar no outro botão */}
+     
 
       <div
         className={`${display} border-[1px] solid border-[#CCCCCC] bg-white px-12 py-8`}
@@ -127,11 +127,11 @@ export const Acordes = () => {
         <ul className="text-2rem">
           <div className="flex items-center justify-between">
             <li className="flex gap-5 py-4 max-[319px]:flex-col">
-              <span>Título:</span>
+              <span className="dark:text-gray-900">Título:</span>
               <span className="text-[#5B5B5B]">{nome_pedido}</span>
             </li>
             <div className="flex items-center max-lg:flex-col-reverse">
-              <span>Status: </span>
+              <span className="dark:text-gray-900">Status: </span>
               <Circle
                 size={26}
                 weight="fill"
@@ -179,11 +179,11 @@ export const Acordes = () => {
           </div>
 
           <li className="flex gap-5 py-4">
-            <span>Data de Entrega:</span>
+            <span className="dark:text-gray-900">Data de Entrega:</span>
             <span className="text-[#5B5B5B]">{dtentrega_pedido}</span>
           </li>
           <li className="flex gap-5 py-4">
-            <span>Nome do Cliente:</span>
+            <span className="dark:text-gray-900">Nome do Cliente:</span>
             <span className="text-[#5B5B5B]">{nome_cliente}</span>
           </li>
         </ul>
@@ -191,16 +191,16 @@ export const Acordes = () => {
         <div className="flex flex-col gap-[25rem]">
           <ul>
             <li className="py-5">
-              <span>Descrição dos Produtos:</span>
+              <span className="dark:text-gray-900">Descrição dos Produtos:</span>
               <br />
               <span className="text-[#5B5B5B]">{desc_produtos}</span>
             </li>
           </ul>
           <div className="mt-full">
             <div className="flex justify-between py-1.2rem">
-              <span>Preço total:</span>
+              <span className="dark:text-gray-900">Preço total:</span>
               <div className="flex items-center gap-5">
-                <span>R$ {valor_pedido}</span>
+                <span className="dark:text-gray-900">R$ {valor_pedido}</span>
 
                 <div className="flex items-center max-lg:flex-col-reverse">
                   <Circle
