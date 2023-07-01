@@ -24,7 +24,7 @@ export default function SignIn() {
 
   const handleSubmit = () => {
     api
-      .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/login", formData)
+      .post("/usuarios/login", formData)
       .then((response) => {
         if (response.data) {
           setAuth && setAuth(true);

@@ -14,7 +14,7 @@ export const Trilha = () => {
   const { perfil, setPerfil } = useContext(Context);
   const { atividades, setAtividades, atualizarAtividade, nivelamento } = useContext(Context);
   const [showModal, setShowModal] = useState(true);
-    
+  
   
   function handleModal() {
     setShowModal(!showModal)

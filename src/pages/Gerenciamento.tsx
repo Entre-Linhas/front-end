@@ -2,17 +2,22 @@ import { Header } from "../components/Header";
 import { Tag, Storefront, ShoppingCart, CaretDown } from "@phosphor-icons/react";
 import { Modal } from "../components/Modal";
 import { Linking } from "../components/Linking";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Acordes } from "../components/Acordes";
 import { Button } from "../components/Button";
 import { Menu } from "../components/Menu";
+import { Pedido } from "../models/pedido";
+import api from "../apiInstance";
+import { Context } from "../contexts/Context";
 
-
+ 
 
 
 export const Gerenciamento = () => {
+  const { perfil } = useContext(Context);
   const [showModal, setShowModal] = useState(true);
   const [showForm, setShowForm] = useState(false)
+  const [pedidos, setPedidos] = useState<Pedido[]>([{ date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }, {date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: ""}]);
 
   function handleModal() {
     setShowModal(!showModal)
@@ -23,47 +28,51 @@ export const Gerenciamento = () => {
   }
 
 
+  function pedidoParser(payload:any) {
+    return {...payload, date:new Date(payload.date)}
+  }
+  
+
+  // const pedidos: Pedido[] = [{ date: new Date(), nome: "", desc: "", price: 100, title: "", status: "" }, {date: new Date(), nome: "", desc: "", price: 100, title: "", status: ""}]
+
+  // O conteúdo acima é um mock, que é um objeto de exemplo, pra podermos exemplificar o que esperamos receber do backend. Aqui em cima, ta igual porque eu quero exibir dois acordões pra testar a lógica. 
+
+
+  function saveForm() { 
+  
+  const data:any = {}
+    // "Partial" indica que eu tenho um objeto com determinada tipagem mas ele não precisa estar completo, pode estar parcialmente ("Partial") preenchido, o trecho "<>" é o "generycs", é uma forma de deixa uma tipagem reutilizável e dinâmica, é só colocar o tipo que a gente quer dentro. 
+
+  const inputs = document.querySelectorAll('#formGeren input, #formGeren textarea') as any as HTMLInputElement[]
+  // sobre o "as any as HTMLInputElement" eu to dizendo transformo em qualquer coisa e depois transforme em algo, que no caso é o elemento input do HTML"
+  inputs.forEach(item => {
+  data[item.id] = item.value
+  
+  }
+  )
+  data.usuario = perfil.usuario
+  console.log(data)
+  api.post("/pedidos", pedidoParser(data)).then((response) => {
+    if (response.data) {
+      setPedidos([pedidoParser(response.data), ...pedidos])
+      console.log(response.data)
+    } else {
+      console.log("vazio");
+    }
+  })
+  .catch((error) => {
+    console.log(error)
+  });
+  }
+
+
   return (
     <>
       <Header />
       <div className="text-3xl flex flex-wrap min-h-[900px] gap-5 py-[10rem] max-[860px]:flex-col">
-       
-       
-       <Menu SelectPage="Gerenciamento" />
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-        {/* <div className="flex flex-col w-[300px] max-w-[300px]">
-          <div className="px-10">
-            <h2 className="font-bold text-2.2rem">Ferramentas</h2>
-            <div className="px-5 py-5 space-y-5 font-medium">
-              <div className="flex items-center gap-2">
-                <Tag size={32} />
-                <span>Precificação</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Storefront size={32} />
-                <span>Gerenciamento de Pedidos</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ShoppingCart size={32} />
-                <span>Fornecedores</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
+
+        <Menu SelectPage="Gerenciamento" />
 
         <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto max-lg:px-[1rem]  px-[3rem]">
           <h1 className="font-bold">Gerenciamento de Pedidos</h1>
@@ -79,22 +88,8 @@ export const Gerenciamento = () => {
           </div>
 
 
-          {/* componente */}
-
-          <Acordes />
-
-          <Acordes />
-
-          <Acordes />
-          <Acordes />
-          <Acordes />
-          <Acordes />
-          <Acordes />
-          <Acordes />
-          <Acordes />
-
-
-
+            {pedidos.map(pedido =>  <Acordes pedido={pedido}/>)}
+         
 
         </div>
       </div>
@@ -102,67 +97,68 @@ export const Gerenciamento = () => {
       <Modal _showModal={showModal} _close={handleModal}>
         <div className="flex flex-col items-center">
           <h1 className="text-center font-semibold text-4xl dark:text-gray-900">Experimente as ferramentas do Entre Linhas e otimize sua <span className="text-custom-salmon">produtividade</span>!</h1>
-          <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="min-[500px]:h-[38rem]"/>
+          <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="min-[500px]:h-[38rem]" />
           <Linking to={"/ferramentas"} title="Saiba mais" className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md" />
         </div>
       </Modal>
 
       <Modal _showModal={showForm} _close={newForm}>
 
-        <div className="space-y-4">
+    
+        <form className="space-y-4" id="formGeren">
           <div className="py-5">
-            <label htmlFor="titulo" className="block text-gray-700 font-bold">
+            <label htmlFor="title" className="block text-gray-700 font-bold">
               Título
             </label>
             <input
               type="text"
-              id="titulo"
+              id="title"
               className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
           <div className="py-5">
-            <label htmlFor="dataEntrega" className="block text-gray-700 font-bold">
+            <label htmlFor="date" className="block text-gray-700 font-bold">
               Data de entrega
             </label>
             <input
               type="date"
-              id="dataEntrega"
+              id="date"
               className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
           <div className="py-5">
-            <label htmlFor="nomeCliente" className="block text-gray-700 font-bold">
+            <label htmlFor="nome" className="block text-gray-700 font-bold">
               Nome do(a) cliente:
             </label>
             <input
               type="text"
-              id="nomeCliente"
+              id="nome"
               className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
+
             />
           </div>
           <div className="py-5">
-            <label htmlFor="descricaoProdutos" className="block text-gray-700 font-bold">
+            <label htmlFor="description" className="block text-gray-700 font-bold">
               Descrição dos Produtos
             </label>
             <textarea
-              id="descricaoProdutos"
-              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-5 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon resize-y"
-            ></textarea>
+              id="description"
+              className="w-[25rem] min-[425px]:w-[35rem] px-2 py-5 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon resize-y">
+            </textarea>
           </div>
           <div className="py-5">
-            <label htmlFor="precoTotal" className="block text-gray-700 font-bold">
+            <label htmlFor="price" className="block text-gray-700 font-bold">
               Preço Total
             </label>
             <input
               type="number"
-              id="precoTotal"
+              id="price"
               className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
-          <Button title="Adicionar" />
-        </div>
-
-
+          <Button title="Adicionar" onClick={saveForm} type="button"/>
+        </form>
+         
 
       </Modal>
     </>

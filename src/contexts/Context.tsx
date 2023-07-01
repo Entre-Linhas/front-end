@@ -108,6 +108,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       ...perfil,
       foto: imageName
     };
+    setPerfil(newPerfil)
   };
 
     function definirDescricao(servicoProps: string) {

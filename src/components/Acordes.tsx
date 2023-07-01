@@ -1,14 +1,13 @@
 import { CaretDown, CaretUp, Circle, X } from "@phosphor-icons/react";
 import { useState } from "react";
+import { Pedido } from "../models/pedido";
 
-var nome_pedido = "Roupas da Juliana";
-var valor_pedido = 170;
-var dtentrega_pedido = "10/10/2010";
-var nome_cliente = "teste";
-var desc_produtos =
-  "A calça é confeccionada com um tecido de alta qualidade, proporcionando conforto e durabilidade. Seu corte é ajustado, valorizando a silhueta e oferecendo um caimento impecável. O design é versátil, permitindo combinações com diferentes estilos de blusas e sapatos. Além disso, a calça possui bolsos funcionais e detalhes sutis que adicionam um toque de sofisticação.";
+type AcordesProps = {
 
-export const Acordes = () => {
+pedido?: Pedido
+}
+
+export const Acordes = ({pedido}: AcordesProps) => {
   const [display, setDisplay] = useState("hidden");
   const [display3, setDisplay3] = useState("hidden");
   const [status, setStatus] = useState("text-gray-500");
@@ -50,10 +49,10 @@ export const Acordes = () => {
           display === "hidden" ? "block" : "hidden"
         } py-3 bg-white w-[100%] flex items-center justify-between`}
       >
-        <span className="px-5 text-2.2rem dark:text-gray-900">{nome_pedido}</span>
+        <span className="px-5 text-2.2rem dark:text-gray-900">{pedido?.title}</span>
         <div className="flex items-center px-5">
-          <span className="px-5 text-2.2rem dark:text-gray-900">R$ {valor_pedido}</span>
-          <div className="flex items-center max-lg:flex-col-reverse">
+          <span className="px-5 text-2.2rem dark:text-gray-900">R$ {pedido?.price}</span>
+          <div className="flex items-center  flex-col-reverse">
             <span title={status} className="dark:text-gray-900">Status: </span>
             <Circle
               size={26}
@@ -63,12 +62,16 @@ export const Acordes = () => {
             
             />
             <div
-              className={`${
-                display3 === "hidden" ? "hidden" : "block"
-              } min-lg:self-start rounded-md shadow-xl`}
+              className={
+            `${display3 === "hidden" ? "hidden" : "block"} 
+            
+            min-lg:self-start rounded-md shadow-xl
+            
+            
+            `}
             >
               <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
-                <div className="flex px-5 py-2 gap-5 max-lg:flex-col">
+                <div className="flex px-5 py-2 gap-5 flex-col">
                   <li className="dark:text-gray-900">
                     {" "}
                     <Circle
@@ -112,7 +115,7 @@ export const Acordes = () => {
           <div className="flex justify-between items-center max-md:flex-col max-md:items-start">
             <li className="flex gap-5 py-4 max-[319px]:flex-col">
               <span className="dark:text-gray-900">Título:</span>
-              <span className="text-[#5B5B5B]">{nome_pedido}</span>
+              <span className="text-[#5B5B5B]">{pedido?.nome}</span>
             </li>
             <div className="flex items-center">
               <span className="dark:text-gray-900">Status: </span>
@@ -127,7 +130,7 @@ export const Acordes = () => {
                   display3 === "hidden" ? "hidden" : "block"
                 } min-lg:self-start rounded-md shadow-xl`}
               >
-                <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+                <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] mr-[10rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
                   <div className="flex px-5 py-2 gap-5 max-lg:flex-col">
                     <li>
                       {" "}
@@ -164,11 +167,11 @@ export const Acordes = () => {
 
           <li className="flex gap-5 py-4">
             <span className="dark:text-gray-900">Data de Entrega:</span>
-            <span className="text-[#5B5B5B]">{dtentrega_pedido}</span>
+            <span className="text-[#5B5B5B]">{pedido?.date.toLocaleDateString()}</span>
           </li>
           <li className="flex gap-5 py-4">
             <span className="dark:text-gray-900">Nome do Cliente:</span>
-            <span className="text-[#5B5B5B]">{nome_cliente}</span>
+            <span className="text-[#5B5B5B]">{pedido?.nome}</span>
           </li>
         </ul>
 
@@ -177,7 +180,7 @@ export const Acordes = () => {
             <li className="py-5">
               <span className="dark:text-gray-900">Descrição dos Produtos:</span>
               <br />
-              <span className="text-[#5B5B5B]">{desc_produtos}</span>
+              <span className="text-[#5B5B5B]">{pedido?.description}</span>
             </li>
           </ul>
           <div className="mt-full">
@@ -185,7 +188,7 @@ export const Acordes = () => {
             <div className="flex justify-between py-1.2rem">
               <span className="dark:text-gray-900">Preço total:</span>
               <div className="flex items-center gap-5">
-                <span className="dark:text-gray-900">R$ {valor_pedido}</span>
+                <span className="dark:text-gray-900">R$ {pedido?.price}</span>
 
                 <div className="flex items-center max-lg:flex-col-reverse">
                   <Circle

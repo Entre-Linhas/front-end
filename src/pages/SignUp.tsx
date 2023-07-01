@@ -1,5 +1,5 @@
 import { CaretLeft, Envelope, IdentificationCard, Key, MapPin, SignIn, Tag, UserCircle } from "@phosphor-icons/react";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
@@ -10,10 +10,12 @@ import { Swiper, SwiperSlide, } from "swiper/react";
 import { Swiper as classSwiper } from 'swiper';
 
 import 'swiper/css';
+import { Context } from "../contexts/Context";
 
  
 
 export default function SignUp() {
+    const { auth, setAuth, perfil, setPerfil, setAtividades } = useContext(Context);
     const [email, setEmail] = useState<string>("");
     const [senha, setSenha] = useState<string>("");
     const [nome, setNome] = useState<string>("");
@@ -90,7 +92,7 @@ export default function SignUp() {
 
     function handleSubmit() {
         api
-            .post("https://dgc6qt23wamgi.cloudfront.net/api/usuarios/cadastro", {
+            .post("/usuarios/cadastro", {
                 email,
                 senha,
                 nome,
@@ -102,11 +104,14 @@ export default function SignUp() {
             .then((response) => {
                 console.log(response);
                 
-                // if (response.status) {
-                    // navigate("/nivelamento")
-                // } else {
-                //     alert("teste")
-                // }
+                if (response.status) {
+                    // setAuth && setAuth(true);
+                    // setPerfil?.(response.data)
+                    // setAtividades && setAtividades(response.data.trilhas.atividades)
+                    // navigate("/Nivelamento");
+                } else {
+                    alert("teste")
+                }
 
             })
             .catch((error) => {
