@@ -1,11 +1,17 @@
+import React from 'react';
 import { Buildings, Hammer, Lightbulb, UsersThree, UserCircleGear, Briefcase, Star } from "@phosphor-icons/react";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 import "../styles/index.css";
-import { useCarousel } from "../utils/carousel";
-// import { useCa} from "react"
+
 
 
 interface HomeProps {
@@ -29,7 +35,6 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
     url: "/Temporary.svg"
   }];
 
-  const [active, setActive, handlers, style] = useCarousel(carousel.length, 5000);
   return (
 
     <div className="">
@@ -229,35 +234,48 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
 
       </div>
 
-      <div className="h-[50.9rem] py-[40rem]">
-        <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-          <h1 className="text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem] dark:text-white">Confira <span className="text-custom-salmon">relatos</span> de quem já passou por aqui</h1>
-          <div className="flex gap-10 min-[220px]:flex-col">
-            <div className="flex justify-evenly gap-10">
-              <img src="/left.svg" />
-              <div className="flex justify-center">
-                <img src="/Temporary.svg" className="max-w-[50%] min-[220px]:m-auto min-[900px]:max-w-[43.5rem]" />
-                <div className="max-[1439px]:hidden flex flex-col m-auto gap-10">
-                  <p className="text-[2.2rem]">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
-                  <p className="text-[2.2rem] ml-auto font-bold text-custom-salmon">Angie Nonbine</p>
+      <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+        <h1 className="text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem] dark:text-white">Confira <span className="text-custom-salmon">relatos</span> de quem já passou por aqui</h1>
+      </div>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {carousel.map((s, i) => (
+          <SwiperSlide>
+            <div className="h-[50.9rem] py-[40rem]">
+              <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+                <div className="flex gap-10 min-[220px]:flex-col">
+                <div className="flex justify-evenly gap-10">
+                  <div className="flex justify-center">
+                    <img src="/Temporary.svg" className="max-w-[50%] min-[220px]:m-auto min-[900px]:max-w-[43.5rem]" />
+                    <div className="max-[1439px]:hidden flex flex-col m-auto gap-10">
+                      <p className="text-[2.2rem]">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
+                      <p className="text-[2.2rem] ml-auto font-bold text-custom-salmon">Angie Nonbine</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-[2.2rem] m-auto font-bold text-custom-salmon min-[1440px]:hidden">Angie Nonbine</p>
+                <div className="min-[1440px]:hidden">
+                  <p className="text-[2.2rem] dark:text-gray-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
+                  <p className="min-[220px]:hidden text-[2.2rem] mr-auto">Angie Nonbine</p>
+                </div>
                 </div>
               </div>
-              <img src="/right.svg" />
             </div>
-            <p className="text-[2.2rem] m-auto font-bold text-custom-salmon min-[1440px]:hidden">Angie Nonbine</p>
-            <div className="min-[1440px]:hidden">
-              <p className="text-[2.2rem] dark:text-gray-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
-              <p className="min-[220px]:hidden text-[2.2rem] mr-auto">Angie Nonbine</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* <ul>
-          {carousel.map((s, i) => (
-            <li onClick={() => setActive(i)} key={i}><img src={s.url} alt={s.author} /></li>
-          ))}
-        </ul> */}
+          </SwiperSlide>
+        ))}           
+      </Swiper>
+      
 
 
 
