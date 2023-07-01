@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 interface ContextProps {
-  auth: boolean;
-  setAuth?: Function;
+  auth: boolean
+  setAuth?: Function
   perfil: any
-  setPerfil?: Function;
+  setPerfil?: Function
   atividades: any
   setAtividades?: Function;
   incrementarProgressoAtividade: Function
@@ -16,15 +16,16 @@ interface ContextProps {
   definirFotoPerfil: (imageName: string) => void
   definirDescricao: (descricaoProps: string) => void
   avançarQuest: Function
-  /* handleSubmit2: (formDat: any) => void
-  hS3: (formDat: any) => void */
+  nivelamento: any
+  setNivelamento: Function
 }
-export const Context = createContext<ContextProps>({ /* auth: false, atividades: null */ } as any);
+export const Context = createContext<ContextProps>({} as any);
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState(false);
   const [perfil, setPerfil] = useState<any>(null);
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
+  const [nivelamento, setNivelamento] = useState<any>(null);
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -191,7 +192,8 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   // ATÈ AQUI  
 
     return (
-      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest/* , handleSubmit2, hS3 */ }}>
+      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
+        setNivelamento }}>
         {/* {JSON.stringify(atividades.progresso || {})} */}
         {children}
       </Context.Provider>

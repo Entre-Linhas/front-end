@@ -6,12 +6,18 @@ import { Context } from '../contexts/Context';
 import { useNavigate } from "react-router-dom";
 
 export default function Nivelamento() {
-    const { perfil } = useContext(Context);
+    const { perfil, setNivelamento } = useContext(Context);
     console.log(perfil);
     console.log(perfil?.usuario);
     console.log(perfil?.usuario?.nome);
 
     const navigate = useNavigate();
+
+    function advancedUser() {
+        setNivelamento?.(100)
+
+        navigate("/Trilha")
+    }
 
 
     const [showModal, setShowModal] = useState(false);
@@ -44,7 +50,7 @@ export default function Nivelamento() {
                                     <h2 className="font-bold text-[2.2rem] dark:text-gray-900">Já tenho meu negócio</h2>
                                     <p className="text-center dark:text-gray-900">Aqui você faz um teste para pular o conteúdo que você já sabe</p>
                                 </div>
-                                <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]">Iniciar Trilha</button>
+                                <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]" onClick={advancedUser}>Iniciar Trilha</button>
                             </div>
                         </div>
                     </div>

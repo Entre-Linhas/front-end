@@ -10,53 +10,37 @@ var desc_produtos =
 
 export const Acordes = () => {
   const [display, setDisplay] = useState("hidden");
-  const [display2, setDisplay2] = useState("hidden");
   const [display3, setDisplay3] = useState("hidden");
-  const [display4, setDisplay4] = useState("hidden");
   const [status, setStatus] = useState("text-gray-500");
 
   const handleClick = () => {
     setDisplay(display === "hidden" ? "block" : "hidden");
   };
 
-  const ShowStatus1 = () => {
-    setDisplay2(display2 === "hidden" ? "block" : "hidden");
-    setDisplay3("hidden");
-    setDisplay4("hidden");
-    alert(display2)
-  };
 
   const ShowStatus2 = () => {
     setDisplay3(display3 === "hidden" ? "block" : "hidden");
-    setDisplay2("hidden");
-    setDisplay4("hidden");
-  };
-
-  const ShowStatus3 = () => {
-    setDisplay4(display4 === "hidden" ? "block" : "hidden");
-    setDisplay3("hidden");
-    setDisplay2("hidden");
+    
   };
 
   const StatusGreen = () => {
     setStatus("text-green-500");
-    setDisplay4("hidden");
+    
     setDisplay3("hidden");
-    setDisplay2("hidden");
+    
   };
 
   const StatusYellow = () => {
     setStatus("text-yellow-500");
-    setDisplay4("hidden");
+   
     setDisplay3("hidden");
-    setDisplay2("hidden");
+    
   };
 
   const StatusRed = () => {
     setStatus("text-red-500");
-    setDisplay4("hidden");
     setDisplay3("hidden");
-    setDisplay2("hidden");
+
   };
 
   return (
@@ -74,7 +58,7 @@ export const Acordes = () => {
             <Circle
               size={26}
               weight="fill"
-              onClick={ShowStatus1}
+              onClick={ShowStatus2}
               className={`${status}`}
             
             />
@@ -125,17 +109,17 @@ export const Acordes = () => {
         className={`${display} border-[1px] solid border-[#CCCCCC] bg-white px-12 py-8`}
       >
         <ul className="text-2rem">
-          <div className="flex items-center justify-between">
+          <div className="flex justify-between items-center max-md:flex-col max-md:items-start">
             <li className="flex gap-5 py-4 max-[319px]:flex-col">
               <span className="dark:text-gray-900">Título:</span>
               <span className="text-[#5B5B5B]">{nome_pedido}</span>
             </li>
-            <div className="flex items-center max-lg:flex-col-reverse">
+            <div className="flex items-center">
               <span className="dark:text-gray-900">Status: </span>
               <Circle
                 size={26}
                 weight="fill"
-                onClick={ShowStatus1}
+                onClick={ShowStatus2}
                 className={`${status}`}
               />
               <div
@@ -197,6 +181,7 @@ export const Acordes = () => {
             </li>
           </ul>
           <div className="mt-full">
+           
             <div className="flex justify-between py-1.2rem">
               <span className="dark:text-gray-900">Preço total:</span>
               <div className="flex items-center gap-5">
@@ -206,46 +191,9 @@ export const Acordes = () => {
                   <Circle
                     size={26}
                     weight="fill"
-                    onClick={ShowStatus3}
+                    onClick={ShowStatus2}
                     className={`${status}`}
                   />
-                  <div
-                    className={`${
-                      display2 === "hidden" ? "hidden" : "block"
-                    } min-lg:self-start rounded-md shadow-xl`}
-                  >
-                    <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
-                      <div className="flex px-5 py-2 gap-5 max-lg:flex-col">
-                        <li>
-                          {" "}
-                          <Circle
-                            size={26}
-                            weight="fill"
-                            className="text-green-500"
-                            onClick={StatusGreen}
-                          />
-                        </li>
-                        <li>
-                          {" "}
-                          <Circle
-                            size={26}
-                            weight="fill"
-                            className="text-yellow-500"
-                            onClick={StatusYellow}
-                          />
-                        </li>
-                        <li>
-                          {" "}
-                          <Circle
-                            size={26}
-                            weight="fill"
-                            className="text-red-500"
-                            onClick={StatusRed}
-                          />
-                        </li>
-                      </div>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>

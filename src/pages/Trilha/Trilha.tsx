@@ -12,7 +12,7 @@ import { Linking } from "../../components/Linking";
 
 export const Trilha = () => {
   const { perfil, setPerfil } = useContext(Context);
-  const { atividades, setAtividades, atualizarAtividade } = useContext(Context);
+  const { atividades, setAtividades, atualizarAtividade, nivelamento } = useContext(Context);
   const [showModal, setShowModal] = useState(true);
     
   
@@ -28,7 +28,7 @@ export const Trilha = () => {
       progresso: perfil.progresso + 25
     }
     setPerfil && setPerfil(newPerfil)
-
+ 
     const newAtividades = {
       ...atividades,
       progresso: 1,
@@ -43,9 +43,6 @@ export const Trilha = () => {
       }
     }
     atualizarAtividade(newAtividades);
-
-  
-
   }
 
 
@@ -54,11 +51,10 @@ export const Trilha = () => {
     <div className="overflow-hidden h-screen">
       <Header style={{ position: "relative" }} />
       <button onClick={test}>TEEEEEEEEEST</button>
-      <button onClick={test}>TEEEEEEEEEST</button>
       <div className="flex flex-col overflow-auto h-full snap-y snap-mandatory">
         <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always">Bem vindo, à Trilha Educacional</h1>
         <div className="flex flex-col mx-auto ">
-          <Modulo _titleModulo="Meu Negócio" _progress={0} conteudos={[
+          <Modulo _titleModulo="Meu Negócio" _progress={nivelamento} conteudos={[
             { title: "1. Identificar o nicho de mercado e da proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.", time: "20min", _completed: true },
             { title: "2. Análise de mercado", describe: "Estudo do público-alvo e concorrência.", time: "20min" },
             { title: "3. Meu produto", describe: "Qual o meu produto e como identificar seu valor agregado", time: "20min" },

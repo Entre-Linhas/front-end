@@ -217,7 +217,7 @@ export default function SignUp() {
                 </div>
             </div>
             <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
-                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
+                <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" role="imagem" />
             </div>
         </div>
     )

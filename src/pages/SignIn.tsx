@@ -101,7 +101,7 @@ export default function SignIn() {
         </div>
 
         <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">
-          <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
+          <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" alt="imagens de costureiras" role="imagem" />
         </div>
       </div>
     </>

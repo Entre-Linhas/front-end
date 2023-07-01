@@ -87,6 +87,11 @@ export const Gerenciamento = () => {
 
           <Acordes />
           <Acordes />
+          <Acordes />
+          <Acordes />
+          <Acordes />
+          <Acordes />
+          <Acordes />
 
 
 

@@ -19,7 +19,7 @@ export default function Material({ image, title, content }: MaterialProps) {
         <h1 className="text-[2.4rem] font-semibold">{atividades?.materia?.tituloPag || "...Carregando"}</h1>
         <div className="flex flex-col items-center px-[2rem]">
           <div>
-            <img src={image} className="m-auto py-[4rem] max-w-[100%]" alt="Material" />
+            <img src={image} className="m-auto py-[4rem] max-w-[100%]" alt="Material" role='imagem'/>
           </div>
           <p className="text-justify max-w-[80.9rem] ">
             {atividades?.materia?.txt1 || "...Carregando"}

@@ -26,7 +26,7 @@ export default function Eventos() {
 
 
                 <img style={{ width: 480, height: 320 }} src="/Eventos.svg" className="py-[1.5rem] max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto "  alt="Ilustração de eventos"
-  role="presentation"/>
+  role="imagem"/>
 
             </div>
             <Footer />

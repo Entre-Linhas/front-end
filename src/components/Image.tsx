@@ -8,7 +8,7 @@ export const Image = ({ source, ...rest }: ImageProps) => {
 
     return (
         <div className="rounded-[12px]">
-            <img src={source} {...rest}></img>
+            <img src={source} {...rest} role="imagem"></img>
         </div>
 
     )
