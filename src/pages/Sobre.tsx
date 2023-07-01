@@ -15,7 +15,7 @@ export default function Sobre() {
 
             <div>
 
-                <div className="flex items-center w-[100%] h-[40vh]">
+                <div className="mt-[0] flex items-center w-[100%] h-[40vh]">
                     <img src="/Sobre.jpg" className="w-[100%] h-[100%] object-cover" />
                 </div>
 
@@ -54,7 +54,7 @@ export default function Sobre() {
                         nome="Matheus Passos" 
                         GitHub="https://github.com/DevPassosMatheus" 
                         Linkedin="https://www.linkedin.com/in/passosmatheus/" 
-                        desc="Sou um jovem cheio de energia e extremamente dedicado, dou o sangue sempre, em tudo que faço. Tenho uma fome imensurável de crescimento e sou apaixonado por tecnologia." 
+                        desc="Sou um jovem cheio de energia e extremamente dedicado, dou o sangue sempre, em tudo que faço. Tenho uma fome imensurável de crescimento e evolução, e sou apaixonado por tecnologia." 
                         img="/Matheus.png"
                     />
                     <About 
@@ -62,14 +62,14 @@ export default function Sobre() {
                          GitHub="https://github.com/gabrielaasouza" 
                          Linkedin="https://www.linkedin.com/in/gabrielaasouza/"  
                          nome="Gabriela Souza" 
-                         desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                         desc="Scrum Master e Designer da equipe, adoro filmes e ler ficção científica, principalmente se for Isaac Asimov. Também gosto de tirar foto com meu gato."
                          img="/Gabi.png"
                      />
                     <About 
                      nome="Kevyn Aciole" 
                       GitHub="https://github.com/KevynAciole" 
                       Linkedin="https://www.linkedin.com/in/kevyn-aciole-15a446254/" 
-                      desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                      desc="Jovem morador da zona leste de São Paulo que gosta muito de música, tecnologia, comunicação e muito mais, adora aprender coisas novas e ser desafiado. E acredita que a tecnologia é um meio e não um fim."
                       img="/Kevyn.png"
                     />
                     <About  
@@ -99,7 +99,7 @@ export default function Sobre() {
                     nome="Matheus Assis"  
                     GitHub="https://github.com/M4THEUSDev" 
                     Linkedin="https://www.linkedin.com/in/matheusassisdev/"
-                    desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                    desc="Meu nome é Matheus, Estudante de análise e desenvolvimento de sistemas, Tenho 21 anos sou apaixonado pelo mundo de tecnologia e adoro escutar música."
                     img="/Assis.png"
                     />
                     

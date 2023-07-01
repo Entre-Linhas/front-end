@@ -13,7 +13,6 @@ export default function Material({ image, title, content }: MaterialProps) {
   const navigate = useNavigate();
   const { atividades, incrementarProgressoAtividade, decrementarProgressoAtividade } = useContext(Context);
 
-
     return (
       <div className="m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] py-[10rem] text-center">
         <h1 className="text-[2.4rem] font-semibold">{atividades?.materia?.tituloPag || "...Carregando"}</h1>

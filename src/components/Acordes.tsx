@@ -47,13 +47,14 @@ export const Acordes = ({pedido}: AcordesProps) => {
       <div
         className={`${
           display === "hidden" ? "block" : "hidden"
-        } py-3 bg-white w-[100%] flex items-center justify-between`}
+        } py-3 bg-white shadow-sm shadow-zinc-800 w-[100%] flex items-center justify-between dark:bg-zinc-700 `}
       >
-        <span className="px-5 text-2.2rem dark:text-gray-900">{pedido?.title}</span>
+        <span className="px-5 text-2.2rem text-gray-900 dark:text-white">{pedido?.title}</span>
         <div className="flex items-center px-5">
-          <span className="px-5 text-2.2rem dark:text-gray-900">R$ {pedido?.price}</span>
-          <div className="flex items-center  flex-col-reverse">
-            <span title={status} className="dark:text-gray-900">Status: </span>
+          <span className="px-5 text-2.2rem text-gray-900 dark:text-white">R$ {pedido?.price}</span>
+          <div className="flex items-center">
+            <span title={status} className="text-gray-900 dark:text-white">Status: </span>
+            <div className="flex flex-col justify-center"> 
             <Circle
               size={26}
               weight="fill"
@@ -65,12 +66,12 @@ export const Acordes = ({pedido}: AcordesProps) => {
               className={
             `${display3 === "hidden" ? "hidden" : "block"} 
             
-            min-lg:self-start rounded-md shadow-xl
+            min-lg:self-start rounded-md 
             
             
             `}
             >
-              <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+              <ul className="text-custom-salmon absolute z-10 rounded-xl py-2 bg-white shadow-black shadow-2xl dark:bg-zinc-800 dark:border-b-zinc-700 max-[620px]:right-[1rem]">
                 <div className="flex px-5 py-2 gap-5 flex-col">
                   <li className="dark:text-gray-900">
                     {" "}
@@ -102,6 +103,7 @@ export const Acordes = ({pedido}: AcordesProps) => {
                 </div>
               </ul>
             </div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,16 +111,17 @@ export const Acordes = ({pedido}: AcordesProps) => {
      
 
       <div
-        className={`${display} border-[1px] solid border-[#CCCCCC] bg-white px-12 py-8`}
+        className={`${display} border-[1px] solid border-[#CCCCCC] bg-white px-12 py-8 dark:text-white dark:bg-zinc-800 dark:border-zinc-700`}
       >
         <ul className="text-2rem">
           <div className="flex justify-between items-center max-md:flex-col max-md:items-start">
             <li className="flex gap-5 py-4 max-[319px]:flex-col">
-              <span className="dark:text-gray-900">Título:</span>
+              <span className="dark:text-white">Título:</span>
               <span className="text-[#5B5B5B]">{pedido?.nome}</span>
             </li>
-            <div className="flex items-center">
-              <span className="dark:text-gray-900">Status: </span>
+            <div className="flex items-center justify-center">
+              <span className="dark:text-white">Status: </span>
+             <div className="flex flex-col justify-center"> 
               <Circle
                 size={26}
                 weight="fill"
@@ -128,10 +131,10 @@ export const Acordes = ({pedido}: AcordesProps) => {
               <div
                 className={`${
                   display3 === "hidden" ? "hidden" : "block"
-                } min-lg:self-start rounded-md shadow-xl`}
+                }   min-lg:self-start rounded-md shadow-xl`}
               >
-                <ul className="text-custom-salmon absolute z-10 max-lg:-mt-[13rem] mr-[10rem] bg-black rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
-                  <div className="flex px-5 py-2 gap-5 max-lg:flex-col">
+                <ul className="text-custom-salmon absolute z-10 bg-white shadow-black shadow-2xl rounded-xl py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+                  <div className="flex px-5 py-2 gap-5 flex-col">
                     <li>
                       {" "}
                       <Circle
@@ -162,15 +165,16 @@ export const Acordes = ({pedido}: AcordesProps) => {
                   </div>
                 </ul>
               </div>
+              </div>
             </div>
           </div>
 
-          <li className="flex gap-5 py-4">
-            <span className="dark:text-gray-900">Data de Entrega:</span>
+          <li className="flex gap-5 py-4 max-[375px]:flex-col">
+            <span className="dark:text-white">Data de Entrega:</span>
             <span className="text-[#5B5B5B]">{pedido?.date.toLocaleDateString()}</span>
           </li>
-          <li className="flex gap-5 py-4">
-            <span className="dark:text-gray-900">Nome do Cliente:</span>
+          <li className="flex gap-5 py-4 max-[375px]:flex-col">
+            <span className="dark:text-white">Nome do Cliente:</span>
             <span className="text-[#5B5B5B]">{pedido?.nome}</span>
           </li>
         </ul>
@@ -178,7 +182,7 @@ export const Acordes = ({pedido}: AcordesProps) => {
         <div className="flex flex-col gap-[25rem]">
           <ul>
             <li className="py-5">
-              <span className="dark:text-gray-900">Descrição dos Produtos:</span>
+              <span className="dark:text-white">Descrição dos Produtos:</span>
               <br />
               <span className="text-[#5B5B5B]">{pedido?.description}</span>
             </li>
@@ -186,9 +190,9 @@ export const Acordes = ({pedido}: AcordesProps) => {
           <div className="mt-full">
            
             <div className="flex justify-between py-1.2rem">
-              <span className="dark:text-gray-900">Preço total:</span>
+              <span className="dark:text-white">Preço total:</span>
               <div className="flex items-center gap-5">
-                <span className="dark:text-gray-900">R$ {pedido?.price}</span>
+                <span className="text-gray-900 dark:text-[#5B5B5B]">R$ {pedido?.price}</span>
 
                 <div className="flex items-center max-lg:flex-col-reverse">
                   <Circle
@@ -199,16 +203,16 @@ export const Acordes = ({pedido}: AcordesProps) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> 
             <hr />
             <br />
             <button className="text-red-600">Excluir produto</button>
-          </div>
+          </div> 
         </div>
       </div>
 
       <button
-        className="bg-[#62B8AF] w-full text-white py-2 rounded-0.5rem flex items-center justify-center"
+        className="bg-[#62B8AF] shadow-sm shadow-zinc-800 w-full text-white py-2 rounded-0.5rem flex items-center justify-center"
         onClick={handleClick}
       >
         {display === "hidden" ? <CaretDown size={32} /> : <CaretUp size={32} />}

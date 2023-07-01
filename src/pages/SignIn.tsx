@@ -29,12 +29,11 @@ export default function SignIn() {
         if (response.data) {
           setAuth && setAuth(true);
           setPerfil?.(response.data)
-          atulizarPerfil();
           setAtividades && setAtividades(response.data.trilhas.atividades)
-          if (response.data.trilhas.atividades && !perfil?.progresso === null)
-            navigate("/Trilha");
-          else {
-            navigate("/Nivelamento");
+          if (response.data.progresso === null) {
+            navigate("/Nivelamento")
+          } else {
+            navigate("/Trilha")
           }
         } else {
           console.log("vazio");

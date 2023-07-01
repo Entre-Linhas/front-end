@@ -9,6 +9,7 @@ import { Menu } from "../components/Menu";
 import { Pedido } from "../models/pedido";
 import api from "../apiInstance";
 import { Context } from "../contexts/Context";
+import { Link } from "react-router-dom";
 
  
 
@@ -74,15 +75,15 @@ export const Gerenciamento = () => {
 
         <Menu SelectPage="Gerenciamento" />
 
-        <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto max-lg:px-[1rem]  px-[3rem]">
+        <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto max-lg:px-[3rem]  px-[3rem]">
           <h1 className="font-bold">Gerenciamento de Pedidos</h1>
           <p>Aqui você encontra os pedidos pendentes, em andamento e concluídos.</p>
 
           <div className="py-5">
-            <input type="search" className="px-2 w-full shadow-md" placeholder="Buscar pedidos" />
+            <input type="search" className="px-2 py-2 w-full shadow-md rounded-lg" placeholder="Buscar pedidos" />
           </div>
           <div className="py-12">
-            <button className="bg-[#62B8AF] w-full text-white py-5 rounded-0.5rem" onClick={newForm}>
+            <button className="bg-[#62B8AF] w-full text-white py-5 rounded-[1.5rem]" onClick={newForm}>
               + Novo pedido
             </button>
           </div>
@@ -97,8 +98,9 @@ export const Gerenciamento = () => {
       <Modal _showModal={showModal} _close={handleModal}>
         <div className="flex flex-col items-center">
           <h1 className="text-center font-semibold text-4xl dark:text-gray-900">Experimente as ferramentas do Entre Linhas e otimize sua <span className="text-custom-salmon">produtividade</span>!</h1>
-          <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="min-[500px]:h-[38rem]" />
-          <Linking to={"/ferramentas"} title="Saiba mais" className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md" />
+          <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available" }} className="" />
+       
+          <button  className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md"><Link to="/ferramentas">Saiba mais</Link></button>
         </div>
       </Modal>
 

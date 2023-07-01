@@ -17,6 +17,7 @@ interface ContextProps {
   nivelamento: any
   setNivelamento: Function
   atulizarPerfil: Function
+  // SingOut: Function
 }
 export const Context = createContext<ContextProps>({} as any);
 
@@ -64,18 +65,20 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         console.error(error);
       });
   }, [perfil]); */
-
+  
+  // salva no banco o perfil atualizado e salvar no perfil a resposta do banco
   function atulizarPerfil() {
     const idPerfil: any = perfil?.idPerfil;
     idPerfil && api
       .put("/perfis/" + idPerfil, perfil)
       .then((response) => {
         if (response.data) {
-          console.log('resposta put perfil', response.data);
+          // console.log("in atualizarPerfil, context111", response.data);
+          // console.log("in atualizarPerfil, context", perfil);
           atividades?.idAtividades &&
-            setAtividades(response.data.trilhas.atividades)
+            setPerfil(response.data)
         } else {
-          console.log("vazio");
+          console.log("vazio in context");
         }
       })
       .catch((error) => {
@@ -102,6 +105,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         });
   }, [atividades]) */
 
+  // salva no banco o atividades atualizada do perfil e salvar no atividades da resposta do banco
   function atualizarAtividade(newAtividade: any) {
     const idAtividade: any = atividades?.idAtividades;
     api
@@ -109,9 +113,11 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       .then((response) => {
         if (response.data) {
           setAtividades(response.data);
-          console.log(response.data); // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
+          atulizarPerfil();
+          // console.log("in contextAtualizarAt111", atulizarPerfil)
+          // console.log("in Context atualizarAt", response.data);
         } else {
-          console.log("vazio");
+          console.log("vazio in atualizaAt");
         }
       })
       .catch((error) => {
@@ -157,7 +163,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
           idMateria: atividades.progresso - 1
         }
       }
-      console.log(atividades.materia) // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
+      console.log("in DecrementarProgress, context", atividades.materia) // AQUI PODE APAGAR ESSE CONSOLE NO FUTURO
       atualizarAtividade(newAtividade)
     }
 

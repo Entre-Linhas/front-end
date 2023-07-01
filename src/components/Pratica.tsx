@@ -78,26 +78,26 @@ export default function Pratica() {
       console.log('Resposta correta! Parabéns!');
       const newPerfil = {
         ...perfil,
-        progresso: perfil?.progresso + 0.5
+        progresso: perfil?.progresso + 1
       }
       setPerfil?.(newPerfil)
       atulizarPerfil()
-      if ((perfil?.progresso === 1 && atividades?.pratica?.idPratica === 3)  ||  
-        (perfil?.progresso === 2 && atividades?.pratica?.idPratica === 5)    || 
-        (perfil?.progresso === 3  && atividades?.pratica?.idPratica === 7)   ||
-        (perfil?.progresso === 4  && atividades?.pratica?.idPratica === 9)   ||
-        (perfil?.progresso === 5   && atividades?.pratica?.idPratica === 11)  ||
-        (perfil?.progresso === 6   && atividades?.pratica?.idPratica === 13)  ||
-        (perfil?.progresso === 7   && atividades?.pratica?.idPratica === 15)  ||
-        (perfil?.progresso === 8   && atividades?.pratica?.idPratica === 17)  ||
-        (perfil?.progresso === 9   && atividades?.pratica?.idPratica === 19)  ||
-        (perfil?.progresso === 10  && atividades?.pratica?.idPratica === 21)  ||
-        (perfil?.progresso === 11   && atividades?.pratica?.idPratica === 23) ||
-        (perfil?.progresso === 12   && atividades?.pratica?.idPratica === 25) ||
-        (perfil?.progresso === 13   && atividades?.pratica?.idPratica === 27) ||
-        (perfil?.progresso === 14   && atividades?.pratica?.idPratica === 29) ||
-        (perfil?.progresso === 15   && atividades?.pratica?.idPratica === 31) ||
-        (perfil?.progresso === 16  && atividades?.pratica?.idPratica === 33)) {
+      if ((perfil?.progresso === 2 && atividades?.pratica?.idPratica === 3)  ||  
+        (perfil?.progresso === 4 && atividades?.pratica?.idPratica === 5)    || 
+        (perfil?.progresso === 6  && atividades?.pratica?.idPratica === 7)   ||
+        (perfil?.progresso === 8  && atividades?.pratica?.idPratica === 9)   ||
+        (perfil?.progresso === 10   && atividades?.pratica?.idPratica === 11)  ||
+        (perfil?.progresso === 12   && atividades?.pratica?.idPratica === 13)  ||
+        (perfil?.progresso === 14   && atividades?.pratica?.idPratica === 15)  ||
+        (perfil?.progresso === 16   && atividades?.pratica?.idPratica === 17)  ||
+        (perfil?.progresso === 18   && atividades?.pratica?.idPratica === 19)  ||
+        (perfil?.progresso === 20  && atividades?.pratica?.idPratica === 21)  ||
+        (perfil?.progresso === 22   && atividades?.pratica?.idPratica === 23) ||
+        (perfil?.progresso === 24   && atividades?.pratica?.idPratica === 25) ||
+        (perfil?.progresso === 26   && atividades?.pratica?.idPratica === 27) ||
+        (perfil?.progresso === 28   && atividades?.pratica?.idPratica === 29) ||
+        (perfil?.progresso === 30   && atividades?.pratica?.idPratica === 31) ||
+        (perfil?.progresso === 32  && atividades?.pratica?.idPratica === 33)) {
         navigate("/Trilha");
       }
       avançarQuest();
@@ -106,6 +106,8 @@ export default function Pratica() {
     function respostaIncorretaSelecionada() {
       console.log('Incorreto! Tente novamente!');
     }
+
+    console.log("Pratica", perfil)
 
    return (
       <>

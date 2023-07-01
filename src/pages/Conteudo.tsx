@@ -4,9 +4,135 @@ import Material from "../components/Material";
 import Pratica from "../components/Pratica";
 import { Context } from "../contexts/Context";
 
+// 2 formas de solução, 1º editar o perfil apenas dessa pagina, atraves do setPerfil sem usar a function setAtividade, liberando os exercicios 2º tornando os dados do perfil uma variavel e trocandos todas as variaveis, assim seta na variavel do mesmo jeito como na primeira solução, ver se funciona na primeira e assim por diante se der certo
 
 export const Conteudo = () => {
-    const { atividades, perfil } = useContext(Context);
+    const { setPerfil, setAtividades, atividades, perfil } = useContext(Context);
+    /* const progresso = atividades?.progresso; */
+    console.log("CONTEUDO 1", atividades?.progresso)
+    
+
+    console.log("CONTEUDO 3", perfil.progresso)
+// para setar o progresso para essa pagina funcionar normalmente atraves do link independente do progresso do perfil
+switch (atividades?.atividades?.progresso) {
+  case 1:
+    const novoPerfil1 = {
+      ...perfil,
+      progresso: 1
+    };
+    console.log("CONTEUDO 2", novoPerfil1)
+    setPerfil?.(novoPerfil1);
+    break;
+  case 10:
+    const novoPerfil2 = {
+      ...perfil,
+      progresso: 2
+    };
+    setPerfil?.(novoPerfil2);
+    break;
+  case 19:
+    const novoPerfil3 = {
+      ...perfil,
+      progresso: 3
+    };
+    setPerfil?.(novoPerfil3);
+    break;
+  case 28:
+    const novoPerfil4 = {
+      ...perfil,
+      progresso: 4
+    };
+    setPerfil?.(novoPerfil4);
+    break;
+  case 37:
+    const novoPerfil5 = {
+      ...perfil,
+      progresso: 5
+    };
+    setPerfil?.(novoPerfil5);
+    break;
+  case 48:
+    const novoPerfil6 = {
+      ...perfil,
+      progresso: 6
+    };
+    setPerfil?.(novoPerfil6);
+    break;
+  case 55:
+    const novoPerfil7 = {
+      ...perfil,
+      progresso: 7
+    };
+    setPerfil?.(novoPerfil7);
+    break;
+  case 64:
+    const novoPerfil8 = {
+      ...perfil,
+      progresso: 8
+    };
+    setPerfil?.(novoPerfil8);
+    break;
+  case 73:
+    const novoPerfil9 = {
+      ...perfil,
+      progresso: 9
+    };
+    setPerfil?.(novoPerfil9);
+    break;
+  case 82:
+    const novoPerfil10 = {
+      ...perfil,
+      progresso: 10
+    };
+    setPerfil?.(novoPerfil10);
+    break;
+  case 91:
+    const novoPerfil11 = {
+      ...perfil,
+      progresso: 11
+    };
+    setPerfil?.(novoPerfil11);
+    break;// oiii digaa PASSOS! Olha whats2
+  case 100:
+    const novoPerfil12 = {
+      ...perfil,
+      progresso: 12
+    };
+    setPerfil?.(novoPerfil12);
+    break;
+  case 109:
+    const novoPerfil13 = {
+      ...perfil,
+      progresso: 13
+    };
+    setPerfil?.(novoPerfil13);
+    break;
+  case 118:
+    const novoPerfil14 = {
+      ...perfil,
+      progresso: 14
+    };
+    setPerfil?.(novoPerfil14);
+    break;
+  case 127:
+    const novoPerfil15 = {
+      ...perfil,
+      progresso: 15
+    };
+    setPerfil?.(novoPerfil15);
+    break;
+  case 136:
+    const novoPerfil16 = {
+      ...perfil,
+      progresso: 16
+    };
+    setPerfil?.(novoPerfil16);
+    break;
+  default:
+    break;
+}
+
+
 
     const progresso = atividades?.progresso;
     const [exerciciosP1T1, setExerciciosP1T1] = useState(false);
@@ -27,6 +153,7 @@ export const Conteudo = () => {
     
 
     useEffect(() => {
+      // controla os exercicios, para não aparecer os mesmos, e assim poder atraves de 2 definir apenas correto para o necessario, sendo os dois correto como se fosse 1
         if (atividades?.pratica?.idPratica === 3 || perfil.progresso >= 2) {
           setExerciciosP1T1(true);
         }
@@ -74,7 +201,8 @@ export const Conteudo = () => {
         }
       }, [atividades?.pratica?.idPratica, perfil.progresso]);
       
-
+      
+// defini quando irá aparecer os exercicios
     if (progresso > 0) {
         if ((!exerciciosP1T1 && progresso === 10) || (!exerciciosP1T2 && progresso === 19) || (!exerciciosP1T3 && progresso === 28) || (!exerciciosP1T4 && progresso === 37) || (!exerciciosP2T1 && progresso === 48) || (!exerciciosP2T2 && progresso === 55) || (!exerciciosP2T3 && progresso === 64) || (!exerciciosP2T4 && progresso === 73) || (!exerciciosP3T1 && progresso === 82) || (!exerciciosP3T2 && progresso === 91) || (!exerciciosP3T3 && progresso === 100) || (!exerciciosP3T4 && progresso === 109) || (!exerciciosP4T1 && progresso === 118) || (!exerciciosP4T2 && progresso === 127) || (!exerciciosP4T3 && progresso === 136)) {
             return (
