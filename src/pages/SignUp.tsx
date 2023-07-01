@@ -1,5 +1,5 @@
 import { CaretLeft, Envelope, IdentificationCard, Key, MapPin, SignIn, Tag, UserCircle } from "@phosphor-icons/react";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
@@ -7,6 +7,12 @@ import { Linking } from "../components/Linking";
 import { Logo } from "../components/Logo";
 import { Modal } from "../components/Modal";
 import api from "../apiInstance";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import classSwiper, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
  
 
@@ -123,15 +129,14 @@ export class Sign extends Component {
 }
 
 export default function SignUp() {
-    const [steps, setSteps] = useState<number>(1);
+    const [steps, setSteps] = useState<number>(0);
     const [email, setEmail] = useState<string>();
     const [password, setPassword] = useState<string>();
     const [terms, setTerms] = useState<boolean>(false);
-    const [showPassword, setShowPassord] = useState<boolean>(false);
     const [typePassword, setTypePassword] = useState<"text" | "password">("password");
     const [currentValue, setCurrentValue] = useState<{ src: string, alt: string }>({ src: "/ContentIm5.jpg", alt: "img5" });
-
     const navigate = useNavigate();
+    const swiperRef = useRef<any>();
 
 
     useEffect(() => {
@@ -194,11 +199,31 @@ export default function SignUp() {
     //     }
     // }
 
-
-
-
-
     return (
+        <>
+            <Swiper
+                // install Swiper modules
+                navigation
+                spaceBetween={20}
+                slidesPerView={1}
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }} effect="fade"
+            >
+                <SwiperSlide className="w-full"  >
+                    <div>
+                        <span>Primeiro <input type="text" /></span>
+                    </div>
+                </SwiperSlide>
+                <button onClick={() => swiperRef.current.slideNext()}>
+                    Go to Next Slide
+                </button>
+            </Swiper>
+        </>
+    )
+}
+
+/* 
         <div className="flex h-screen w-full text-[100% !important]">
             <div className="h-screen bg-white flex flex-col p-6 max-[1023px]:w-full sm:w-full min-[1024px]:w-[64rem] min-[1440px]:w-[100rem] min-[1770px]:w-[130rem] dark:bg-zinc-900">
                 <header className="w-full">
@@ -219,6 +244,4 @@ export default function SignUp() {
             <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
                 <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" />
             </div>
-        </div>
-    )
-}
+        </div> */
