@@ -33,7 +33,6 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [nivelamento, setNivelamento] = useState<any>(null);
   const [pedido2, setPedido] = useState<any>();
   
-  const [dataRetrieved, setDataRetrieved] = useState<boolean>(false);
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -44,21 +43,17 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
   // para não perder os dados mesmo depois de recarregar
   useEffect(() => {
-    if (!dataRetrieved) {
-      const storedData = localStorage.getItem('contextData');
+    const storedData = localStorage.getItem('contextData');
 
-      if (storedData) {
-        const parsedData = JSON.parse(storedData);
-        setAuth(parsedData.auth);
-        setPerfil(parsedData.perfil);
-        setAtividades(parsedData.atividades);
-        setNivelamento(parsedData.nivelamento);
-        setPedido(parsedData.pedido2);
-      }
-
-      setDataRetrieved(true);
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      setAuth(parsedData.auth);
+      setPerfil(parsedData.perfil);
+      setAtividades(parsedData.atividades);
+      setNivelamento(parsedData.nivelamento);
+      setPedido(parsedData.pedido2);
     }
-  }, [dataRetrieved]);
+  }, [localStorage]);
 
   // Armazena os dados no localStorage sempre que eles forem atualizados
   useEffect(() => {

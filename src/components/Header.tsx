@@ -60,7 +60,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
                 <div className="w-[3.5rem] h-[3.5rem]">
                   <img src={perfil.foto} className="max-w-[100%] h-full rounded-full" alt='imagem de perfil do usuário' />
                 </div>
-                {perfil && <p>{perfil.usuario.nome}</p>}
+                <p className="max-w-[8rem] truncate">{perfil.usuario.nome}</p>
               </div>
             </button>
 
