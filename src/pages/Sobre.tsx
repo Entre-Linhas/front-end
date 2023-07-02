@@ -55,7 +55,7 @@ export default function Sobre() {
                         GitHub="https://github.com/DevPassosMatheus" 
                         Linkedin="https://www.linkedin.com/in/passosmatheus/" 
                         desc="Sou um jovem cheio de energia e extremamente dedicado, dou o sangue sempre, em tudo que faço. Tenho uma fome imensurável de crescimento e evolução, e sou apaixonado por tecnologia." 
-                        img="/Matheus.png"
+                        img="/Matheus.png" 
                     />
                     <About 
                          StyleAbout="secondary"  

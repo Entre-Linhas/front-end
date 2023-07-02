@@ -18,14 +18,14 @@ export default function Material({ image, title, content }: MaterialProps) {
         <h1 className="text-[2.4rem] font-semibold">{atividades?.materia?.tituloPag || "...Carregando"}</h1>
         <div className="flex flex-col items-center px-[2rem]">
           <div>
-            <img src={image} className="m-auto py-[4rem] max-w-[100%]" alt="Material" role='imagem'/>
+            <img src={image} className="m-auto py-[4rem] max-w-[100%]" alt="imagem ilustrativa do assunto" role='imagem ilustrativa'/>
           </div>
           <p className="text-justify max-w-[80.9rem] ">
             {atividades?.materia?.txt1 || "...Carregando"}
           </p>
           <div className="flex gap-[3.5rem] py-[3.5rem]">
-            <Button titleBt="anterior"onClick={() => decrementarProgressoAtividade()} />
-            <Button titleBt="próximo" onClick={() => incrementarProgressoAtividade()} />
+            <Button titleBt="anterior"onClick={() => decrementarProgressoAtividade()} title="Ir para o anterior" />
+            <Button titleBt="próximo" onClick={() => incrementarProgressoAtividade()} title="ir para o próximo" />
           </div>
         </div>
       </div>

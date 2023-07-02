@@ -14,7 +14,7 @@ export const Conquistas = ({ etapa }: ConquistasProps) => {
 
                 <div className="flex gap-5 items-center py-5">
                     <div className="bg-[#E3E3E3] rounded-full py-2 px-2">
-                        <Trophy size={32} weight="fill" className="text-[#FED130]" />
+                        <Trophy size={32} weight="fill" className="text-[#FED130]" alt="troféu" />
                     </div>
                     <h2 className="dark:text-white">Concliu a etapa<span className="text-custom-salmon"> {etapa}</span></h2>
                 </div>

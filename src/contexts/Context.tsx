@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import api from '../apiInstance';
+ 
 
 interface ContextProps {
   auth: boolean
@@ -20,6 +21,7 @@ interface ContextProps {
   pedido2: any
   setPedido?: Function
   pegarDadosPedido?: Function
+  LogOut: Function
   // SingOut: Function
 }
 export const Context = createContext<ContextProps>({} as any);
@@ -30,6 +32,8 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
   const [nivelamento, setNivelamento] = useState<any>(null);
   const [pedido2, setPedido] = useState<any>();
+  
+  const [dataRetrieved, setDataRetrieved] = useState<boolean>(false);
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -39,18 +43,42 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
 
   // para não perder os dados mesmo depois de recarregar
-  /* useEffect(() => {
-    const storedPerfil = localStorage.getItem('perfil');
-    if (storedPerfil) {
-      setPerfil(JSON.parse(storedPerfil));
-    }
-  }, []);
-
   useEffect(() => {
-    if (perfil) {
-      localStorage.setItem('perfil', JSON.stringify(perfil));
+    if (!dataRetrieved) {
+      const storedData = localStorage.getItem('contextData');
+
+      if (storedData) {
+        const parsedData = JSON.parse(storedData);
+        setAuth(parsedData.auth);
+        setPerfil(parsedData.perfil);
+        setAtividades(parsedData.atividades);
+        setNivelamento(parsedData.nivelamento);
+        setPedido(parsedData.pedido2);
+      }
+
+      setDataRetrieved(true);
     }
-  }, [perfil]); */
+  }, [dataRetrieved]);
+
+  // Armazena os dados no localStorage sempre que eles forem atualizados
+  useEffect(() => {
+    const dataToStore = {
+      auth,
+      perfil,
+      atividades,
+      nivelamento,
+      pedido2
+    };
+
+    localStorage.setItem('contextData', JSON.stringify(dataToStore));
+  }, [auth, perfil, atividades, nivelamento, pedido2]);
+
+function LogOut() {
+  localStorage.clear();
+  setAuth(false);
+}
+
+  
 
   /* useEffect(() => {
     const idPerfil: any = perfil?.idPerfil;
@@ -215,7 +243,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
-        setNivelamento, atulizarPerfil, pedido2, setPedido, pegarDadosPedido }}>
+        setNivelamento, atulizarPerfil, pedido2, setPedido, pegarDadosPedido, LogOut }}>
         {/* {JSON.stringify(atividades.progresso || {})} */}
         {children}
       </Context.Provider>

@@ -32,10 +32,10 @@ return (
                 <p className="text-[2rem] max-w-[70rem] py-5">{desc}</p>
                 <div className="flex gap-5 py-10">
                    <a href={Linkedin} target="_blank"> 
-                    <img src="/Linkedin.png" className="h-[3.2rem]"  alt="imagem de um membro da equipe" role="imagem"/>
+                    <img src="/Linkedin.png" className="h-[3.2rem]"  alt="imagem de um membro da equipe" role="imagem de logo"/>
                    </a>
                    <a  href={GitHub} target="_blank"> 
-                   <img src="/GitHub.png" className="h-[3.2rem]" alt="logo github" role="imagem"/>
+                   <img src="/GitHub.png" className="h-[3.2rem]" alt="logo github" role="imagem de logo"/>
                    </a>
                  
                 </div> 
@@ -54,13 +54,13 @@ return (
                     <img src="/Linkedin.png" className="h-[3.2rem]"  alt="imagem de um membro da equipe" role="imagem"/>
                    </a>
                    <a  href={GitHub} target="_blank"> 
-                   <img src="/GitHub.png" className="h-[3.2rem]" alt="logo github" role="imagem"/>
+                   <img src="/GitHub.png" className="h-[3.2rem]" alt="logo github" role="imagem do logo"/>
                    </a>
                 </div> 
             </div>
             
             <div>
-            <img src={img} className="max-w-[30rem] w-full rounded-full" alt="imagem de um membro da equipe" role="imagem"/>
+            <img src={img} className="max-w-[30rem] w-full rounded-full" alt="imagem de um membro da equipe" role="imagem do logo"/>
             </div>
         </>
         )

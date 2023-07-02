@@ -15,7 +15,7 @@ export function Modal({ children, _showModal, _close, _maxWidth = "w-full max-w-
     return (
         <div className={`px-5 fixed flex items-center justify-center bg-black bg-opacity-50 top-0 right-0 bottom-0 left-0 transition-all duration-200 ${!_showModal && "invisible opacity-0"}`}>
             <div className={`flex flex-col ${_Custom} relative ${_maxWidth} max-h-screenModal rounded-lg shadow-md px-8 py-7 `} {...rest}>
-                <button onClick={_close} className="ml-auto">
+                <button onClick={_close} className="ml-auto" title="Fechar">
                     <X className="dark:text-gray-900"/>
                 </button>
                 {children}
