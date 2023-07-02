@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
@@ -25,7 +25,7 @@ export default function FreeRoutes() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/pagamento" element={<Pagamento />} />
         <Route path="/Comunidade" element={<Comunidade />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<Navigate replace to="/"/>} />
       </Routes>
     </BrowserRouter>
   );

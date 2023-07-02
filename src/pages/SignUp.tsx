@@ -8,10 +8,10 @@ import { Logo } from "../components/Logo";
 import api from "../apiInstance";
 import { Swiper, SwiperSlide, } from "swiper/react";
 import { Swiper as classSwiper } from 'swiper';
-
+import { Modal } from "../components/Modal";
 import 'swiper/css';
 import { Context } from "../contexts/Context";
-
+import { Link } from "react-router-dom";
  
 
 export default function SignUp() {
@@ -27,7 +27,15 @@ export default function SignUp() {
     const [currentValue, setCurrentValue] = useState<{ src: string, alt: string }>({ src: "/ContentIm5.jpg", alt: "img5" });
     const navigate = useNavigate();
     const swiperRef = useRef<classSwiper>();
+    const [showModal, setShowModal] = useState(false);
+ 
     // const swiper = useSwiper();
+
+    function handleModal() {
+     setShowModal(!showModal)
+    }
+
+
 
 
     useEffect(() => {
@@ -116,9 +124,8 @@ export default function SignUp() {
 
             })
             .catch((error) => {
-                alert("Email ja utilizado")
                 console.error(error);
-
+                handleModal();
             });
     }
 
@@ -160,7 +167,7 @@ export default function SignUp() {
                                     <input type="checkbox" onChange={() => setTerms(!terms)} title="aceitar os termos de uso"/>
                                     <label htmlFor="" className="dark:text-gray-100" >Concordo com os <Linking title="Termos de uso" to="/terms-of-use" className="hover:border-none" style={{ color: "#FF6464" }} /></label>
                                 </div>
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={email.length === 0 || senha.length === 0 || !terms || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={email.length === 0 || senha.length === 0 || !terms || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
                             </div>
                         </SwiperSlide>
 
@@ -171,7 +178,7 @@ export default function SignUp() {
                                 <Input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value)} value={sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
                                 <Input type="text" placeholder="CPF" onChange={(e) => setCpf(e.target.value)} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
                             </div>
                         </SwiperSlide>
 
@@ -180,7 +187,7 @@ export default function SignUp() {
                             <div className="flex gap-2 mt-2 justify-center flex-col items-center">
                                 <Input type="text" placeholder="Endereço" onChange={(e) => setEndereco(e.target.value)} value={endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={endereco.length === 0} titleBt="Finalizar" icon={SignIn} onClick={handleSubmit} title="concluir a etapa"/>
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={endereco.length === 0} titleBt="Finalizar" icon={SignIn} onClick={handleSubmit} title="concluir a etapa"/>
                             </div>
                         </SwiperSlide>
                     </Swiper>
@@ -189,6 +196,17 @@ export default function SignUp() {
             <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
                 <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" aria-roledescription="Variações de imagem de costureiras(os)" />
             </div>
+
+            <Modal _showModal={showModal} _close={handleModal}  >
+              <div className="flex flex-col items-center">
+              <h1 className="text-center font-semibold text-[2.8rem] dark:text-gray-900 text-custom-salmon">Esse e-mail já foi costurado!</h1>
+                <p style={{ width: "-webkit-fill-available"}} className="py-20 text-[2rem] text-center">O e-mail que você inseriu já está cadastrado conosco. <br/><br/> Você pode tentar criar seu cadastro novamente com um e-mail diferente, ou realizar o login com este e-mail.</p>
+                <div className="flex gap-10 text-white"> 
+                  <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md text-[1.8rem]" onClick={() => window.location.reload()}>Tentar novamente</button>
+                  <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md text-[1.8rem]"><Link to="/signin" title="Voltar para o login">Login</Link></button>
+               </div>
+              </div>
+            </Modal>
         </div>
         </>
     )

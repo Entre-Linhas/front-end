@@ -6,6 +6,8 @@ import { Input } from "../components/Input";
 import { Logo } from "../components/Logo";
 import { Context } from "../contexts/Context";
 import api from "../apiInstance";
+import { Modal } from "../components/Modal";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
   const [email, setEmail] = useState<string>("");
@@ -14,13 +16,21 @@ export default function SignIn() {
   var [currentValue, setCurrentValue] = useState<string>("/ContentIm5.jpg");
   const [ error, setError] = useState(false);
   const { auth, setAuth } = useContext(Context);
-  const {perfil, setPerfil, setAtividades, atulizarPerfil} = useContext(Context);
+  const {perfil, setPerfil, setAtividades, atualizarPerfil} = useContext(Context);
+  const [showModal, setShowModal] = useState(false);
+
+  function handleModal() {
+      setShowModal(!showModal)
+  }
+
   const formData = {
     email,
     senha
   };
  
   const navigate = useNavigate();
+
+
 
   const handleSubmit = () => {
     api
@@ -30,6 +40,7 @@ export default function SignIn() {
           setAuth && setAuth(true);
           setPerfil?.(response.data)
           setAtividades && setAtividades(response.data.trilhas.atividades)
+          localStorage.setItem('perfil', JSON.stringify(response.data))
           if (response.data.progresso === null) {
             navigate("/Nivelamento")
           } else {
@@ -41,7 +52,8 @@ export default function SignIn() {
       })
       .catch((error) => {
         setError(true);
-        console.log(error)
+        console.log(error);
+        handleModal();
       });
   };
 
@@ -98,7 +110,7 @@ export default function SignIn() {
               onChange={(e: any) => setPassword(e.target.value)}
               leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />}
             />
-            <Button titleBt="Entrar" onClick={handleSubmit} title="Entrar" />
+            <Button titleBt="Entrar" onClick={handleSubmit} title="Entrar" style={{width: "100%", maxWidth: "55rem"}} />
             <NavLink to="/SignUp" className="dark:text-gray-100" title='cadastrar-se'>
               Cadastrar-me
             </NavLink>
@@ -108,6 +120,19 @@ export default function SignIn() {
         <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">
           <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" alt="imagens de costureiras" role="imagem ilustrativa de costureiras" />
         </div>
+
+
+
+            <Modal _showModal={showModal} _close={handleModal}  >
+              <div className="flex flex-col items-center">
+              <h1 className="text-center font-semibold text-[2.8rem] dark:text-gray-900 text-custom-salmon">Opa, algo deu errado...</h1>
+                <p style={{ width: "-webkit-fill-available"}} className="py-20 text-[2rem]">Os dados inseridos podem estar invalidos, ou você pode ainda não possuir um cadastro conosco.</p>
+                <div className="flex gap-10 text-white"> 
+                  <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md text-[1.8rem]" onClick={() => setShowModal(!showModal)}>Tentar novamente</button>
+                  <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md text-[1.8rem]"><Link to="/signup" title="Realizar cadastro">Registrar</Link></button>
+               </div>
+              </div>
+            </Modal>
       </div>
     </>
   );

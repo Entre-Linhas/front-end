@@ -19,7 +19,7 @@ interface ContextProps {
   avançarQuest: Function
   nivelamento: any
   setNivelamento: Function
-  atulizarPerfil: Function
+  atualizarPerfil: Function
   pedido2: Pedido[]
   setPedido?: Function
   pegarDadosPedido?: Function
@@ -34,13 +34,27 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
   const [nivelamento, setNivelamento] = useState<any>(null);
   const [pedido2, setPedido] = useState<Pedido[]>([]);
+  const [hasVerifiedLogin, setHasVerifiedLogin] = useState(false)
+
+  function verificaLoginAnterior() {
+    const rawPerfil = localStorage.getItem('perfil')
+    console.log(rawPerfil)
+    if(rawPerfil) {
+      const perfil = JSON.parse(rawPerfil)
+      setPerfil(perfil)
+      setAuth(true)
+    }
+    setHasVerifiedLogin(true)
+  }
   
 
-  /* useEffect(() => {
-    console.log("Log no context",
-      perfil
-    )
-  },[perfil]) */
+  useEffect(() => {
+    verificaLoginAnterior()
+  },[])
+
+  useEffect(() => {
+    perfil?.idPerfil && localStorage.setItem('perfil', JSON.stringify(perfil))
+  }, [perfil])
 
 
   // para não perder os dados mesmo depois de recarregar
@@ -70,6 +84,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('contextData', JSON.stringify(dataToStore));
   }, [auth, perfil, atividades, nivelamento, pedido2]); */
 
+  console.log("CONTEXT", perfil)
 function LogOut() {
   localStorage.clear();
   setAuth(false);
@@ -96,16 +111,13 @@ function LogOut() {
   }, [perfil]); */
   
   // salva no banco o perfil atualizado e salvar no perfil a resposta do banco
-  function atulizarPerfil() {
-    const idPerfil: any = perfil?.idPerfil;
+  function atualizarPerfil(newPerfil: any) {
+    const idPerfil: any = newPerfil?.idPerfil;
     idPerfil && api
-      .put("/perfis/" + idPerfil, perfil)
+      .put("/perfis/" + idPerfil, newPerfil)
       .then((response) => {
         if (response.data) {
-          // console.log("in atualizarPerfil, context111", response.data);
-          // console.log("in atualizarPerfil, context", perfil);
-          perfil?.idPerfil &&
-            setPerfil(response.data)
+          setPerfil?.(response.data)
         } else {
           console.log("vazio in context");
         }
@@ -142,8 +154,7 @@ function LogOut() {
       .then((response) => {
         if (response.data) {
           setAtividades(response.data);
-          atulizarPerfil();
-          // console.log("in contextAtualizarAt111", atulizarPerfil)
+          // console.log("in contextAtualizarAt111", atualizarPerfil)
           // console.log("in Context atualizarAt", response.data);
         } else {
           console.log("vazio in atualizaAt");
@@ -161,7 +172,7 @@ function LogOut() {
       foto: imageName
     };
     setPerfil(newPerfil)
-    atulizarPerfil()
+    atualizarPerfil(newPerfil)
   };
 
     function definirDescricao(servicoProps: string) {
@@ -170,7 +181,7 @@ function LogOut() {
         servico: servicoProps
       };
       setPerfil(newPerfil)
-      atulizarPerfil()
+      atualizarPerfil(newPerfil)
     };
 
     function incrementarProgressoAtividade() {
@@ -205,6 +216,17 @@ function LogOut() {
       }
       atualizarAtividade(newAtividade)
     }
+
+    /* 
+    function avançarProgressoPerfil() {
+      const newPerfil = {
+      ...perfil,
+      progresso: perfil?.progresso + 1
+    }
+    setPerfil?.(newPerfil)
+    atualizarPerfil(newPerfil)
+    } 
+    */
 
     // faz o get da lista de pedido
   /* function pegarDadosPedido() {
@@ -242,9 +264,9 @@ function LogOut() {
 
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
-        setNivelamento, atulizarPerfil, pedido2, setPedido, pegarDadosPedido, LogOut }}>
+        setNivelamento, atualizarPerfil, pedido2, setPedido, pegarDadosPedido, LogOut }}>
         {/* {JSON.stringify(atividades.progresso || {})} */}
-        {children}
+        {hasVerifiedLogin && children}
       </Context.Provider>
     );
   }

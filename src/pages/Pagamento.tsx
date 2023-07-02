@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 import { CheckCircle } from "@phosphor-icons/react";
 import { Context } from "../contexts/Context";
 import { Modal } from "../components/Modal";
+import { useContext } from "react";
 
 export const Pagamento = () => {
   const [AlterForm, setAlterForm] = useState(1);
+  const [auth, setAuth] = useState(Context)
 
   const ProximoForm = () => {
     setAlterForm(AlterForm + 1);
   };
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
     function handleModal() {
         setShowModal(!showModal)
@@ -41,6 +43,7 @@ export const Pagamento = () => {
                   placeholder="Seu nome"
                   className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
                   aria-labelledby="nome completo"
+                  disabled 
                 />
               </div>
               <div className="py-5">
@@ -52,7 +55,8 @@ export const Pagamento = () => {
                   id="email"
                   placeholder="seu.email.aqui@example.com"
                   className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="email"
-                />
+                  disabled 
+               />
               </div>
               <div className="flex gap-12 max-[450px]:flex-col">
                 <div className="w-full max-w-[28.5rem] py-5">
@@ -64,6 +68,7 @@ export const Pagamento = () => {
                     id="celular"
                     placeholder="(00) 00000-0000"
                     className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="celular"
+                    disabled 
                   />
                 </div>
 
@@ -76,6 +81,7 @@ export const Pagamento = () => {
                     id="cpf"
                     placeholder="000.000.000-00"
                     className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="cpf"
+                    disabled 
                   />
                 </div>
               </div>
@@ -107,7 +113,8 @@ export const Pagamento = () => {
                   id="nomeImpresso"
                   placeholder="Matheus Passos da Silva"
                   className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
-                />
+                  disabled 
+              />
               </div>
               <div className="py-5">
                 <label htmlFor="numeroCartao" className="block text-[#575757] dark:text-gray-100">
@@ -118,6 +125,7 @@ export const Pagamento = () => {
                   id="numeroCartao"
                   placeholder="0000 0000 0000 0000"
                   className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="numero do cartão"
+                  disabled 
                 />
               </div>
               <div className="flex gap-12 max-[450px]:flex-col">
@@ -130,6 +138,7 @@ export const Pagamento = () => {
                     id="validade"
                     placeholder="MM/AA"
                     className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="validade"
+                    disabled 
                   />
                 </div>
 
@@ -142,7 +151,8 @@ export const Pagamento = () => {
                     id="cvv"
                     placeholder="000"
                     className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="cvv"
-                  />
+                    disabled 
+                 />
                 </div>
               </div>
             </div>
@@ -168,7 +178,7 @@ export const Pagamento = () => {
             <div className="py-10 flex flex-col items-center gap-5">
               <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white">
                 
-                <Link to="/Gerenciamento" title="ir para as ferramentas">Ir para as ferramentas</Link>
+                <Link to={auth ? "/gerenciamento" : "/signin"} title="ir para as ferramentas">Ir para as ferramentas</Link>
               </button>
               <span className="text-[1.8rem] text-[#8F8F8F] underline dark:text-gray-100">
                 <Link to="/" title='voltar para página inicial'>Voltar para a página inicial</Link>
@@ -176,11 +186,15 @@ export const Pagamento = () => {
             </div>
           </div>
         )}
-          <Modal _showModal={showModal} _close={handleModal}>
-                <div className="flex flex-col overflow-auto gap-8 mx-14 my-10">
-                    <h2 className="text-custom-salmon font-semibold text-3xl text-center">Com dúvida em qual opção escolher?</h2>
-                    <p className="dark:text-gray-900">Se você pretende iniciar um negócio, a primeira opção foi feita para você. Ela irá te ensinar desde como identificar seu cliente até o que o seu produto tem de especial.<br /><br />Já se você tem um negócio, a segunda opção é a melhor. Você poderá escolher em que ponto da trilha irá iniciar seus estudos.</p>
-                </div>
+          <Modal _showModal={showModal} _close={handleModal}  >
+              <div className="flex flex-col items-center">
+              <h1 className="text-center font-semibold text-[2.8rem] dark:text-gray-900 text-custom-salmon">Não se preocupe!</h1>
+                <p style={{ width: "-webkit-fill-available"}} className="py-10 text-[1.8rem]">Todas as ferramentas do Entre Linhas estão disponíveis gratuitamente para testes durante um mês! A opção de pagamento foi desativada, o que significa que você pode conhecer e desfrutar de todas as nossas funcionalidades apenas se cadastrando.</p>
+                <div className="flex gap-10 text-white"> 
+                  <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md"><Link to="/signup" title="Saiba mais">Registrar</Link></button>
+                  <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md"><Link to="/signin" title="Saiba mais">Login</Link></button>
+               </div>
+              </div>
             </Modal>
       </div>
     </>

@@ -1,5 +1,5 @@
 export interface Pedido {
-/* id: Key | null | undefined */
+id?: number
 
 title: string
 date: Date

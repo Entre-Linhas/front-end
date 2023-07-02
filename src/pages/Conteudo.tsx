@@ -3,6 +3,7 @@ import { Header } from "../components/Header";
 import Material from "../components/Material";
 import Pratica from "../components/Pratica";
 import { Context } from "../contexts/Context";
+import { useNavigate } from "react-router-dom";
 
 // 2 formas de solução, 1º editar o perfil apenas dessa pagina, atraves do setPerfil sem usar a function setAtividade, liberando os exercicios 2º tornando os dados do perfil uma variavel e trocandos todas as variaveis, assim seta na variavel do mesmo jeito como na primeira solução, ver se funciona na primeira e assim por diante se der certo
 
@@ -135,6 +136,7 @@ switch (atividades?.progresso) {
 }, [atividades?.progresso]); */
 
 
+  const navigate = useNavigate();
 
     const progresso = atividades?.progresso;
     const [exerciciosP1T1, setExerciciosP1T1] = useState(false);
@@ -152,54 +154,55 @@ switch (atividades?.progresso) {
     const [exerciciosP4T1, setExerciciosP4T1] = useState(false);
     const [exerciciosP4T2, setExerciciosP4T2] = useState(false);
     const [exerciciosP4T3, setExerciciosP4T3] = useState(false);
-    
+    console.log("CONTEUDO", perfil)
 
     useEffect(() => {
       // controla os exercicios, para não aparecer os mesmos, e assim poder atraves de 2 definir apenas correto para o necessario, sendo os dois correto como se fosse 1
-        if (atividades?.pratica?.idPratica === 3 || perfil.progresso >= 2) {
+        if (atividades?.pratica?.idPratica === 3 || perfil.progresso >= 2 && exerciciosP1T1 != true) {
           setExerciciosP1T1(true);
+          /* navigate("/Trilha") */
           /* navigate = useContext(Context); */
         }
-        if (atividades?.pratica?.idPratica === 5 || perfil.progresso >= 4) {
+        if (atividades?.pratica?.idPratica === 5 || perfil.progresso >= 4 && exerciciosP1T2 != true) {
           setExerciciosP1T2(true);
         }
-        if (atividades?.pratica?.idPratica === 7 || perfil.progresso >= 6) {
+        if (atividades?.pratica?.idPratica === 7 || perfil.progresso >= 6 && exerciciosP1T3 != true) {
           setExerciciosP1T3(true);
         }
-        if (atividades?.pratica?.idPratica === 9 || perfil.progresso >= 8) {
+        if (atividades?.pratica?.idPratica === 9 || perfil.progresso >= 8 && exerciciosP1T4 != true) {
           setExerciciosP1T4(true);
         }
-        if (atividades?.pratica?.idPratica === 11 || perfil.progresso >= 10) {
+        if (atividades?.pratica?.idPratica === 11 || perfil.progresso >= 10 && exerciciosP2T1 != true) {
           setExerciciosP2T1(true);
         }
-        if (atividades?.pratica?.idPratica === 13 || perfil.progresso >= 12) {
+        if (atividades?.pratica?.idPratica === 13 || perfil.progresso >= 12 && exerciciosP2T2 != true) {
           setExerciciosP2T2(true);
         }
-        if (atividades?.pratica?.idPratica === 15 || perfil.progresso >= 14) {
+        if (atividades?.pratica?.idPratica === 15 || perfil.progresso >= 14 && exerciciosP2T3 != true) {
           setExerciciosP2T3(true);
         }
-        if (atividades?.pratica?.idPratica === 17 || perfil.progresso >= 16) {
+        if (atividades?.pratica?.idPratica === 17 || perfil.progresso >= 16 && exerciciosP2T4 != true) {
           setExerciciosP2T4(true);
         }
-        if (atividades?.pratica?.idPratica === 19 || perfil.progresso >= 18) {
+        if (atividades?.pratica?.idPratica === 19 || perfil.progresso >= 18 && exerciciosP3T1 != true) {
           setExerciciosP3T1(true);
         }
-        if (atividades?.pratica?.idPratica === 21 || perfil.progresso >= 20) {
+        if (atividades?.pratica?.idPratica === 21 || perfil.progresso >= 20 && exerciciosP3T2 != true) {
           setExerciciosP3T2(true);
         }
-        if (atividades?.pratica?.idPratica === 23 || perfil.progresso >= 22) {
+        if (atividades?.pratica?.idPratica === 23 || perfil.progresso >= 22 && exerciciosP3T3 != true) {
           setExerciciosP3T3(true);
         }
-        if (atividades?.pratica?.idPratica === 25 || perfil.progresso >= 24) {
+        if (atividades?.pratica?.idPratica === 25 || perfil.progresso >= 24 && exerciciosP3T4 != true) {
           setExerciciosP3T4(true);
         }
-        if (atividades?.pratica?.idPratica === 27 || perfil.progresso >= 26) {
+        if (atividades?.pratica?.idPratica === 27 || perfil.progresso >= 26 && exerciciosP4T1 != true) {
           setExerciciosP4T1(true);
         }
-        if (atividades?.pratica?.idPratica === 29 || perfil.progresso >= 28) {
+        if (atividades?.pratica?.idPratica === 29 || perfil.progresso >= 28 && exerciciosP4T2 != true) {
           setExerciciosP4T2(true);
         }
-        if (atividades?.pratica?.idPratica === 31 || perfil.progresso >= 30) {
+        if (atividades?.pratica?.idPratica === 31 || perfil.progresso >= 30 && exerciciosP4T3 != true) {
           setExerciciosP4T3(true);
         }
       }, [atividades?.pratica?.idPratica, perfil.progresso]);

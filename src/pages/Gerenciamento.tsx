@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Tag, Storefront, ShoppingCart, CaretDown } from "@phosphor-icons/react";
 import { Modal } from "../components/Modal";
 import { Linking } from "../components/Linking";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Acordes } from "../components/Acordes";
 import { Button } from "../components/Button";
 import { Menu } from "../components/Menu";
@@ -28,6 +28,8 @@ export const Gerenciamento = () => {
   function newForm() {
     setShowForm(!showForm)
   }
+
+  useEffect(() => {pegarDadosPedido?.()}, [])
 
   // bug
   // {pedido2.length > 0 ? (
@@ -120,7 +122,7 @@ export const Gerenciamento = () => {
         
 
 
-          {pedido2.map(pedido => <Acordes pedido={pedido} />)}
+          {pedido2.map(pedido => <Acordes key={pedido.id} pedido={pedido} />)}
           
 
 

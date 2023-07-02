@@ -58,9 +58,9 @@ export const Header = ({ ...rest }: HeaderProps) => {
             <button onClick={Click}>
               <div className='hidden lg:flex items-center gap-[1.2rem]'>
                 <div className="w-[3.5rem] h-[3.5rem]">
-                  <img src={perfil.foto} className="max-w-[100%] h-full rounded-full" alt='imagem de perfil do usuário' />
+                  <img src={perfil?.foto} className="max-w-[100%] h-full rounded-full" alt='imagem de perfil do usuário' />
                 </div>
-                <p className="max-w-[8rem] truncate">{perfil.usuario.nome}</p>
+                <p className="max-w-[8rem] truncate">{perfil?.usuario?.nome}</p>
               </div>
             </button>
 
@@ -101,7 +101,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
                   <NavLink to="/profile">
                     <UserCircle size={32} weight="fill" />
-                    <span>{perfil.usuario.nome}</span>
+                    <span>{perfil?.usuario?.nome}</span>
                   </NavLink>
                 </li>
                 <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">

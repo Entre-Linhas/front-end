@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../contexts/Context";
 import { useContext } from "react";
 export default function Pratica() {
-  const { atividades, avançarQuest, perfil, setPerfil, atulizarPerfil } = useContext(Context);
+  const { atividades, avançarQuest, perfil, setPerfil, atualizarPerfil } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -115,10 +115,13 @@ export default function Pratica() {
 
     if (respostaSelecionada === respostaCorreta) {
       respostaCorretaSelecionada();
+      const questao = atividades?.pratica?.idPratica;
+      /* if (questao == 2 || questao == 2  || questao == 2 || questao == 2 || questao == 2 || questao == 2 || questao == 2 || questao == 2) */
     } else {
       respostaIncorretaSelecionada();
     }
   }
+  console.log(perfil)
 
   function respostaCorretaSelecionada() {
     console.log('Resposta correta! Parabéns!');
@@ -128,27 +131,26 @@ export default function Pratica() {
     }
     setPerfil?.(newPerfil)
     avançarQuest();
-    atulizarPerfil();
-    console.log(perfil)
+    atualizarPerfil(newPerfil);
     console.log(perfil?.progresso)
     console.log(atividades?.pratica?.idPratica)
-    if ((perfil?.progresso === 2 && atividades?.pratica?.idPratica === 3) ||
-      (perfil?.progresso === 4 && atividades?.pratica?.idPratica === 5) ||
-      (perfil?.progresso === 6 && atividades?.pratica?.idPratica === 7) ||
-      (perfil?.progresso === 8 && atividades?.pratica?.idPratica === 9) ||
-      (perfil?.progresso === 10 && atividades?.pratica?.idPratica === 11) ||
-      (perfil?.progresso === 12 && atividades?.pratica?.idPratica === 13) ||
-      (perfil?.progresso === 14 && atividades?.pratica?.idPratica === 15) ||
-      (perfil?.progresso === 16 && atividades?.pratica?.idPratica === 17) ||
-      (perfil?.progresso === 18 && atividades?.pratica?.idPratica === 19) ||
-      (perfil?.progresso === 20 && atividades?.pratica?.idPratica === 21) ||
-      (perfil?.progresso === 22 && atividades?.pratica?.idPratica === 23) ||
-      (perfil?.progresso === 24 && atividades?.pratica?.idPratica === 25) ||
-      (perfil?.progresso === 26 && atividades?.pratica?.idPratica === 27) ||
-      (perfil?.progresso === 28 && atividades?.pratica?.idPratica === 29) ||
-      (perfil?.progresso === 30 && atividades?.pratica?.idPratica === 31) ||
-      (perfil?.progresso === 32 && atividades?.pratica?.idPratica === 33)) {
-      navigate("/Trilhas")
+    if ((newPerfil?.progresso === 2 && atividades?.pratica?.idPratica === 3) ||
+      (newPerfil?.progresso === 4 && atividades?.pratica?.idPratica === 5) ||
+      (newPerfil?.progresso === 6 && atividades?.pratica?.idPratica === 7) ||
+      (newPerfil?.progresso === 8 && atividades?.pratica?.idPratica === 9) ||
+      (newPerfil?.progresso === 10 && atividades?.pratica?.idPratica === 11) ||
+      (newPerfil?.progresso === 12 && atividades?.pratica?.idPratica === 13) ||
+      (newPerfil?.progresso === 14 && atividades?.pratica?.idPratica === 15) ||
+      (newPerfil?.progresso === 16 && atividades?.pratica?.idPratica === 17) ||
+      (newPerfil?.progresso === 18 && atividades?.pratica?.idPratica === 19) ||
+      (newPerfil?.progresso === 20 && atividades?.pratica?.idPratica === 21) ||
+      (newPerfil?.progresso === 22 && atividades?.pratica?.idPratica === 23) ||
+      (newPerfil?.progresso === 24 && atividades?.pratica?.idPratica === 25) ||
+      (newPerfil?.progresso === 26 && atividades?.pratica?.idPratica === 27) ||
+      (newPerfil?.progresso === 28 && atividades?.pratica?.idPratica === 29) ||
+      (newPerfil?.progresso === 30 && atividades?.pratica?.idPratica === 31) ||
+      (newPerfil?.progresso === 32 && atividades?.pratica?.idPratica === 33)) {
+      navigate("/Trilha")
     }
   }
 
