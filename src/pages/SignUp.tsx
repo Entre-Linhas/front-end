@@ -158,7 +158,7 @@ export default function SignUp() {
                                     <input type="checkbox" onChange={() => setTerms(!terms)} />
                                     <label htmlFor="" className="dark:text-gray-100">Concordo com os <Linking title="Termos de uso" to="/terms-of-use" className="hover:border-none" style={{ color: "#FF6464" }} /></label>
                                 </div>
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={email.length === 0 || senha.length === 0 || !terms || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)} title="Continuar" icon={SignIn} onClick={changeStep} />
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={email.length === 0 || senha.length === 0 || !terms || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)} titleBt="Continuar" icon={SignIn} onClick={changeStep} />
                             </div>
                         </SwiperSlide>
 
@@ -169,7 +169,7 @@ export default function SignUp() {
                                 <Input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value)} value={sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
                                 <Input type="text" placeholder="CPF" onChange={(e) => setCpf(e.target.value)} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} title="Continuar" icon={SignIn} onClick={changeStep} />
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} titleBt="Continuar" icon={SignIn} onClick={changeStep} />
                             </div>
                         </SwiperSlide>
 
@@ -178,7 +178,7 @@ export default function SignUp() {
                             <div className="flex gap-2 mt-2 justify-center flex-col items-center">
                                 <Input type="text" placeholder="Endereço" onChange={(e) => setEndereco(e.target.value)} value={endereco} leftElement={<MapPin className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={endereco.length === 0} title="Finalizar" icon={SignIn} onClick={handleSubmit} />
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center"}} disabled={endereco.length === 0} titleBt="Finalizar" icon={SignIn} onClick={handleSubmit} />
                             </div>
                         </SwiperSlide>
                     </Swiper>

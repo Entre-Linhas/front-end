@@ -24,8 +24,8 @@ export default function Material({ image, title, content }: MaterialProps) {
             {atividades?.materia?.txt1 || "...Carregando"}
           </p>
           <div className="flex gap-[3.5rem] py-[3.5rem]">
-            <Button title="anterior"onClick={() => decrementarProgressoAtividade()} />
-            <Button title="próximo" onClick={() => incrementarProgressoAtividade()} />
+            <Button titleBt="anterior"onClick={() => decrementarProgressoAtividade()} />
+            <Button titleBt="próximo" onClick={() => incrementarProgressoAtividade()} />
           </div>
         </div>
       </div>

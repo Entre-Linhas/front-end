@@ -8,9 +8,7 @@ import Contato from "../pages/Contato";
 import Sobre from "../pages/Sobre";
 import TermsUse from "../pages/TermsUse";
 import Comunidade from "../pages/Comunidade"
-import { Gerenciamento } from "../pages/Gerenciamento";
-import { Trofeu } from "../pages/Trofeu";
-import Profile from "../pages/Profile";
+import { Pagamento } from "../pages/Pagamento";
 
 export default function FreeRoutes() {
   return (
@@ -25,6 +23,7 @@ export default function FreeRoutes() {
         <Route path="/contato" element={<Contato />} />
         <Route path="/ajuda" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
+        <Route path="/pagamento" element={<Pagamento />} />
         <Route path="/Comunidade" element={<Comunidade />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

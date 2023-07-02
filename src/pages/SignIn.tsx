@@ -98,15 +98,15 @@ export default function SignIn() {
               onChange={(e: any) => setPassword(e.target.value)}
               leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />}
             />
-            <Button title="Entrar" onClick={handleSubmit} />
-            <NavLink to="/SignUp" className="dark:text-gray-100">
+            <Button titleBt="Entrar" onClick={handleSubmit} title="Entrar" />
+            <NavLink to="/SignUp" className="dark:text-gray-100" title='cadastrar-se'>
               Cadastrar-me
             </NavLink>
           </div>
         </div>
 
         <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">
-          <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" alt="imagens de costureiras" role="imagem" />
+          <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" alt="imagens de costureiras" role="imagem ilustrativa de costureiras" />
         </div>
       </div>
     </>

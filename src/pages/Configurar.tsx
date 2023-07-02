@@ -170,7 +170,7 @@ export const Configurar = () => {
                </div>
 
                <div>
-                  <h2 className="font-bold text-[2rem]" title="Aparência">Aparência</h2>
+                  <h2 className="font-bold text-[2rem]" >Aparência</h2>
                   <hr />
                </div>
 
@@ -179,14 +179,14 @@ export const Configurar = () => {
                      borderColor: selectedTheme === "light" ? "#62B8AF" : undefined
                   }} aria-roledescription="botão modo claro" onClick={() => changeSelectedTheme("light")}>
                   <Sun size={24} className="text-[#FFB125]" />
-                  <span title="modo claro">Modo claro</span>
+                  <span >Modo claro</span>
                   </button>
 
                   <button className="flex items-center gap-2 border-2 border-zinc-300 hover:border-turquoise-300 dark:hover:hover:border-turquoise-300 dark:border-zinc-700 dark:bg-zinc-800 bg-white px-8 py-3 rounded-xl shadow-md" style={{
                      borderColor: selectedTheme === "dark" ? "#62B8AF" : undefined
                   }} aria-roledescription="botão modo escuro" onClick={() => changeSelectedTheme("dark")}>
                   <Moon size={24} className="text-gray-500" />
-                  <span title="modo escuro">Modo escuro</span>
+                  <span>Modo escuro</span>
                   </button>
                </div>
 

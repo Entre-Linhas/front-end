@@ -7,7 +7,7 @@ interface ContextProps {
   perfil: any
   setPerfil?: Function
   atividades: any
-  setAtividades?: Function;
+  setAtividades?: Function
   incrementarProgressoAtividade: Function
   decrementarProgressoAtividade: Function
   atualizarAtividade: Function
@@ -17,6 +17,9 @@ interface ContextProps {
   nivelamento: any
   setNivelamento: Function
   atulizarPerfil: Function
+  pedido: any
+  setPedido?: Function
+  pegarDadosPedido?: Function
   // SingOut: Function
 }
 export const Context = createContext<ContextProps>({} as any);
@@ -26,6 +29,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [perfil, setPerfil] = useState<any>(null);
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
   const [nivelamento, setNivelamento] = useState<any>(null);
+  const [pedido, setPedido] = useState<any>();
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -75,7 +79,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         if (response.data) {
           // console.log("in atualizarPerfil, context111", response.data);
           // console.log("in atualizarPerfil, context", perfil);
-          atividades?.idAtividades &&
+          perfil?.idPerfil &&
             setPerfil(response.data)
         } else {
           console.log("vazio in context");
@@ -177,15 +181,46 @@ export default function Provider({ children }: { children: React.ReactNode }) {
       atualizarAtividade(newAtividade)
     }
 
+    // faz o get da lista de pedido
+  /* function pegarDadosPedido() {
+    api
+      .get("/pedidos")
+      .then((response) => {
+        if (response.data) {
+          setPedido?.(response.data)
+          console.log("Console do CONTEXT PEGAR DADOS PEDIDOS - response.data", response.data)
+        } else {
+          console.log("vazio in context");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  } */
+
+  function pegarDadosPedido() {
+    api.get(`/pedidos/${perfil.usuario.idUsuario}`)
+      .then((response) => {
+        if (response.data) {
+          setPedido?.(response.data);
+          console.log("Console do CONTEXT PEGAR DADOS PEDIDOS - response.data", response.data);
+        } else {
+          console.log("vazio in context");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
-        setNivelamento, atulizarPerfil }}>
+        setNivelamento, atulizarPerfil, pedido, setPedido, pegarDadosPedido }}>
         {/* {JSON.stringify(atividades.progresso || {})} */}
         {children}
       </Context.Provider>
     );
   }
-
   // 
 
   // import React, { createContext, useState, useEffect } from 'react';

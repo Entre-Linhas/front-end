@@ -135,10 +135,10 @@ export const Trilha = () => {
       <div className="overflow-hidden h-screen">
         <Header style={{ position: "relative" }} />
         <div className="flex flex-col overflow-auto h-full snap-y snap-mandatory">
-          <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always">Bem vindo, à Trilha Educacional</h1>
+          <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always max-[540px]:text-center px-[1rem]">Bem vindo, à Trilha Educacional</h1>
           <div className="flex flex-col mx-auto ">
             <Modulo _titleModulo="Meu Negócio" _progress={nivelamento} conteudos={[
-              { title: "1. Identificar o nicho de mercado e da proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.", time: "20min", _completed: andamento1, irConteudo: () => handleIrConteudo(1, 1) },
+              { title: "1. Nicho de mercado e proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.", time: "20min", _completed: andamento1, irConteudo: () => handleIrConteudo(1, 1) },
               { title: "2. Análise de mercado", describe: "Estudo do público-alvo e concorrência.", time: "20min", _completed: andamento2, irConteudo: () => handleIrConteudo(10, 3) },
               { title: "3. Meu produto", describe: "Qual o meu produto e como identificar seu valor agregado", time: "20min", _completed: andamento3, irConteudo: () => handleIrConteudo(19, 5) },
               { title: "4. Diferencial", describe: "Identificar o diferencial do seu negócio e o que ele pode oferecer ao mercado", time: "20min", _completed: andamento4, irConteudo: () => handleIrConteudo(28, 7) }
@@ -171,8 +171,8 @@ export const Trilha = () => {
           <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
             <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
             <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
-            <img src="/Trofeu.svg" alt="Ilustração de uma troféu" style={{ width: "-webkit-fill-available" }} className="max-h-[30rem]" />
-            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal}><span>Continuar</span></div>
+             <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
+            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal} title="continuar a trilha"><span>Continuar</span></div>
           </div>
         </Modal>
       ){/* } */}

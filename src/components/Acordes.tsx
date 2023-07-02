@@ -49,11 +49,11 @@ export const Acordes = ({pedido}: AcordesProps) => {
           display === "hidden" ? "block" : "hidden"
         } py-3 bg-white shadow-sm shadow-zinc-800 w-[100%] flex items-center justify-between dark:bg-zinc-700 `}
       >
-        <span className="px-5 text-2.2rem text-gray-900 dark:text-white">{pedido?.title}</span>
+        <span className="px-5 text-2.2rem text-gray-900 dark:text-white max-w-[20rem]">{pedido?.title}</span>
         <div className="flex items-center px-5">
-          <span className="px-5 text-2.2rem text-gray-900 dark:text-white">R$ {pedido?.price}</span>
+          <span className="px-5 text-2.2rem text-gray-900 dark:text-white max-[620px]:hidden">R$ {pedido?.price}</span>
           <div className="flex items-center">
-            <span title={status} className="text-gray-900 dark:text-white">Status: </span>
+            <span title={status} className="text-gray-900 dark:text-white max-[620px]:hidden">Status: </span>
             <div className="flex flex-col justify-center"> 
             <Circle
               size={26}
@@ -119,7 +119,7 @@ export const Acordes = ({pedido}: AcordesProps) => {
               <span className="dark:text-white">Título:</span>
               <span className="text-[#5B5B5B]">{pedido?.nome}</span>
             </li>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center gap-3">
               <span className="dark:text-white">Status: </span>
              <div className="flex flex-col justify-center"> 
               <Circle
@@ -194,7 +194,7 @@ export const Acordes = ({pedido}: AcordesProps) => {
               <div className="flex items-center gap-5">
                 <span className="text-gray-900 dark:text-[#5B5B5B]">R$ {pedido?.price}</span>
 
-                <div className="flex items-center max-lg:flex-col-reverse">
+                <div className="flex items-center max-lg:flex-col-reverse max-[360px]:hidden">
                   <Circle
                     size={26}
                     weight="fill"

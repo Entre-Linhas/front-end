@@ -2,11 +2,16 @@ import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Footer } from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../contexts/Context";
+import React, { useState } from 'react';
 
 export default function Ferramentas() {
-
+    const [auth, setAuth] = useState(false);
     const Assinatura = useNavigate();
 
+    const Compra = () => {
+        auth && true ?  Assinatura('/pagamento') : Assinatura('/signin');
+    }
 
     return (
 
@@ -20,13 +25,13 @@ export default function Ferramentas() {
                         <p className="text-center max-w-[1100px] text-[2.4rem] max-[375px]:text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem]">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
 
                         
-                                <Button title="Comece a costurar o seu futuro" onClick={() => Assinatura('/pagamento')} />
+                                <Button titleBt="Comece a costurar o seu futuro" title='ir para a página de pagamento' onClick={Compra} />
                          
                     </div>
 
                 </div>
 
-                <img src="/ArtFerramenta.svg" className="m-auto max-w-[100%] max-[700px]:hidden" alt="Imagem de ferramentas" role="presentation" />
+                <img src="/ArtFerramenta.svg" className="m-auto max-w-[100%] max-[700px]:hidden" alt="Imagem da ferramenta de gerenciamneto" role="imagem ilustrativa" />
 
                 <div className="flex flex-col m-auto box-border gap-[10rem] w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1020px]:justify-evenly">
                     <div className="flex max-[1024px]:flex-col min-[1024px]:gap-[10rem]">
@@ -35,13 +40,13 @@ export default function Ferramentas() {
                             <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto">Já pensou em poder gerenciar seus pedidos facilmente? Com a nossa ferramenta de gerenciamento você pode. Controle valores, produtos e status em um só lugar.</p>
                         </div>
                         <div>
-                            <img src="SalmonPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" />
+                            <img src="SalmonPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" alt='imagem da ferramenta de precificação no app' role='imagem ilustrativa'/>
                         </div>
                     </div>
 
                     <div className="flex min-[1024px]:gap-[10rem] max-[1024px]:flex-col-reverse">
                         <div>
-                            <img src="YellowPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" />
+                            <img src="YellowPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" alt='imagem da ferramenta de gerenciamento no app' role='imagem ilustrativa'/>
                         </div>
                         <div className="text-justify self-center max-[1024px]:text-center">
                             <h3 className="self-center text-[2.8rem] font-bold min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2.4rem] min-[500px]:text-[3.8rem] dark:text-white">Esquecendo a data para entregar uma encomenda? Gerencie seus pedidos aqui também</h3>
@@ -60,19 +65,19 @@ export default function Ferramentas() {
                         <div className="max-[1023px]:m-auto text-center bg-white rounded-[2rem] shadow-mg flex flex-col gap-[5rem] py-[7rem] px-[2.4rem] text-[2.2rem] max-w-[50rem] dark:bg-zinc-800 dark:border-zinc-700 dark:border-2">
                             <div>
                                 <h3 className="font-bold dark:text-white">Plano Mensal</h3>
-                                <p className="max-w-[35rem] m-auto dark:text-zinc-50">Acesso à ferramenta de precificação e gerenciamento por:</p>
+                                <p className="max-w-[35rem] m-auto dark:text-zinc-50">Acesso total a plataforma por:</p>
                             </div>
-                            <h2 className="font-bold text-[6.4rem] max-[400px]:text-[3.2rem] dark:text-white">R$ 36,00</h2>
-                            <button className="bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]" onClick={() => Assinatura('/pagamento')}>Assine aqui</button>
+                            <h2 className="font-bold text-[6.4rem] max-[400px]:text-[3.2rem] dark:text-white">R$ 38</h2>
+                            <button className="bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]" onClick={Compra} title="ir para a página de pagamento">Assine aqui</button>
                         </div>
 
                         <div className="max-[1023px]:m-auto text-center bg-white rounded-[2rem] shadow-mg flex flex-col gap-[5rem] py-[7rem] px-[2.4rem] text-[2.2rem] max-w-[50rem] dark:bg-zinc-800 dark:border-zinc-700 dark:border-2">
                             <div>
-                                <h3 className="font-bold dark:text-white">Plano Mensal</h3>
-                                <p className="max-w-[35rem] m-auto dark:text-zinc-50">Acesso à ferramenta de precificação e gerenciamento por:</p>
+                                <h3 className="font-bold dark:text-white">Plano Anual</h3>
+                                <p className="max-w-[35rem] m-auto dark:text-zinc-50">Acesso total a plataforma por:</p>
                             </div>
-                            <h2 className="font-bold text-[6.4rem] max-[400px]:text-[3.2rem] dark:text-white">R$ 36,00</h2>
-                            <button className=" bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]" onClick={() => Assinatura('/pagamento')}>Assine aqui</button>
+                            <h2 className="font-bold text-[6.4rem] max-[400px]:text-[3.2rem] dark:text-white">R$ 348</h2>
+                            <button className=" bg-[#62B8AF] rounded-[1rem] text-white px-[9.5rem] py-[2.3rem] max-[400px]:px-[5.5rem] max-[400px]:py-[1.5]" onClick={Compra}title="ir para a página de pagamento">Assine aqui</button>
                         </div>
                     </div>
 
@@ -84,7 +89,7 @@ export default function Ferramentas() {
                         <h2 className="text-[3.6rem] font-bold text-center dark:text-white">Suas maiores aliadas no dia a dia</h2>
                         <p className="text-[2.2rem] max-w-[77rem] max-[500px]:text-center min-[500px]:px-[5rem]">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
                     </div>
-                    <img src="FerramentaArt2.svg" className="py-[10rem] m-auto max-w-[95%] min-[1140px]:max-w-[100%]"  alt="Imagem ilustrativa" role="imagem"/>
+                    <img src="FerramentaArt2.svg" className="py-[10rem] m-auto max-w-[95%] min-[1140px]:max-w-[100%]"  alt="Imagem ilustrativa de uma moça sentada em cima de uma bobina ao lado de um carretel" role="imagem ilustrativa"/>
                 </div>
             </div>
             <Footer />

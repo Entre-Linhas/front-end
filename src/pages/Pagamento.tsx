@@ -2,6 +2,7 @@ import { Header } from "../components/Header";
 import { useState } from "react";
 import { Link } from "react-router-dom"; 
 import { CheckCircle } from "@phosphor-icons/react";
+import { Context } from "../contexts/Context";
 
 export const Pagamento = () => {
   const [AlterForm, setAlterForm] = useState(1);
@@ -24,7 +25,7 @@ export const Pagamento = () => {
 
             <div className="space-y-2">
               <div className="py-5">
-                <label htmlFor="nomeCompleto" className="block text-[#575757] dark:text-gray-100">
+                <label htmlFor="nomeCompleto" className="block text-[#575757] dark:text-gray-100" >
                   Nome completo
                 </label>
                 <input
@@ -32,6 +33,7 @@ export const Pagamento = () => {
                   id="nomeCompleto"
                   placeholder="Seu nome"
                   className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                  aria-labelledby="nome completo"
                 />
               </div>
               <div className="py-5">
@@ -42,7 +44,7 @@ export const Pagamento = () => {
                   type="email"
                   id="email"
                   placeholder="seu.email.aqui@example.com"
-                  className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                  className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="email"
                 />
               </div>
               <div className="flex gap-12 max-[450px]:flex-col">
@@ -54,7 +56,7 @@ export const Pagamento = () => {
                     type="tel"
                     id="celular"
                     placeholder="(00) 00000-0000"
-                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="celular"
                   />
                 </div>
 
@@ -66,14 +68,14 @@ export const Pagamento = () => {
                     type="text"
                     id="cpf"
                     placeholder="000.000.000-00"
-                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="cpf"
                   />
                 </div>
               </div>
             </div>
 
             <div className="py-10">
-              <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white" onClick={ProximoForm}>
+              <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white" title="continuar pagamento" onClick={ProximoForm}>
                 Continuar
               </button>
             </div>
@@ -108,7 +110,7 @@ export const Pagamento = () => {
                   type="text"
                   id="numeroCartao"
                   placeholder="0000 0000 0000 0000"
-                  className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                  className="placeholder-[#62B8AF] w-full max-w-[60rem] px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="numero do cartão"
                 />
               </div>
               <div className="flex gap-12 max-[450px]:flex-col">
@@ -120,7 +122,7 @@ export const Pagamento = () => {
                     type="text"
                     id="validade"
                     placeholder="MM/AA"
-                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="validade"
                   />
                 </div>
 
@@ -132,14 +134,14 @@ export const Pagamento = () => {
                     type="text"
                     id="cvv"
                     placeholder="000"
-                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon"
+                    className="placeholder-[#62B8AF] w-full px-5 py-3 rounded-[0.8rem] shadow-[0px_6px_4px_rgba(0,6,4,0.1)] focus:outline-none focus:border-[1px] border-custom-salmon" aria-labelledby="cvv"
                   />
                 </div>
               </div>
             </div>
 
             <div className="py-10">
-              <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white" onClick={ProximoForm}>
+              <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white" title='concluir pagamento' onClick={ProximoForm}>
                 Concluir
               </button>
             </div>
@@ -158,10 +160,11 @@ export const Pagamento = () => {
 
             <div className="py-10 flex flex-col items-center gap-5">
               <button className="px-[6rem] py-5 bg-[#62B8AF] rounded-[1rem] text-white">
-                <Link to="/Gerenciamento">Ir para as ferramentas</Link>
+                
+                <Link to="/Gerenciamento" title="ir para as ferramentas">Ir para as ferramentas</Link>
               </button>
               <span className="text-[1.8rem] text-[#8F8F8F] underline dark:text-gray-100">
-                <Link to="/">Voltar para a página inicial</Link>
+                <Link to="/" title='voltar para página inicial'>Voltar para a página inicial</Link>
               </span>
             </div>
           </div>

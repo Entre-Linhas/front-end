@@ -15,7 +15,7 @@ export default function Contato() {
 
         <>
             <Header />
-            <div className="flex items-center h-[100dvh] justify-center max-[1023px]:flex-col box-border w-[100%] m-auto xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+            <div className="flex items-center py-[10rem] justify-center max-[1023px]:flex-col box-border w-[100%] m-auto xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
 
 
                 <div className="m-auto">
@@ -27,12 +27,12 @@ export default function Contato() {
                             <Input placeholder="Seu nome" onChange={(e: any) => setEmail(e.target.value)} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={40} />} />
                             <Input placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={40} />} />
                             <Input placeholder="Como podemos te ajudar?" onChange={(e: any) => setEmail(e.target.value)} leftElement={<ChatText className="mr-2 text-zinc-300 resize-y" weight="light" size={40} />} />
-                            <button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem] w-[100%] max-w-[55.2rem]">Enviar</button>
+                            <button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem] w-[100%] max-w-[55.2rem]" title="enviar as dúvidas e sugestões">Enviar</button>
                         </div>
                     </div>
                 </div>
 
-                <img src="/Contato.svg" className="max-[1340px]:max-w-[50rem] max-[1170px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Imagem de contato" role="imagem" />
+                <img src="/Contato.svg" className="py-20 max-[1340px]:max-w-[50rem] max-[1170px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Ilustração de uma atendente" role="imagem ilustrativa" />
 
             </div>
             <Footer />

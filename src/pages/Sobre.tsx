@@ -84,7 +84,7 @@ export default function Sobre() {
                     nome="Thailany Pereira"  
                     GitHub="https://github.com/ThailanyP" 
                     Linkedin="https://www.linkedin.com/in/thailany-pereira-neves-santos/" 
-                    desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                    desc="Olá! Sou Thailany, gosto de desenhar, ouvir musica e adoro  programação, com foco especial em front-end, UX/UI design e banco de dados."
                     img="/Thai.png"
                     />
                     <About  

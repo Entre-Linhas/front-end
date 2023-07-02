@@ -112,8 +112,8 @@ export const Header = ({ ...rest }: HeaderProps) => {
         
         (
           <div className='hidden lg:flex gap-[1.2rem]'>
-            <Button title='Login' typeStyle='secondary' onClick={() => navigate("/signin")} />
-            <Button title='Registro' onClick={() => navigate("/SignUp")} />
+            <Button titleBt='Login' typeStyle='secondary' onClick={() => navigate("/signin")} />
+            <Button titleBt='Registro' onClick={() => navigate("/SignUp")} />
           </div>
         )
         }
