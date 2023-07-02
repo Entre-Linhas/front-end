@@ -36,13 +36,14 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState(false);
   const [perfil, setPerfil] = useState<any>(null);
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
-  const [nivelamento, setNivelamento] = useState<any>(null);
+  const [nivelamento, setNivelamento] = useState<any>(0);
   const [pedido2, setPedido] = useState<Pedido[]>([]);
   const [hasVerifiedLogin, setHasVerifiedLogin] = useState(false)
   const [showModalConquista, setShowModalConquista] = useState(false)
   const [nomeModuloConquista, setNomeModuloConquista ] = useState('')
   const [conquista2, setConquista] = useState<Conquista[]>([])
 
+  
   function verificaLoginAnterior() {
     const rawPerfil = localStorage.getItem('perfil')
     if(rawPerfil) {
@@ -86,7 +87,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     console.log('este é o nivel', nivelamento)
-    nivelamento > -1 && localStorage.setItem('nivelamento', JSON.stringify(nivelamento))
+    !!nivelamento && localStorage.setItem('nivelamento', JSON.stringify(nivelamento))
   }, [nivelamento])
 
 
@@ -124,6 +125,7 @@ function LogOut() {
   setNivelamento(null)
   localStorage.clear();
   setAuth(false);
+  window.location.reload();
 }
 
   
