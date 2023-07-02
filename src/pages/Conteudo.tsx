@@ -14,6 +14,7 @@ export const Conteudo = () => {
 
     console.log("CONTEUDO 3", perfil.progresso)
 // para setar o progresso para essa pagina funcionar normalmente atraves do link independente do progresso do perfil
+/* useEffect(() => {
 switch (atividades?.progresso) {
   case 1:
     const novoPerfil1 = {
@@ -92,7 +93,7 @@ switch (atividades?.progresso) {
       progresso: 11
     };
     setPerfil?.(novoPerfil11);
-    break;// oiii digaa PASSOS! Olha whats2
+    break;
   case 100:
     const novoPerfil12 = {
       ...perfil,
@@ -131,6 +132,7 @@ switch (atividades?.progresso) {
   default:
     break;
 }
+}, [atividades?.progresso]); */
 
 
 
@@ -156,6 +158,7 @@ switch (atividades?.progresso) {
       // controla os exercicios, para não aparecer os mesmos, e assim poder atraves de 2 definir apenas correto para o necessario, sendo os dois correto como se fosse 1
         if (atividades?.pratica?.idPratica === 3 || perfil.progresso >= 2) {
           setExerciciosP1T1(true);
+          /* navigate = useContext(Context); */
         }
         if (atividades?.pratica?.idPratica === 5 || perfil.progresso >= 4) {
           setExerciciosP1T2(true);

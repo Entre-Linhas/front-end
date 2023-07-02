@@ -42,7 +42,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
 
   // para não perder os dados mesmo depois de recarregar
-  useEffect(() => {
+  /* useEffect(() => {
     const storedData = localStorage.getItem('contextData');
 
     if (storedData) {
@@ -66,7 +66,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     };
 
     localStorage.setItem('contextData', JSON.stringify(dataToStore));
-  }, [auth, perfil, atividades, nivelamento, pedido2]);
+  }, [auth, perfil, atividades, nivelamento, pedido2]); */
 
 function LogOut() {
   localStorage.clear();
