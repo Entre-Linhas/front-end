@@ -36,7 +36,7 @@ export default function Profile() {
 
       <div className="max-[1024px]:text-[1.8rem] text-[2rem] px-12 py-40 flex max-md:flex-col max-md:px-5 min-[1024px]:gap-12 ">
 
-        <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:max-w-[31rem] min-[1024px]:min-[1024px]:shadow-xl px-5 dark:bg-zinc-800">
+        <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:max-w-[31rem] min-[1024px]:min-[1024px]:shadow-xl px-5 dark:bg-zinc-800 dark:border-zinc-800">
           <div className="h-96 max-w-[25rem] w-full m-auto flex flex-col">
             <img src={perfil.foto} className="max-w-[100%] h-full rounded-full" alt="foto de perfil do usuário" role="imagem de perfil"/>
             <div className="self-end text-custom-salmon"> 
@@ -114,7 +114,7 @@ export default function Profile() {
 
 
           
-        <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:w-[100%] dark:bg-zinc-800">
+        <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:w-[100%] dark:bg-zinc-800 dark:border-zinc-700">
           <div className={` px-10 py-10`}>
             <h1 className="dark:text-white">Últimas conquistas</h1>
             <div className="flex flex-col gap-10 py-10">

@@ -14,7 +14,7 @@ export const Conteudo = () => {
 
     console.log("CONTEUDO 3", perfil.progresso)
 // para setar o progresso para essa pagina funcionar normalmente atraves do link independente do progresso do perfil
-switch (atividades?.atividades?.progresso) {
+switch (atividades?.progresso) {
   case 1:
     const novoPerfil1 = {
       ...perfil,
