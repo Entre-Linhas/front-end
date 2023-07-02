@@ -10,6 +10,7 @@ import { Pedido } from "../models/pedido";
 import api from "../apiInstance";
 import { Context } from "../contexts/Context";
 import { Link } from "react-router-dom";
+import { pedidoParser } from "../utils/parsers";
 
 
 
@@ -18,9 +19,8 @@ export const Gerenciamento = () => {
   const { perfil, pedido2, setPedido, pegarDadosPedido } = useContext(Context);
   const [showModal, setShowModal] = useState(true);
   const [showForm, setShowForm] = useState(false)
-  const [pedidos, setPedidos] = useState<Pedido[]>([/* { date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" } *//* , {date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: ""} *//* , { pedido } */]);
-  console.log(pedido2)
-
+  const [pedidos, setPedidos] = useState<Pedido[]>([ { date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }   , {date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: ""} ]);
+  const [keyModal, setKeyModal] = useState(crypto.randomUUID())
   function handleModal() {
     setShowModal(!showModal)
   };
@@ -29,17 +29,12 @@ export const Gerenciamento = () => {
     setShowForm(!showForm)
   }
 
-
-  function pedidoParser(payload: any) {
-    return { ...payload, date: new Date(payload.date) }
-  }
-
   // bug
-  {pedido2.length > 0 ? (
-    pedido2.map((pedido: any) => <Acordes pedido={pedido} />)
-  ) : (
-    <p>Nenhum pedido encontrado.</p>
-  )}
+  // {pedido2.length > 0 ? (
+  //   pedido2.map((pedido: any) => <Acordes pedido={pedido} />)
+  // ) : (
+  //   <p>Nenhum pedido encontrado.</p>
+  // )}
 
   /* setPedidos(pedido2); */
 
@@ -88,7 +83,9 @@ export const Gerenciamento = () => {
     console.log(data)
     api.post("/pedidos", pedidoParser(data)).then((response) => {
       if (response.data) {
-        setPedidos([pedidoParser(response.data), ...pedidos])
+        pegarDadosPedido?.();
+        setShowForm(false)
+        setKeyModal(crypto.randomUUID())
 
       } else {
         console.log("vazio");
@@ -116,14 +113,14 @@ export const Gerenciamento = () => {
             <input type="search" className="px-2 py-2 w-full shadow-md rounded-lg" placeholder="Buscar pedidos" />
           </div>
           <div className="py-12">
-            <button className="bg-[#62B8AF] w-full text-white py-5 rounded-[1.5rem]" onClick={newForm}>
+            <button className="bg-[#62B8AF] w-full text-white py-5 rounded-[1.5rem]" onClick={newForm} title="Adicionar novo pedido">
               + Novo pedido
             </button>
           </div>
-          <button onClick={() => pegarDadosPedido?.()}>Obter Pedidos</button>
+        
 
 
-          {/* {pedidos.map(pedido => <Acordes pedido={pedido} />)} */}
+          {pedido2.map(pedido => <Acordes pedido={pedido} />)}
           
 
 
@@ -135,11 +132,11 @@ export const Gerenciamento = () => {
           <h1 className="text-center font-semibold text-4xl dark:text-gray-900">Experimente as ferramentas do Entre Linhas e otimize sua <span className="text-custom-salmon">produtividade</span>!</h1>
           <img src="/admin_pana.svg" alt="Ilustração de uma mulher gerenciando." style={{ width: "-webkit-fill-available", height: "" }} className="" />
 
-          <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md"><Link to="/ferramentas">Saiba mais</Link></button>
+          <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md"><Link to="/ferramentas" title="Saiba mais">Saiba mais</Link></button>
         </div>
       </Modal>
 
-      <Modal _showModal={showForm} _close={newForm}>
+      <Modal _showModal={showForm} _close={newForm} key={keyModal}>
 
 
         <form className="space-y-4" id="formGeren">
@@ -193,7 +190,7 @@ export const Gerenciamento = () => {
               className="w-[25rem] min-[425px]:w-[35rem] px-2 py-1 border border-gray-300 dark:text-gray-900 rounded-md focus:outline-none focus:border-custom-salmon"
             />
           </div>
-          <Button titleBt="Adicionar" onClick={saveForm} type="button" title="teste" />
+          <Button titleBt="Adicionar" onClick={saveForm} type="button" title="Adicionar" />
         </form>
 
 

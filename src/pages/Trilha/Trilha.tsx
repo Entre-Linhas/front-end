@@ -150,10 +150,10 @@ export const Trilha = () => {
               { title: "4. Engajamento", describe: "Manter um relacionamento com o seu cliente", time: "20min", _completed: andamento8, irConteudo: () => handleIrConteudo(64, 15) }
             ]} style={{ scrollSnapAlign: "start", flexDirection: "row" }} />
             <Modulo _titleModulo="?" _progress={nivelamento} conteudos={[
-              { title: "1. ?.", describe: "?.", time: "20min", _completed: andamento9, irConteudo: () => handleIrConteudo(73, 17) },
-              { title: "2. ?", describe: "?.", time: "20min", _completed: andamento10, irConteudo: () => handleIrConteudo(82, 19) },
-              { title: "3. Meu produto", describe: "?", time: "20min", _completed: andamento11, irConteudo: () => handleIrConteudo(91, 21) },
-              { title: "4. ?", describe: "?", time: "20min", _completed: andamento12, irConteudo: () => handleIrConteudo(100, 23) }
+              { title: "1. Planejamento Estratégico e Organização.", describe: "Definição de metas e estratégias para alcançar objetivos e estruturação eficiente dos recursos e processos da empresa.", time: "20min", _completed: andamento9, irConteudo: () => handleIrConteudo(73, 17) },
+              { title: "2. Finanças e Planejamento", describe: "Gestão e análise dos recursos financeiros de uma empresa. Definição de estratégias e ações para alcançar metas financeiras.", time: "20min", _completed: andamento10, irConteudo: () => handleIrConteudo(82, 19) },
+              { title: "3. Gestão de Pessoas e Desenvolvimento", describe: "Administração e liderança dos recursos humanos de uma organização. Promovendo o crescimento e aprimoramento dos colaboradores por meio de treinamentos e programas de capacitação", time: "20min", _completed: andamento11, irConteudo: () => handleIrConteudo(91, 21) },
+              { title: "4. Gestão de Pessoas e Desenvolvimento", describe: "Administração estratégica dos recursos humanos de uma organização. Investimento no aprimoramento das competências e habilidades dos colaboradores para promover seu crescimento pessoal e profissional.", time: "20min", _completed: andamento12, irConteudo: () => handleIrConteudo(100, 23) }
             ]} style={{ visibility: "visible" }} />
             <Modulo _titleModulo="???" _progress={clientesVendas} conteudos={[
               { title: "1. ???.", describe: "???", time: "20min", _completed: andamento13, irConteudo: () => handleIrConteudo(109, 25) },
@@ -166,7 +166,7 @@ export const Trilha = () => {
       </div>
 
 
-      {/* {showModal && nivelamento >= 100 && */} (
+      {showModal && nivelamento >= 100 && (
         <Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
           <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
             <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
@@ -175,7 +175,7 @@ export const Trilha = () => {
             <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal} title="continuar a trilha"><span>Continuar</span></div>
           </div>
         </Modal>
-      ){/* } */}
+      )}
     </>
 
   );

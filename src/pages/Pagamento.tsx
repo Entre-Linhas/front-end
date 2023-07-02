@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom"; 
 import { CheckCircle } from "@phosphor-icons/react";
 import { Context } from "../contexts/Context";
+import { Modal } from "../components/Modal";
 
 export const Pagamento = () => {
   const [AlterForm, setAlterForm] = useState(1);
@@ -10,6 +11,12 @@ export const Pagamento = () => {
   const ProximoForm = () => {
     setAlterForm(AlterForm + 1);
   };
+
+  const [showModal, setShowModal] = useState(false);
+
+    function handleModal() {
+        setShowModal(!showModal)
+    }
 
   return (
     <>
@@ -169,6 +176,12 @@ export const Pagamento = () => {
             </div>
           </div>
         )}
+          <Modal _showModal={showModal} _close={handleModal}>
+                <div className="flex flex-col overflow-auto gap-8 mx-14 my-10">
+                    <h2 className="text-custom-salmon font-semibold text-3xl text-center">Com dúvida em qual opção escolher?</h2>
+                    <p className="dark:text-gray-900">Se você pretende iniciar um negócio, a primeira opção foi feita para você. Ela irá te ensinar desde como identificar seu cliente até o que o seu produto tem de especial.<br /><br />Já se você tem um negócio, a segunda opção é a melhor. Você poderá escolher em que ponto da trilha irá iniciar seus estudos.</p>
+                </div>
+            </Modal>
       </div>
     </>
   );

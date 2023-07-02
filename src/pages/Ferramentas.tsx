@@ -10,7 +10,7 @@ export default function Ferramentas() {
     const Assinatura = useNavigate();
 
     const Compra = () => {
-        auth && true ?  Assinatura('/pagamento') : Assinatura('/signin');
+         Assinatura('/pagamento');
     }
 
     return (

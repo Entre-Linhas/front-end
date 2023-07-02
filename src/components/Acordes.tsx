@@ -60,7 +60,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
               weight="fill"
               onClick={ShowStatus2}
               className={`${status}`}
-            
+              role="button"
+              aria-label="Alterar status"
             />
             <div
               className={
@@ -80,6 +81,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                       weight="fill"
                       className="text-green-500"
                       onClick={StatusGreen}
+                      role="button"
+                      aria-label="Definir como status verde"
                     />
                   </li>
                   <li>
@@ -89,6 +92,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                       weight="fill"
                       className="text-yellow-500"
                       onClick={StatusYellow}
+                      role="button"
+                      aria-label="Definir como status amarelo"
                     />
                   </li>
                   <li>
@@ -98,6 +103,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                       weight="fill"
                       className="text-red-500"
                       onClick={StatusRed}
+                      role="button"
+                      aria-label="Definir como status vermelho"
                     />
                   </li>
                 </div>
@@ -127,6 +134,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                 weight="fill"
                 onClick={ShowStatus2}
                 className={`${status}`}
+                role="button"
+                aria-label="Alterar status"
               />
               <div
                 className={`${
@@ -142,6 +151,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                         weight="fill"
                         className="text-green-500"
                         onClick={StatusGreen}
+                        role="button"
+                        aria-label="Definir como status verde"
                       />
                     </li>
                     <li>
@@ -151,6 +162,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                         weight="fill"
                         className="text-yellow-500"
                         onClick={StatusYellow}
+                        role="button"
+                        aria-label="Definir como status amarelo"
                       />
                     </li>
                     <li>
@@ -160,6 +173,8 @@ export const Acordes = ({pedido}: AcordesProps) => {
                         weight="fill"
                         className="text-red-500"
                         onClick={StatusRed}
+                        role="button"
+                        aria-label="Definir como status vermelho"
                       />
                     </li>
                   </div>
@@ -200,13 +215,15 @@ export const Acordes = ({pedido}: AcordesProps) => {
                     weight="fill"
                     onClick={ShowStatus2}
                     className={`${status}`}
+                    role="button"
+                aria-label="Alterar status"
                   />
                 </div>
               </div>
             </div> 
             <hr />
             <br />
-            <button className="text-red-600">Excluir produto</button>
+            <button className="text-red-600" title="Excluir produto">Excluir produto</button>
           </div> 
         </div>
       </div>

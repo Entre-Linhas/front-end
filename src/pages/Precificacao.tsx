@@ -48,17 +48,17 @@ export default function Precificacao() {
                   </div>
 
                   <div className="flex flex-col gap-10">
-                     <button className="w-full py-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F]" onClick={handleModal}>
+                     <button className="w-full py-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F]" onClick={handleModal} title="adicionar um material">
                         + Adicionar material
                      </button>
                      <hr />
 
-                     <button className="w-full py-5 px-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F] flex items-center gap-3">
+                     <button className="w-full py-5 px-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F] flex items-center gap-3" title="Tempo gasto">
                         <Clock size={24} className="text-black" />
                         tempo gasto
                      </button>
 
-                     <button className="w-full py-5 border-solid bg-[#62B8AF] border-[1px] border-[#CCCCCC] rounded-xl text-white text-center">
+                     <button className="w-full py-5 border-solid bg-[#62B8AF] border-[1px] border-[#CCCCCC] rounded-xl text-white text-center" title="calcular">
                         Calcular
                      </button>
 

@@ -9,10 +9,10 @@ import { Context } from "../contexts/Context";
 export const Conteudo = () => {
     const { setPerfil, setAtividades, atividades, perfil } = useContext(Context);
     /* const progresso = atividades?.progresso; */
-    console.log("CONTEUDO 1", atividades?.progresso)
+/*     console.log("CONTEUDO 1", atividades?.progresso)
     
 
-    console.log("CONTEUDO 3", perfil.progresso)
+    console.log("CONTEUDO 3", perfil.progresso) */
 // para setar o progresso para essa pagina funcionar normalmente atraves do link independente do progresso do perfil
 /* useEffect(() => {
 switch (atividades?.progresso) {

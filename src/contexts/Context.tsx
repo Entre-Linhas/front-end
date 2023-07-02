@@ -1,5 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import api from '../apiInstance';
+import { Pedido } from '../models/pedido';
+import { pedidoParser } from '../utils/parsers';
  
 
 interface ContextProps {
@@ -18,7 +20,7 @@ interface ContextProps {
   nivelamento: any
   setNivelamento: Function
   atulizarPerfil: Function
-  pedido2: any
+  pedido2: Pedido[]
   setPedido?: Function
   pegarDadosPedido?: Function
   LogOut: Function
@@ -31,7 +33,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [perfil, setPerfil] = useState<any>(null);
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
   const [nivelamento, setNivelamento] = useState<any>(null);
-  const [pedido2, setPedido] = useState<any>();
+  const [pedido2, setPedido] = useState<Pedido[]>([]);
   
 
   /* useEffect(() => {
@@ -222,10 +224,12 @@ function LogOut() {
   } */
 
   function pegarDadosPedido() {
-    api.get(`/pedidos/${perfil.usuario.idUsuario}`)
+    api.get<Partial<Pedido>[]>(`/pedidos/${perfil.usuario.idUsuario}`)
       .then((response) => {
         if (response.data) {
-          setPedido?.(response.data);
+          const pedidosParsed = response.data.map(item => pedidoParser(item))
+
+          setPedido?.(pedidosParsed);
           console.log("Console do CONTEXT PEGAR DADOS PEDIDOS - response.data", response.data);
         } else {
           console.log("vazio in context");
