@@ -1,6 +1,6 @@
 
 import { Tag, Storefront, ShoppingCart } from "@phosphor-icons/react"
-import { Linking } from "./Linking";
+import { NavLink } from "react-router-dom";
 
 interface MenuProps {
     SelectPage?: "Gerenciamento" | "Precificacao" | "Fornecedores";
@@ -16,14 +16,14 @@ return (
       <div className="px-5 py-5 space-y-5 font-medium">
         <div className={` px-3 flex items-center gap-2 ${SelectPage === "Precificacao" ? "bg-white border solid border-[#CCCCCC] dark:text-gray-900 rounded-[0.8rem]" : " "}`} >
           <Tag size={32} />
-          <span className="">
-              <Linking to="/Precificacao" title="Precificação" role="link" />
+          <span>
+              <NavLink to="/Precificacao" title="Ir para a ferramenta de precificação" role="link">Precificação</NavLink>
             </span>
         </div>
         <div className={` px-3 flex items-center gap-2 ${SelectPage === "Gerenciamento" ? "bg-white border solid border-[#CCCCCC] dark:text-gray-900  rounded-[0.8rem]": " "}`}>
           <Storefront size={32} />
           <span>
-              <Linking to="/Gerenciamento" title="Gerenciamento de Pedidos" role="link" />
+              <NavLink to="/Gerenciamento" title="Gerenciamento de Pedidos" role="link">Gerenciamento de Pedidos</NavLink>
             </span>
         </div>
         <div className={` px-3 flex items-center gap-2 ${SelectPage === "Fornecedores" ? "bg-white border solid border-[#CCCCCC] dark:text-gray-900 rounded-[0.8rem]" : " "}`}>

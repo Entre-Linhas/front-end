@@ -40,7 +40,6 @@ export default function SignIn() {
           setAuth && setAuth(true);
           setPerfil?.(response.data)
           setAtividades && setAtividades(response.data.trilhas.atividades)
-          localStorage.setItem('perfil', JSON.stringify(response.data))
           if (response.data.progresso === null) {
             navigate("/Nivelamento")
           } else {

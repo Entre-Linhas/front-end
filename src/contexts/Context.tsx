@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import api from '../apiInstance';
 import { Pedido } from '../models/pedido';
 import { pedidoParser } from '../utils/parsers';
- 
+import { Conquista } from '../models/consquista';
 
 interface ContextProps {
   auth: boolean
@@ -24,7 +24,11 @@ interface ContextProps {
   setPedido?: Function
   pegarDadosPedido?: Function
   LogOut: Function
-  // SingOut: Function
+  setShowModalConquista: Function
+  showModalConquista: boolean
+  setNomeModuloConquista: Function
+  nomeModuloConquista: string
+  conquista2: Conquista[]
 }
 export const Context = createContext<ContextProps>({} as any);
 
@@ -35,26 +39,55 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [nivelamento, setNivelamento] = useState<any>(null);
   const [pedido2, setPedido] = useState<Pedido[]>([]);
   const [hasVerifiedLogin, setHasVerifiedLogin] = useState(false)
+  const [showModalConquista, setShowModalConquista] = useState(false)
+  const [nomeModuloConquista, setNomeModuloConquista ] = useState('')
+  const [conquista2, setConquista] = useState<Conquista[]>([])
 
   function verificaLoginAnterior() {
     const rawPerfil = localStorage.getItem('perfil')
-    console.log(rawPerfil)
     if(rawPerfil) {
-      const perfil = JSON.parse(rawPerfil)
-      setPerfil(perfil)
+      const localPerfil = JSON.parse(rawPerfil)
+      setPerfil(localPerfil)
       setAuth(true)
     }
     setHasVerifiedLogin(true)
   }
+
+  function verificaAtividadesAnterior() {
+    const rawAtividades = localStorage.getItem('atividades')
+    if(rawAtividades) {
+      const loacalAtividades = JSON.parse(rawAtividades)
+      setAtividades(loacalAtividades)
+    }
+  }
+
+  function verificaNivelamentoAnterior() {
+    const rawNivelamento = localStorage.getItem('nivelamento')
+    if(rawNivelamento) {
+      const localNivelamento = JSON.parse(rawNivelamento)
+      setNivelamento(localNivelamento)
+    }
+  } 
   
 
   useEffect(() => {
     verificaLoginAnterior()
+    verificaAtividadesAnterior()
+    verificaNivelamentoAnterior()
   },[])
 
   useEffect(() => {
     perfil?.idPerfil && localStorage.setItem('perfil', JSON.stringify(perfil))
   }, [perfil])
+
+  useEffect(() => {
+    atividades && localStorage.setItem('atividades', JSON.stringify(atividades))
+  }, [atividades])
+
+  useEffect(() => {
+    console.log('este é o nivel', nivelamento)
+    nivelamento > -1 && localStorage.setItem('nivelamento', JSON.stringify(nivelamento))
+  }, [nivelamento])
 
 
   // para não perder os dados mesmo depois de recarregar
@@ -86,6 +119,9 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
   console.log("CONTEXT", perfil)
 function LogOut() {
+  setAtividades(null)
+  setPerfil(null)
+  setNivelamento(null)
   localStorage.clear();
   setAuth(false);
 }
@@ -262,10 +298,14 @@ function LogOut() {
       });
   }
 
+  function definirNovaConquista(nomeModulo: string) {
+    setShowModalConquista(true)
+    setNomeModuloConquista(nomeModulo)
+  }
+
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
-        setNivelamento, atualizarPerfil, pedido2, setPedido, pegarDadosPedido, LogOut }}>
-        {/* {JSON.stringify(atividades.progresso || {})} */}
+        setNivelamento, atualizarPerfil, pedido2, setPedido, pegarDadosPedido, LogOut, setShowModalConquista, showModalConquista, nomeModuloConquista, setNomeModuloConquista, conquista2 }}>
         {hasVerifiedLogin && children}
       </Context.Provider>
     );

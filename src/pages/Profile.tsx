@@ -6,11 +6,18 @@ import { useContext } from "react";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { Pencil, GearSix } from "@phosphor-icons/react";
+import { Conquista } from "../models/consquista";
 
 export default function Profile() {
+
+
+  const [conquista, setConquista] = useState<Conquista[]>([ { date: new Date(), modulo: ""} ]);
+
+
+
   const [displayFotos, setDisplayFotos] = useState(true);
   const [background, setBackground] = useState("bg-custom-salmon");
-  const { perfil, definirFotoPerfil, definirDescricao } = useContext(Context)
+  const { perfil, definirFotoPerfil, definirDescricao, conquista2 } = useContext(Context)
   const [displaydesc, setDisplaydesc] = useState(false)
   const [descricao, setDescricao] = useState<string>("")
   const navigate = useNavigate()
@@ -118,11 +125,10 @@ export default function Profile() {
           <div className={` px-10 py-10`}>
             <h1 className="dark:text-white">Últimas conquistas</h1>
             <div className="flex flex-col gap-10 py-10">
-              <Conquistas etapa="1. Definição do negócio" />
-              <Conquistas etapa="2. Análise de mercado" />
-              <Conquistas etapa="3. Meu produto" />
-              <Conquistas etapa="4. Diferencial" />
-              <Conquistas etapa="1. Meu cliente" />
+              
+              
+                {conquista2.map(conquista => <Conquistas key={conquista.id} conquista={conquista} />)}
+
             </div>
           </div>
          </div>

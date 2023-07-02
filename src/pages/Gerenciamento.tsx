@@ -109,7 +109,7 @@ export const Gerenciamento = () => {
         <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto max-lg:px-[3rem]  px-[3rem]">
           <h1 className="font-bold">Gerenciamento de Pedidos</h1>
           <p>Aqui você encontra os pedidos pendentes, em andamento e concluídos.</p>
-          {/* <button onClick={() => handleGetPedidos?.()}>TETESTEEEEEEEEEEEEEE</button> */}
+         
 
           <div className="py-5">
             <input type="search" className="px-2 py-2 w-full shadow-md rounded-lg" placeholder="Buscar pedidos" />

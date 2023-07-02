@@ -15,8 +15,16 @@ export const Trilha = () => {
   
 
   function handleModal() {
-    setShowModal(!showModal)
+    setShowModal(true); 
+    
   };
+
+  function handleModal2() {
+    setShowModal(false); 
+    
+  };
+
+
   // salva a materia e pratica e progress.atividade atraves da function atualizarAtividades, apenas gerando o objeto antes...
   const matDefLink = (novoMat: any, novaPrat: any) => {
     const newAtividades = {
@@ -229,14 +237,46 @@ export const Trilha = () => {
         </div>
       </div>
 
-
-      {showModal && nivelamento >= 100 && (
+      {showModal && perfil?.progresso == 8 && (
         <Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
           <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
             <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
             <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
              <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
-            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal} title="continuar a trilha"><span>Continuar</span></div>
+            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
+          </div>
+        </Modal>
+      )}
+
+{showModal && perfil?.progresso == 16 && (
+        <Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
+          <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
+            <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
+            <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
+             <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
+            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
+          </div>
+        </Modal>
+      )}
+
+{showModal && perfil?.progresso == 24 && (
+        <Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
+          <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
+            <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
+            <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
+             <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
+            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
+          </div>
+        </Modal>
+      )}
+
+{showModal && perfil?.progresso == 32 && (
+        <Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
+          <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
+            <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
+            <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo “Meu Negócio”</p>
+             <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
+            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
           </div>
         </Modal>
       )}

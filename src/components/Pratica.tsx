@@ -116,7 +116,9 @@ export default function Pratica() {
     if (respostaSelecionada === respostaCorreta) {
       respostaCorretaSelecionada();
       const questao = atividades?.pratica?.idPratica;
-      /* if (questao == 2 || questao == 2  || questao == 2 || questao == 2 || questao == 2 || questao == 2 || questao == 2 || questao == 2) */
+      if (questao == 2 || questao == 4  || questao == 6 || questao == 8 || questao == 10 || questao == 12 || questao == 14 || questao == 16 || questao == 18 || questao == 20 || questao == 22 || questao == 24 || questao == 26 || questao == 28 || questao == 30 || questao == 32) {
+        navigate("/Trilha")
+      }
     } else {
       respostaIncorretaSelecionada();
     }
@@ -132,9 +134,7 @@ export default function Pratica() {
     setPerfil?.(newPerfil)
     avançarQuest();
     atualizarPerfil(newPerfil);
-    console.log(perfil?.progresso)
-    console.log(atividades?.pratica?.idPratica)
-    if ((newPerfil?.progresso === 2 && atividades?.pratica?.idPratica === 3) ||
+    /* if ((newPerfil?.progresso === 2 && atividades?.pratica?.idPratica === 3) ||
       (newPerfil?.progresso === 4 && atividades?.pratica?.idPratica === 5) ||
       (newPerfil?.progresso === 6 && atividades?.pratica?.idPratica === 7) ||
       (newPerfil?.progresso === 8 && atividades?.pratica?.idPratica === 9) ||
@@ -150,15 +150,14 @@ export default function Pratica() {
       (newPerfil?.progresso === 28 && atividades?.pratica?.idPratica === 29) ||
       (newPerfil?.progresso === 30 && atividades?.pratica?.idPratica === 31) ||
       (newPerfil?.progresso === 32 && atividades?.pratica?.idPratica === 33)) {
-      navigate("/Trilha")
-    }
+    } */
   }
 
   function respostaIncorretaSelecionada() {
     console.log('Incorreto! Tente novamente!');
   }
 
-
+console.log("Atividades", atividades);
   return (
     <>
 
