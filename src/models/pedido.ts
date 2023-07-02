@@ -1,4 +1,5 @@
 export interface Pedido {
+/* id: Key | null | undefined */
 
 title: string
 date: Date

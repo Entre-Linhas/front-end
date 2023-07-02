@@ -17,7 +17,7 @@ interface ContextProps {
   nivelamento: any
   setNivelamento: Function
   atulizarPerfil: Function
-  pedido: any
+  pedido2: any
   setPedido?: Function
   pegarDadosPedido?: Function
   // SingOut: Function
@@ -29,7 +29,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [perfil, setPerfil] = useState<any>(null);
   const [atividades, setAtividades] = useState<any>({ progresso: 0 });
   const [nivelamento, setNivelamento] = useState<any>(null);
-  const [pedido, setPedido] = useState<any>();
+  const [pedido2, setPedido] = useState<any>();
 
   /* useEffect(() => {
     console.log("Log no context",
@@ -215,7 +215,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 
     return (
       <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
-        setNivelamento, atulizarPerfil, pedido, setPedido, pegarDadosPedido }}>
+        setNivelamento, atulizarPerfil, pedido2, setPedido, pegarDadosPedido }}>
         {/* {JSON.stringify(atividades.progresso || {})} */}
         {children}
       </Context.Provider>

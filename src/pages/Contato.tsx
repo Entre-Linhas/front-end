@@ -24,9 +24,9 @@ export default function Contato() {
                     <div className="flex flex-col gap-2 m-auto max-w-[80%]">
                         <p className="min-[1024px]:hidden text-[2.4rem] text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem] px-[2rem]">Dúvidas e sugestões? Envie-nos um e-mail explicando o assunto desejado e responderemos assim que possível.</p>
                         <div className="max-w-[100%] w-[100%] lg:m-auto flex flex-col justify-center items-center gap-3">
-                            <Input placeholder="Seu nome" onChange={(e: any) => setEmail(e.target.value)} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={40} />} />
-                            <Input placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={40} />} />
-                            <Input placeholder="Como podemos te ajudar?" onChange={(e: any) => setEmail(e.target.value)} leftElement={<ChatText className="mr-2 text-zinc-300 resize-y" weight="light" size={40} />} />
+                            <Input placeholder="Seu nome" onChange={(e: any) => setEmail(e.target.value)} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={40} />} aria-labelledby="seu nome"/>
+                            <Input placeholder="Email" onChange={(e: any) => setEmail(e.target.value)} leftElement={<Envelope className="mr-2 text-zinc-300" weight="light" size={40} />}  aria-labelledby="Email"/>
+                            <Input placeholder="Como podemos te ajudar?" onChange={(e: any) => setEmail(e.target.value)} leftElement={<ChatText className="mr-2 text-zinc-300 resize-y" weight="light" size={40} />} aria-labelledby="Como podemos te ajudar"  />
                             <button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem] w-[100%] max-w-[55.2rem]" title="enviar as dúvidas e sugestões">Enviar</button>
                         </div>
                     </div>
