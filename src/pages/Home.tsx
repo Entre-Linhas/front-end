@@ -44,7 +44,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
 
       {/* container1 - responsividade ok*/}
 
-      <div className='py-[9rem] bg-[#62B8AF] min-[220px]:h-auto flex justify-center items-center max-[1023px]:py-[5rem]'>
+      <div className='py-[9rem] bg-[#62B8AF] dark:bg-zinc-800 min-[220px]:h-auto flex justify-center items-center max-[1023px]:py-[5rem]'>
 
         <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem] no-wrap">
           <div className="flex flex-col text-white m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
@@ -160,12 +160,13 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
       {/* container8 - responsividade ok  */}
 
       {/* diminuir o tamanho do botão*/}
-      <div className="bg-[#FFF2C1]">
+      {/* Aplicativo */}
+      <div className="bg-[#FFF2C1] dark:bg-zinc-800">
         <div className="flex items-center box-border w-[100%] m-auto px-[3rem] lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
           <div className="m-auto flex flex-col gap-[1.6rem] items-center min-[840px]:flex-row">
             <div className="flex flex-col gap-[1.6rem] items-center">
               <h1 className="text-center text-custom-salmon font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]"> Aprenda também pelo <span className="text-custom-salmon">App</span></h1>
-              <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-900">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
+              <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-white">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
               <img src="/Login.svg" className="h-[5.3rem]" alt='imagem de download do appn o google play' role='imagem ilustrativa'/>
             </div>
             <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt='ilustração de uma plantinha ao lado de um celular e uma pessoa' role='imagem ilustrativa'></img>

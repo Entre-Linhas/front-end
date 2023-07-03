@@ -10,6 +10,9 @@ import TermsUse from "../pages/TermsUse";
 import Comunidade from "../pages/Comunidade"
 import { Pagamento } from "../pages/Pagamento";
 import Agradecimento from "../pages/Agradecimento";
+import CalculadoraPrecificacao from "../pages/CalculadoraPrecificacao";
+import { Fornecedores } from "../pages/Fornecedores";
+
 
 export default function FreeRoutes() {
   return (
@@ -28,6 +31,8 @@ export default function FreeRoutes() {
         <Route path="/Comunidade" element={<Comunidade />} />
         <Route path="/agradecimento" element={<Agradecimento />} />
         <Route path="*" element={<Navigate replace to="/"/>} />
+        <Route path="/teste" element={<CalculadoraPrecificacao />} />
+        <Route path="fornecedores" element={<Fornecedores />} />
       </Routes>
     </BrowserRouter>
   );

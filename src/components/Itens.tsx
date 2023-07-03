@@ -40,7 +40,7 @@ export const Itens = () => {
     <>
       <div className="w-full border solid border-[#CCCCCC] flex flex-col rounded-md shadow-lg">
         <div className="flex flex-wrap items-center justify-between px-5 py-3  ">
-          <span className="font-bold px-3">Nome do material</span>
+          <span className="font-bold px-3">Nome do produto</span>
           <span className="text-[#62B8AF] font-bold">Valor</span>
           <div className="flex">
             <span title="Ver">
@@ -62,12 +62,13 @@ export const Itens = () => {
               <input
                 type="text"
                 value={v.total}
+                className=""
                 onChange={(e) => handleInputChange(i, "total", e.target.value)}
               />
             </div>
           ))}
 
-          <div className="flex border solid border-[#CCCCCC] items-center gap-3 py-3 px-3 rounded-md">
+          {/* <div className="flex border solid border-[#CCCCCC] items-center gap-3 py-3 px-3 rounded-md">
             <span title="moeda">
               <Coins size={32} weight="thin" />
             </span>
@@ -79,7 +80,7 @@ export const Itens = () => {
               <Coins size={32} weight="thin" />
             </span>
             <span>Preço pago pela linha</span>
-          </div>
+          </div> */}
 
           <button onClick={handleAddProduct}>Adicionar produto</button>
         </div>

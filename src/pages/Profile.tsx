@@ -81,7 +81,7 @@ export default function Profile() {
             
           </div>
 
-          <div className="flex">
+          <div className="flex gap-5 items-center justify-between">
             <h2 className="font-bold text-[2.4rem] dark:text-white ">{perfil.usuario.nome} {perfil.usuario.sobrenome}</h2>
             <GearSix size={32} weight="fill" className="text-custom-salmon cursor-pointer" onClick={() => navigate("/configurar")}/>
           </div>

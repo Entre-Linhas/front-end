@@ -9,15 +9,15 @@ export function Footer() {
   const [auth, setAuth] = useState(false);
 
   return (
-    <div className="py-[2rem] bg-custom-salmon">
+    <div className="py-[2rem] bg-custom-salmon dark:bg-zinc-800">
       <div className="flex items-center box-border w-[100%] m-auto px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
         <div className="flex flex-col gap-[3.8rem] w-[100%] py-[1.6rem]">
           <div className="w-[100%] flex justify-between text-white  max-[660px]:flex-col max-[660px]:items-center gap-8 ">
             <nav className="max-[660px]:hidden">
               <ul className="text-[1.8rem] font-medium">
                 <li><NavLink to="/sobre" className="text-[2rem] font-bold">Sobre Nós</NavLink></li>
-                <li><NavLink to="/">Parceiros</NavLink></li>
-                <li><NavLink to="/">Fornecedores</NavLink></li>
+                <li><NavLink to="/agradecimento">Parceiros</NavLink></li>
+                <li><NavLink to="/Fornecedores">Fornecedores</NavLink></li>
               </ul>
             </nav>
             <nav className="max-[660px]:hidden">

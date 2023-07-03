@@ -90,12 +90,13 @@ export const Acordes = ({ pedido }: AcordesProps) => {
         className={`${display === "hidden" ? "block" : "hidden"
           } py-3 bg-white shadow-sm shadow-zinc-800 w-[100%] flex items-center justify-between dark:bg-zinc-700 `}
       >
-        <span className="px-5 text-2.2rem text-gray-900 dark:text-white max-w-[20rem]">{pedido?.title}</span>
+        <p className="px-5 text-2.2rem text-gray-900 dark:text-white max-w-[20rem] break-words truncate">{pedido?.title}</p>
         {/* esse aqui */}
         <div className="flex items-center px-5">
-          <span className="px-5 text-2.2rem text-gray-900 dark:text-white max-[620px]:hidden">R$ {pedido?.price}</span>
+          <p className="px-5 text-2.2rem text-gray-900 dark:text-white max-[620px]:hidden">R$ {pedido?.price}</p>
           <div className="flex items-center">
-            <span title={status} className="text-gray-900 dark:text-white max-[620px]:hidden">Status: </span>
+            <p  className="px-5 text-2.2rem text-gray-900 dark:text-white ">R$ {pedido?.price}</p>
+            <p title={status} className="text-gray-900 dark:text-white max-[620px]:hidden">Status: </p>
             <div className="flex flex-col justify-center">
               <Circle
                 size={26}
@@ -111,7 +112,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
             
             min-lg:self-start rounded-md 
             
-            
+            // Status
             `}
               >
                 <ul className="text-custom-salmon absolute z-10 rounded-xl py-2 bg-white shadow-black shadow-2xl dark:bg-zinc-800 dark:border-b-zinc-700 max-[620px]:right-[1rem]">
@@ -164,12 +165,12 @@ export const Acordes = ({ pedido }: AcordesProps) => {
       >
         <ul className="text-2rem">
           <div className="flex justify-between items-center max-md:flex-col max-md:items-start">
-            <li className="flex gap-5 py-4 max-[319px]:flex-col">
-              <span className="dark:text-white">Título:</span>
-              <span className="text-[#5B5B5B]">{pedido?.title}</span>
+            <li className="flex gap-5 py-4 flex-wrap">
+              <p className="dark:text-white">Título:</p>
+              <p className="text-[#5B5B5B] max-w-[20rem] break-words">{pedido?.title}</p>
             </li>
             <div className="flex items-center justify-center gap-3">
-              <span className="dark:text-white">Status: </span>
+              <p className="dark:text-white">Status: </p>
               <div className="flex flex-col justify-center">
                 <Circle
                   size={26}
@@ -225,30 +226,30 @@ export const Acordes = ({ pedido }: AcordesProps) => {
             </div>
           </div>
 
-          <li className="flex gap-5 py-4 max-[375px]:flex-col">
-            <span className="dark:text-white">Data de Entrega:</span>
-            <span className="text-[#5B5B5B]">{pedido?.date.toLocaleDateString()}</span>
+          <li className="flex flex-wrap gap-5 py-4">
+            <p className="dark:text-white">Data de Entrega:</p>
+            <p className="text-[#5B5B5B]">{pedido?.date.toLocaleDateString()}</p>
           </li>
-          <li className="flex gap-5 py-4 max-[375px]:flex-col">
-            <span className="dark:text-white">Nome do Cliente:</span>
-            <span className="text-[#5B5B5B]">{pedido?.nome}</span>
+          <li className="gap-5 py-4 flex flex-wrap ">
+            <p className="dark:text-white">Nome do Cliente:</p>
+            <p className="text-[#5B5B5B]">{pedido?.nome}</p>
           </li>
         </ul>
 
         <div className="flex flex-col gap-[25rem]">
           <ul>
             <li className="py-5">
-              <span className="dark:text-white">Descrição dos Produtos:</span>
+              <p className="dark:text-white">Descrição dos Produtos:</p>
               <br />
-              <span className="text-[#5B5B5B]">{pedido?.description}</span>
+              <p className="text-[#5B5B5B]">{pedido?.description}</p>
             </li>
           </ul>
           <div className="mt-full">
 
             <div className="flex justify-between py-1.2rem">
-              <span className="dark:text-white">Preço total:</span>
+              <p className="dark:text-white">Preço total:</p>
               <div className="flex items-center gap-5">
-                <span className="text-gray-900 dark:text-[#5B5B5B]">R$ {pedido?.price}</span>
+                <p className="text-gray-900 dark:text-[#5B5B5B]">R$ {pedido?.price}</p>
 
                 <div className="flex items-center max-lg:flex-col-reverse max-[360px]:hidden">
                   <Circle

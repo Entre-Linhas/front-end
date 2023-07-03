@@ -32,7 +32,8 @@ export default function SignIn() {
 
 
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
     api
       .post("/usuarios/login", formData)
       .then((response) => {
@@ -90,7 +91,7 @@ export default function SignIn() {
             </button>
           </header>
 
-          <div className="flex flex-col items-center my-auto gap-[1rem]">
+          <form className="flex flex-col items-center my-auto gap-[1rem]">
             <Logo />
 
             <h4 className="text-[1.4rem] min-[300px]:text-[1.6rem] min-[360px]:text-[1.8rem] min-[560px]:text-[2.2rem] dark:text-white">
@@ -113,7 +114,7 @@ export default function SignIn() {
             <NavLink to="/SignUp" className="dark:text-gray-100" title='cadastrar-se'>
               Cadastrar-me
             </NavLink>
-          </div>
+          </form>
         </div>
 
         <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">

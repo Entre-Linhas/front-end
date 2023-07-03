@@ -238,10 +238,10 @@ export const Trilha = () => {
       </div>
 
 
-       <Modal _showModal={showModalConquista} _close={handleModal2} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
-            <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
-               <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
-               <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo {nomeModuloConquista}</p>
+       <Modal _showModal={showModalConquista} _close={handleModal2} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg" _Ajuste="max-[320px]:top-[7rem]">
+            <div className="px-5 flex flex-col items-center gap-5 text-white rounded-[2rem] max-[360px]:overflow-y-auto max-[360px]:overflow-x-hidden">
+         
+               <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo "{nomeModuloConquista}"</p>
              <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
             <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
           </div>

@@ -10,8 +10,8 @@ export default function Comunidade() {
             <div className="flex items-center py-[11rem] justify-center max-[1023px]:flex-col">
 
                 <div className="flex flex-col gap-[5rem] px-[5rem]">
-                    <h1 className="text-center font-semibold m-auto text-[2.8rem] min-[425px]:text-[3rem] min-[1024px]:text-[4.8rem]" title="Entre Linhas">Conheça o fórum
-                        do <br /><span className="text-custom-salmon font-[Sacramento]"> Entre-Linhas</span></h1>
+                    <h1 className=" font-semibold text-[2.8rem] min-[425px]:text-[3rem] min-[1024px]:text-[4.8rem]" title="Entre Linhas">Conheça o fórum
+                        do <br /><span className="text-custom-salmon"> Entre-Linhas</span></h1>
 
                     <p className="max-w-[73.5rem] text-[2.2rem] " >Você poderá se conectar com outros profissionais da costura e trocar ideias sobre suas experiências no ramo. Aqui, você encontrará uma rede de apoio que pode ajudá-lo(a) a superar os desafios do seu negócio e aprimorar suas habilidades na costura.</p>
 

@@ -7,6 +7,7 @@ import { Itens } from "../components/Itens";
 import { Clock } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Modal } from "../components/Modal";
+import CalculadoraPrecificacao from "./CalculadoraPrecificacao";
 
 export default function Precificacao() {
    const [showModal, setShowModal] = useState(false);
@@ -14,6 +15,10 @@ export default function Precificacao() {
    function handleModal() {
       setShowModal(!showModal)
    }
+
+   // const inputsP = document.querySelector(`form#Precifica inputs`).values 
+ 
+
    return (
       <>
          <Header />
@@ -24,41 +29,35 @@ export default function Precificacao() {
             <Menu SelectPage="Precificacao" />
 
 
-            <div className="py-10 flex flex-col flex-1 max-w-[80rem]  mt-16 m-auto max-lg:px-[1rem] px-[3rem]">
+            <div className="py-10 flex flex-col flex-1 max-w-[80rem]  mt-16 m-auto max-lg:px-[1rem] px-[3rem] ">
 
                <div className="py-10">
                   <h1 className="font-bold py-3">Precificação</h1>
                   <p>Adicione itens usados no seu produto e calcule o preço dele.</p>
                </div>
 
-               <div className="w-full text-black bg-white px-5 py-10">
+               <div className="w-full text-black bg-white px-5 py-10 dark:bg-zinc-900">
 
 
-                  <h2 className="py-5">Nome do produto: { }</h2>
-                  <hr />
+               
                   <div className="py-10 flex flex-col gap-8">
-                     <h2 className="py-5">Materiais usados</h2>
+                     <h2 className="py-5 text-white">Produtos</h2>
 
-                     <Itens />
-                     <Itens />
-                     <Itens />
-                     <Itens />
-
+                  <CalculadoraPrecificacao />
+                   
 
                   </div>
 
-                  <div className="flex flex-col gap-10">
-                     <button className="w-full py-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F]" onClick={handleModal} title="adicionar um material">
-                        + Adicionar material
-                     </button>
+                  <div className="flex flex-col gap-10 dark:text-white">
+                   
                      <hr />
 
-                     <button className="w-full py-5 px-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F] flex items-center gap-3" title="Tempo gasto">
-                        <Clock size={24} className="text-black" />
+                     {/* <button className="w-full py-5 px-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F] flex items-center gap-3" title="Tempo gasto">
+                        <Clock size={24} className="text-black  dark:text-white" />
                         tempo gasto
-                     </button>
+                     </button> */}
 
-                     <button className="w-full py-5 border-solid bg-[#62B8AF] border-[1px] border-[#CCCCCC] rounded-xl text-white text-center" title="calcular">
+                     <button className="w-full py-5 border-solid bg-[#62B8AF] rounded-xl text-white text-center" title="calcular">
                         Calcular
                      </button>
 
@@ -67,6 +66,7 @@ export default function Precificacao() {
                </div>
 
 
+                    
 
 
 
@@ -74,17 +74,20 @@ export default function Precificacao() {
 
 
 
-
-
+                     document.QuerrySelect(inputs# )
 
 
 
             </div>
 
             <Modal _showModal={showModal} _close={handleModal}>
-               <div className="flex flex-col gap-8 mx-14 my-10">
-                 teste
-               </div>
+                     <form id="Precifica">  
+                      
+
+
+
+
+                     </form>
             </Modal>
 
          </div>

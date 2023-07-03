@@ -35,27 +35,32 @@ export default function Nivelamento() {
                 <Header />
                 <div className="py-[20rem] flex flex-col px-[2.5rem]" >
                     <div className="m-auto flex items-center justify-center gap-[9rem] max-[1023px]:flex-col" style={{ overflow: showModal ? "auto" : "hidden" }}>
-                        <div className="border solid border-1 border-[#E3E3E3] bg-white rounded-[2rem] shadow-mg flex flex-col items-center text-center min-[1024px]:min-h-[48.7rem] min-[1024px]:max-w-[39.87rem]">
+                        
+                        <div className="border solid border-1 border-[#E3E3E3] bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-[2rem] shadow-mg flex flex-col items-center text-center min-[1024px]:min-h-[48.7rem] min-[1024px]:max-w-[39.87rem]">
                             <div className="py-[6rem] flex flex-col items-center gap-[5.2rem] px-[3.8rem]">
                                 <StarHalf size="50" className="text-custom-salmon" />
                                 <div>
-                                    <h2 className="font-bold text-[2.2rem] dark:text-gray-900">Vou começar meu negócio</h2>
-                                    <p className="text-center dark:text-gray-900">Aqui você começa a trilha desde o início, vendo todos os tópicos</p>
+                                    <h2 className="font-bold text-[2.2rem] dark:text-white">Vou começar meu negócio</h2>
+                                    <p className="text-center dark:text-white">Aqui você começa a trilha desde o início, vendo todos os tópicos</p>
                                 </div>
                                 
                                     <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]" onClick={startUser}title="iniciar a trilha">Iniciar Trilha</button>
                                 </div>
                         </div>
-                        <div className="border solid border-1 border-[#E3E3E3] bg-white rounded-[2rem] shadow-mg flex flex-col items-center text-center min-[1024px]:min-h-[48.7rem] min-[1024px]:max-w-[39.87rem]">
+
+                        
+                        <div className="border solid border-1 border-[#E3E3E3] bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-[2rem] shadow-mg flex flex-col items-center text-center min-[1024px]:min-h-[48.7rem] min-[1024px]:max-w-[39.87rem]">
                             <div className="py-[6rem] flex flex-col items-center gap-[5.2rem] px-[3.8rem]">
                                 <Star size="50" className="text-custom-salmon" />
                                 <div>
-                                    <h2 className="font-bold text-[2.2rem] dark:text-gray-900">Já tenho meu negócio</h2>
-                                    <p className="text-center dark:text-gray-900">Aqui você faz um teste para pular o conteúdo que você já sabe</p>
+                                    <h2 className="font-bold text-[2.2rem] dark:text-white">Já tenho meu negócio</h2>
+                                    <p className="text-center dark:text-white">Aqui você faz um teste para pular o conteúdo que você já sabe</p>
                                 </div>
                                 <button className="bg-custom-salmon text-white py-[1rem] px-[1rem] rounded-[0.5rem] text-[1.8rem] min-[320px]:px-[3rem] min-[360px]:px-[5rem] min-[425px]:px-[8rem] min-[530px]:px-[10rem]" onClick={advancedUser} title="iniciar a trilha">Iniciar Trilha</button>
                             </div>
                         </div>
+
+
                     </div>
                     <button onClick={handleModal} className="py-20 mx-0 text-center text-[2.2rem] underline text-[#525151] dark:text-white">Entenda mais sobre o teste de nivelamento e por onde começar.</button>
                 </div>

@@ -32,7 +32,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
       <nav className="hidden lg:flex gap-[2.5rem] font-medium mx-auto text-custom-salmon text-[2.2rem]" title='Menu'>
         <ul className='flex gap-6'>
           <li className={`relative`}>
-            <Linking to="/" title='Inicio' />
+            <Linking to="/" title='Início' />
           </li>
           <li className={`relative ${auth ? "" : "hidden"}`}>
             <Linking to="/Trilha" title='Trilha' />

@@ -15,8 +15,10 @@ import { Gerenciamento } from "../pages/Gerenciamento";
 import Profile from "../pages/Profile";
 import Precificacao from "../pages/Precificacao";
 import { Pagamento } from "../pages/Pagamento";
-import {Configurar} from "../pages/Configurar"
+import { Configurar } from "../pages/Configurar"
 import Agradecimento from "../pages/Agradecimento";
+import CalculadoraPrecificacao from "../pages/CalculadoraPrecificacao";
+import { Fornecedores } from "../pages/Fornecedores";
 
 export default function CloseRoutes() {
   return (
@@ -41,6 +43,9 @@ export default function CloseRoutes() {
         <Route path="/pagamento" element={<Pagamento />} />
         <Route path="/Configurar" element={<Configurar />} />
         <Route path="/agradecimento" element={<Agradecimento />} />
+        {/* <Route path="*" element={<Navigate replace to="/"/>} /> */}
+        <Route path="fornecedores" element={<Fornecedores />} />
+        <Route path="/teste" element={<CalculadoraPrecificacao />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

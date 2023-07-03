@@ -188,7 +188,7 @@ export const Pagamento = () => {
         )}
           <Modal _showModal={showModal} _close={handleModal}  >
               <div className="flex flex-col items-center">
-              <h1 className="text-center font-semibold text-[2.8rem] dark:text-gray-900 text-custom-salmon">Não se preocupe!</h1>
+              <h1 className="text-center font-semibold text-[2.8rem] dark:text-white darkbg-zinc-800 text-custom-salmon">Não se preocupe!</h1>
                 <p style={{ width: "-webkit-fill-available"}} className="py-10 text-[1.8rem]">Todas as ferramentas do Entre Linhas estão disponíveis gratuitamente para testes durante um mês! A opção de pagamento foi desativada, o que significa que você pode conhecer e desfrutar de todas as nossas funcionalidades apenas se cadastrando.</p>
                 <div className="flex gap-10 text-white"> 
                   <button className="bg-turquoise-400 color-white text-2xl py-5 px-6 rounded-md"><Link to="/signup" title="Saiba mais">Registrar</Link></button>

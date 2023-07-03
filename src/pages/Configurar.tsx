@@ -79,6 +79,9 @@ export const Configurar = () => {
       },
    ];
 
+    
+
+
    function handleModal() {
       setShowModal(!showModal);
    }
@@ -206,13 +209,14 @@ export const Configurar = () => {
 
                <button className="max-w-[20rem] px-8 py-4 rounded-xl bg-[#62B8AF] text-white" onClick={AtDesc} aria-roledescription="Botão salvar alterações">Salvar alterações</button>
             </div>
-
-            <Modal _showModal={showModal} _close={handleModal} _maxWidth="max-w-[90rem]" >
-               <div className="flex flex-wrap overflow-auto gap-8 mx-14 my-10">
-                  {images.map((image) => <img onClick={() => definirFotoPerfil(image.src)} className="h-52 w-52 cursor-pointer" src={image.src} alt={image.alt} />)}
+                  
+           
+            <Modal _showModal={showModal} _close={handleModal} _maxWidth="max-w-[90rem]" _Ajuste="max-[900px]:py-[20rem]">
+               <div className="flex flex-wrap overflow-auto gap-8 mx-14 my-10 max-[600px]:justify-center">
+                  {images.map((image) => <img onClick={() => {definirFotoPerfil(image.src); handleModal();}} className="h-52 w-52 cursor-pointer m-auto" src={image.src} alt={image.alt} />)}
                </div>
                <button 
-                  className="self-end max-w-[20rem] px-10 py-4 rounded-xl bg-[#62B8AF] text-white"
+                  className="self-end max-w-[20rem] px-12 py-4 rounded-xl bg-[#62B8AF] text-white m-auto"
                   onClick={handleModal}
                >
                   Salvar

@@ -124,14 +124,15 @@ export default function Pratica() {
 
   function classeCorAlternativa(reposta: string) {
     const objGreen = {
-      backgroundColor: '#00FF7F',
-      // color: 'white',
-      boxShadow: '0 0 10px 5px rgba(0, 255, 0, 0.5)',
+      backgroundColor: '#FFFFFF',
+      color: '#4FA526',
+      boxShadow: '0 0 8px 2px rgba(79, 165, 38)',
     }
 
     const objRed = {
-      backgroundColor: '#FF6347',
-      color: '#D3D3D3'
+      backgroundColor: '#FFFFFF',
+      color: '#535353',
+      boxShadow: '0 0 8px 2px rgba(183, 183, 183)',
     }
     if (!respostaSelecionada) return ''
     return respostaCorretaQuestao == reposta ? objGreen : objRed
