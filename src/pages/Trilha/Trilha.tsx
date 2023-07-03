@@ -231,7 +231,7 @@ export const Trilha = () => {
               { title: "1. Análise de mercado", describe: "Pesquisa e avaliação de dados para entender o cenário competitivo, identificar oportunidades e tomar decisões estratégicas.",  _completed: andamento13, irConteudo: () => handleIrConteudo(109, 25, "Análise de mercado") },
               { title: "2. Segmentação de mercado", describe: "Divisão do mercado em grupos distintos com características e necessidades semelhantes para direcionar estratégias de marketing de forma mais eficaz.",  _completed: andamento14, irConteudo: () => handleIrConteudo(118, 27, "Segmentação de mercado") },
               { title: "3. Inovação de produtos e serviços", describe: "Criação e introdução de novas soluções no mercado para atender às demandas dos clientes e se destacar da concorrência.",  _completed: andamento15, irConteudo: () => handleIrConteudo(127, 29, "Inovação de produtos e serviços") },
-              { title: "4. Estratégias de marketing eficazes", describe: "Estratégias de marketing eficazes: Abordagens estratégicas que geram resultados positivos na promoção e venda de produtos e serviços.",  _completed: andamento16, irConteudo: () => handleIrConteudo(136, 31, ) }
+              { title: "4. Estratégias de marketing eficazes", describe: "Estratégias de marketing eficazes: Abordagens estratégicas que geram resultados positivos na promoção e venda de produtos e serviços.",  _completed: andamento16, irConteudo: () => handleIrConteudo(136, 31, "Estratégias de marketing eficazes") }
             ]} style={{ scrollSnapAlign: "start", flexDirection: "row" }} />
           </div>
         </div>

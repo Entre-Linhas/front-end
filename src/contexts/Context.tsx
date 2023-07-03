@@ -97,7 +97,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         dataConquista: new Date(),
         nome: nomeModuloConquista
       }
-      api.post('/conquistas', payload)
+      api.post('/conquista', payload)
       .then((response) => {})
       .catch((err) => console.log('ERRO AO SALVAR A CONQUISTA'))
     }

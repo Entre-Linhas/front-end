@@ -69,15 +69,21 @@ export const Header = ({ ...rest }: HeaderProps) => {
 
             <div className={`${display}`}>
               <ul className="max-lg:hidden shadow-xl text-custom-salmon absolute right-0 z-10 mt-4 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
+               <NavLink to="/Profile" title="Meu perfil"> 
                 <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/Profile" title="Meu perfil" />
+                  <span>Meu Perfil</span>
                 </li>
-                <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/Configurar" title="Configurações" />
-                </li>
-                <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title="Sair" onClick={() => LogOut()} />
-                </li>
+                </NavLink>
+                <NavLink to="/Configurar" title="Configurações"> 
+                  <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
+                    <span>Configurações</span>
+                 </li>
+                </NavLink>
+                <NavLink to="/" title="Sair de sua conta" onClick={() => LogOut()}> 
+                  <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
+                    <span>Sair</span>
+                 </li>
+                </NavLink>
               </ul>
             </div>
           </div>

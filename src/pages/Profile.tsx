@@ -38,7 +38,7 @@ export default function Profile() {
   }
 
   function pegarConquistas() {
-    api.get<Conquista[]>('/conquista')
+    api.get<Conquista[]>('/conquista/' + perfil.usuario.idUsuario)
       .then((response) => {
         const conquistas = response.data.map(item => conquistaParser(item))
         setConquistas(conquistas)

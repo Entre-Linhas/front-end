@@ -197,30 +197,30 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
 
         <div className="min-[900px]:flex justify-center">
 
-          <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700">
+          <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700 max-[900px]:border-none max-[900px]:rounded-none">
             <div>
               <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Conhecimento</h3>
-              <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Através da educação, buscamos mostrar aos nossos profissionais todo o seu potêncial como empreendedores de sucesso.</p>
+              <p className="min-[900px]:max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Através da educação, buscamos mostrar aos nossos profissionais todo o seu potêncial como empreendedores de sucesso.</p>
             </div>
             <img src="/LineSalmon.svg" className="py-[1rem]" alt='desenho de um carrretel de linha rosa'  role='imagem ilustrativa'/>
           </div>
 
           <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
 
-          <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700">
+          <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700 max-[900px]:border-none max-[900px]:rounded-none">
             <div>
               <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Transformação</h3>
-              <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Almejamos a transformação de profissionais da costura através da educação, permitindo que eles tenham impacto em seus negócios e comunidades.</p>
+              <p className="min-[900px]:max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100 max-[900px]:border-none max-[900px]:rounded-none">Almejamos a transformação de profissionais da costura através da educação, permitindo que eles tenham impacto em seus negócios e comunidades.</p>
             </div>
             <img src="/LineYellow.svg" className="py-[1rem]" alt='desenho de um carrretel de linha amarelo'  role='imagem ilustrativa'/>
           </div>
 
           <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
 
-          <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700">
+          <div className="bg-white border solid rounded-[2rem] px-[1rem] flex flex-col justify-center items-center max-h-[58rem] dark:bg-zinc-800 dark:border-zinc-700 max-[900px]:border-none max-[900px]:rounded-none">
             <div>
               <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Sustentabilidade</h3>
-              <p className="max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
+              <p className="min-[900px]:max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
             </div>
             <img src="/LineTurq.svg" className="py-[1rem]"alt='desenho de um carrretel de linha Turquesa'  role='imagem ilustrativa' />
           </div>

@@ -33,7 +33,7 @@ export default function Nivelamento() {
         <>
             <div>
                 <Header />
-                <div className="h-[100dvh] flex flex-col px-[2.5rem]" >
+                <div className="py-[20rem] flex flex-col px-[2.5rem]" >
                     <div className="m-auto flex items-center justify-center gap-[9rem] max-[1023px]:flex-col" style={{ overflow: showModal ? "auto" : "hidden" }}>
                         <div className="border solid border-1 border-[#E3E3E3] bg-white rounded-[2rem] shadow-mg flex flex-col items-center text-center min-[1024px]:min-h-[48.7rem] min-[1024px]:max-w-[39.87rem]">
                             <div className="py-[6rem] flex flex-col items-center gap-[5.2rem] px-[3.8rem]">
@@ -57,7 +57,7 @@ export default function Nivelamento() {
                             </div>
                         </div>
                     </div>
-                    <button onClick={handleModal} className="mx-0 text-center text-[2.2rem] underline text-[#525151] dark:text-white">Entenda mais sobre o teste de nivelamento e por onde começar.</button>
+                    <button onClick={handleModal} className="py-20 mx-0 text-center text-[2.2rem] underline text-[#525151] dark:text-white">Entenda mais sobre o teste de nivelamento e por onde começar.</button>
                 </div>
             </div>
             <Modal _showModal={showModal} _close={handleModal}>
