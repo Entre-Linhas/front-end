@@ -57,8 +57,8 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   function verificaAtividadesAnterior() {
     const rawAtividades = localStorage.getItem('atividades')
     if(rawAtividades) {
-      const loacalAtividades = JSON.parse(rawAtividades)
-      setAtividades(loacalAtividades)
+      const localAtividades = JSON.parse(rawAtividades)
+      localAtividades?.idAtividades && setAtividades(localAtividades)
     }
   }
 
@@ -82,7 +82,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   }, [perfil])
 
   useEffect(() => {
-    atividades && localStorage.setItem('atividades', JSON.stringify(atividades))
+    atividades?.idAtividades && localStorage.setItem('atividades', JSON.stringify(atividades))
   }, [atividades])
 
   useEffect(() => {
@@ -119,6 +119,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   }, [auth, perfil, atividades, nivelamento, pedido2]); */
 
   console.log("CONTEXT", perfil)
+  
 function LogOut() {
   setAtividades(null)
   setPerfil(null)

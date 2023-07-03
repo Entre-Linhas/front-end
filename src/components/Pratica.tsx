@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../contexts/Context";
 import { useContext } from "react";
 export default function Pratica() {
-  const { atividades, avançarQuest, perfil, setPerfil, atualizarPerfil } = useContext(Context);
+  const { atividades, avançarQuest, perfil, setPerfil, atualizarPerfil, setNomeModuloConquista, setShowModalConquista } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -117,6 +117,7 @@ export default function Pratica() {
       respostaCorretaSelecionada();
       const questao = atividades?.pratica?.idPratica;
       if (questao == 2 || questao == 4  || questao == 6 || questao == 8 || questao == 10 || questao == 12 || questao == 14 || questao == 16 || questao == 18 || questao == 20 || questao == 22 || questao == 24 || questao == 26 || questao == 28 || questao == 30 || questao == 32) {
+        setShowModalConquista(true)
         navigate("/Trilha")
       }
     } else {

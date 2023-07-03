@@ -214,14 +214,18 @@ switch (atividades?.progresso) {
             return (
                 <>
                     <Header />
-                    <Pratica />
+                 
+                      <Pratica />
+                   
                 </>
             );
         }
         return (
             <>
                 <Header />
-                <Material title="title" />
+                
+                   <Material title="title" />
+                 
             </>
         )
     }

@@ -19,7 +19,7 @@ export const Gerenciamento = () => {
   const { perfil, pedido2, setPedido, pegarDadosPedido } = useContext(Context);
   const [showModal, setShowModal] = useState(true);
   const [showForm, setShowForm] = useState(false)
-  const [pedidos, setPedidos] = useState<Pedido[]>([ { date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }   , {date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: ""} ]);
+  const [pedidos, setPedidos] = useState<Pedido[]>([{ date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }, { date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }]);
   const [keyModal, setKeyModal] = useState(crypto.randomUUID())
   function handleModal() {
     setShowModal(!showModal)
@@ -29,50 +29,13 @@ export const Gerenciamento = () => {
     setShowForm(!showForm)
   }
 
-  useEffect(() => {pegarDadosPedido?.()}, [])
-
-  // bug
-  // {pedido2.length > 0 ? (
-  //   pedido2.map((pedido: any) => <Acordes pedido={pedido} />)
-  // ) : (
-  //   <p>Nenhum pedido encontrado.</p>
-  // )}
-
-  /* setPedidos(pedido2); */
-
-  // const pedidos: Pedido[] = [{ date: new Date(), nome: "", desc: "", price: 100, title: "", status: "" }, {date: new Date(), nome: "", desc: "", price: 100, title: "", status: ""}]
-
-  // O conteúdo acima é um mock, que é um objeto de exemplo, pra podermos exemplificar o que esperamos receber do backend. Aqui em cima, ta igual porque eu quero exibir dois acordões pra testar a lógica. 
-/* 
-  function saveForm() {
-    const data: any = {};
-
-    const inputs = document.querySelectorAll('#formGeren input, #formGeren textarea') as any as HTMLInputElement[];
-    inputs.forEach(item => {
-      data[item.id] = item.value;
-    });
-
-    data.usuario = perfil.usuario;
-
-    api.post("/pedidos", pedidoParser(data))
-      .then((response) => {
-        if (response.data) {
-          const newPedido = pedidoParser(response.data);
-          setPedidos([...pedidos, newPedido]);
-        } else {
-          console.log("vazio");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  } */
+  useEffect(() => { pegarDadosPedido?.() }, [])
 
 
   function saveForm() {
 
     const data: any = {}
-    // "Partial" indica que eu tenho um objeto com determinada tipagem mas ele não precisa estar completo, pode estar parcialmente ("Partial") preenchido, o trecho "<>" é o "generycs", é uma forma de deixa uma tipagem reutilizável e dinâmica, é só colocar o tipo que a gente quer dentro. 
+
 
     const inputs = document.querySelectorAll('#formGeren input, #formGeren textarea') as any as HTMLInputElement[]
     // sobre o "as any as HTMLInputElement" eu to dizendo transformo em qualquer coisa e depois transforme em algo, que no caso é o elemento input do HTML"
@@ -109,7 +72,7 @@ export const Gerenciamento = () => {
         <div className="flex flex-col flex-1 max-w-[80rem] mt-16 m-auto max-lg:px-[3rem]  px-[3rem]">
           <h1 className="font-bold">Gerenciamento de Pedidos</h1>
           <p>Aqui você encontra os pedidos pendentes, em andamento e concluídos.</p>
-         
+
 
           <div className="py-5">
             <input type="search" className="px-2 py-2 w-full shadow-md rounded-lg" placeholder="Buscar pedidos" />
@@ -119,11 +82,11 @@ export const Gerenciamento = () => {
               + Novo pedido
             </button>
           </div>
-        
+
 
 
           {pedido2.map(pedido => <Acordes key={pedido.id} pedido={pedido} />)}
-          
+
 
 
         </div>

@@ -11,7 +11,7 @@ import { Conquista } from "../models/consquista";
 export default function Profile() {
 
 
-  const [conquista, setConquista] = useState<Conquista[]>([ { date: new Date(), modulo: ""} ]);
+  const [conquista, setConquista] = useState<Conquista[]>([ { id: 1, date: new Date(), modulo: ""} ]);
 
 
 

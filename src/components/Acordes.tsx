@@ -1,6 +1,8 @@
 import { CaretDown, CaretUp, Circle, X } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
 import { Pedido } from "../models/pedido";
+import { useContext } from "react";
+import { Context } from "../contexts/Context";
 import api from "../apiInstance";
  
 type AcordesProps = {
@@ -11,8 +13,10 @@ type AcordesProps = {
 export const Acordes = ({ pedido }: AcordesProps) => {
   const [display, setDisplay] = useState("hidden");
   const [display3, setDisplay3] = useState("hidden");
-  const [status, setStatus] = useState("text-gray-500");
+  const [status, setStatus] = useState("");
   // const [estado, setEstado] = useState(Pedido);
+  const { pegarDadosPedido } = useContext(Context)
+
 
   const handleClick = () => {
     setDisplay(display === "hidden" ? "block" : "hidden");
@@ -21,20 +25,33 @@ export const Acordes = ({ pedido }: AcordesProps) => {
 
   useEffect(() => {
     const newPedido:any = {...pedido, estado:status} 
-    saveEstado(newPedido);
+    status && saveEstado(newPedido);
     console.log("Testando se funciona", newPedido);
   }, [status]) 
   
   
 
   const saveEstado = (pedido: Pedido) => {
-    api.put("/pedido/" + pedido.id, pedido)
+    api.put("/pedidos/" + pedido.id, pedido)
       
       .then((response) => {
-
+        pegarDadosPedido?.()
       })
       .catch((error) => {
         console.error(error);
+      }
+      )
+
+  };
+
+  const deletePedido = (pedido: Pedido) => {
+    api.delete("/pedidos/" + pedido.id)
+      
+      .then((response) => {
+        pegarDadosPedido?.()
+      })
+      .catch((error) => {
+       
       }
       )
 
@@ -74,6 +91,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
           } py-3 bg-white shadow-sm shadow-zinc-800 w-[100%] flex items-center justify-between dark:bg-zinc-700 `}
       >
         <span className="px-5 text-2.2rem text-gray-900 dark:text-white max-w-[20rem]">{pedido?.title}</span>
+        {/* esse aqui */}
         <div className="flex items-center px-5">
           <span className="px-5 text-2.2rem text-gray-900 dark:text-white max-[620px]:hidden">R$ {pedido?.price}</span>
           <div className="flex items-center">
@@ -83,7 +101,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
                 size={26}
                 weight="fill"
                 onClick={ShowStatus2}
-                className={`${status}`}
+                className={`${pedido?.estado}`}
                 role="button"
                 aria-label="Alterar status"
               />
@@ -148,7 +166,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
           <div className="flex justify-between items-center max-md:flex-col max-md:items-start">
             <li className="flex gap-5 py-4 max-[319px]:flex-col">
               <span className="dark:text-white">Título:</span>
-              <span className="text-[#5B5B5B]">{pedido?.nome}</span>
+              <span className="text-[#5B5B5B]">{pedido?.title}</span>
             </li>
             <div className="flex items-center justify-center gap-3">
               <span className="dark:text-white">Status: </span>
@@ -157,7 +175,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
                   size={26}
                   weight="fill"
                   onClick={ShowStatus2}
-                  className={`${status}`}
+                  className={`${pedido?.estado}`}
                   role="button"
                   aria-label="Alterar status"
                 />
@@ -237,7 +255,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
                     size={26}
                     weight="fill"
                     onClick={ShowStatus2}
-                    className={`${status}`}
+                    className={`${pedido?.estado}`}
                     role="button"
                     aria-label="Alterar status"
                   />
@@ -246,7 +264,7 @@ export const Acordes = ({ pedido }: AcordesProps) => {
             </div>
             <hr />
             <br />
-            <button className="text-red-600" title="Excluir produto">Excluir produto</button>
+            <button className="text-red-600" title="Excluir produto" onClick={() => deletePedido(pedido as Pedido)}>Excluir produto</button>
           </div>
         </div>
       </div>

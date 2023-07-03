@@ -77,7 +77,7 @@ export default function Sobre() {
                      GitHub="https://github.com/Skinzin" 
                      Linkedin="https://www.linkedin.com/in/vinicius-scosta/" 
                      nome="Vinicius Costa" 
-                     desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                     desc="Muito prazer! Me chamo Vinicius e gosto de explorar este grande mundo, principalmente quando se trata de tecnologia 🚀 Sempre seguindo com foco e determinação!"
                      img="/Vini.png"
                      />
                     <About  

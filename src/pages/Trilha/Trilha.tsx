@@ -8,7 +8,7 @@ import { Modulo } from "./Modulo";
 
 
 export const Trilha = () => {
-  const { atividades, atualizarAtividade, nivelamento, setNivelamento, perfil, atualizarPerfil } = useContext(Context);
+  const { atividades, atualizarAtividade, nivelamento, setNivelamento, perfil, atualizarPerfil, setNomeModuloConquista, setShowModalConquista, nomeModuloConquista, showModalConquista } = useContext(Context);
   const [showModal, setShowModal] = useState(true);
 
   // atualizarPerfil(); // talves precisa para voltar os valores depois de entrar no conteudo
@@ -20,8 +20,7 @@ export const Trilha = () => {
   };
 
   function handleModal2() {
-    setShowModal(false); 
-    
+    setShowModalConquista(false);
   };
 
 
@@ -46,7 +45,8 @@ export const Trilha = () => {
   const navigate = useNavigate();
 
   // direnciana para a pagina conteudo e antes salva a materia e pratica e progress.atividade atraves da function mat...
-  const handleIrConteudo = (mater: any, pratica: any) => {
+  const handleIrConteudo = (mater: any, pratica: any, nomeModulo?: string) => {
+    nomeModulo && setNomeModuloConquista(nomeModulo)
     matDefLink(mater, pratica);
     navigate("/Conteudo");
   };
@@ -210,7 +210,7 @@ export const Trilha = () => {
           <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always max-[540px]:text-center px-[1rem]">Bem vindo, à Trilha Educacional</h1>
           <div className="flex flex-col mx-auto ">
             <Modulo _titleModulo="Meu Negócio" _progress={nivelamento} conteudos={[
-              { title: "1. Nicho de mercado e proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.", time: "20min", _completed: andamento1, irConteudo: () => handleIrConteudo(1, 1) },
+              { title: "1. Nicho de mercado e proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.", time: "20min", _completed: andamento1, irConteudo: () => handleIrConteudo(1, 1, "Meu Negócio") },
               { title: "2. Análise de mercado", describe: "Estudo do público-alvo e concorrência.", time: "20min", _completed: andamento2, irConteudo: () => handleIrConteudo(10, 3) },
               { title: "3. Meu produto", describe: "Qual o meu produto e como identificar seu valor agregado", time: "20min", _completed: andamento3, irConteudo: () => handleIrConteudo(19, 5) },
               { title: "4. Diferencial", describe: "Identificar o diferencial do seu negócio e o que ele pode oferecer ao mercado", time: "20min", _completed: andamento4, irConteudo: () => handleIrConteudo(28, 7) }
@@ -237,7 +237,17 @@ export const Trilha = () => {
         </div>
       </div>
 
-      {showModal && perfil?.progresso == 8 && (
+
+      <Modal _showModal={showModalConquista} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
+          <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
+            <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
+            <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo {nomeModuloConquista}</p>
+             <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
+            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
+          </div>
+        </Modal>
+
+      {/* {showModal && perfil?.progresso == 8 && (
         <Modal _showModal={showModal} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
           <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
             <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
@@ -279,7 +289,7 @@ export const Trilha = () => {
             <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
           </div>
         </Modal>
-      )}
+      )} */}
     </>
 
   );

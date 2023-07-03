@@ -258,7 +258,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
       >
         {carousel.map((s, i) => (
           <SwiperSlide>
-            <div className="h-[50.9rem] py-[40rem]">
+            {/* <div className="h-[50.9rem] py-[40rem]">
               <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
                 <div className="flex gap-10 min-[220px]:flex-col">
                 <div className="flex justify-evenly gap-10">
@@ -277,7 +277,37 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
                 </div>
                 </div>
               </div>
+            </div> */}
+            
+            {/* Carrosel */}
+            <div className="h-[50.9rem] py-[40rem]">
+
+                <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
+
+                  <div className="flex gap-10 min-[220px]:flex-col">
+
+                      <div className="flex justify-evenly gap-10">
+
+                        <div className="flex justify-center">
+                          <img src="/DonaDivina.png" className="max-w-[50%] min-[220px]:m-auto min-[900px]:max-w-[43.5rem]" alt='Imagem do usuário' role='imagem do perfil do usuário' />
+                        </div>
+
+                      </div>
+
+                    <p className="text-[2.2rem] m-auto font-bold text-custom-salmon min-[1440px]:hidden">Angie Nonbine</p>
+
+                    <div className="min-[1440px]:hidden">
+                      <p className="text-[2.2rem] dark:text-gray-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
+                      <p className="min-[220px]:hidden text-[2.2rem] mr-auto">Angie Nonbine</p>
+                    </div>
+
+                  </div>
+
+                
+                </div>
+
             </div>
+
           </SwiperSlide>
         ))}           
       </Swiper>

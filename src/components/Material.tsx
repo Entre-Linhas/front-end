@@ -14,8 +14,7 @@ export default function Material({ image, title, content }: MaterialProps) {
   const { atividades, incrementarProgressoAtividade, decrementarProgressoAtividade } = useContext(Context);
 
   console.log(atividades?.materia?.txt1)
-  const paragrafos = atividades?.materia?.txt1.substring("\n");
-  console.log(paragrafos)
+  const paragrafos = atividades?.materia?.txt1.split("\n");
 
     return (
       <div className="m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] py-[10rem] text-center">
