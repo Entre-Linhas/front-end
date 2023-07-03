@@ -7,7 +7,7 @@ import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { Pencil, GearSix } from "@phosphor-icons/react";
 import { Conquista } from "../models/consquista";
-
+import { RedeSocial } from "../components/RedeSocial";
 export default function Profile() {
 
 
@@ -84,17 +84,14 @@ export default function Profile() {
 
 
           <ul>
-            <li className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded-lg bg-black"></div>
-              <span className="dark:text-white" >Rede 01</span>
+            <li>
+              {/* <RedeSocial url={perfil.usuario}/> */}
             </li>
             <li className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded-lg bg-black"></div>
-              <span className="dark:text-white">Rede 02</span>
+              {/* <RedeSocial url={perfil.usuario}/> */}
             </li>
             <li className="flex items-center gap-3">
-              <div className="w-6 h-6 rounded-lg bg-black"></div>
-              <span className="dark:text-white">Rede 03</span>
+              {/* <RedeSocial url={perfil.usuario}/> */}
             </li>
           </ul>
           <ul>

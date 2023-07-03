@@ -56,6 +56,7 @@ export default function Sobre() {
                         Linkedin="https://www.linkedin.com/in/passosmatheus/" 
                         desc="Sou um jovem cheio de energia e extremamente dedicado, dou o sangue sempre, em tudo que faço. Tenho uma fome imensurável de crescimento e evolução, e sou apaixonado por tecnologia." 
                         img="/Matheus.png" 
+                        cargo="Product Owner e Front-End"
                     />
                     <About 
                          StyleAbout="secondary"  
@@ -64,6 +65,7 @@ export default function Sobre() {
                          nome="Gabriela Souza" 
                          desc="Scrum Master e Designer da equipe, adoro filmes e ler ficção científica, principalmente se for Isaac Asimov. Também gosto de tirar foto com meu gato."
                          img="/Gabi.png"
+                         cargo="Scrum Master e UI/UX Designer"
                      />
                     <About 
                      nome="Kevyn Aciole" 
@@ -71,6 +73,7 @@ export default function Sobre() {
                       Linkedin="https://www.linkedin.com/in/kevyn-aciole-15a446254/" 
                       desc="Jovem morador da zona leste de São Paulo que gosta muito de música, tecnologia, comunicação e muito mais, adora aprender coisas novas e ser desafiado. E acredita que a tecnologia é um meio e não um fim."
                       img="/Kevyn.png"
+                      cargo="Financeiro e Back-End"
                     />
                     <About  
                      StyleAbout="secondary" 
@@ -79,6 +82,7 @@ export default function Sobre() {
                      nome="Vinicius Costa" 
                      desc="Muito prazer! Me chamo Vinicius e gosto de explorar este grande mundo, principalmente quando se trata de tecnologia 🚀 Sempre seguindo com foco e determinação!"
                      img="/Vini.png"
+                     cargo="Full Stack e Mobile"
                      />
                     <About  
                     nome="Thailany Pereira"  
@@ -86,14 +90,16 @@ export default function Sobre() {
                     Linkedin="https://www.linkedin.com/in/thailany-pereira-neves-santos/" 
                     desc="Olá! Sou Thailany, gosto de desenhar, ouvir musica e adoro  programação, com foco especial em front-end, UX/UI design e banco de dados."
                     img="/Thai.png"
+                    cargo="Full Stack e Scrum"
                     />
                     <About  
                     StyleAbout="secondary"  
                     GitHub="https://github.com/RaffaGR" 
                     Linkedin="https://www.linkedin.com/in/raffavf/" 
                     nome="Rafael Viana" 
-                    desc="Inovação, Colaboração, Empoderamento, Sustentabilidade, Aprendizagem lorem impsul lorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsullorem impsul"
+                    desc="Como alguém apaixonado por aprender, estou sempre em busca de respostas para minhas indagações. Tenho uma mente curiosa e aberta, pronta para explorar diversos assuntos e expandir meu conhecimento. Além disso, minha paciência e persistência são características que me impulsionam a nunca desistir."
                     img="/Rafa.png"
+                    cargo="Back-End e Animador"
                     />
                     <About  
                     nome="Matheus Assis"  
@@ -101,6 +107,7 @@ export default function Sobre() {
                     Linkedin="https://www.linkedin.com/in/matheusassisdev/"
                     desc="Meu nome é Matheus, Estudante de análise e desenvolvimento de sistemas, Tenho 21 anos sou apaixonado pelo mundo de tecnologia e adoro escutar música."
                     img="/Assis.png"
+                    cargo="Back-End e Banco de Dados"
                     />
                     
                 

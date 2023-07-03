@@ -4,12 +4,13 @@ import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination, Navigation } from "swiper";
 import { useNavigate } from 'react-router';
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+import Carousel from '../components/carousel';
 
 import "../styles/index.css";
 
@@ -24,17 +25,7 @@ interface HomeProps {
 /* Não se assuste, Passos! Era para isto acontecer mesmo. */
 
 export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
-  const carousel = [{
-    id: 1,
-    author: "Fulano",
-    msg: "Lorem tal",
-    url: "/Temporary.svg"
-  }, {
-    id: 2,
-    author: "Fulana",
-    msg: "Lorem tal 2223232323",
-    url: "/Temporary.svg"
-  }];
+
 
   const navigate = useNavigate();
 
@@ -58,7 +49,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
         <div className="box-border w-[100%] m-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1024px]:flex min-[1024px]:flex-row min-[1024px]:gap-[1.5rem] no-wrap">
           <div className="flex flex-col text-white m-auto items-center py-[4.2rem] px-[1.5rem] min-[220px]:gap-[3rem]">
             <h1 className='self-center min-[1024px]:self-start font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
-            <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você, e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
+            <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
             <div className="min-[1024px]:self-start">
               <Button titleBt='Comece agora!' title='Ir para registrar' onClick={setNavigate}/>
             </div>
@@ -199,7 +190,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
       <div className="py-[14rem] box-border w-[100%] m-auto flex flex-col gap-[5rem]">
 
         <div className="m-auto">
-          <h1 className="text-center font-[Nunito] text-[2.8rem] text-custom-salmon min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que<span className="text-black dark:text-white"> fazemos</span>?</h1>
+          <h1 className="text-center font-[Nunito] text-[2.8rem] dark:text-white text-black min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Por que <span className="text-custom-salmon">fazemos</span>?</h1>
           <br />
           <p className="max-w-[90.2rem] m-auto text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-100">Nascemos do sonho e da fome de crescimento dos profissionais de costura, trabalhamos para mudar o mundo textil e torná-lo melhor para eles!</p>
         </div>
@@ -243,76 +234,8 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
       <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
         <h1 className="text-center font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem] dark:text-white">Confira <span className="text-custom-salmon">relatos</span> de quem já passou por aqui</h1>
       </div>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 4500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {carousel.map((s, i) => (
-          <SwiperSlide>
-            {/* <div className="h-[50.9rem] py-[40rem]">
-              <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-                <div className="flex gap-10 min-[220px]:flex-col">
-                <div className="flex justify-evenly gap-10">
-                  <div className="flex justify-center">
-                    <img src="/Temporary.svg" className="max-w-[50%] min-[220px]:m-auto min-[900px]:max-w-[43.5rem]" alt='Imagem do usuário' role='imagem do perfil do usuário' />
-                    <div className="max-[1439px]:hidden flex flex-col m-auto gap-10">
-                      <p className="text-[2.2rem]">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
-                      <p className="text-[2.2rem] ml-auto font-bold text-custom-salmon">Angie Nonbine</p>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-[2.2rem] m-auto font-bold text-custom-salmon min-[1440px]:hidden">Angie Nonbine</p>
-                <div className="min-[1440px]:hidden">
-                  <p className="text-[2.2rem] dark:text-gray-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
-                  <p className="min-[220px]:hidden text-[2.2rem] mr-auto">Angie Nonbine</p>
-                </div>
-                </div>
-              </div>
-            </div> */}
-            
-            {/* Carrosel */}
-            <div className="h-[50.9rem] py-[40rem]">
 
-                <div className="flex flex-col items-center justify-center text-center box-border h-[90%] w-[100%] px-[1.5rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem]">
-
-                  <div className="flex gap-10 min-[220px]:flex-col">
-
-                      <div className="flex justify-evenly gap-10">
-
-                        <div className="flex justify-center">
-                          <img src="/DonaDivina.png" className="max-w-[50%] min-[220px]:m-auto min-[900px]:max-w-[43.5rem]" alt='Imagem do usuário' role='imagem do perfil do usuário' />
-                        </div>
-
-                      </div>
-
-                    <p className="text-[2.2rem] m-auto font-bold text-custom-salmon min-[1440px]:hidden">Angie Nonbine</p>
-
-                    <div className="min-[1440px]:hidden">
-                      <p className="text-[2.2rem] dark:text-gray-100">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus eu purus bibendum, id sagittis lectus pulvinar. Etiam ultrices, velit non dictum fringilla, massa nulla pulvinar est, vitae malesuada dolor libero non metus. “</p>
-                      <p className="min-[220px]:hidden text-[2.2rem] mr-auto">Angie Nonbine</p>
-                    </div>
-
-                  </div>
-
-                
-                </div>
-
-            </div>
-
-          </SwiperSlide>
-        ))}           
-      </Swiper>
-      
-
+      <Carousel />
 
 
       <Footer />

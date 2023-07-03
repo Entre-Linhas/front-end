@@ -12,12 +12,11 @@ export function Modulo({ conteudos, _titleModulo, _progress, ...rest}: ModuloPro
     return (
       <div className="flex flex-row-reverse item " {...rest}>
         <div className="flex flex-col gap-7 w-2/4">
-          {conteudos.map(({ title, describe, time, _completed, irConteudo}, i) => (
+          {conteudos.map(({ title, describe, _completed, irConteudo}, i) => (
               <Model
                   key={i}
                   title={title}
                   describe={describe}
-                  time={time}
                   _completed={_completed}
                   irConteudo={irConteudo}
             />

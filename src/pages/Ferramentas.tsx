@@ -21,7 +21,7 @@ export default function Ferramentas() {
                
                 <div className="flex justify-center max-[820px]:flex-col min-[820px]:px-[2rem] min-[820px]:gap-[2rem]">
                     <div className="flex flex-col items-center max-[660px]:w-[80%] max-w-[1100px] gap-[5rem] m-auto">
-                        <h1 className="text-center font-semibold text-[2.8rem] min-[425px]:text-[3rem] min-[1024px]:text-[4.8rem] dark:text-white">Transforme seu negócio com as ferramentas do Entre-Linhas</h1>
+                        <h1 className="text-center font-semibold text-[2.8rem] min-[425px]:text-[3rem] min-[1024px]:text-[4.8rem] dark:text-white">Transforme seu negócio com as ferramentas do Entre Linhas</h1>
                         <p className="text-center max-w-[1100px] text-[2.4rem] max-[375px]:text-center max-[660px]:py-[5rem] min-[660px]:py-[2rem]">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
 
                         

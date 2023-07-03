@@ -147,7 +147,7 @@ export default function SignUp() {
                     </button>
                 </header>
 
-                <div className="flex flex-col items-center my-auto gap-4">
+                <div className="flex flex-col items-center my-auto gap-4 z-10">
                     <Logo />
                     <h1 className="text-zinc-400 text-2xl">Passo {(swiperRef.current?.activeIndex || 0) + 1} de {swiperRef.current?.slides.length || 0}</h1>
                     <Swiper 
@@ -174,14 +174,14 @@ export default function SignUp() {
                         <SwiperSlide>
                             <span className="dark:text-gray-100">Falta pouco para completarmos =)</span>
                             <div className="flex gap-2 mt-2 flex-col items-center">
-                                <Input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value)} value={nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                                <Input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value)} value={sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                                <Input type="text" placeholder="CPF" onChange={(e) => setCpf(e.target.value)} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value.replace( /[^a-zA-ZÀ-ÿ\s]+/g, ""))} value={nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value.replace( /[^a-zA-ZÀ-ÿ\s]+/g, ""))} value={sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="text" placeholder="CPF" onChange={(e) => setCpf(e.target.value.replace( /^[0-9]+$/, ""))} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11 || /^[a-zA-Z]+$/.test(nome)} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
                             </div>
                         </SwiperSlide>
-
+                         
                         <SwiperSlide>
                             <span className="dark:text-gray-100">Ultimo etapa</span>
                             <div className="flex gap-2 mt-2 justify-center flex-col items-center">
@@ -190,6 +190,7 @@ export default function SignUp() {
                                 <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={endereco.length === 0} titleBt="Finalizar" icon={SignIn} onClick={handleSubmit} title="concluir a etapa"/>
                             </div>
                         </SwiperSlide>
+                       
                     </Swiper>
                 </div>
             </div>
@@ -197,6 +198,7 @@ export default function SignUp() {
                 <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" aria-roledescription="Variações de imagem de costureiras(os)" />
             </div>
 
+            <div className="z-10"> 
             <Modal _showModal={showModal} _close={handleModal}  >
               <div className="flex flex-col items-center">
               <h1 className="text-center font-semibold text-[2.8rem] dark:text-gray-900 text-custom-salmon">Esse e-mail já foi costurado!</h1>
@@ -207,6 +209,7 @@ export default function SignUp() {
                </div>
               </div>
             </Modal>
+            </div>
         </div>
         </>
     )

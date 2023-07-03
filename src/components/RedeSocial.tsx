@@ -23,10 +23,10 @@ export function RedeSocial({ url }: RedeSocialProps) {
     }
 
     return (
-        <div>
+        <a href={url} target="_blank" className="flex items-center gap-2">
             {iconName[getLinkingName[1]] || <div className="w-2 h-2 rounded-md bg-gray-400" />}
 
             <span>{getLinkingName === "vazio" ? "Not found" : getLinkingName[1].charAt(0).toUpperCase() + getLinkingName[1].slice(1).toLowerCase()}</span>
-        </div>
+        </a>
     )
 }

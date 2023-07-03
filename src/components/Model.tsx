@@ -3,14 +3,13 @@ import { Check } from "@phosphor-icons/react";
 export interface ModelProps {
   title: string;
   describe: string;
-  time: string;
   _completed?: boolean;
   path?: String;
   irConteudo?: () => void;
 }
 
 
-export const Model = ({ title, describe, time, _completed = false, path, irConteudo }: ModelProps) => {
+export const Model = ({ title, describe, _completed = false, path, irConteudo }: ModelProps) => {
   return (
     <div onClick={irConteudo}>
 
@@ -20,7 +19,6 @@ export const Model = ({ title, describe, time, _completed = false, path, irConte
           {_completed && <div className="bg-green-500 rounded-full p-1">
             <Check  weight="bold"/>
           </div>}
-          <span className="text-[1.4rem] text-[#A1A1AA] ml-auto max-[375px]:hidden">{time}</span>
         </div>
       </div>
       <span className={`${!_completed && "opacity-50"} max-md:hidden`}>{describe}</span>
