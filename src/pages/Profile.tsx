@@ -1,5 +1,5 @@
 import { Header } from "../components/Header";
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { Conquistas } from "../components/Conquistas";
 import { Context } from "../contexts/Context";
 import { useContext } from "react";
@@ -8,10 +8,12 @@ import { useNavigate } from "react-router-dom";
 import { Pencil, GearSix } from "@phosphor-icons/react";
 import { Conquista } from "../models/consquista";
 import { RedeSocial } from "../components/RedeSocial";
+import api from "../apiInstance";
+import { conquistaParser } from "../utils/parsers";
 export default function Profile() {
 
 
-  const [conquista, setConquista] = useState<Conquista[]>([ { id: 1, dataConquista: new Date(), nome: "testeatwagfaw"} ]);
+  const [conquistas, setConquistas] = useState<Conquista[]>([ { id: 1, dataConquista: new Date(), nome: "testeatwagfaw"} ]);
 
 
 
@@ -34,6 +36,19 @@ export default function Profile() {
   const Hidden = () => {
     setDisplaydesc(false);
   }
+
+  function pegarConquistas() {
+    api.get<Conquista[]>('/conquista')
+      .then((response) => {
+        const conquistas = response.data.map(item => conquistaParser(item))
+        setConquistas(conquistas)
+      })
+  }
+
+  useEffect(pegarConquistas, [])
+
+
+
 
   
 
@@ -62,10 +77,10 @@ export default function Profile() {
             {perfil.servico ?
               (
                 <div>
-                  <p>
+                  <p style={{maxWidth: "10rem"}} className="flex flex-wrap max-w-[10rem]">
                     {perfil.servico || "costurando a descrição"}
                   </p>
-                  <div className={`${displaydesc ? "hidden" : "block"}`}>
+                  <div className={`${displaydesc ? "hidden" : "block"} py-20`}>
                     <Button typeStyle="secondary" titleBt="Editar" onClick={() => { navigate("/Configurar") }} title='ir para a página de configurações'/>
                   </div>
                 </div>
@@ -126,7 +141,7 @@ export default function Profile() {
             <div className="flex flex-col gap-10 py-10">
               
               
-                {conquista.map(conquista => <Conquistas key={conquista.id} conquista={conquista} />)}
+                {conquistas.map(conquista => <Conquistas key={conquista.id} conquista={conquista} />)}
 
             </div>
           </div>

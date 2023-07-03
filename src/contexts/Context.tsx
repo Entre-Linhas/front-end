@@ -90,6 +90,19 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     !!nivelamento && localStorage.setItem('nivelamento', JSON.stringify(nivelamento))
   }, [nivelamento])
 
+  useEffect(() => {
+    if(showModalConquista) {
+      const payload = {
+        usuario: perfil.usuario,
+        dataConquista: new Date(),
+        nome: nomeModuloConquista
+      }
+      api.post('/conquistas', payload)
+      .then((response) => {})
+      .catch((err) => console.log('ERRO AO SALVAR A CONQUISTA'))
+    }
+  }, [showModalConquista])
+
 
   // para não perder os dados mesmo depois de recarregar
   /* useEffect(() => {
@@ -221,6 +234,7 @@ function LogOut() {
       };
       setPerfil(newPerfil)
       atualizarPerfil(newPerfil)
+      
     };
 
     function incrementarProgressoAtividade() {

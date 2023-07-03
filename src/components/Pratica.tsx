@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { Context } from "../contexts/Context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 export default function Pratica() {
   const { atividades, avançarQuest, perfil, setPerfil, atualizarPerfil, setNomeModuloConquista, setShowModalConquista } = useContext(Context);
+  const [respostaSelecionada, setRespostaSelecionada] = useState('')
+  const [respostaCorretaQuestao, setRespostaCorretaQuestao] = useState('')
+
 
   const navigate = useNavigate();
 
-  function verificarResposta(respostaSelecionada: string) {
-    let respostaCorreta: string;
-
+  function defineRespostaCorreta() {
+    let respostaCorreta = ''
     const questao = atividades?.pratica?.idPratica;
 
     switch (questao) {
@@ -112,6 +114,35 @@ export default function Pratica() {
         respostaCorreta = '?';
         break;
     }
+    setRespostaCorretaQuestao(respostaCorreta)
+  }
+
+  useEffect(() => {
+    setRespostaSelecionada('')
+    defineRespostaCorreta()
+  }, [atividades?.pratica?.idPratica])
+
+  function classeCorAlternativa(reposta: string) {
+    const objGreen = {
+      backgroundColor: '#00FF7F',
+      // color: 'white',
+      boxShadow: '0 0 10px 5px rgba(0, 255, 0, 0.5)',
+    }
+
+    const objRed = {
+      backgroundColor: '#FF6347',
+      color: '#D3D3D3'
+    }
+    if (!respostaSelecionada) return ''
+    return respostaCorretaQuestao == reposta ? objGreen : objRed
+  }
+  
+
+  function verificarResposta(respostaSelecionada: string) {
+    let respostaCorreta: string = respostaCorretaQuestao;
+    setRespostaSelecionada(respostaSelecionada)
+
+    
 
     if (respostaSelecionada === respostaCorreta) {
       respostaCorretaSelecionada();
@@ -170,12 +201,12 @@ console.log("Atividades", atividades);
         </div>
 
         <div className="py-[2rem] flex flex-col items-center">
-          <h2 className="text-center font-semibold">Qual é a importância da definição do negócio para um empreendimento?</h2>
+          <h2 className="text-center font-semibold">{atividades?.pratica?.img}</h2>
           <div className="flex flex-col m-auto text-center gap-[3rem] py-[4rem] max-w-[100rem] px-[2.5rem]">
-            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('A')} title="Resposta A" role="button"><p className="text-center">{atividades?.pratica?.txt1}</p></div>
-            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('B')} title="Resposta B" role="button"><p className="text-center">{atividades?.pratica?.txt2}</p></div>
-            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('C')} title="Resposta C" role="button"><p className="text-center">{atividades?.pratica?.txt3}</p></div>
-            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" onClick={() => verificarResposta('D')} title="Resposta D" role="button"><p className="text-center">{atividades?.pratica?.txt4}</p></div>
+            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto w-[100%] cursor-pointer dark:text-gray-900" style={{...classeCorAlternativa('A')}} onClick={() => verificarResposta('A')} title="Resposta A" role="button"><p className="text-center ">{atividades?.pratica?.txt1}</p></div>
+            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" style={{...classeCorAlternativa('B')}} onClick={() => verificarResposta('B')} title="Resposta B" role="button"><p className="text-center ">{atividades?.pratica?.txt2}</p></div>
+            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" style={{...classeCorAlternativa('C')}}  onClick={() => verificarResposta('C')} title="Resposta C" role="button"><p className="text-center ">{atividades?.pratica?.txt3}</p></div>
+            <div className="py-[1.5rem] px-[1.5rem] rounded-[1rem] bg-white m-auto  w-[100%] cursor-pointer dark:text-gray-900" style={{...classeCorAlternativa('D')}} onClick={() => verificarResposta('D')} title="Resposta D" role="button"><p className="text-center ">{atividades?.pratica?.txt4}</p></div>
           </div>
 
         </div>

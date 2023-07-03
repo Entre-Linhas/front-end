@@ -7,6 +7,8 @@ import { Context } from '../contexts/Context';
 import { NavLink } from 'react-router-dom';
 import { UserCircle, List } from '@phosphor-icons/react';
 
+
+
 interface HeaderProps extends HTMLAttributes<HTMLHeadingElement> { }
 
 export const Header = ({ ...rest }: HeaderProps) => {
@@ -14,7 +16,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
   const { auth, perfil, LogOut } = useContext(Context);
   const [display, setDisplay] = useState("hidden");
 
- 
+
 
   const Click = () => {
     setDisplay(display === "hidden" ? "block" : "hidden")
@@ -97,49 +99,71 @@ export const Header = ({ ...rest }: HeaderProps) => {
 
         <div className={`${display}`}>
           <ul className="shadow-xl text-custom-salmon absolute right-0 z-10 mt-6 bg-white py-2 dark:bg-zinc-800 dark:border-b-zinc-700">
-            {auth && perfil ? (
+            {auth ? (
               <>
-                <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <NavLink to="/profile">
-                    <UserCircle size={32} weight="fill" />
-                    <span>{perfil?.usuario?.nome}</span>
-                  </NavLink>
-                </li>
-                <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <Linking to="/" title='Sair' />
-                </li>
+                <NavLink to="/profile">
+                  <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                    <div className="flex items-center gap-3">
+                      <UserCircle size={32} weight="fill" />
+                      <p className="max-w-[10rem] truncate">{perfil?.usuario?.nome}</p>
+                    </div>
+                  </li>
+                </NavLink>
               </>
             ) : (
               <>
-                <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <NavLink to="/SignIn" title='Login' />
-                </li>
-                <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                  <NavLink to="/SignUp" title='Registrar' />
-                </li>
+                <NavLink to="/SignIn" title='Login'>
+                  <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                    <span>Login</span>
+                  </li>
+                </NavLink>
+                <NavLink to="/SignUp" title='Registrar'>
+                  <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                    <span>Registrar</span>
+                  </li>
+                </NavLink>
               </>
             )}
+            <NavLink to="/" title='Inicio'>
+              <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                <span>Inicio</span>
+              </li>
+            </NavLink>
+            <NavLink to="/trilha" title='Trilha'>
+              <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`}>
+                <span>Trilha</span>
+              </li>
+            </NavLink>
+            <NavLink to={auth ? "/Gerenciamento" : "/ferramentas"} title='Ferramentas'>
+              <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                <span>Ferramentas </span>
+              </li>
+            </NavLink>
+            <NavLink to="/Comunidade">
+              <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
+                <span>Comunidade</span>
+              </li>
+            </NavLink>
+            <NavLink to="/Eventos" title='Eventos'> 
             <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-              <Linking to="/" title='Inicio' />
+              <span>Eventos</span>
             </li>
-            <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`}>
-              <Linking to="/trilha" title='Trilha' />
-            </li>
+            </NavLink>
+            <NavLink to="/sobre" title='Sobre'> 
             <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-              <Linking to={auth ? "/Gerenciamento" : "/ferramentas"} title='Ferramentas' />
+              <span>Sobre</span> 
             </li>
+            </NavLink>
+            <NavLink to="/ajuda" title='Ajuda'> 
             <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-              <Linking to="/Comunidade" title='Comunidade' />
+              <span>Ajuda</span> 
             </li>
-            <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-              <Linking to="/Eventos" title='Eventos' />
-            </li>
-            <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-              <Linking to="/sobre" title='Sobre' />
-            </li>
-            <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-              <Linking to="/ajuda" title='Ajuda' />
-            </li>
+            </NavLink>
+            <NavLink to="/" title='Sair'> 
+             <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`}>
+              <span>Sair</span> 
+             </li>
+            </NavLink>
           </ul>
         </div>
       </div>

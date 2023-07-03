@@ -5,6 +5,7 @@ import { Header } from "../components/Header";
 import { Context } from "../contexts/Context";
 import { Modal } from "../components/Modal";
 import { handleTheme, getTheme, theme } from "../utils/theme";
+import { useNavigate } from "react-router-dom";
 
 export const Configurar = () => {
    const { perfil, definirFotoPerfil, definirDescricao } = useContext(Context);
@@ -12,6 +13,7 @@ export const Configurar = () => {
    const [showModal, setShowModal] = useState(false);
    const [selectedTheme, setSelectedTheme] = useState<"dark" | "light">(getTheme);
    const [redeSocial, setRedeSocial] = useState<any>();
+   const navigate = useNavigate()
 
    const images = [
       {
@@ -86,6 +88,12 @@ export const Configurar = () => {
       return theme;
    }
 
+   function AtDesc () {
+    definirDescricao(descricao);
+    navigate("/profile");
+    alert("sandrão é incrível")
+   }
+
 
    return (
       <>
@@ -128,7 +136,7 @@ export const Configurar = () => {
                   onChange={(e) => setDescricao(e.target.value)}
                   id="desc"
                   placeholder={perfil.serviço || "Insira uma descrição"}
-                  className="text-black w-full py-3 px-2 rounded-xl shadow-lg resize-y focus:border-custom-salmon"
+                  className="text-black w-full py-3 px-2 rounded-xl shadow-lg resize-y focus:border-custom-salmon dark:text-white dark:bg-zinc-800"
                   role="texto de descrição"
                   />
                </div>
@@ -150,10 +158,7 @@ export const Configurar = () => {
                   <Input id="desc" value={perfil.usuario.email} disabled aria-labelledby="descrição"/>
                </div>
 
-               <div className="max-w-[30rem] flex flex-col">
-                  <span title="senha">Senha</span>
-                  <button className="max-w-[15rem] px-8 py-4 rounded-xl bg-[#62B8AF] text-white" aria-roledescription="botão alterar">Alterar</button>
-               </div>
+              
 
                <div className="max-w-[60rem]">
                   <label htmlFor="desc">CPF</label>
@@ -190,7 +195,7 @@ export const Configurar = () => {
                   </button>
                </div>
 
-               <button className="max-w-[20rem] px-8 py-4 rounded-xl bg-[#62B8AF] text-white" onClick={() => definirDescricao(descricao)} aria-roledescription="Botão salvar alterações">Salvar alterações</button>
+               <button className="max-w-[20rem] px-8 py-4 rounded-xl bg-[#62B8AF] text-white" onClick={AtDesc} aria-roledescription="Botão salvar alterações">Salvar alterações</button>
             </div>
 
             <Modal _showModal={showModal} _close={handleModal} _maxWidth="max-w-[90rem]" >
