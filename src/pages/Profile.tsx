@@ -11,7 +11,7 @@ import { RedeSocial } from "../components/RedeSocial";
 export default function Profile() {
 
 
-  const [conquista, setConquista] = useState<Conquista[]>([ { id: 1, date: new Date(), modulo: ""} ]);
+  const [conquista, setConquista] = useState<Conquista[]>([ { id: 1, dataConquista: new Date(), nome: "testeatwagfaw"} ]);
 
 
 
@@ -34,6 +34,8 @@ export default function Profile() {
   const Hidden = () => {
     setDisplaydesc(false);
   }
+
+  
 
 
 
@@ -124,7 +126,7 @@ export default function Profile() {
             <div className="flex flex-col gap-10 py-10">
               
               
-                {conquista2.map(conquista => <Conquistas key={conquista.id} conquista={conquista} />)}
+                {conquista.map(conquista => <Conquistas key={conquista.id} conquista={conquista} />)}
 
             </div>
           </div>

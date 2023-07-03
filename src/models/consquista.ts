@@ -2,7 +2,7 @@
 export interface Conquista {
 id?: number
 
-modulo: string
-date: Date
+nome: string
+dataConquista: Date
 
 }

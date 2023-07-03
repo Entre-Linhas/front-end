@@ -176,9 +176,9 @@ export default function SignUp() {
                             <div className="flex gap-2 mt-2 flex-col items-center">
                                 <Input type="text" placeholder="Nome" onChange={(e) => setNome(e.target.value.replace( /[^a-zA-ZÀ-ÿ\s]+/g, ""))} value={nome} leftElement={<UserCircle className="mr-2 text-zinc-300" weight="light" size={31} />} />
                                 <Input type="text" placeholder="Sobrenome" onChange={(e) => setSobrenome(e.target.value.replace( /[^a-zA-ZÀ-ÿ\s]+/g, ""))} value={sobrenome} leftElement={<Tag className="mr-2 text-zinc-300" weight="light" size={31} />} />
-                                <Input type="text" placeholder="CPF" onChange={(e) => setCpf(e.target.value.replace( /^[0-9]+$/, ""))} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
+                                <Input type="number" placeholder="CPF" onChange={(e) => setCpf(e.target.value)} value={cpf} leftElement={<IdentificationCard className="mr-2 text-zinc-300" weight="light" size={31} />} />
 
-                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11 || /^[a-zA-Z]+$/.test(nome)} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
+                                <Button style={{width: "100%", marginTop: 4, textAlign: "center", maxWidth: "55rem"}} disabled={nome.length === 0 || sobrenome.length === 0 || cpf.length < 11 || cpf?.length > 11} titleBt="Continuar" icon={SignIn} onClick={changeStep} title="ir para próxima etapa"/>
                             </div>
                         </SwiperSlide>
                          
