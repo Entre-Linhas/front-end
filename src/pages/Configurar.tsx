@@ -90,10 +90,17 @@ export const Configurar = () => {
    }
 
    function AtDesc () {
-    
-     definirDescricao(descricao);
-     definirRedeSocial(link);
-    navigate("/profile");
+      
+      if (descricao){ 
+      definirDescricao(descricao);
+      navigate("/profile");
+      } else
+      {
+         navigate("/profile");
+      }
+      
+     
+      
    }
 
 
@@ -105,7 +112,7 @@ export const Configurar = () => {
             <div className="h-96 max-w-[25rem] w-full flex flex-col items-center gap-10 max-md:m-auto">
                <img
                   src={perfil.foto}
-                  className="max-w-[100%] h-full rounded-full cursor-pointer"
+                  className="max-w-[100%] h-full rounded-full cursor-pointer hover:brightness-75"
                   onClick={handleModal}
                   alt="Foto de perfil"
                   role="imagem"
@@ -143,7 +150,7 @@ export const Configurar = () => {
                   />
                </div>
 
-               <div className="max-w-[40rem]">
+               <div className="max-w-[40rem] hidden">
                   <label htmlFor="desc">Redes Sociais</label>
                   <br />
                   <Input id="desc" type="text" placeholder="Link da Rede Social" aria-labelledby="descrição" onChange={(e) => setRedeSocial(e.target.value)} />

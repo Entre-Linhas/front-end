@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Pencil, GearSix } from "@phosphor-icons/react";
 import { Conquista } from "../models/consquista";
 // aqui rafa
-import { RedeSocial } from "../models/redesocial";
-import { redesocialParser } from "../utils/parsers";
+ 
 
 import api from "../apiInstance";
 import { conquistaParser } from "../utils/parsers";
@@ -17,7 +16,7 @@ export default function Profile() {
 
 
   const [conquistas, setConquistas] = useState<Conquista[]>([ { id: 1, dataConquista: new Date(), nome: "testeatwagfaw"} ]);
-// + no parses e no model rafa
+ 
   
 
 
@@ -28,9 +27,9 @@ export default function Profile() {
   const [descricao, setDescricao] = useState<string>("")
   const navigate = useNavigate()
 // aqui rafa
-  const [redesSocial, setRedesSocial] = useState<RedeSocial[]>([
-    { id: perfil.usuario.idUsuario, link: "" }
-  ]);
+  // const [redesSocial, setRedesSocial] = useState<RedeSocial[]>([
+  //   { id: perfil.usuario.idUsuario, link: "" }
+  // ]);
 
   const alterContent = () => {
     setDisplayFotos(!displayFotos);
@@ -52,14 +51,14 @@ export default function Profile() {
         setConquistas(conquistas)
       })
   }
-// editei aqui - rafa
-  function pegarRedesSociais() {
-    api.get<RedeSocial[]>('/redesociais/' + perfil.usuario.idUsuario)
-      .then((response) => {
-        const redesSociais = response.data.map(item => redesocialParser(item))
-        setRedesSocial(redesSociais)
-      })
-  }
+// // editei aqui - rafa
+//   function pegarRedesSociais() {
+//     api.get<RedeSocial[]>('/redesociais/' + perfil.usuario.idUsuario)
+//       .then((response) => {
+//         const redesSociais = response.data.map(item => redesocialParser(item))
+//         setRedesSocial(redesSociais)
+//       })
+//   }
 
   useEffect(pegarConquistas, [])
 
@@ -78,16 +77,13 @@ export default function Profile() {
 
         <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:max-w-[31rem] min-[1024px]:min-[1024px]:shadow-xl px-5 dark:bg-zinc-800 dark:border-zinc-800">
           <div className="h-96 max-w-[25rem] w-full m-auto flex flex-col">
-            <img src={perfil.foto} className="max-w-[100%] h-full rounded-full" alt="foto de perfil do usuário" role="imagem de perfil"/>
-            <div className="self-end text-custom-salmon"> 
-            {/* <Pencil size={32} weight="fill"/> */}
-            <GearSix size={32} weight="fill" />
-            </div>
+            <img src={perfil.foto} className="max-w-[100%] h-full rounded-full hover:brightness-75 cursor-pointer" alt="foto de perfil do usuário" role="imagem de perfil" onClick={() => navigate("/configurar")}/>
+            
           </div>
 
-          <div>
+          <div className="flex">
             <h2 className="font-bold text-[2.4rem] dark:text-white ">{perfil.usuario.nome} {perfil.usuario.sobrenome}</h2>
-            <span className="dark:text-white">Membro</span>
+            <GearSix size={32} weight="fill" className="text-custom-salmon cursor-pointer" onClick={() => navigate("/configurar")}/>
           </div>
           <div>
             {perfil.servico ?
@@ -106,17 +102,17 @@ export default function Profile() {
 
 
                 <div>
-                  <p className="py-5 dark:text-white">Adicione uma descrição sobre você</p>
+                  <p className="py-5 dark:text-white">{perfil.servico ? perfil.serviço : "Adicione uma descrição sobre você"}</p>
                   <div className={`${displaydesc ? "hidden" : "block"}`}>
-                    <Button typeStyle="secondary" titleBt="Adicionar" onClick={() => { navigate("/Configurar") }} title='ir para a página de configurações'/>
+                    <Button typeStyle="secondary" titleBt={perfil.servico ? "Adicionar" : "Editar"} onClick={() => { navigate("/Configurar") }} title='ir para a página de configurações'/>
                   </div>
                 </div>
               )
             }
           </div>
 
-
-          <ul>
+          {/* deixando escondida caso não dê tempo de implementar */}
+          <ul className="hidden">
             <li>
               {/* <RedeSocial url={perfil.link}/> */}
             </li>
@@ -127,20 +123,93 @@ export default function Profile() {
               {/* <RedeSocial url={perfil.usuario}/> */}
             </li>
           </ul>
+
           <ul>
             <li className="flex flex-col py-3">
               <span className="font-semibold dark:text-white ">Nível</span>
-              <span className="dark:text-white">{perfil.nivel} - {perfil.nivel > 3 ? "Aprendiz" : "Iniciante"}</span>
+              <span className="dark:text-white">
+  {
+    perfil.progresso === 1 ? "1. Aprendiz" :
+    perfil.progresso === 2 ? "2. Iniciante" :
+    perfil.progresso === 3 ? "3. Aspirante" :
+    perfil.progresso === 4 ? "4. Novato" :
+    perfil.progresso === 5 ? "5. Amador" :
+    perfil.progresso === 6 ? "6. Intermediário" :
+    perfil.progresso === 7 ? "7. Competente" :
+    perfil.progresso === 8 ? "8. Habilidoso" :
+    perfil.progresso === 9 ? "9. Experiente" :
+    perfil.progresso === 10 ? "10. Avançado" :
+    perfil.progresso === 11 ? "11. Especialista" :
+    perfil.progresso === 12 ? "12. Proficiente" :
+    perfil.progresso === 13 ? "13. Mestre" :
+    perfil.progresso === 14 ? "14. Expert" :
+    perfil.progresso === 15 ? "15. Virtuoso" :
+    perfil.progresso === 16 ? "16. Elite" :
+    perfil.progresso === 17 ? "17. Notável" :
+    perfil.progresso === 18 ? "18. Excelente" :
+    perfil.progresso === 19 ? "19. Mestre Supremo" :
+    perfil.progresso === 20 ? "20. Lendário" :
+    perfil.progresso === 21 ? "21. Herói" :
+    perfil.progresso === 22 ? "22. Invencível" :
+    perfil.progresso === 23 ? "23. Destemido" :
+    perfil.progresso === 24 ? "24. Soberano" :
+    perfil.progresso === 25 ? "25. Magnífico" :
+    perfil.progresso === 26 ? "26. Supremo" :
+    perfil.progresso === 27 ? "27. Desafiante" :
+    perfil.progresso === 28 ? "28. Sobrenatural" :
+    perfil.progresso === 29 ? "29. Divino" :
+    perfil.progresso === 30 ? "30. Imortal" :
+    perfil.progresso === 31 ? "31. Supremacia" :
+    perfil.progresso === 32 ? "32. Último Nível" :
+    ""
+  }
+</span>
             </li>
             <li className="flex flex-col py-3">
-              <span className="font-semibold dark:text-white">Membro desde</span>
+              <span className="font-semibold dark:text-white">Estudando desde:</span>
               <span className="dark:text-white">
-                {perfil.usuario.data_termino || "não tem"}
+                {perfil.daily || "você ainda não iniciou a Trilha."}
               </span>
             </li>
             <li className="flex flex-col py-3">
               <span className="font-semibold dark:text-white">Melhor sequência</span>
-              <span className="dark:text-white">{perfil.max_combo || "Você ainda não iniciou a Trilha."}</span>
+              <span className="dark:text-white">
+              {
+                  perfil.progresso === 1 ? "1. Módulo concluído!" :
+                  perfil.progresso === 2 ? "2. Módulos concluídos!" :
+                  perfil.progresso === 3 ? "3. Módulos concluídos!" :
+                  perfil.progresso === 4 ? "4. Módulos concluídos!" :
+                  perfil.progresso === 5 ? "5. Módulos concluídos!" :
+                  perfil.progresso === 6 ? "6. Módulos concluídos!" :
+                  perfil.progresso === 7 ? "7. Módulos concluídos!" :
+                  perfil.progresso === 8 ? "8. Módulos concluídos!" :
+                  perfil.progresso === 9 ? "9. Módulos concluídos!" :
+                  perfil.progresso === 10 ? "10. Módulos concluídos!" :
+                  perfil.progresso === 11 ? "11. Módulos concluídos!" :
+                  perfil.progresso === 12 ? "12. Módulos concluídos!" :
+                  perfil.progresso === 13 ? "13. Módulos concluídos!" :
+                  perfil.progresso === 14 ? "14. Módulos concluídos!" :
+                  perfil.progresso === 15 ? "15. Módulos concluídos!" :
+                  perfil.progresso === 16 ? "16. Módulos concluídos!" :
+                  perfil.progresso === 17 ? "17. Módulos concluídos!" :
+                  perfil.progresso === 18 ? "18. Módulos concluídos!" :
+                  perfil.progresso === 19 ? "19. Módulos concluídos!" :
+                  perfil.progresso === 20 ? "20. Módulos concluídos!" :
+                  perfil.progresso === 21 ? "21. Módulos concluídos!" :
+                  perfil.progresso === 22 ? "22. Módulos concluídos!" :
+                  perfil.progresso === 23 ? "23. Módulos concluídos!" :
+                  perfil.progresso === 24 ? "24. Módulos concluídos!" :
+                  perfil.progresso === 25 ? "25. Módulos concluídos!" :
+                  perfil.progresso === 26 ? "26. Módulos concluídos!" :
+                  perfil.progresso === 27 ? "27. Módulos concluídos!" :
+                  perfil.progresso === 28 ? "28. Módulos concluídos!" :
+                  perfil.progresso === 29 ? "29. Módulos concluídos!" :
+                  perfil.progresso === 30 ? "30. Módulos concluídos!" :
+                  perfil.progresso === 31 ? "31. Módulos concluídos!" :
+                  perfil.progresso === 32 ? "32. Módulos concluídos!" :
+                  ""
+              }
+              </span>
               <span></span>
               <span></span>
             </li>

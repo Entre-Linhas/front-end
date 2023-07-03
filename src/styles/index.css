@@ -64,3 +64,24 @@ video {
     border-radius: 8px !important;
     background: #FF6464 !important;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-100% + 100vh));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s ease-in-out infinite;
+}
+
+@media (max-width: 1024px) {
+  .animate-scroll {
+    animation-duration: 60s;
+  }
+}
+
+

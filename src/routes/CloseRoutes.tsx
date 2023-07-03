@@ -12,11 +12,11 @@ import { Conteudo } from "../pages/Conteudo"
 import { Trilha } from "../pages/Trilha/Trilha"
 import Comunidade from "../pages/Comunidade"
 import { Gerenciamento } from "../pages/Gerenciamento";
-import { Trofeu } from "../pages/Trofeu";
 import Profile from "../pages/Profile";
 import Precificacao from "../pages/Precificacao";
 import { Pagamento } from "../pages/Pagamento";
 import {Configurar} from "../pages/Configurar"
+import Agradecimento from "../pages/Agradecimento";
 
 export default function CloseRoutes() {
   return (
@@ -36,11 +36,11 @@ export default function CloseRoutes() {
         <Route path="/Trilha" element={<Trilha />} />
         <Route path="/Comunidade" element={<Comunidade />} />
         <Route path="/Gerenciamento" element={<Gerenciamento />} />
-        <Route path="/Trofeu" element={<Trofeu />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Precificacao" element={<Precificacao />} />
         <Route path="/pagamento" element={<Pagamento />} />
         <Route path="/Configurar" element={<Configurar />} />
+        <Route path="/agradecimento" element={<Agradecimento />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

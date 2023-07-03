@@ -9,6 +9,7 @@ import Sobre from "../pages/Sobre";
 import TermsUse from "../pages/TermsUse";
 import Comunidade from "../pages/Comunidade"
 import { Pagamento } from "../pages/Pagamento";
+import Agradecimento from "../pages/Agradecimento";
 
 export default function FreeRoutes() {
   return (
@@ -25,6 +26,7 @@ export default function FreeRoutes() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/pagamento" element={<Pagamento />} />
         <Route path="/Comunidade" element={<Comunidade />} />
+        <Route path="/agradecimento" element={<Agradecimento />} />
         <Route path="*" element={<Navigate replace to="/"/>} />
       </Routes>
     </BrowserRouter>

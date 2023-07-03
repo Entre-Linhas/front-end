@@ -238,7 +238,7 @@ export const Trilha = () => {
       </div>
 
 
-       <Modal _showModal={showModalConquista} _close={handleModal} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
+       <Modal _showModal={showModalConquista} _close={handleModal2} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg">
             <div className="py-10 px-5 flex flex-col items-center gap-10 text-white rounded-[2rem]">
                <h1 className="text-center text-[6rem] font-Sacramento">Entre Linhas</h1>
                <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo {nomeModuloConquista}</p>
