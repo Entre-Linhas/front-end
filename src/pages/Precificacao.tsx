@@ -33,34 +33,13 @@ export default function Precificacao() {
 
                <div className="py-10">
                   <h1 className="font-bold py-3">Precificação</h1>
-                  <p>Adicione itens usados no seu produto e calcule o preço dele.</p>
+                  <p>Saiba quanto cobrar por seus produtos!</p>
                </div>
 
-               <div className="w-full text-black bg-white px-5 py-10 dark:bg-zinc-900">
-
-
-               
+               <div className="w-full text-black bg-white shadow-xl px-5 py-10 dark:bg-zinc-900">
                   <div className="py-10 flex flex-col gap-8">
-                     <h2 className="py-5 text-white">Produtos</h2>
-
-                  <CalculadoraPrecificacao />
-                   
-
-                  </div>
-
-                  <div className="flex flex-col gap-10 dark:text-white">
-                   
-                     <hr />
-
-                     {/* <button className="w-full py-5 px-5 border-dashed border-[1px] border-[#8F8F8F] rounded-xl text-[#8F8F8F] flex items-center gap-3" title="Tempo gasto">
-                        <Clock size={24} className="text-black  dark:text-white" />
-                        tempo gasto
-                     </button> */}
-
-                     <button className="w-full py-5 border-solid bg-[#62B8AF] rounded-xl text-white text-center" title="calcular">
-                        Calcular
-                     </button>
-
+                     <h2 className="py-5 text-white">Calcule abaixo:</h2>
+                     <CalculadoraPrecificacao />
                   </div>
 
                </div>
@@ -74,8 +53,7 @@ export default function Precificacao() {
 
 
 
-                     document.QuerrySelect(inputs# )
-
+               
 
 
             </div>

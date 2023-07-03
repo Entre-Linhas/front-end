@@ -35,7 +35,7 @@ const CalculadoraPrecificacao: React.FC = () => {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen dark:text-white">
+    <div className="flex justify-center items-center dark:bg-zinc-700  py-10 px-10">
        
       <Swiper
         spaceBetween={5}
@@ -45,7 +45,7 @@ const CalculadoraPrecificacao: React.FC = () => {
         onSwiper={(swi) => swiperRef.current = swi}
       >
         <SwiperSlide>
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Horas gastas:
             <input
               type="number"
@@ -53,11 +53,11 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setHoras(parseFloat(e.target.value))}
               step={0.5}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
 
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Preço cobrado por hora:
             <input
               type="number"
@@ -65,14 +65,16 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setPrecoHora(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
-          <button onClick={changeStep}>Continuar</button>
+          <div className="py-10"> 
+            <button onClick={changeStep} className="dark:text-white py-5 px-5 bg-custom-salmon rounded-xl">Continuar</button>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Preço da linha (por unidade):
             <input
               type="number"
@@ -80,27 +82,31 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setPrecoLinha(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
-          </label>
+          </label> 
 
-          <label className="mb-4">
+        
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Quantidade de linha utilizada:
+            <br/>
             <input
               type="number"
               value={qtdLinha}
               onChange={(e) => setQtdLinha(parseFloat(e.target.value))}
               step={1}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
-          <button onClick={backStep}>Voltar</button>
-          <button onClick={changeStep}>Continuar</button>
+          <div className="flex gap-10 justify-center items-center py-10"> 
+            <button onClick={backStep} className="dark:text-white py-5 px-5 bg-custom-salmon rounded-xl text-[2.2rem] ">Voltar</button>
+            <button onClick={changeStep} className="dark:text-white py-5 px-5 bg-custom-salmon rounded-xl text-[2.2rem]">Continuar</button>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Preço do tecido (por metro):
             <input
               type="number"
@@ -108,11 +114,11 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setPrecoTecido(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
 
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Quantidade de tecido utilizado (em metros):
             <input
               type="number"
@@ -120,14 +126,16 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setQtdTecido(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
-          <button onClick={changeStep}>Continuar</button>
+          <div className="py-10"> 
+           <button onClick={changeStep} className="text-white py-5 px-5 bg-custom-salmon rounded-xl-lg text-[2.2rem] ">Continuar</button>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Preço dos botões (por unidade):
             <input
               type="number"
@@ -135,11 +143,11 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setPrecoBotoes(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
 
-          <label className="mb-4">
+          <label className="mb-4 dark:text-white text-[2.2rem]">
             Quantidade de botões utilizados:
             <input
               type="number"
@@ -147,23 +155,30 @@ const CalculadoraPrecificacao: React.FC = () => {
               onChange={(e) => setQtdBotoes(parseInt(e.target.value))}
               step={1}
               min={0}
-              className="w-full border rounded p-2"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
             />
           </label>
-
-          <button onClick={calcularPreco} className="bg-blue-500 text-white py-2 px-4 rounded">
-            Calcular
-          </button>
+          <div className="py-10 flex gap-10 items-center justify-center">
+            <button onClick={backStep} className="bg-custom-salmon text-white py-5 px-4 rounded-xl text-[2.2rem]">
+              Voltar
+            </button>
+            
+            <button onClick={calcularPreco} className="bg-custom-salmon text-white py-5 px-4 rounded-xl text-[2.2rem]">
+              Calcular
+            </button>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <h2 className="text-xl font-bold mt-6">Resultado:</h2>
+          <div className="flex flex-col gap-20 items-center"> 
+            <h2 className="font-bold mt-6 dark:text-white text-[2.2rem]">Resultado:</h2>
 
-          <p className="text-lg">Preço do Produto: R$ {precoProduto.toFixed(2)}</p>
+            <p className="text-[2.2rem] dark:text-white ">Preço do Produto: R$ {precoProduto.toFixed(2)}</p>
 
-          <button onClick={backStep} className="bg-blue-500 text-white py-2 px-4 rounded">
-            Voltar
-          </button>
+            <button onClick={backStep} className="bg-custom-salmon text-white py-5 px-4 rounded-xl text-[2.2rem]">
+              Voltar
+            </button>
+          </div>
         </SwiperSlide>
 
       </Swiper>
