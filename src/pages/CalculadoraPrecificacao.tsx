@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as classSwiper } from 'swiper';
+import {RadioButton}from "@phosphor-icons/react";
 
 const CalculadoraPrecificacao: React.FC = () => {
   const [horas, setHoras] = useState<number>(0);
@@ -40,65 +41,65 @@ const CalculadoraPrecificacao: React.FC = () => {
       <Swiper
         spaceBetween={5}
         slidesPerView={1}
-        // allowSlideClick={false}
+       
         allowTouchMove={false}
         onSwiper={(swi) => swiperRef.current = swi}
       >
         <SwiperSlide>
-          <label className="mb-4 dark:text-white text-[2.2rem]">
-            Horas gastas:
+          <span className=" dark:text-white text-[2.2rem]"> Horas gastas: </span>
             <input
               type="number"
               value={horas}
               onChange={(e) => setHoras(parseFloat(e.target.value))}
               step={0.5}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
-            />
-          </label>
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"/>
+           
 
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Preço cobrado por hora:
+            </span>
             <input
               type="number"
               value={precoHora}
               onChange={(e) => setPrecoHora(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label>
+        
           <div className="py-10"> 
             <button onClick={changeStep} className="dark:text-white py-5 px-5 bg-custom-salmon rounded-xl">Continuar</button>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Preço da linha (por unidade):
+            </span> 
             <input
               type="number"
               value={precoLinha}
               onChange={(e) => setPrecoLinha(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label> 
+        
 
         
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Quantidade de linha utilizada:
-            <br/>
+            </span>
             <input
               type="number"
               value={qtdLinha}
               onChange={(e) => setQtdLinha(parseFloat(e.target.value))}
               step={1}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label>
+         
           <div className="flex gap-10 justify-center items-center py-10"> 
             <button onClick={backStep} className="dark:text-white py-5 px-5 bg-custom-salmon rounded-xl text-[2.2rem] ">Voltar</button>
             <button onClick={changeStep} className="dark:text-white py-5 px-5 bg-custom-salmon rounded-xl text-[2.2rem]">Continuar</button>
@@ -106,58 +107,62 @@ const CalculadoraPrecificacao: React.FC = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Preço do tecido (por metro):
+            </span>
             <input
               type="number"
               value={precoTecido}
               onChange={(e) => setPrecoTecido(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label>
+           
 
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Quantidade de tecido utilizado (em metros):
+            </span>
             <input
               type="number"
               value={qtdTecido}
               onChange={(e) => setQtdTecido(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label>
+          
           <div className="py-10"> 
            <button onClick={changeStep} className="text-white py-5 px-5 bg-custom-salmon rounded-xl-lg text-[2.2rem] ">Continuar</button>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Preço dos botões (por unidade):
+            </span>
             <input
               type="number"
               value={precoBotoes}
               onChange={(e) => setPrecoBotoes(parseFloat(e.target.value))}
               step={0.01}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label>
+          
 
-          <label className="mb-4 dark:text-white text-[2.2rem]">
+          <span className=" dark:text-white text-[2.2rem]">
             Quantidade de botões utilizados:
+            </span>
             <input
               type="number"
               value={qtdBotoes}
               onChange={(e) => setQtdBotoes(parseInt(e.target.value))}
               step={1}
               min={0}
-              className="w-full border rounded-xl p-2 dark:bg-zinc-800 shadow-xl"
+              className="w-full border rounded-xl p-2 dark:bg-zinc-800 border-zinc-800 border-solid-[1px]"
             />
-          </label>
+         
           <div className="py-10 flex gap-10 items-center justify-center">
             <button onClick={backStep} className="bg-custom-salmon text-white py-5 px-4 rounded-xl text-[2.2rem]">
               Voltar
