@@ -7,14 +7,18 @@ import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { Pencil, GearSix } from "@phosphor-icons/react";
 import { Conquista } from "../models/consquista";
-import { RedeSocial } from "../components/RedeSocial";
+// aqui rafa
+import { RedeSocial } from "../models/redesocial";
+import { redesocialParser } from "../utils/parsers";
+
 import api from "../apiInstance";
 import { conquistaParser } from "../utils/parsers";
 export default function Profile() {
 
 
   const [conquistas, setConquistas] = useState<Conquista[]>([ { id: 1, dataConquista: new Date(), nome: "testeatwagfaw"} ]);
-
+// + no parses e no model rafa
+  
 
 
   const [displayFotos, setDisplayFotos] = useState(true);
@@ -23,6 +27,10 @@ export default function Profile() {
   const [displaydesc, setDisplaydesc] = useState(false)
   const [descricao, setDescricao] = useState<string>("")
   const navigate = useNavigate()
+// aqui rafa
+  const [redesSocial, setRedesSocial] = useState<RedeSocial[]>([
+    { id: perfil.usuario.idUsuario, link: "" }
+  ]);
 
   const alterContent = () => {
     setDisplayFotos(!displayFotos);
@@ -42,6 +50,14 @@ export default function Profile() {
       .then((response) => {
         const conquistas = response.data.map(item => conquistaParser(item))
         setConquistas(conquistas)
+      })
+  }
+// editei aqui - rafa
+  function pegarRedesSociais() {
+    api.get<RedeSocial[]>('/redesociais/' + perfil.usuario.idUsuario)
+      .then((response) => {
+        const redesSociais = response.data.map(item => redesocialParser(item))
+        setRedesSocial(redesSociais)
       })
   }
 
@@ -102,7 +118,7 @@ export default function Profile() {
 
           <ul>
             <li>
-              {/* <RedeSocial url={perfil.usuario}/> */}
+              {/* <RedeSocial url={perfil.link}/> */}
             </li>
             <li className="flex items-center gap-3">
               {/* <RedeSocial url={perfil.usuario}/> */}

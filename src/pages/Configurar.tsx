@@ -8,8 +8,9 @@ import { handleTheme, getTheme, theme } from "../utils/theme";
 import { useNavigate } from "react-router-dom";
 
 export const Configurar = () => {
-   const { perfil, definirFotoPerfil, definirDescricao } = useContext(Context);
+   const { perfil, definirFotoPerfil, definirDescricao, definirRedeSocial} = useContext(Context);
    const [descricao, setDescricao] = useState<string>("");
+   const [link, setLink] = useState<string>("");
    const [showModal, setShowModal] = useState(false);
    const [selectedTheme, setSelectedTheme] = useState<"dark" | "light">(getTheme);
    const [redeSocial, setRedeSocial] = useState<any>();
@@ -89,9 +90,10 @@ export const Configurar = () => {
    }
 
    function AtDesc () {
-    definirDescricao(descricao);
+    
+     definirDescricao(descricao);
+     definirRedeSocial(link);
     navigate("/profile");
-    alert("sandrão é incrível")
    }
 
 
@@ -144,7 +146,7 @@ export const Configurar = () => {
                <div className="max-w-[40rem]">
                   <label htmlFor="desc">Redes Sociais</label>
                   <br />
-                  <Input id="desc" type="text" placeholder="Link da Rede Social" aria-labelledby="descrição" />
+                  <Input id="desc" type="text" placeholder="Link da Rede Social" aria-labelledby="descrição" onChange={(e) => setRedeSocial(e.target.value)} />
                </div>
 
                <div>

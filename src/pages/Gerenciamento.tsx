@@ -73,13 +73,9 @@ export const Gerenciamento = () => {
           <h1 className="font-bold">Gerenciamento de Pedidos</h1>
           <p>Aqui você encontra os pedidos pendentes, em andamento e concluídos.</p>
 
-
-          <div className="py-5">
-            <input type="search" className="px-2 py-2 w-full shadow-md rounded-lg" placeholder="Buscar pedidos" />
-          </div>
           <div className="py-12">
             <button className="bg-[#62B8AF] w-full text-white py-5 rounded-[1.5rem]" onClick={newForm} title="Adicionar novo pedido">
-              + Novo pedido
+              Registrar novo pedido
             </button>
           </div>
 

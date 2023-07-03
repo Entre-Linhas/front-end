@@ -16,6 +16,7 @@ interface ContextProps {
   atualizarAtividade: Function
   definirFotoPerfil: (imageName: string) => void
   definirDescricao: (descricaoProps: string) => void
+  definirRedeSocial: (descricaoProps: string) => void
   avançarQuest: Function
   nivelamento: any
   setNivelamento: Function
@@ -179,6 +180,22 @@ function LogOut() {
       });
   }
 
+  function criarRedesSociais(redes: any) {
+    const idPerfil: any = redes?.idPerfil;
+    idPerfil && api
+      .put("/redesocial", redes)
+      .then((response) => {
+        if (response.data) {
+          setPerfil?.(response.data)
+        } else {
+          console.log("vazio in context");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   /* useEffect(() => {
     const idAtividade: any = atividades?.idAtividades;
 
@@ -235,6 +252,16 @@ function LogOut() {
       setPerfil(newPerfil)
       atualizarPerfil(newPerfil)
       
+    };
+
+    function definirRedeSocial(linkProps: string) {
+      const newPerfil = {
+        ...perfil,
+        link: linkProps,
+        usuario : {
+          idUSuario : perfil.usuario.idUsuario
+        }
+      };
     };
 
     function incrementarProgressoAtividade() {
@@ -321,7 +348,7 @@ function LogOut() {
   }
 
     return (
-      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, avançarQuest, nivelamento,
+      <Context.Provider value={{ auth, setAuth, perfil, setPerfil, atividades, setAtividades, decrementarProgressoAtividade, incrementarProgressoAtividade, atualizarAtividade, definirFotoPerfil, definirDescricao, definirRedeSocial, avançarQuest, nivelamento,
         setNivelamento, atualizarPerfil, pedido2, setPedido, pegarDadosPedido, LogOut, setShowModalConquista, showModalConquista, nomeModuloConquista, setNomeModuloConquista, conquista2 }}>
         {hasVerifiedLogin && children}
       </Context.Provider>

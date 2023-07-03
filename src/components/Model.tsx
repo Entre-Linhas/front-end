@@ -14,14 +14,14 @@ export const Model = ({ title, describe, _completed = false, path, irConteudo }:
     <div onClick={irConteudo}>
 
       <div className="flex gap-[4rem] max-[600px]:px-10">
-        <div className="flex items-center gap-[0.5rem] w-full" >
+        <div className="flex items-center gap-[0.5rem] w-full">
          <p className={`font-bold ${!_completed && "opacity-50"}`}>{title}</p>
           {_completed && <div className="bg-green-500 rounded-full p-1">
             <Check  weight="bold"/>
           </div>}
         </div>
       </div>
-      <span className={`${!_completed && "opacity-50"} max-md:hidden`}>{describe}</span>
+      <p className={`${!_completed && "opacity-50"} max-md:hidden min-[600px]:px-5`}>{describe}</p>
     </div>
   )
 }
