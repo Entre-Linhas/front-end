@@ -4,12 +4,10 @@ import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Autoplay, Pagination, Navigation } from "swiper";
+import { Context } from '../contexts/Context';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
+ 
 import Carousel from '../components/carousel';
 
 import "../styles/index.css";
@@ -25,13 +23,12 @@ interface HomeProps {
 /* Não se assuste, Passos! Era para isto acontecer mesmo. */
 
 export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
-
+const [auth, setAuth] = useState(Context)
 
   const navigate = useNavigate();
 
-  const setNavigate = () => {
-  navigate("/signup")
-  }
+ 
+
   return (
 
     <div className="">
@@ -51,7 +48,7 @@ export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
             <h1 className='self-center min-[1024px]:self-start font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
             <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
             <div className="min-[1024px]:self-start">
-              <Button titleBt='Comece agora!' title='Ir para registrar' onClick={setNavigate}/>
+              <Button titleBt='Saiba mais!' title='Ir para registrar' onClick={() => navigate("/sobre")}/>
             </div>
           </div>
           <img src="/ArteMain.svg"  className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt="ilustração da moça costurando com alguns botões e carretéis em volta" role="imagem ilustrativa"/>

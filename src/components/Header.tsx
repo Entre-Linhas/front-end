@@ -80,8 +80,8 @@ export const Header = ({ ...rest }: HeaderProps) => {
                  </li>
                 </NavLink>
                 <NavLink to="/" title="Sair de sua conta" onClick={() => LogOut()}> 
-                  <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white">
-                    <span>Sair</span>
+                  <li className="block px-8 py-5 hover:bg-custom-salmon hover:text-white" onClick={() => LogOut()}>
+                    <span onClick={() => LogOut()}>Sair</span>
                  </li>
                 </NavLink>
               </ul>
@@ -166,8 +166,8 @@ export const Header = ({ ...rest }: HeaderProps) => {
             </li>
             </NavLink>
             <NavLink to="/" title='Sair'> 
-             <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`}>
-              <span>Sair</span> 
+             <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`} onClick={() => LogOut()}>
+              <span >Sair</span> 
              </li>
             </NavLink>
           </ul>
