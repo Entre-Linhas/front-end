@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 export function Footer() {
 
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(Context);
 
   return (
     <div className="py-[2rem] bg-custom-salmon dark:bg-zinc-800">
@@ -17,7 +17,6 @@ export function Footer() {
               <ul className="text-[1.8rem] font-medium">
                 <li><NavLink to="/sobre" className="text-[2rem] font-bold">Sobre Nós</NavLink></li>
                 <li><NavLink to="/agradecimento">Parceiros</NavLink></li>
-                <li><NavLink to="/Fornecedores">Fornecedores</NavLink></li>
               </ul>
             </nav>
             <nav className="max-[660px]:hidden">
@@ -36,12 +35,13 @@ export function Footer() {
             <nav>
               <ul className="text-[1.8rem] font-medium max-[660px]:text-center">
                 <li><NavLink to="/" className="text-[2rem] font-bold">Mapa do site</NavLink></li>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to={auth ? "/precificacao" : "/ferramentas"}>Ferramentas</NavLink></li>
+                <li><NavLink to="/">Início</NavLink></li>
+                <li><NavLink to={auth ? "/gerenciamento" : "/ferramentas"}>Ferramentas</NavLink></li>
                 <li><NavLink to="/eventos">Eventos</NavLink></li>
                 <li><NavLink to="/contato">Ajuda</NavLink></li>
                 <li><NavLink to="/sobre">Sobre Nós</NavLink></li>
-                <li><NavLink to="/sobre">Parceiros</NavLink></li>
+                <li><NavLink to="/agradecimento">Parceiros</NavLink></li>
+                <li><NavLink to="/fornecedores">Fornecedores</NavLink></li>
               </ul>
             </nav>
             <nav className="text-center py-5">

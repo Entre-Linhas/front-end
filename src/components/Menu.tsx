@@ -28,7 +28,11 @@ return (
         </div>
         <div className={` px-3 flex items-center gap-2 ${SelectPage === "Fornecedores" ? "bg-white border solid border-[#CCCCCC] dark:bg-zinc-800  rounded-[0.8rem]" : " "}`}>
           <ShoppingCart size={32} />
-          <span title="Fornecedores" role="link">Fornecedores</span>
+          <span title="Fornecedores" role="link">
+          <NavLink to="/Fornecedores" title="Nossos fornecedores parceiros" role="link"> 
+            Fornecedores
+            </NavLink>
+          </span>
         </div>
       </div>
     </div>

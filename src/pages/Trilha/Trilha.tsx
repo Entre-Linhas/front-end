@@ -12,11 +12,11 @@ export const Trilha = () => {
   const [showModal, setShowModal] = useState(true);
 
   // atualizarPerfil(); // talves precisa para voltar os valores depois de entrar no conteudo
-  
+
 
   function handleModal() {
-    setShowModal(true); 
-    
+    setShowModal(true);
+
   };
 
   function handleModal2() {
@@ -93,18 +93,18 @@ export const Trilha = () => {
     if (nivelamento >= 25 || perfil?.progresso >= 2) {
       setAndamento1(true);
     }
-    if (nivelamento >= 50  || perfil?.progresso >= 4) {
+    if (nivelamento >= 50 || perfil?.progresso >= 4) {
       setAndamento2(true);
     }
-    if (nivelamento >= 75  || perfil?.progresso >= 6) {
+    if (nivelamento >= 75 || perfil?.progresso >= 6) {
       setAndamento3(true);
     }
-    if (nivelamento >= 100  || perfil?.progresso >= 8) {
+    if (nivelamento >= 100 || perfil?.progresso >= 8) {
       setAndamento4(true);
     }
     if (/* clientesVendas >= 25  ||  */perfil?.progresso >= 10) {
       if (
-        clientesVendas <= 25 
+        clientesVendas <= 25
       ) {
         setC2(25);
       }
@@ -112,7 +112,7 @@ export const Trilha = () => {
     }
     if (/* clientesVendas >= 50  ||  */perfil?.progresso >= 12) {
       if (
-        clientesVendas <= 50 
+        clientesVendas <= 50
       ) {
         setC2(50);
       }
@@ -120,7 +120,7 @@ export const Trilha = () => {
     }
     if (/* clientesVendas >= 75  ||  */perfil?.progresso >= 14) {
       if (
-        clientesVendas <= 75 
+        clientesVendas <= 75
       ) {
         setC2(75);
       }
@@ -128,7 +128,7 @@ export const Trilha = () => {
     }
     if (/* clientesVendas >= 100  ||  */perfil?.progresso >= 16) {
       if (
-        clientesVendas <= 100 
+        clientesVendas <= 100
       ) {
         setC2(100);
       }
@@ -136,7 +136,7 @@ export const Trilha = () => {
     }
     if (/* aprendendoGerenciar >= 25  ||  */perfil?.progresso >= 18) {
       if (
-        aprendendoGerenciar <= 25 
+        aprendendoGerenciar <= 25
       ) {
         setA3(25);
       }
@@ -144,7 +144,7 @@ export const Trilha = () => {
     }
     if (/* aprendendoGerenciar >= 50  ||  */perfil?.progresso >= 20) {
       if (
-        aprendendoGerenciar <= 50 
+        aprendendoGerenciar <= 50
       ) {
         setA3(50);
       }
@@ -152,7 +152,7 @@ export const Trilha = () => {
     }
     if (/* aprendendoGerenciar >= 75  ||  */perfil?.progresso >= 22) {
       if (
-        aprendendoGerenciar <= 75 
+        aprendendoGerenciar <= 75
       ) {
         setA3(75);
       }
@@ -160,7 +160,7 @@ export const Trilha = () => {
     }
     if (/* aprendendoGerenciar >= 100  ||  */perfil?.progresso >= 24) {
       if (
-        aprendendoGerenciar <= 100 
+        aprendendoGerenciar <= 100
       ) {
         setA3(100);
       }
@@ -168,7 +168,7 @@ export const Trilha = () => {
     }
     if (/* marketingInovação >= 25  ||  */perfil?.progresso >= 26) {
       if (
-        marketingInovação <= 25 
+        marketingInovação <= 25
       ) {
         setMI4(25);
       }
@@ -176,7 +176,7 @@ export const Trilha = () => {
     }
     if (/* marketingInovação >= 50  ||  */perfil?.progresso >= 28) {
       if (
-        marketingInovação <= 50 
+        marketingInovação <= 50
       ) {
         setMI4(50);
       }
@@ -184,7 +184,7 @@ export const Trilha = () => {
     }
     if (/* marketingInovação >= 75  ||  */perfil?.progresso >= 30) {
       if (
-        marketingInovação <= 75 
+        marketingInovação <= 75
       ) {
         setMI4(75);
       }
@@ -192,7 +192,7 @@ export const Trilha = () => {
     }
     if (/* marketingInovação >= 100  ||  */perfil?.progresso >= 32) {
       if (
-        marketingInovação <= 100 
+        marketingInovação <= 100
       ) {
         setMI4(100);
       }
@@ -200,8 +200,7 @@ export const Trilha = () => {
     }
   }, [nivelamento, clientesVendas, aprendendoGerenciar, marketingInovação, perfil?.progresso]);
 
-  console.log("Trilha", perfil)
-  
+
   return (
     <>
       <div className="overflow-hidden h-screen">
@@ -210,44 +209,44 @@ export const Trilha = () => {
           <h1 className="py-[3.5rem] mx-auto text-[3.6rem] font-bold snap-start snap-always max-[540px]:text-center px-[1rem]">Bem-vindo à Trilha Educacional</h1>
           <div className="flex flex-col mx-auto ">
             <Modulo _titleModulo="Meu Negócio" _progress={nivelamento} conteudos={[
-              { title: "1. Nicho de mercado e proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.",  _completed: andamento1, irConteudo: () => handleIrConteudo(1, 1, "Nicho de mercado e proposta de valor.") },
-              { title: "2. Análise de mercado", describe: "Estudo do público-alvo e concorrência.",  _completed: andamento2, irConteudo: () => handleIrConteudo(10, 3, "Análise de mercado") },
-              { title: "3. Meu produto", describe: "Qual o meu produto e como identificar seu valor agregado",  _completed: andamento3, irConteudo: () => handleIrConteudo(19, 5, "Meu produto") },
-              { title: "4. Diferencial", describe: "Identificar o diferencial do seu negócio e o que ele pode oferecer ao mercado",  _completed: andamento4, irConteudo: () => handleIrConteudo(28, 7, "Diferencial") }
+              { title: "1. Nicho de mercado e proposta de valor.", describe: "Identificar o nicho de mercado e da proposta de valor.", _disabled: false, _completed: andamento1, irConteudo: () => handleIrConteudo(1, 1, "Nicho de mercado e proposta de valor.") },
+              { title: "2. Análise de mercado", describe: "Estudo do público-alvo e concorrência.", _disabled: !andamento1, _completed: andamento2, irConteudo: () => handleIrConteudo(10, 3, "Análise de mercado") },
+              { title: "3. Meu produto", describe: "Qual o meu produto e como identificar seu valor agregado", _disabled: !andamento2, _completed: andamento3, irConteudo: () => handleIrConteudo(19, 5, "Meu produto") },
+              { title: "4. Diferencial", describe: "Identificar o diferencial do seu negócio e o que ele pode oferecer ao mercado", _disabled: !andamento3, _completed: andamento4, irConteudo: () => handleIrConteudo(28, 7, "Diferencial") }
             ]} style={{ visibility: "visible" }} />
             <Modulo _titleModulo="Cliente e Vendas" _progress={clientesVendas} conteudos={[
-              { title: "1. Meu cliente.", describe: "Conhecer quem é o meu cliente e suas necessidades",  _completed: andamento5, irConteudo: () => handleIrConteudo(37, 9, "Meu cliente") },
-              { title: "2. Experiência do cliente", describe: "Entender como a experiência do cliente ageta suas vendas",  _completed: andamento6, irConteudo: () => handleIrConteudo(48, 11, "Experiência do cliente") },
-              { title: "3. Estratégias de venda", describe: "Criação de promoções e ações de vendas baseadas nos seus clientes",  _completed: andamento7, irConteudo: () => handleIrConteudo(55, 13, "Estratégias de venda") },
-              { title: "4. Engajamento", describe: "Manter um relacionamento com o seu cliente",  _completed: andamento8, irConteudo: () => handleIrConteudo(64, 15, "Engajamento") }
+              { title: "1. Meu cliente.", describe: "Conhecer quem é o meu cliente e suas necessidades", _disabled: !andamento4, _completed: andamento5, irConteudo: () => handleIrConteudo(37, 9, "Meu cliente") },
+              { title: "2. Experiência do cliente", describe: "Entender como a experiência do cliente ageta suas vendas", _disabled: !andamento5, _completed: andamento6, irConteudo: () => handleIrConteudo(48, 11, "Experiência do cliente") },
+              { title: "3. Estratégias de venda", describe: "Criação de promoções e ações de vendas baseadas nos seus clientes", _disabled: !andamento16, _completed: andamento7, irConteudo: () => handleIrConteudo(55, 13, "Estratégias de venda") },
+              { title: "4. Engajamento", describe: "Manter um relacionamento com o seu cliente", _disabled: !andamento7, _completed: andamento8, irConteudo: () => handleIrConteudo(64, 15, "Engajamento") }
             ]} style={{ scrollSnapAlign: "start", flexDirection: "row" }} />
             <Modulo _titleModulo="Aprendendo a Gerenciar" _progress={aprendendoGerenciar} conteudos={[
-              { title: "1. Planejamento Estratégico e Organização.", describe: "Definição de metas e estratégias para alcançar objetivos e estruturação eficiente dos recursos e processos da empresa.",  _completed: andamento9, irConteudo: () => handleIrConteudo(73, 17, "Planejamento Estratégico e Organização") },
-              { title: "2. Finanças e Planejamento", describe: "Gestão e análise dos recursos financeiros de uma empresa. Definição de estratégias e ações para alcançar metas financeiras.",  _completed: andamento10, irConteudo: () => handleIrConteudo(82, 19, "Finanças e Planejamento") },
-              { title: "3. Gestão de Pessoas e Desenvolvimento", describe: "Administração e liderança dos recursos humanos de uma organização. Promovendo o crescimento e aprimoramento dos colaboradores por meio de treinamentos e programas de capacitação",  _completed: andamento11, irConteudo: () => handleIrConteudo(91, 21, "Gestão de Pessoas e Desenvolvimento") },
-              { title: "4. Gestão de Pessoas e Desenvolvimento", describe: "Administração estratégica dos recursos humanos de uma organização. Investimento no aprimoramento das competências e habilidades dos colaboradores para promover seu crescimento pessoal e profissional.",  _completed: andamento12, irConteudo: () => handleIrConteudo(100, 23, "Gestão de Pessoas e Desenvolvimento") }
+              { title: "1. Planejamento Estratégico e Organização.", describe: "Definição de metas e estratégias para alcançar objetivos e estruturação eficiente dos recursos e processos da empresa.", _disabled: !andamento8, _completed: andamento9, irConteudo: () => handleIrConteudo(73, 17, "Planejamento Estratégico e Organização") },
+              { title: "2. Finanças e Planejamento", describe: "Gestão e análise dos recursos financeiros de uma empresa. Definição de estratégias e ações para alcançar metas financeiras.", _disabled: !andamento9, _completed: andamento10, irConteudo: () => handleIrConteudo(82, 19, "Finanças e Planejamento") },
+              { title: "3. Gestão de Pessoas e Desenvolvimento", describe: "Administração e liderança dos recursos humanos de uma organização. Promovendo o crescimento e aprimoramento dos colaboradores por meio de treinamentos e programas de capacitação", _disabled: !andamento10, _completed: andamento11, irConteudo: () => handleIrConteudo(91, 21, "Gestão de Pessoas e Desenvolvimento") },
+              { title: "4. Gestão de Pessoas e Desenvolvimento", describe: "Administração estratégica dos recursos humanos de uma organização. Investimento no aprimoramento das competências e habilidades dos colaboradores para promover seu crescimento pessoal e profissional.", _disabled: !andamento11, _completed: andamento12, irConteudo: () => handleIrConteudo(100, 23, "Gestão de Pessoas e Desenvolvimento") }
             ]} style={{ visibility: "visible" }} />
             <Modulo _titleModulo="Marketing e Inovação" _progress={marketingInovação} conteudos={[
-              { title: "1. Análise de mercado", describe: "Pesquisa e avaliação de dados para entender o cenário competitivo, identificar oportunidades e tomar decisões estratégicas.",  _completed: andamento13, irConteudo: () => handleIrConteudo(109, 25, "Análise de mercado") },
-              { title: "2. Segmentação de mercado", describe: "Divisão do mercado em grupos distintos com características e necessidades semelhantes para direcionar estratégias de marketing de forma mais eficaz.",  _completed: andamento14, irConteudo: () => handleIrConteudo(118, 27, "Segmentação de mercado") },
-              { title: "3. Inovação de produtos e serviços", describe: "Criação e introdução de novas soluções no mercado para atender às demandas dos clientes e se destacar da concorrência.",  _completed: andamento15, irConteudo: () => handleIrConteudo(127, 29, "Inovação de produtos e serviços") },
-              { title: "4. Estratégias de marketing eficazes", describe: "Estratégias de marketing eficazes: Abordagens estratégicas que geram resultados positivos na promoção e venda de produtos e serviços.",  _completed: andamento16, irConteudo: () => handleIrConteudo(136, 31, "Estratégias de marketing eficazes") }
+              { title: "1. Análise de mercado", describe: "Pesquisa e avaliação de dados para entender o cenário competitivo, identificar oportunidades e tomar decisões estratégicas.", _disabled: !andamento12, _completed: andamento13, irConteudo: () => handleIrConteudo(109, 25, "Análise de mercado") },
+              { title: "2. Segmentação de mercado", describe: "Divisão do mercado em grupos distintos com características e necessidades semelhantes para direcionar estratégias de marketing de forma mais eficaz.", _disabled: !andamento13, _completed: andamento14, irConteudo: () => handleIrConteudo(118, 27, "Segmentação de mercado") },
+              { title: "3. Inovação de produtos e serviços", describe: "Criação e introdução de novas soluções no mercado para atender às demandas dos clientes e se destacar da concorrência.", _disabled: !andamento14, _completed: andamento15, irConteudo: () => handleIrConteudo(127, 29, "Inovação de produtos e serviços") },
+              { title: "4. Estratégias de marketing eficazes", describe: "Estratégias de marketing eficazes: Abordagens estratégicas que geram resultados positivos na promoção e venda de produtos e serviços.", _disabled: !andamento15, _completed: andamento16, irConteudo: () => handleIrConteudo(136, 31, "Estratégias de marketing eficazes") }
             ]} style={{ scrollSnapAlign: "start", flexDirection: "row" }} />
           </div>
         </div>
       </div>
 
 
-       <Modal _showModal={showModalConquista} _close={handleModal2} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg" _Ajuste="max-[320px]:top-[7rem]">
-            <div className="px-5 flex flex-col items-center gap-5 text-white rounded-[2rem] max-[360px]:overflow-y-auto max-[360px]:overflow-x-hidden">
-         
-               <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo "{nomeModuloConquista}"</p>
-             <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem"}} className="max-h-[30rem]" />
-            <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
-          </div>
-        </Modal>
+      <Modal _showModal={showModalConquista} _close={handleModal2} _Custom="bg-[url('/public/Trofeus.svg')] bg-center bg-cover shadow-[#FFB125] shadow-lg" _Ajuste="max-[320px]:top-[7rem]">
+        <div className="px-5 flex flex-col items-center gap-5 text-white rounded-[2rem] max-[360px]:overflow-y-auto max-[360px]:overflow-x-hidden">
 
-      
+          <p className="text-[2.4rem] text-center font-bold">Parabéns, você concluiu o módulo "{nomeModuloConquista}"</p>
+          <img src="/Trofeu.svg" alt="Ilustração de um troféu" style={{ width: "-webkit-fill-available", height: "28.5rem" }} className="max-h-[30rem]" />
+          <div className="text-[#FFB125] bg-white h-[6rem] flex items-center justify-center w-[27rem] rounded-[1.5rem]" onClick={handleModal2} title="continuar a trilha"><span>Continuar</span></div>
+        </div>
+      </Modal>
+
+
     </>
 
   );

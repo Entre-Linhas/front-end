@@ -19,7 +19,7 @@ export const Gerenciamento = () => {
   const { perfil, pedido2, setPedido, pegarDadosPedido } = useContext(Context);
   const [showModal, setShowModal] = useState(false);
   const [showForm, setShowForm] = useState(false)
-  const [pedidos, setPedidos] = useState<Pedido[]>([{ date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }, { date: new Date(), nome: "", description: "", price: 100.00, title: "", estado: "" }]);
+  const [pedidos, setPedidos] = useState<Pedido[]>([ ]);
   const [keyModal, setKeyModal] = useState(crypto.randomUUID())
   function handleModal() {
     setShowModal(!showModal)

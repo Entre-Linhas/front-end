@@ -13,7 +13,7 @@ return (
 <Header />
     <div className="text-3xl flex flex-wrap min-h-[900px] gap-5 py-[10rem]">
 
-     <div className={auth ? "hidden" : " "}> 
+     <div className={auth ? "" : "hidden"}> 
         <Menu SelectPage="Fornecedores" />
       </div>
       <div className="flex flex-col max-w-[130rem] mt-16 m-auto px-[3rem] box-border">

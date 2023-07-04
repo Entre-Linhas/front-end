@@ -22,12 +22,12 @@ export default function Eventos() {
                         Fique atento à nossa agenda de eventos e não perca a oportunidade de participar de um de nossos encontros emocionantes!
                     </p>
 
-                    <button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem]" title="Acompanhe os eventos"><a href="https://www.instagram.com/entrelinhas.empreenda/" target="_blank">Acompanhe!</a></button>
+                    <a href="https://www.instagram.com/entrelinhas.empreenda/" target="_blank"><button className="bg-[#62B8AF] px-[6rem] py-[1.5rem] text-white text-[1.8rem] rounded-[1rem] w-full" title="Acompanhe os eventos"> Acompanhe!</button></a>
                 </div>
 
 
                 <img style={{ width: 480, height: 320 }} src="/Eventos.svg" className="py-[1.5rem] max-[1340px]:max-w-[60rem] max-[1170px]:max-w-[55rem] max-[1100px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Ilustração de pessoas conversando"
-                    role="imagem ilustrativa" />
+                    role="img" />
 
             </div>
             <Footer />

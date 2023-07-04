@@ -6,22 +6,23 @@ export interface ModelProps {
   _completed?: boolean;
   path?: String;
   irConteudo?: () => void;
+  _disabled: boolean
 }
 
 
-export const Model = ({ title, describe, _completed = false, path, irConteudo }: ModelProps) => {
+export const Model = ({ title, describe, _completed = false, path, irConteudo, _disabled }: ModelProps) => {
   return (
-    <div onClick={irConteudo}>
+    <div onClick={() => { !_disabled && irConteudo?.() }} style={_disabled ? { cursor: 'not-allowed' } : {}}>
 
-      <div className="flex gap-[4rem] max-[600px]:px-10">
-        <div className="flex items-center gap-[0.5rem] w-full">
-         <p className={`font-bold ${!_completed && "opacity-50"}`}>{title}</p>
+      <div className="flex gap-[4rem] max-[600px]:px-10" style={_disabled ? { cursor: 'not-allowed' } : {}}>
+        <div className="flex items-center gap-[0.5rem] w-full" style={_disabled ? { cursor: 'not-allowed' } : {}}>
+          <p className={`font-bold cursor-pointer ${!_completed && "opacity-50"}`} style={_disabled ? { cursor: 'not-allowed' } : {}}>{title}</p>
           {_completed && <div className="bg-green-500 rounded-full p-1">
-            <Check  weight="bold"/>
+            <Check weight="bold" />
           </div>}
         </div>
       </div>
-      <p className={`${!_completed && "opacity-50"} max-md:hidden min-[600px]:px-5`}>{describe}</p>
+      <p className={`${!_completed && "opacity-50"} cursor-pointer max-md:hidden min-[600px]:px-5`} style={_disabled ? { cursor: 'not-allowed' } : {}}>{describe}</p>
     </div>
   )
 }

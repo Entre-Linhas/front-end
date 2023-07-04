@@ -66,7 +66,7 @@ const Carousel = () => {
                         src={s.image}
                         className="max-w-[50%] min-[220px]:m-auto min-[900px]:max-w-[43.5rem]"
                         alt="Imagem do usuário"
-                        role="imagem do perfil do usuário"
+                        role="img"
                       />
                     )}
                   </div>

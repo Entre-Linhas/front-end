@@ -77,7 +77,7 @@ export default function Profile() {
 
         <div className="bg-white py-5 flex flex-col gap-10 max-md:w-full max-md:max-w-2xl max-md:m-auto min-[1024px]:border solid min-[1024px]:max-w-[31rem] min-[1024px]:min-[1024px]:shadow-xl px-5 dark:bg-zinc-800 dark:border-zinc-800">
           <div className="h-96 max-w-[25rem] w-full m-auto flex flex-col">
-            <img src={perfil.foto} className="max-w-[100%] h-full rounded-full hover:brightness-75 cursor-pointer" alt="foto de perfil do usuário" role="imagem de perfil" onClick={() => navigate("/configurar")}/>
+            <img src={perfil.foto} className="max-w-[100%] h-full rounded-full hover:brightness-75 cursor-pointer" alt="foto de perfil do usuário" role="img" onClick={() => navigate("/configurar")}/>
             
           </div>
 

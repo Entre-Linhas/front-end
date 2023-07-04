@@ -21,57 +21,15 @@ export default function Precificacao() {
 
    return (
       <>
-         <Header />
+      <Header />
+      <div className="py-[11rem] m-auto flex flex-wrap"> 
+          <Menu />
 
-
-
-         <div className="text-3xl flex h-[100dvh] gap-5 py-[10rem] px-3 max-lg:flex-col">
-            <Menu SelectPage="Precificacao" />
-
-
-            <div className="py-10 flex flex-col flex-1 max-w-[80rem]  mt-16 m-auto max-lg:px-[1rem] px-[3rem] ">
-
-               <div className="py-10">
-                  <h1 className="font-bold py-3">Precificação</h1>
-                  <p>Saiba quanto cobrar por seus produtos!</p>
+                <div className="py-[3rem] m-auto max-w-[70rem] w-full"> 
+                  <CalculadoraPrecificacao />
                </div>
-
-               <div className="w-full text-black bg-white px-5 py-10 dark:bg-zinc-900 rounded-3xl">
-                  <div className="py-10 flex flex-col gap-8">
-                     <h2 className="py-5 text-white">Calcule abaixo:</h2>
-                     <CalculadoraPrecificacao />
-                  </div>
-
-               </div>
-
-
-                    
-
-
-
-
-
-
-
-               
-
-
             </div>
-
-            <Modal _showModal={showModal} _close={handleModal}>
-                     <form id="Precifica">  
-                      
-
-
-
-
-                     </form>
-            </Modal>
-
-         </div>
-
-
-
+         <Footer />
       </>
 
 

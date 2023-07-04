@@ -32,7 +32,7 @@ export default function Contato() {
                     </div>
                 </div>
 
-                <img src="/Contato.svg" className="py-20 max-[1340px]:max-w-[50rem] max-[1170px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Ilustração de uma atendente" role="imagem ilustrativa" />
+                <img src="/Contato.svg" className="py-20 max-[1340px]:max-w-[50rem] max-[1170px]:max-w-[48rem] max-[1023px]:max-w-[100%] max-[1023px]:m-auto " alt="Ilustração de uma atendente" role="img" />
 
             </div>
             <Footer />

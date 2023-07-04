@@ -7,7 +7,7 @@ import { Footer } from "../components/Footer";
 import { Context } from '../contexts/Context';
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
- 
+
 import Carousel from '../components/carousel';
 
 import "../styles/index.css";
@@ -23,11 +23,11 @@ interface HomeProps {
 /* Não se assuste, Passos! Era para isto acontecer mesmo. */
 
 export default function Home({ NameUser, PhotoUser, TextUser }: HomeProps) {
-const [auth, setAuth] = useState(Context)
+  const [auth, setAuth] = useState(Context)
 
   const navigate = useNavigate();
 
- 
+
 
   return (
 
@@ -48,10 +48,10 @@ const [auth, setAuth] = useState(Context)
             <h1 className='self-center min-[1024px]:self-start font-bold text-[3rem] min-[425px]:text-[4.5rem]'>Transforme seu negócio!</h1>
             <p className='max-[1499px]:max-w-[50rem] text-center min-[1024px]:text-justify min-[220px]:text-[1.8rem] min-[300px]:text-[2rem] min-[320px]:text-[2.2rem] min-[500px]:text-[2.4rem] min-[768px]:text-[2.8rem] min-[1500px]:max-w-[80rem]'>O Entre-Linhas foi desenvolvido com foco total em você e no seu negócio! Explore a plataforma, aprenda e cresça conosco!</p>
             <div className="min-[1024px]:self-start">
-              <Button titleBt='Saiba mais!' title='Ir para registrar' onClick={() => navigate("/sobre")}/>
+              <Button titleBt='Saiba mais!' title='Ir para registrar' onClick={() => navigate("/sobre")} />
             </div>
           </div>
-          <img src="/ArteMain.svg"  className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt="ilustração da moça costurando com alguns botões e carretéis em volta" role="imagem ilustrativa"/>
+          <img src="/ArteMain.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt="ilustração da moça costurando com alguns botões e carretéis em volta" role="img" />
         </div>
 
       </div>
@@ -106,7 +106,7 @@ const [auth, setAuth] = useState(Context)
               <h1 className="max-[1023px]:text-center font-[Nunito] text-custom-salmon text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]">Costure seu<span className="text-black dark:text-white"> futuro</span> aqui!</h1>
               <p className="max-w-[64rem] m-auto text-justify min-[220px]:text-[1.8rem] py-[2rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-gray-100">Conteúdo totalmente produzido com foco em você e para se adaptar ao seu contexto e realidade. Conosco, a teoria e a prática vão caminhar juntas, construa seu negócio enquanto aprende de forma intuitiva e interativa!</p>
             </div>
-            <img src="/Machinee.svg" className="m-auto min-[220px]:h-[15rem] min-[240px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[24rem] min-[425px]:h-[28rem] min-[500px]:h-[32rem] min-[768px]:h-[40rem] min-[1024px]:h-[40rem] min-[1440px]:h-[48rem]" alt="ilustração de máquina de costura com dois botões e carretéis em volta" role="imagem ilustrativa"/>
+            <img src="/Machinee.svg" className="m-auto min-[220px]:h-[15rem] min-[240px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[24rem] min-[425px]:h-[28rem] min-[500px]:h-[32rem] min-[768px]:h-[40rem] min-[1024px]:h-[40rem] min-[1440px]:h-[48rem]" alt="ilustração de máquina de costura com dois botões e carretéis em volta" role="img" />
           </div>
         </div>
 
@@ -146,7 +146,7 @@ const [auth, setAuth] = useState(Context)
             <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto dark:text-gray-100">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
           </div>
           <div>
-            <img src="/HomeFerramenta.svg" className="m-auto max-w-[50rem] max-h-[80rem] w-[100%]" alt='Imagem da ferramenta de precificação no app' role='imagem ilustrativa' />
+            <img src="/HomeFerramenta.svg" className="m-auto max-w-[50rem] max-h-[80rem] w-[100%]" alt='Imagem da ferramenta de precificação no app' role='img' />
           </div>
         </div>
       </div>
@@ -164,9 +164,9 @@ const [auth, setAuth] = useState(Context)
             <div className="flex flex-col gap-[1.6rem] items-center">
               <h1 className="text-center text-custom-salmon font-[Nunito] text-[2.8rem] min-[425px]:text-[4rem] min-[1024px]:text-[4.8rem]"> Aprenda também pelo <span className="text-custom-salmon">App</span></h1>
               <p className="m-auto max-w-[84.5rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.4rem] dark:text-white">Você escolhe como quer estudar! O Entre-Linhas foi feito para você e por você. Carregue o conhecimento e o poder de transformar o seu negócio em qualquer lugar. </p>
-              <img src="/Login.svg" className="h-[5.3rem]" alt='imagem de download do appn o google play' role='imagem ilustrativa'/>
+              <img src="/Login.svg" className="h-[5.3rem]" alt='imagem de download do appn o google play' role='img' />
             </div>
-            <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt='ilustração de uma plantinha ao lado de um celular e uma pessoa' role='imagem ilustrativa'></img>
+            <img src="/ArtCelular.svg" className="m-auto min-[220px]:h-[16rem] min-[300px]:h-[22rem] min-[360px]:h-[25rem] min-[400px]:h-[28rem] min-[475px]:h-[32rem] min-[500px]:h-[35rem] min-[600px]:h-[40rem] min-[640px]:h-[42rem] min-[720px]:h-[44rem] min-[1024px]:h-[40rem] min-[1280px]:h-[50rem]" alt='ilustração de uma plantinha ao lado de um celular e uma pessoa' role='img'></img>
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@ const [auth, setAuth] = useState(Context)
               <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Conhecimento</h3>
               <p className="min-[900px]:max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Através da educação, buscamos mostrar aos nossos profissionais todo o seu potêncial como empreendedores de sucesso.</p>
             </div>
-            <img src="/LineSalmon.svg" className="py-[1rem]" alt='desenho de um carrretel de linha rosa'  role='imagem ilustrativa'/>
+            <img src="/LineSalmon.svg" className="py-[1rem]" alt='desenho de um carrretel de linha rosa' role='img' />
           </div>
 
           <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
@@ -210,7 +210,7 @@ const [auth, setAuth] = useState(Context)
               <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Transformação</h3>
               <p className="min-[900px]:max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100 max-[900px]:border-none max-[900px]:rounded-none">Almejamos a transformação de profissionais da costura através da educação, permitindo que eles tenham impacto em seus negócios e comunidades.</p>
             </div>
-            <img src="/LineYellow.svg" className="py-[1rem]" alt='desenho de um carrretel de linha amarelo'  role='imagem ilustrativa'/>
+            <img src="/LineYellow.svg" className="py-[1rem]" alt='desenho de um carrretel de linha amarelo' role='img' />
           </div>
 
           <div className="max-[899px]:hidden self-center border-dashed border-t-[2px] border-custom-salmon w-[5%] min-[1440px]:w-[10%]"></div>
@@ -220,7 +220,7 @@ const [auth, setAuth] = useState(Context)
               <h3 className="py-[2.2rem] text-center font-[Nunito] text-[2.4rem] min-[425px]:text-[3.2rem] dark:text-white">Sustentabilidade</h3>
               <p className="min-[900px]:max-w-[28rem] text-center min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2rem] min-[500px]:text-[2.1.8rem] dark:text-gray-100">Em busca de um mundo mais sustentável, prezamos pelo uso consciente de materiais. Em nossa trilha, reforçamos isso com materiais didáticos sobre técnicas sustentáveis.</p>
             </div>
-            <img src="/LineTurq.svg" className="py-[1rem]"alt='desenho de um carrretel de linha Turquesa'  role='imagem ilustrativa' />
+            <img src="/LineTurq.svg" className="py-[1rem]" alt='desenho de um carrretel de linha Turquesa' role='img' />
           </div>
 
         </div>

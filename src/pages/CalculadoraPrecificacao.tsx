@@ -41,7 +41,7 @@ const CalculadoraPrecificacao: React.FC = () => {
       <Swiper
         spaceBetween={5}
         slidesPerView={1}
-       
+        // _containerClasses={"bg-black"}
         allowTouchMove={false}
         onSwiper={(swi) => swiperRef.current = swi}
       >

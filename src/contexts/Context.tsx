@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import api from '../apiInstance';
 import { Pedido } from '../models/pedido';
 import { pedidoParser } from '../utils/parsers';
-import { Conquista } from '../models/consquista';
+import { Conquista } from '../models/consquista'
 
 interface ContextProps {
   auth: boolean
@@ -43,7 +43,6 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [showModalConquista, setShowModalConquista] = useState(false)
   const [nomeModuloConquista, setNomeModuloConquista ] = useState('')
   const [conquista2, setConquista] = useState<Conquista[]>([])
-
   
   function verificaLoginAnterior() {
     const rawPerfil = localStorage.getItem('perfil')
@@ -90,6 +89,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     console.log('este é o nivel', nivelamento)
     !!nivelamento && localStorage.setItem('nivelamento', JSON.stringify(nivelamento))
   }, [nivelamento])
+
 
   useEffect(() => {
     if(showModalConquista) {

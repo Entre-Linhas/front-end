@@ -130,9 +130,9 @@ export const Header = ({ ...rest }: HeaderProps) => {
                 </NavLink>
               </>
             )}
-            <NavLink to="/" title='Inicio'>
+            <NavLink to="/" title='Início'>
               <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
-                <span>Inicio</span>
+                <span>Início</span>
               </li>
             </NavLink>
             <NavLink to="/trilha" title='Trilha'>

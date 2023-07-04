@@ -156,10 +156,8 @@ export default function Pratica() {
       respostaIncorretaSelecionada();
     }
   }
-  console.log(perfil)
 
   function respostaCorretaSelecionada() {
-    console.log('Resposta correta! Parabéns!');
     const newPerfil = {
       ...perfil,
       progresso: perfil?.progresso + 1
@@ -167,30 +165,11 @@ export default function Pratica() {
     setPerfil?.(newPerfil)
     avançarQuest();
     atualizarPerfil(newPerfil);
-    /* if ((newPerfil?.progresso === 2 && atividades?.pratica?.idPratica === 3) ||
-      (newPerfil?.progresso === 4 && atividades?.pratica?.idPratica === 5) ||
-      (newPerfil?.progresso === 6 && atividades?.pratica?.idPratica === 7) ||
-      (newPerfil?.progresso === 8 && atividades?.pratica?.idPratica === 9) ||
-      (newPerfil?.progresso === 10 && atividades?.pratica?.idPratica === 11) ||
-      (newPerfil?.progresso === 12 && atividades?.pratica?.idPratica === 13) ||
-      (newPerfil?.progresso === 14 && atividades?.pratica?.idPratica === 15) ||
-      (newPerfil?.progresso === 16 && atividades?.pratica?.idPratica === 17) ||
-      (newPerfil?.progresso === 18 && atividades?.pratica?.idPratica === 19) ||
-      (newPerfil?.progresso === 20 && atividades?.pratica?.idPratica === 21) ||
-      (newPerfil?.progresso === 22 && atividades?.pratica?.idPratica === 23) ||
-      (newPerfil?.progresso === 24 && atividades?.pratica?.idPratica === 25) ||
-      (newPerfil?.progresso === 26 && atividades?.pratica?.idPratica === 27) ||
-      (newPerfil?.progresso === 28 && atividades?.pratica?.idPratica === 29) ||
-      (newPerfil?.progresso === 30 && atividades?.pratica?.idPratica === 31) ||
-      (newPerfil?.progresso === 32 && atividades?.pratica?.idPratica === 33)) {
-    } */
   }
 
   function respostaIncorretaSelecionada() {
-    console.log('Incorreto! Tente novamente!');
   }
 
-console.log("Atividades", atividades);
   return (
     <>
 

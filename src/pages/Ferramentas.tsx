@@ -31,7 +31,7 @@ export default function Ferramentas() {
 
                 </div>
 
-                <img src="/ArtFerramenta.svg" className="m-auto max-w-[100%] max-[700px]:hidden" alt="Imagem da ferramenta de gerenciamneto" role="imagem ilustrativa" />
+                <img src="/ArtFerramenta.svg" className="m-auto max-w-[100%] max-[700px]:hidden" alt="Imagem da ferramenta de gerenciamneto" role="img" />
 
                 <div className="flex flex-col m-auto box-border gap-[10rem] w-[100%] px-[1.5rem] py-[10.2rem] mx-auto lg:max-w-[99rem] xl:max-w-[122rem] 2xl:max-w-[147.6rem] min-[1020px]:justify-evenly">
                     <div className="flex max-[1024px]:flex-col min-[1024px]:gap-[10rem]">
@@ -40,13 +40,13 @@ export default function Ferramentas() {
                             <p className="max-w-[50rem] text-[2.4rem] max-[660px]:py-[5rem] min-[660px]:py-[2rem] max-[1024px]:m-auto">Já pensou em poder gerenciar seus pedidos facilmente? Com a nossa ferramenta de gerenciamento você pode. Controle valores, produtos e status em um só lugar.</p>
                         </div>
                         <div>
-                            <img src="SalmonPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" alt='imagem da ferramenta de precificação no app' role='imagem ilustrativa'/>
+                            <img src="SalmonPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" alt='imagem da ferramenta de precificação no app' role='img'/>
                         </div>
                     </div>
 
                     <div className="flex min-[1024px]:gap-[10rem] max-[1024px]:flex-col-reverse">
                         <div>
-                            <img src="YellowPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" alt='imagem da ferramenta de gerenciamento no app' role='imagem ilustrativa'/>
+                            <img src="YellowPhone.svg" className="m-auto max-[1024px]:max-w-[100%]" alt='imagem da ferramenta de gerenciamento no app' role='img'/>
                         </div>
                         <div className="text-justify self-center max-[1024px]:text-center">
                             <h3 className="self-center text-[2.8rem] font-bold min-[220px]:text-[1.6rem] min-[300px]:text-[1.8rem] min-[320px]:text-[2.4rem] min-[500px]:text-[3.8rem] dark:text-white">Esquecendo a data para entregar uma encomenda? Gerencie seus pedidos aqui também</h3>
@@ -89,7 +89,7 @@ export default function Ferramentas() {
                         <h2 className="text-[3.6rem] font-bold text-center dark:text-white">Suas maiores aliadas no dia a dia</h2>
                         <p className="text-[2.2rem] max-w-[77rem] max-[500px]:text-center min-[500px]:px-[5rem]">Nossas ferramentas são desenvolvidas totalmente com base em você e em seu negócio. Tarefas que levariam um tempo valioso, podem ser feitas em poucos segundos com o auxilio de nossas ferramentas. Nunca se perca o controle dos seus pedidos, e poupe tempo para orçamentar um pedido.</p>
                     </div>
-                    <img src="FerramentaArt2.svg" className="py-[10rem] m-auto max-w-[95%] min-[1140px]:max-w-[100%]"  alt="Imagem ilustrativa de uma moça sentada em cima de uma bobina ao lado de um carretel" role="imagem ilustrativa"/>
+                    <img src="FerramentaArt2.svg" className="py-[10rem] m-auto max-w-[95%] min-[1140px]:max-w-[100%]"  alt="Imagem ilustrativa de uma moça sentada em cima de uma bobina ao lado de um carretel" role="img"/>
                 </div>
             </div>
             <Footer />

@@ -18,7 +18,7 @@ export default function SignIn() {
   const { auth, setAuth } = useContext(Context);
   const {perfil, setPerfil, setAtividades, atualizarPerfil} = useContext(Context);
   const [showModal, setShowModal] = useState(false);
-
+  
   function handleModal() {
       setShowModal(!showModal)
   }
@@ -29,8 +29,6 @@ export default function SignIn() {
   };
  
   const navigate = useNavigate();
-
-
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -118,7 +116,7 @@ export default function SignIn() {
         </div>
 
         <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen">
-          <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" alt="imagens de costureiras" role="imagem ilustrativa de costureiras" />
+          <img src={currentValue} className="w-[100%] h-screen object-cover min-[1024px]:object-center" alt="imagens de costureiras" role="img" />
         </div>
 
 

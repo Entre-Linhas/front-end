@@ -19,14 +19,15 @@ import { Configurar } from "../pages/Configurar"
 import Agradecimento from "../pages/Agradecimento";
 import CalculadoraPrecificacao from "../pages/CalculadoraPrecificacao";
 import { Fornecedores } from "../pages/Fornecedores";
+import { useContext, useEffect } from "react";
+import { Context } from "../contexts/Context";
 
 export default function CloseRoutes() {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/terms-of-use" element={<TermsUse />} />
         <Route path="/ferramentas" element={<Ferramentas />} />
         <Route path="/eventos" element={<Eventos />} />
@@ -46,7 +47,7 @@ export default function CloseRoutes() {
         {/* <Route path="*" element={<Navigate replace to="/"/>} /> */}
         <Route path="fornecedores" element={<Fornecedores />} />
         <Route path="/teste" element={<CalculadoraPrecificacao />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<Home />} />  
       </Routes>
     </BrowserRouter>
   );

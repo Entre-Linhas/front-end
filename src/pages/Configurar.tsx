@@ -118,7 +118,7 @@ export const Configurar = () => {
                   className="max-w-[100%] h-full rounded-full cursor-pointer hover:brightness-75"
                   onClick={handleModal}
                   alt="Foto de perfil"
-                  role="imagem"
+                  role="img"
                />
                <span
                   className="font-semibold text-[2.4rem]"
@@ -148,8 +148,8 @@ export const Configurar = () => {
                   onChange={(e) => setDescricao(e.target.value)}
                   id="desc"
                   placeholder={perfil.serviço || "Insira uma descrição"}
-                  className="text-black w-full py-3 px-2 rounded-xl shadow-lg resize-y focus:border-custom-salmon dark:text-white dark:bg-zinc-800"
-                  role="texto de descrição"
+                  className="text-black w-full py-3 px-2 rounded-xl border-[1px] border-x-gray-200 dark:bg-zinc-800 dark:border-zinc-700 resize-y focus:border-custom-salmon dark:text-white "
+                  role="textbox"
                   />
                </div>
 
