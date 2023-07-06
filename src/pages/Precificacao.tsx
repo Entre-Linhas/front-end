@@ -23,9 +23,9 @@ export default function Precificacao() {
       <>
       <Header />
       <div className="py-[11rem] m-auto flex flex-wrap"> 
-          <Menu />
+          <Menu SelectPage="Precificacao"/>
 
-                <div className="py-[3rem] m-auto max-w-[70rem] w-full"> 
+                <div className="h-[100dvh] m-auto max-w-[70rem] w-full"> 
                   <CalculadoraPrecificacao />
                </div>
             </div>

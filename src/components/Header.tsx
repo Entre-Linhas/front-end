@@ -17,6 +17,12 @@ export const Header = ({ ...rest }: HeaderProps) => {
   const [display, setDisplay] = useState("hidden");
 
 
+  const Testando2 = () => {
+   if (perfil?.progresso === null) {
+   navigate("/nivelamento")
+  } else {
+   navigate("/Trilha")
+  }}
 
   const Click = () => {
     setDisplay(display === "hidden" ? "block" : "hidden")
@@ -35,7 +41,7 @@ export const Header = ({ ...rest }: HeaderProps) => {
             <Linking to="/" title='Início' />
           </li>
           <li className={`relative ${auth ? "" : "hidden"}`}>
-            <Linking to="/Trilha" title='Trilha' />
+             <Linking to={perfil?.progresso === null ? "/Nivelamento " : "/Trilha"} title='Trilha' /> 
           </li>
           <li className={`relative`}>
             <Linking to={auth ? "/Gerenciamento" : "/ferramentas"} title='Ferramentas' />
@@ -135,11 +141,11 @@ export const Header = ({ ...rest }: HeaderProps) => {
                 <span>Início</span>
               </li>
             </NavLink>
-            <NavLink to="/trilha" title='Trilha'>
-              <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`}>
+            {/* <NavLink to={perfil?.progresso === null ? "/Nivelamento" : "Trilha"} title='Trilha'> */}
+              <li className={`${auth ? "" : "hidden"} block px-8 py-2 hover:bg-custom-salmon hover:text-white`} onClick={Testando2}>
                 <span>Trilha</span>
               </li>
-            </NavLink>
+            {/* </NavLink> */}
             <NavLink to={auth ? "/Gerenciamento" : "/ferramentas"} title='Ferramentas'>
               <li className="block px-8 py-2 hover:bg-custom-salmon hover:text-white">
                 <span>Ferramentas </span>

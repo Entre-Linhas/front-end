@@ -104,6 +104,7 @@ export default function SignIn() {
               leftElement={<Envelope className="mr-2 text-zinc-300 " weight="light" size={31} />}
             />
             <Input
+              type="password"
               placeholder="Senha"
               onChange={(e: any) => setPassword(e.target.value)}
               leftElement={<Key className="mr-2 text-zinc-300" weight="light" size={31} />}

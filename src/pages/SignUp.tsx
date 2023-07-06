@@ -110,10 +110,12 @@ export default function SignUp() {
                     setAtividades && setAtividades(response.data.trilhas.atividades)
                     if (response.data.progresso === null) {
                         setTimeout(() => {
-                            window.location.reload()
+                            // window.location.reload()
                         }, 1000);
+                        navigate("/Nivelamento")
                     } else {
-                        navigate("/Trilha")
+                        navigate("/Trilha");
+                       
                     }
                 } else {
                     console.log("vazio");
@@ -223,7 +225,7 @@ export default function SignUp() {
 
                         </Swiper>
                     </div>
-                </div>
+                 </div>
                 <div className="max-[1023px]:hidden flex items-center w-[100%] h-screen ">
                     <img src={currentValue.src} alt={currentValue.alt} className="w-[100%] h-screen object-cover min-[1024px]:object-center" aria-roledescription="Variações de imagem de costureiras(os)" />
                 </div>
